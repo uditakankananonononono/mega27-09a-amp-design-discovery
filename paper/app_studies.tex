@@ -1,0 +1,51 @@
+
+\section{Study-by-study reproducibility walkthrough}\label{app:studies}
+Every study is a single script under \texttt{studies/} writing one JSON
+(and figures where noted) under \texttt{results/}. Commands are run from
+the repository root; hermetic fixtures cover network access in tests.
+
+\begin{table}[h]\centering\scriptsize
+\caption{Study inventory. Runtimes are sandbox wall-clock where measured.}
+\label{tab:studies}
+\begin{tabular}{p{1.3cm}p{6.2cm}p{4.6cm}p{1.8cm}}
+\hline
+Script & Purpose & Output & Runtime \\
+\hline
+\texttt{study01} & Pilot benchmark: reviewed KW-0929 (8--60 aa) vs
+length-matched reviewed non-AMP; PepCNN/PepGNN/RF/logreg; annealing
+designer & \texttt{study01\_amp.json}, ROC figure & minutes \\
+\texttt{study07} & Scale-up on homology-aware clustered split of the
+24{,}628 + 24{,}628 large dataset; trains the frozen screen ensemble &
+\texttt{study07\_scaleup.json}, checkpoints & hours \\
+\texttt{study08} & Discovery screen: score 852 reviewed uncharacterized
+proteins with the frozen ensemble & \texttt{study08\_discovery.json} & minutes \\
+\texttt{study09} & External validation: score APD6 2024 natural AMPs with
+the same frozen ensemble & \texttt{study09\_apd\_validation.json} & minutes \\
+\texttt{study10} & Base-model head-to-head on the Veltri 2018 splits &
+\texttt{study10\_veltri.json} & $\sim$1 h \\
+\texttt{study11} & Stacked ensemble on the Veltri 2018 splits, tuned on
+the tune partition only & \texttt{study11\_veltri\_stack.json} & $\sim$2 h \\
+\texttt{study12} & Candidate naming, novelty audit (APD6, KW-0929),
+physicochemical audit, falsifiable predictions &
+\texttt{study12\_candidates.json} & minutes \\
+\texttt{study13} & Filtered-record Feb2020 CV (retained as ablation) &
+\texttt{study13\_feb2020\_cv.json} & $\sim$15 min \\
+\texttt{study14} & Full-record Feb2020 10-fold CV, all 4{,}042 sequences &
+\texttt{study14\_feb2020\_full.json} & $\sim$15 min \\
+\texttt{study15} & P0ACW4 precursor/signal/mature segment ablation &
+\texttt{study15\_signal\_ablation.json} & seconds \\
+\texttt{audit\_homology} & Exact-decamer train/test overlap per fold &
+\texttt{study16\_homology\_audit.json} & seconds \\
+\texttt{study17} & Post-hoc review-status stratification of the large
+test set & \texttt{study17\_review\_strata.json} & minutes \\
+\hline
+\end{tabular}
+\end{table}
+
+The full pipeline is: \texttt{fetch\_large.py} and
+\texttt{build\_large\_dataset.py} (data, with provenance JSON),
+\texttt{fetch\_published\_benchmarks.py} (pinned external benchmarks,
+Appendix~\ref{app:sources}), the study scripts above in numerical order,
+then the paper-asset generators (\texttt{make\_paper\_assets.py},
+\texttt{make\_sota\_section.py}, \texttt{make\_figs2.py},
+\texttt{make\_appendices2.py}, \texttt{make\_expansion2.py}).

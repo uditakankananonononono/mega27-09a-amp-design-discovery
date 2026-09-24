@@ -1,0 +1,28 @@
+
+\section{Complete interval estimates for the Veltri base models}\label{app:ci}
+Bootstrap percentile intervals (500 resamples over test sequences) for the
+study-10 base models on the Veltri 2018 test partition. Intervals are
+sequence-level; the cluster-dependence caveat of Appendix~\ref{app:math}
+does not bind here because this benchmark's split is fixed by the authors.
+
+\begin{table}[h]\centering\small
+\caption{Study-10 base models: ACC, MCC, AUROC and 95\% bootstrap AUROC
+interval on the Veltri test partition (712 + 712 sequences).}
+\label{tab:ci}
+\begin{tabular}{lcccc}
+\hline
+Model & ACC(\%) & MCC & AUC(\%) & AUC 95\% interval \\
+\hline
+PepCNN & 87.92 & 0.7648 & 95.77 & [94.79, 96.66] \\
+PepGNN & 80.55 & 0.6149 & 88.18 & [86.33, 89.75] \\
+RF (dipeptide+desc.) & 86.10 & 0.7233 & 93.32 & [92.11, 94.49] \\
+LogReg (dipeptide) & 84.41 & 0.6896 & 91.69 & [90.17, 93.02] \\
+CNN+RF average & 89.47 & 0.7934 & 95.81 & [94.87, 96.65] \\
+\hline
+\end{tabular}
+\end{table}
+
+The PepCNN and CNN+RF intervals overlap almost completely: on this
+partition the average ensemble's advantage over a single CNN seed is not
+distinguishable at the sequence level, which is why study 11 moved to
+stacking with tune-partition weighting rather than averaging.

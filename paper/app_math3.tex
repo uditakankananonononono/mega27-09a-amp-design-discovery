@@ -1,0 +1,167 @@
+
+\section{Further derivations for threshold decisions and score quality}
+\label{app:math3}
+
+\subsection{Bayes-optimal threshold under balanced costs}
+The screen and the benchmark studies classify by thresholding a score
+$\hat p(s)$ at $1/2$, and the stack study tunes that threshold on the tune
+partition. The following proposition states when $1/2$ is the right
+default.
+
+\begin{proposition}[Optimal threshold]\label{prop:bayes-thr}
+Let $\hat p(s) = P(y{=}1 \mid s)$ be a calibrated posterior and let the
+loss be $c_{01}$ for a false positive and $c_{10}$ for a false negative.
+The Bayes decision rule predicts AMP iff
+\begin{equation}
+\hat p(s) \;\ge\; t^{*}, \qquad
+t^{*} = \frac{c_{01}}{c_{01} + c_{10}}.
+\label{eq:bayesthr}
+\end{equation}
+In particular $t^{*} = 1/2$ exactly when the two error costs are equal.
+\end{proposition}
+\begin{proof}
+The expected loss of predicting AMP is
+$L_1 = (1-\hat p)\,c_{01}$, since a false positive occurs with
+probability $1-\hat p$. The expected loss of predicting non-AMP is
+$L_0 = \hat p\,c_{10}$, since a false negative occurs with probability
+$\hat p$. Predict AMP iff $L_1 \le L_0$, i.e.
+$(1-\hat p)c_{01} \le \hat p\, c_{10}$, i.e.
+$c_{01} \le \hat p(c_{01} + c_{10})$, which is
+\eqref{eq:bayesthr}. Equal costs give $t^{*} = 1/2$.
+\end{proof}
+
+\begin{remark}
+All datasets used in the benchmark comparisons are balanced and the
+literature reports ACC and MCC, which weight the errors equally, so
+$t^{*}=1/2$ is the defensible default; the tuned thresholds (0.56, 0.575)
+sit close to it. The discovery screen is different: a false negative
+discards a viable candidate while a false positive costs one assay well,
+so $c_{10} \gg c_{01}$ and the screen ranks by score instead of
+thresholding, deferring the decision to the assay budget.
+\end{remark}
+
+\subsection{A variance estimate for the AUROC}
+Section~\ref{sec:results} reports bootstrap intervals; here we derive the
+classical closed form they are checked against.
+
+\begin{proposition}[Hanley--McNeil variance]\label{prop:hm}
+Let $A$ be the empirical AUROC of a score on $n_1$ positives and $n_0$
+negatives, treated as the Mann--Whitney probability
+$P(s^{+} > s^{-}) + \tfrac12 P(s^{+} = s^{-})$
+(Proposition~\ref{prop:mw}). Under independence of the positive and
+negative samples,
+\begin{equation}
+\mathrm{Var}(A) \approx
+\frac{A(1-A) + (n_1 - 1)(Q_1 - A^2) + (n_0 - 1)(Q_2 - A^2)}{n_1 n_0},
+\label{eq:hmvar}
+\end{equation}
+where $Q_1 = P(\text{two positives outrank one random negative})$ and
+$Q_2 = P(\text{one positive outranks two random negatives})$.
+\end{proposition}
+\begin{proof}[Derivation sketch]
+Write the Mann--Whitney statistic as
+$A = (n_0 n_1)^{-1}\sum_{i,j} K(s_i^{+}, s_j^{-})$ with kernel
+$K(x,y) = \mathbf 1[x>y] + \tfrac12 \mathbf 1[x=y]$. The terms are
+independent when they share no index, so the variance decomposes into a
+purely disjoint part contributing $A(1-A)$, a part sharing a positive
+index contributing $(n_1-1)(Q_1 - A^2)$, and a part sharing a negative
+index contributing $(n_0-1)(Q_2 - A^2)$, after expanding
+$\mathrm{Var}(\sum_{ij} K_{ij})$ into its $n_0n_1 + n_0n_1(n_1-1) +
+n_0n_1(n_0-1)$ covariance classes and dividing by $(n_0n_1)^2$.
+$Q_1$ and $Q_2$ are estimated by the corresponding two-out-of-three
+placement frequencies, which reduces to a one-pass computation over the
+ranked scores.
+\end{proof}
+
+\begin{remark}
+For the study-11 stack on the Veltri test partition ($n_0 = n_1 = 712$,
+$A = 0.966$) this formula gives a standard error near $0.007$, in line
+with the bootstrap interval reported there; the two estimators corroborate
+each other on this dataset. The cluster-dependence caveat of
+Appendix~\ref{app:math} still applies to our own large dataset, where
+training clusters, not sequences, are the sampling units.
+\end{remark}
+
+\subsection{Refinement of the MCC bound}
+\begin{corollary}[$|\mathrm{MCC}| \le 1$, with equality cases]
+For any confusion counts with $TP+FN>0$, $TN+FP>0$, $TP+FP>0$ and
+$TN+FN>0$, the MCC of Section~\ref{sec:mcc} satisfies
+$-1 \le \mathrm{MCC} \le 1$, with $+1$ exactly at a perfect classifier and
+$-1$ exactly at a perfectly wrong one.
+\end{corollary}
+\begin{proof}
+By the MCC--Pearson identity (the proposition of
+Section~\ref{sec:mcc}), MCC is the Pearson correlation $r$ between the
+true and predicted binary label vectors. Cauchy--Schwarz gives
+$|r| = |\langle x-\bar x, z-\bar z\rangle| /
+(\|x-\bar x\|\,\|z-\bar z\|) \le 1$ for the centered vectors, with
+equality iff the centered vectors are proportional. Proportionality with
+positive slope on binary values forces agreement everywhere; negative
+slope forces disagreement everywhere.
+\end{proof}
+
+\subsection{A boundedness property of the helical moment}
+\begin{proposition}[Moment bounded by hydropathy range]\label{prop:moment}
+With $h_a \in [h_{\min}, h_{\max}]$ the Kyte--Doolittle values, the
+per-window Eisenberg moment of Eq.~\eqref{eq:hmoment} satisfies
+\begin{equation}
+0 \;\le\; \mu_i(s; w, \delta) \;\le\; \max(|h_{\min}|, |h_{\max}|) = 4.5,
+\label{eq:momentbound}
+\end{equation}
+so $\mu_H \le 4.5$ for every sequence, and $\mu_H = 4.5$ is attained only
+by windows made entirely of isoleucine placed on a single helical face.
+\end{proposition}
+\begin{proof}
+$\mu_i$ is the length of the mean of $w$ planar vectors of lengths
+$|h_a| \le 4.5$ (the Kyte--Doolittle scale spans $-4.5$ for R and W to
+$+4.5$ for I). The triangle inequality bounds the mean's length by the
+mean of the lengths, which is at most $4.5$. Equality in the triangle
+inequality requires all vectors parallel, i.e.\ the same residue
+($h = 4.5$, so isoleucine) at angles equal modulo $360^\circ$; with
+$\delta = 100^\circ$ the angles are distinct modulo $360^\circ$ for any
+$w > 18/5$, so exact equality is unattainable for the standard window and
+$4.5$ is a strict supremum. Non-negativity is the definition of a norm.
+\end{proof}
+
+\subsection{Brier score decomposition for the calibrated screen score}
+The ensemble output is interpreted as a probability. Its quality
+decomposes exactly.
+
+\begin{proposition}[Murphy decomposition]\label{prop:brier}
+For probability forecasts $\hat p_i \in [0,1]$ of binary outcomes $y_i$,
+group the predictions into $K$ distinct forecast values
+$\{f_k\}$ with group sizes $n_k$, empirical outcomes $\bar y_k$ and global
+rate $\bar y$. Then the Brier score
+$\mathrm{BS} = \frac1n \sum_i (\hat p_i - y_i)^2$ satisfies
+\begin{equation}
+\mathrm{BS} \;=\; \underbrace{\frac1n \sum_k n_k (f_k - \bar y_k)^2}_{\text{reliability}}
+\;-\; \underbrace{\frac1n \sum_k n_k (\bar y_k - \bar y)^2}_{\text{resolution}}
+\;+\; \underbrace{\bar y(1-\bar y)}_{\text{uncertainty}}.
+\label{eq:brier}
+\end{equation}
+\end{proposition}
+\begin{proof}
+Expand each term within group $k$ around $\bar y_k$:
+$\sum_{i \in k} (\hat p_i - y_i)^2 =
+n_k(f_k - \bar y_k)^2 + \sum_{i \in k}(y_i - \bar y_k)^2$, the cross term
+vanishing because $\hat p_i = f_k$ is constant within the group and the
+$y_i$ deviations sum to zero. Sum over $k$. For the second term, expand
+$\sum_{i \in k}(y_i - \bar y_k)^2$ around $\bar y$:
+it equals $n_k \bar y_k(1-\bar y_k)$ and, using
+$\sum_k n_k(\bar y_k - \bar y)^2 = \sum_k n_k \bar y_k^2 - n\bar y^2$
+together with $\bar y(1-\bar y) = \bar y - \bar y^2$ and
+$\frac1n\sum_k n_k \bar y_k = \bar y$, algebraic collection of the three
+pieces gives \eqref{eq:brier}.
+\end{proof}
+
+\begin{remark}
+Reliability is the calibration error; resolution is the variance of the
+empirical outcomes across forecast groups, the part a useful score should
+maximize; uncertainty is dataset-fixed. A perfectly calibrated but
+unresolved score (always predicting $\bar y$) still scores $\bar y(1-\bar y)$.
+This decomposition motivates reporting calibration of the frozen screen
+ensemble separately from its ranking quality, and it is why the discovery
+report treats the ensemble output as a rank order rather than a calibrated
+probability: the training-label confound of Section~\ref{sec:labelconfound}
+can distort the reliability term while leaving ranking largely intact.
+\end{remark}

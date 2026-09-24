@@ -1,0 +1,29 @@
+
+\section{Dataset glossary}\label{app:datasets}
+\begin{table}[h]\centering\scriptsize
+\caption{Every dataset used in this work, its role, and its caveats.}
+\label{tab:datasets}
+\begin{tabular}{p{3.2cm}p{1.6cm}p{2.6cm}p{3.4cm}p{4.2cm}}
+\hline
+Dataset & Size & Role & Source & Caveat \\
+\hline
+UniProt KW-0929 positives (10--150 aa) & 27{,}392 fetched; 24{,}628 used &
+Positive class, large benchmark & UniProt REST, keyword KW-0929 &
+21{,}742 of 24{,}628 used records are unreviewed (Section~\ref{sec:labelconfound}) \\
+UniProt reviewed non-AMP pool & 105{,}041 fetched; 24{,}628 used &
+Negative class, length-matched & UniProt REST, reviewed, NOT KW-0929 &
+All reviewed: review-status asymmetry vs positives \\
+APD6 natural AMPs (2024) & 3{,}306 & External validation corpus &
+aps.unmc.edu downloads & Post-2024 list; successor of APD3 \\
+UniProt uncharacterized (10--60 aa) & 852 & Discovery screen pool &
+UniProt REST, reviewed, uncharacterized & Scores are hypotheses, not activities \\
+Veltri 2018 original splits & 1{,}424 / 708 / 1{,}424 &
+Published benchmark (train/tune/test) & authors' GitHub &
+Fixed single split; identity-reduced by authors \\
+Feb2020 production dataset & 2{,}021 + 2{,}021 &
+Published benchmark (10-fold CV) & authors' site &
+Published fold assignments unavailable; 15.98\% decamer overlap
+(Appendix~\ref{app:homology}) \\
+\hline
+\end{tabular}
+\end{table}

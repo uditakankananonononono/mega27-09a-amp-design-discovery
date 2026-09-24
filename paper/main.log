@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.8.14)  24 SEP 2026 20:18
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.8.14)  24 SEP 2026 20:58
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -189,35 +189,36 @@ File: pdftex.def 2020/10/05 v1.2a Graphics/color driver for pdftex
 \c@theorem=\count275
 \c@lemma=\count276
 \c@definition=\count277
-\c@remark=\count278
+\c@corollary=\count278
+\c@remark=\count279
 LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 2
-5.
+7.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
 (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2022-01-12 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count279
+\l__color_backend_stack_int=\count280
 \l__pdf_internal_box=\box52
 )
 (./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -255,16 +256,16 @@ LaTeX Font Info:    ... okay on input line 25.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count280
+\scratchcounter=\count281
 \scratchdimen=\dimen158
 \scratchbox=\box53
-\nofMPsegments=\count281
-\nofMParguments=\count282
+\nofMPsegments=\count282
+\nofMParguments=\count283
 \everyMPshowfont=\toks29
-\MPscratchCnt=\count283
+\MPscratchCnt=\count284
 \MPscratchDim=\dimen159
-\MPnumerator=\count284
-\makeMPintoPDFobject=\count285
+\MPnumerator=\count285
+\makeMPintoPDFobject=\count286
 \everyMPtoPDFconversion=\toks30
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -276,205 +277,512 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 LaTeX Font Info:    Trying to load font information for OT1+ztmcm on input line
- 26.
+ 28.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ztmcm.fd
 File: ot1ztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ztmcm.
 )
 LaTeX Font Info:    Trying to load font information for OML+ztmcm on input line
- 26.
+ 28.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omlztmcm.fd
 File: omlztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ztmcm.
 )
 LaTeX Font Info:    Trying to load font information for OMS+ztmcm on input line
- 26.
+ 28.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omsztmcm.fd
 File: omsztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/ztmcm.
 )
 LaTeX Font Info:    Trying to load font information for OMX+ztmcm on input line
- 26.
+ 28.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omxztmcm.fd
 File: omxztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/ztmcm.
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 26.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 28.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 26.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 28.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 26.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 28.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 37.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 41.
 
-Overfull \hbox (23.59488pt too wide) in paragraph at lines 29--48
+Overfull \hbox (23.59488pt too wide) in paragraph at lines 31--58
 \OT1/ptm/m/n/10.95 two neu-ral ar-chi-tec-tures --- a con-vo-lu-tional net-work
  (PepCNN) over a joint one-hot/physicochemical
  []
 
 
-Overfull \hbox (2.75604pt too wide) in paragraph at lines 29--48
-\OT1/ptm/m/n/10.95 against 24,628 length-matched non-AMP pro-teins, with cluste
-r-aware train/validation/test splits
+Overfull \hbox (0.32782pt too wide) in paragraph at lines 31--58
+\OT1/ptm/m/n/10.95 0.955] un-der 5-fold cross-validation on a cu-rated 2,732-se
+quence pi-lot and $\OT1/ztmcm/m/n/10.95 0\OML/ztmcm/m/it/10.95 :\OT1/ztmcm/m/n/
+10.95 921$ \OT1/ptm/m/n/10.95 [0.913, 0.929]
  []
 
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 59.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 69.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 59.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 69.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 59.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 69.
 [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./intro_ext.tex
-Overfull \hbox (6.19502pt too wide) in paragraph at lines 22--27
+Overfull \hbox (6.19502pt too wide) in paragraph at lines 23--28
 \OT1/ptm/m/n/12 split, with boot-strap in-ter-vals and per-mu-ta-tion tests com
 -puted by one shared har-ness: PepCNN
  []
 
-
-Overfull \hbox (3.72229pt too wide) in paragraph at lines 27--31
-[]\OT1/ptm/m/n/12 External val-i-da-tion on the APD6 2024 nat-u-ral AMP list af
--ter strict de-con-tam-i-na-tion: PepCNN
- []
-
-) (./notation.tex [2]) (./rw_ext.tex [3]) [4]
-Overfull \hbox (0.93993pt too wide) in paragraph at lines 100--106
+[2]) (./notation.tex) [3] (./rw_ext.tex) (./rw_table.tex [4]
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 12.
+)
+Overfull \hbox (0.93993pt too wide) in paragraph at lines 111--117
 \OT1/ptm/m/n/12 10-mers (Def-i-ni-tion 1[]), pro-duc-ing 12,110 clus-ters, then
  as-sign whole clus-ters to train/validation/test
  []
 
-[5]
-Overfull \hbox (16.88844pt too wide) in paragraph at lines 184--189
+[5] [6]
+Overfull \hbox (16.88844pt too wide) in paragraph at lines 192--197
 \OT1/ptm/m/it/12 reparametriza-tion of the Bayes pos-te-rior, so threshold-inde
 pendent rank-ing met-rics (AU-ROC, AUPRC)
  []
 
-[6] (./methods_ext.tex [7]) (./metrics.tex) [8] (./experiments.tex [9])
-(./expansion.tex
-Overfull \hbox (32.54861pt too wide) in paragraph at lines 55--1
-\OT1/ptm/m/n/12 ble 7[]) are en-riched for short, cysteine-rich, signal-peptide
+[7]
+Overfull \hbox (14.2954pt too wide) in paragraph at lines 249--252
+\OT1/ptm/b/n/12 Remark 3. \OT1/ptm/m/it/12 A learned score is not a cer-tifi-ca
+te of an-timi-cro-bial ac-tiv-ity. Nov-elty is $\OT1/ztmcm/m/n/12 1 \OMS/ztmcm/
+m/n/12 ^^@ [][] \OML/ztmcm/m/it/12 J[]\OT1/ztmcm/m/n/12 (\OML/ztmcm/m/it/12 s; 
+c\OT1/ztmcm/m/n/12 )$\OT1/ptm/m/it/12 ,
+ []
+
+(./methods_ext.tex) (./metrics.tex [8]) (./math_ext2.tex [9] [10]
+Overfull \hbox (84.54196pt too wide) in paragraph at lines 142--150
+[]\OT1/ptm/m/n/12 For bi-nary vec-tors, $[]\OT1/ztmcm/m/n/12 (\OML/ztmcm/m/it/1
+2 y; []\OT1/ztmcm/m/n/12 ) = [] \OMS/ztmcm/m/n/12 ^^@ [] \OT1/ztmcm/m/n/12 = []
+$ \OT1/ptm/m/n/12 af-ter ex-pand-ing $\OT1/ztmcm/m/n/12 (\OML/ztmcm/m/it/12 TP[
+]TN[]FP[]FN\OT1/ztmcm/m/n/12 ) =
+ []
+
+
+Overfull \hbox (17.00655pt too wide) in paragraph at lines 142--150
+\OML/ztmcm/m/it/12 N$\OT1/ptm/m/n/12 , and $[]\OT1/ztmcm/m/n/12 (\OML/ztmcm/m/i
+t/12 y\OT1/ztmcm/m/n/12 ) = []$\OT1/ptm/m/n/12 , $[]\OT1/ztmcm/m/n/12 ([]) = []
+$\OT1/ptm/m/n/12 . Sub-sti-tu-tion into $\OML/ztmcm/m/it/12 ^^^ \OT1/ztmcm/m/n/
+12 = []\OML/ztmcm/m/it/12 =[]$
+ []
+
+) (./experiments.tex [11]) (./expansion.tex
+Overfull \hbox (32.54861pt too wide) in paragraph at lines 54--1
+\OT1/ptm/m/n/12 ble 8[]) are en-riched for short, cysteine-rich, signal-peptide
 -like se-quences. The top hit, P0ACW4/P0ACW5
  []
 
-[10]) (./results_tables.tex)
-<fig_auroc.png, id=46, 448.074pt x 245.718pt>
+[12] [13]) (./results_tables.tex) (./label_provenance.tex
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[14]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+) (./review_strata.tex
+Overfull \hbox (113.06781pt too wide) in paragraph at lines 41--1
+\OT1/ptm/m/n/12 query and ex-act split counts are in \OT1/cmtt/m/n/12 data/raw/
+large[]provenance.json \OT1/ptm/m/n/12 and \OT1/cmtt/m/n/12 results/large[]labe
+l[]provenance.json\OT1/ptm/m/n/12 .
+ []
+
+
+Overfull \hbox (66.86629pt too wide) in paragraph at lines 3--14
+\OT1/ptm/m/n/12 PepGNN scored $\OT1/ztmcm/m/n/12 0\OML/ztmcm/m/it/12 :\OT1/ztmc
+m/m/n/12 8703$ \OT1/ptm/m/n/12 and $\OT1/ztmcm/m/n/12 0\OML/ztmcm/m/it/12 :\OT1
+/ztmcm/m/n/12 8780$\OT1/ptm/m/n/12 , re-spec-tively. The num-bers are in \OT1/c
+mtt/m/n/12 results/study17[]review[]strata.json
+ []
+
+[15]) (./compositional_audit.tex
+Underfull \hbox (badness 1087) in paragraph at lines 10--10
+[]\OT1/ptm/m/n/12 Table 10: Com-po-si-tion by la-bel and re-view sta-tus over a
+ll 49,256 large dataset records
+ []
+
+[16]
+<fig_composition.png, id=65, 758.835pt x 216.81pt>
+File: fig_composition.png Graphic file (type png)
+<use fig_composition.png>
+Package pdftex.def Info: fig_composition.png  used on input line 24.
+(pdftex.def)             Requested size: 469.75502pt x 134.219pt.
+) (./sota_benchmark.tex
+Overfull \hbox (61.14624pt too wide) in paragraph at lines 11--21
+\OT1/ptm/m/n/12 we down-loaded the ex-act split files from the au-thors' repos-
+i-tory (\OT1/cmtt/m/n/12 github.com/dan-veltri/amp-scanner-v2\OT1/ptm/m/n/12 ,
+ []
+
+[17 <./fig_composition.png>]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[18]
+Overfull \hbox (4.16782pt too wide) in paragraph at lines 95--114
+ [][] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<fig_feb2020_folds.png, id=74, 758.835pt x 231.264pt>
+File: fig_feb2020_folds.png Graphic file (type png)
+<use fig_feb2020_folds.png>
+Package pdftex.def Info: fig_feb2020_folds.png  used on input line 138.
+(pdftex.def)             Requested size: 469.75502pt x 143.16693pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+) (./benchmark_ablation.tex) (./benchmark_protocol_comparison.tex [19] [20 <./f
+ig_feb2020_folds.png>])
+<fig_sota.png, id=84, 505.89pt x 245.718pt>
+File: fig_sota.png Graphic file (type png)
+<use fig_sota.png>
+Package pdftex.def Info: fig_sota.png  used on input line 268.
+(pdftex.def)             Requested size: 399.29463pt x 193.94637pt.
+<fig_feb2020.png, id=85, 505.89pt x 245.718pt>
+File: fig_feb2020.png Graphic file (type png)
+<use fig_feb2020.png>
+Package pdftex.def Info: fig_feb2020.png  used on input line 269.
+(pdftex.def)             Requested size: 399.29463pt x 193.94637pt.
+ (./candidates.tex
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[21] [22 <./fig_sota.png>]) (./signal_ablation.tex
+Overfull \hbox (1.79198pt too wide) in paragraph at lines 59--1
+\OT1/ptm/m/n/12 These are post-hoc test hy-pothe-ses, not cal-i-brated prob-a-b
+il-i-ties of ac-tiv-ity: InstiAMP-09a-1 through
+ []
+
+) (./experimental_protocol.tex
+Overfull \hbox (247.30331pt too wide) in paragraph at lines 3--1
+\OT1/ptm/m/n/12 P0ACW4 has a sig-nal pep-tide an-no-tated at residues 1--20 (Ec
+ol-i-Wiki, \OT1/cmtt/m/n/12 https://ecoliwiki.org/colipedia/index.php/ydcA:Gene
+[]Product(s)\OT1/ptm/m/n/12 ).
+ []
+
+[23 <./fig_feb2020.png>] [24])
+<fig_auroc.png, id=100, 448.074pt x 245.718pt>
 File: fig_auroc.png Graphic file (type png)
 <use fig_auroc.png>
-Package pdftex.def Info: fig_auroc.png  used on input line 249.
+Package pdftex.def Info: fig_auroc.png  used on input line 273.
 (pdftex.def)             Requested size: 375.80544pt x 206.0905pt.
-<../results/study01_roc.png, id=48, 433.62pt x 361.35pt>
+<../results/study01_roc.png, id=101, 433.62pt x 361.35pt>
 File: ../results/study01_roc.png Graphic file (type png)
 <use ../results/study01_roc.png>
-Package pdftex.def Info: ../results/study01_roc.png  used on input line 250.
+Package pdftex.def Info: ../results/study01_roc.png  used on input line 274.
 (pdftex.def)             Requested size: 328.82707pt x 274.03337pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-(./analysis_ext.tex [11]
+(./analysis_ext.tex [25 <./fig_auroc.png>]
 Overfull \hbox (58.53969pt too wide) in paragraph at lines 19--31
 \OT1/ptm/m/n/12 dropho-bic, sev-eral with ap-par-ent signal-peptide-like N-term
 inal stretches (e.g. the iden-ti-cal P0ACW4/P0ACW5
  []
 
 )
-Overfull \hbox (94.52847pt too wide) in paragraph at lines 33--253
+Overfull \hbox (94.52847pt too wide) in paragraph at lines 33--277
 \OT1/ptm/m/n/12 Every claim in this pa-per is backed by a checked-in ar-ti-fact
-: Ta-bles 3[]--7[] re-gen-er-ate from \OT1/cmtt/m/n/12 results/study01[]amp.jso
+: Ta-bles 4[]--8[] re-gen-er-ate from \OT1/cmtt/m/n/12 results/study01[]amp.jso
 n\OT1/ptm/m/n/12 ,
  []
 
-[12] (./discussion.tex) [13] (./conclusion.tex
-Overfull \hbox (3.71182pt too wide) in paragraph at lines 2--11
-\OT1/ptm/m/n/12 timi-cro-bial pep-tides with held-out AU-ROC $\OT1/ztmcm/m/n/12
- 0\OML/ztmcm/m/it/12 :\OT1/ztmcm/m/n/12 921$ \OT1/ptm/m/n/12 and trans-fers to 
-an in-de-pen-dently cu-rated database
- []
-
-) (./threats.tex [14]) (./software.tex [15 <./fig_auroc.png>]) (./appendix.tex
+(./discussion.tex [26 <../results/study01_roc.png>]) (./conclusion.tex)
+(./threats.tex [27]) (./software.tex) (./tool.tex
 Overfull \hbox (57.28485pt too wide) in paragraph at lines 2--1
 \OT1/ptm/m/n/12 ple-ments the joint one-hot/physicochemical en-cod-ing and the 
 dipep-tide com-po-si-tion map. \OT1/cmtt/m/n/12 pepdesign.models
  []
 
+[28]
+LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <17.28> not available
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 1.
+) (./appendix.tex
 
-Overfull \hbox (52.91907pt too wide) in paragraph at lines 2--1
-\OT1/ptm/m/n/12 ery fig-ure and ta-ble in this pa-per is re-gen-er-ated from \O
-T1/cmtt/m/n/12 results/*.json \OT1/ptm/m/n/12 by \OT1/cmtt/m/n/12 studies/make[
-]paper[]assets.py\OT1/ptm/m/n/12 .
- []
+LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2--1
-
+Overfull \hbox (107.75758pt too wide) in paragraph at lines 29--35
+ [][] 
  []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[16 <../results/study01_roc.png>]
-Overfull \hbox (77.12242pt too wide) in paragraph at lines 28--34
- [][] 
+
+Overfull \hbox (121.2701pt too wide) in paragraph at lines 37--41
+\OT1/ptm/m/n/12 Exact URLs, byte counts, SHA-256 pre-fixes, and UTC fetch times
+-tamps are logged in \OT1/cmtt/m/n/12 data/raw/large[]provenance.json
  []
 
 
-Overfull \hbox (138.89491pt too wide) in paragraph at lines 36--40
-[]\OT1/ptm/m/n/12 Exact URLs, byte counts, SHA-256 pre-fixes, and UTC fetch tim
-es-tamps are logged in \OT1/cmtt/m/n/12 data/raw/large[]provenance.json
+Overfull \hbox (3.5519pt too wide) in paragraph at lines 37--41
+\OT1/ptm/m/n/12 benchmark down-loads have a sep-a-rate SHA-256 man-i-fest in \O
+T1/cmtt/m/n/12 results/benchmark[]sources.json\OT1/ptm/m/n/12 . 
  []
 
-[17]) (./listings.tex
+[29] [30]) (./reproducibility_ext.tex [31]) (./listings.tex
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 15--15
-[]\OT1/ptm/m/n/12 Table 11: Full top 25 of the dis-cov-ery screen (study08). Se
+[]\OT1/ptm/m/n/12 Table 19: Full top 25 of the dis-cov-ery screen (study08). Se
 -quences in
  []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-) [18] [19] [20] (./main.aux) ) 
+) (./app_math3.tex [32]
+Overfull \hbox (91.19215pt too wide) in paragraph at lines 57--60
+\OT1/ptm/m/it/12 where $\OML/ztmcm/m/it/12 Q[] \OT1/ztmcm/m/n/12 = \OML/ztmcm/m
+/it/12 P\OT1/ztmcm/m/n/12 ([])$ \OT1/ptm/m/it/12 and $\OML/ztmcm/m/it/12 Q[] \O
+T1/ztmcm/m/n/12 = \OML/ztmcm/m/it/12 P\OT1/ztmcm/m/n/12 ([])$\OT1/ptm/m/it/12 .
+ 
+ []
+
+[33] [34] [35]) (./app_arch.tex
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[36]) (./app_candidates_full.tex
+LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <12> not available
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 36.
+
+Overfull \hbox (15.46535pt too wide) in paragraph at lines 36--38
+[]\OT1/ptm/m/n/12 (Escherichia coli (strain K12), 57 aa) \OT1/cmtt/m/n/12 MKKLA
+LILFM GTLVSFYADA GRKPCSGSKG GISHCTAGGK
+ []
+
+[37]
+Overfull \hbox (14.13362pt too wide) in paragraph at lines 38--40
+[]\OT1/ptm/m/n/12 (Saccharomyces cere-visiae (strain ATCC 204508 / S288c), 46 a
+a) \OT1/cmtt/m/n/12 MKTWMYSYLF DCPILVLPWT
+ []
+
+
+Overfull \hbox (36.26718pt too wide) in paragraph at lines 40--42
+[]\OT1/ptm/m/n/12 (Helicobacter py-lori (strain J99 / ATCC 700824), 43 aa) \OT1
+/cmtt/m/n/12 MYRRLLLNLF CMVFLQACLK PMSDPKAEKV
+ []
+
+
+Overfull \hbox (10.13766pt too wide) in paragraph at lines 44--46
+[]\OT1/ptm/m/n/12 (Saccharomyces cere-visiae (strain ATCC 204508 / S288c, 38 aa
+) \OT1/cmtt/m/n/12 MFKQPGHLTS RKYDLGPWTN
+ []
+
+
+Overfull \hbox (10.13766pt too wide) in paragraph at lines 46--48
+[]\OT1/ptm/m/n/12 (Saccharomyces cere-visiae (strain ATCC 204508 / S288c, 39 aa
+) \OT1/cmtt/m/n/12 MKGSKLFQMQ KCMPVWCRTG
+ []
+
+
+Overfull \hbox (4.94125pt too wide) in paragraph at lines 48--50
+[]\OT1/ptm/m/n/12 (Dictyostelium dis-coideum, 54 aa) \OT1/cmtt/m/n/12 MSINIVHSN
+E NNEENTNIEN WTTTGTNYRN ECIARCGRLF
+ []
+
+
+Overfull \hbox (20.13351pt too wide) in paragraph at lines 50--52
+[]\OT1/ptm/m/n/12 (Invertebrate iri-des-cent virus 6, 53 aa) \OT1/cmtt/m/n/12 M
+SILLKILFK LLLLILSITF VITDCLPRSC ASFGCCSGNC
+ []
+
+) (./app_homology.tex
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<fig_homology_folds.png, id=147, 469.755pt x 216.81pt>
+File: fig_homology_folds.png Graphic file (type png)
+<use fig_homology_folds.png>
+Package pdftex.def Info: fig_homology_folds.png  used on input line 41.
+(pdftex.def)             Requested size: 352.31625pt x 162.60709pt.
+[38]) (./app_strata_full.tex
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+) (./app_sources.tex
+Overfull \hbox (119.50233pt too wide) in paragraph at lines 3--9
+\OT1/ptm/m/n/12 pinned by SHA-256 be-fore any ex-per-i-ment touched them. Vel-t
+ri 2018 splits: \OT1/cmtt/m/n/12 github.com/dan-veltri/amp-scanner-v2\OT1/ptm/m
+/n/12 ,
+ []
+
+
+Overfull \hbox (31.81133pt too wide) in paragraph at lines 3--9
+\OT1/cmtt/m/n/12 original-dataset/\OT1/ptm/m/n/12 . Feb2020 dataset: \OT1/cmtt/
+m/n/12 dveltri.com/ascan/v2\OT1/ptm/m/n/12 , \OT1/cmtt/m/n/12 AMP[]Scan2[]Feb20
+20[]Dataset.zip\OT1/ptm/m/n/12 .
+ []
+
+[39 <./fig_homology_folds.png>]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+) (./app_datasets.tex
+Underfull \hbox (badness 10000) in paragraph at lines 10--10
+[]\OT1/ptm/m/n/8 27,392
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 10--10
+\OT1/ptm/m/n/8 fetched;
+ []
+
+
+Underfull \hbox (badness 6961) in paragraph at lines 11--11
+[]\OT1/ptm/m/n/8 Positive class, large
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 13--13
+[]\OT1/ptm/m/n/8 105,041
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 13--13
+\OT1/ptm/m/n/8 fetched;
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 14--14
+[]\OT1/ptm/m/n/8 UniProt REST, re-viewed,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 16--16
+[]\OT1/ptm/m/n/8 External val-i-da-tion
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 18--18
+[]\OT1/ptm/m/n/8 UniProt un-char-ac-ter-ized
+ []
+
+
+Underfull \hbox (badness 6691) in paragraph at lines 21--21
+[]\OT1/ptm/m/n/8 Published bench-mark
+ []
+
+
+Underfull \hbox (badness 6691) in paragraph at lines 24--24
+[]\OT1/ptm/m/n/8 Published bench-mark
+ []
+
+
+Overfull \hbox (17.03627pt too wide) in paragraph at lines 6--29
+ [][] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+) (./app_studies.tex
+Underfull \hbox (badness 10000) in paragraph at lines 14--16
+[]\OT1/ptm/m/n/8 Pilot bench-mark: re-viewed KW-0929 (8--60
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 14--16
+\OT1/ptm/m/n/8 aa) vs length-matched re-viewed non-AMP;
+ []
+
+
+Overfull \hbox (21.32216pt too wide) in paragraph at lines 37--37
+[]\OT1/cmtt/m/n/8 audit[]homology| 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+) (./app_cli.tex
+Overfull \hbox (87.24635pt too wide) in paragraph at lines 45--1
+\OT1/ptm/m/n/12 scripts above in nu-mer-i-cal or-der, then the paper-asset gen-
+er-a-tors (\OT1/cmtt/m/n/12 make[]paper[]assets.py\OT1/ptm/m/n/12 , \OT1/cmtt/m
+/n/12 make[]sota[]section.py\OT1/ptm/m/n/12 ,
+ []
+
+
+Overfull \hbox (120.74727pt too wide) in paragraph at lines 13--20
+\OT1/ptm/m/n/12 against the ref-er-ence cor-pus, and whether the nov-elty floor
+ passed. The bun-dled demo (\OT1/cmtt/m/n/12 results/tool[]screen[]demo.json\OT
+1/ptm/m/n/12 )
+ []
+
+[40]) (./app_ci.tex
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+) (./app_encoding.tex
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[41]) (./app_designer.tex [42]
+<fig_anneal.png, id=164, 397.485pt x 231.264pt>
+File: fig_anneal.png Graphic file (type png)
+<use fig_anneal.png>
+Package pdftex.def Info: fig_anneal.png  used on input line 14.
+(pdftex.def)             Requested size: 305.33789pt x 177.65742pt.
+) (./app_case.tex [43 <./fig_anneal.png>])
+Overfull \hbox (2.57137pt too wide) in paragraph at lines 35--309
+ \OT1/ptm/b/n/12 Ver-dict.[] \OT1/ptm/m/n/12 P0ACW4 is a named, quan-ti-fied, f
+al-si-fi-able \OT1/ptm/m/it/12 hy-poth-e-sis\OT1/ptm/m/n/12 : broth-microdiluti
+on MIC against
+ []
+
+[44] [45] [46] (./main.aux) ) 
 Here is how much of TeX's memory you used:
- 3477 strings out of 480247
- 51266 string characters out of 5896151
- 354257 words of memory out of 5000000
- 21321 multiletter control sequences out of 15000+600000
- 514710 words of font info for 126 fonts, out of 8000000 for 9000
+ 3773 strings out of 480247
+ 56180 string characters out of 5896151
+ 369039 words of memory out of 5000000
+ 21511 multiletter control sequences out of 15000+600000
+ 528946 words of font info for 158 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 55i,11n,62p,342b,277s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/b
-ase/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10
-.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><
-/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/sh
-are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/te
-xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/share/texlive/texmf-
-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-d
-ist/fonts/type1/public/rsfs/rsfs10.pfb></usr/share/texlive/texmf-dist/fonts/typ
-e1/urw/symbol/usyr.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/symbol/us
-yr.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/sh
-are/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (20 pages, 280017 bytes).
+ 55i,11n,62p,663b,278s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/bas
+e/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.p
+fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></u
+sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/share/texlive/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmtt8.pfb></usr/share/texlive/texmf-dist/font
+s/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts
+/type1/public/rsfs/rsfs10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/sy
+mbol/usyr.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></
+usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/f
+onts/type1/urw/times/utmri8a.pfb>
+Output written on main.pdf (46 pages, 595961 bytes).
 PDF statistics:
- 140 PDF objects out of 1000 (max. 8388607)
- 87 compressed objects within 1 object stream
+ 242 PDF objects out of 1000 (max. 8388607)
+ 148 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 11 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 41 words of extra memory for PDF output out of 10000 (max. 10000000)
 

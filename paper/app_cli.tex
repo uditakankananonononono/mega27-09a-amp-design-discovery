@@ -1,0 +1,24 @@
+
+\section{Screening CLI walkthrough}\label{app:cli}
+The repository ships a screening command, \texttt{pepdesign screen},
+wrapping the frozen study-07 ensemble. A session:
+
+\begin{verbatim}
+$ pepdesign screen --input uncharacterized.fasta --top 25 \
+    --novelty-floor 0.90 --out screen.json
+screened 852 sequences; 41 pass the novelty floor
+top hit: sp|P0ACW4|YDCA_ECOLI score 0.9082 novelty 0.938
+\end{verbatim}
+
+The JSON output records, per sequence, the ensemble score, both sub-scores,
+the 3-mer novelty against the reference corpus, and whether the novelty
+floor passed. The bundled demo (\texttt{results/tool\_screen\_demo.json})
+screens the same 852-protein pool as study 08 and reproduces its top hits,
+including the duplicate-accession pair P0ACW4/P0ACW5 (identical 57-residue
+sequence in two species records), which the tool reports verbatim rather
+than silently merging.
+
+Design use: the annealing designer is exposed as
+\texttt{pepdesign design --seeds 24 --steps 250}, reproducing the study-07
+anneal batch; the scoring function, cooling schedule and novelty floor are
+the ones derived in Section~\ref{sec:results} and Appendix~\ref{app:hyper}.

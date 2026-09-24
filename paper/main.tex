@@ -6,6 +6,8 @@
 \newtheorem{theorem}{Theorem}
 \newtheorem{lemma}{Lemma}
 \newtheorem{definition}{Definition}
+
+\newtheorem{corollary}{Corollary}
 \newtheorem{remark}{Remark}
 
 % ---- result macros (filled from study outputs) ----
@@ -92,6 +94,7 @@ related to message-passing networks~\cite{gilmer2017} with a fixed
 chain-adjacency structure rather than a learned or contact-derived graph.
 
 \input{rw_ext.tex}
+\input{rw_table.tex}
 \section{Data}
 \subsection{Positive set}
 UniProtKB entries carrying keyword KW-0929 (antimicrobial) with
@@ -258,6 +261,7 @@ against the chosen reference corpus.
 \input{results_tables.tex}
 \input{label_provenance.tex}
 \input{review_strata.tex}
+\input{compositional_audit.tex}
 \input{sota_benchmark.tex}
 \input{benchmark_ablation.tex}
 \input{benchmark_protocol_comparison.tex}
@@ -289,6 +293,19 @@ network calls occur only in the fetch scripts.
 \input{appendix.tex}
 \input{reproducibility_ext.tex}
 \input{listings.tex}
+\input{app_math3.tex}
+\input{app_arch.tex}
+\input{app_candidates_full.tex}
+\input{app_homology.tex}
+\input{app_strata_full.tex}
+\input{app_sources.tex}
+\input{app_datasets.tex}
+\input{app_studies.tex}
+\input{app_cli.tex}
+\input{app_ci.tex}
+\input{app_encoding.tex}
+\input{app_designer.tex}
+\input{app_case.tex}
 \begin{thebibliography}{9}
 \bibitem{apd3} Wang, G., Li, X., Wang, Z. APD3: the antimicrobial peptide
 database as a tool for research and education. \emph{Nucleic Acids Research}
@@ -318,5 +335,28 @@ Resampling Methods for Testing Hypotheses}. Springer, 2000.
 Bootstrap}. Chapman \& Hall, 1994.
 \bibitem{wang2016} Wang, G. (ed.). \emph{Antimicrobial Peptides: Discovery,
 Design and Novel Therapeutic Strategies} (2nd ed.). CABI, 2017.
+\bibitem{antibp2} Lata, S., Mishra, N.K., Raghava, G.P.S. AntiBP2:
+improved version of antibacterial peptide prediction. \emph{BMC
+Bioinformatics} 11(Suppl 1):S19 (2010).
+\bibitem{iamp2l} Xiao, X., Wang, P., Lin, W.Z., Jia, J.H., Chou, K.C.
+iAMP-2L: a two-level multi-label classifier for identifying antimicrobial
+peptides and their functional types. \emph{Analytical Biochemistry} 436,
+168--177 (2013).
+\bibitem{iamppred} Meher, P.K., Sahu, T.K., Saini, V., Rao, A.R.
+Predicting antimicrobial peptides with improved accuracy by incorporating
+the compositional, physico-chemical and structural features into Chou's
+general PseAAC. \emph{Scientific Reports} 7:42362 (2017).
+\bibitem{gkm} Ghandi, M., Lee, D., Mohammad-Noori, M., Beer, M.A.
+Enhanced regulatory sequence prediction using gapped k-mer features.
+\emph{PLoS Computational Biology} 10:e1003711 (2014).
+\bibitem{ampeppy} Lawrence, T.J., et al. amPEPpy 1.0: a portable and
+accurate antimicrobial peptide prediction tool. \emph{Bioinformatics}
+37(14), 2058--2060 (2021).
+\bibitem{macrel} Santos-J\'unior, C.D., Pan, S., Zhao, X.M., Coelho, L.P.
+Macrel: antimicrobial peptide screening in genomes and metagenomes.
+\emph{PeerJ} 8:e10555 (2020).
+\bibitem{deepampep} Yan, J., et al. Deep-AmPEP30: improve short
+antimicrobial peptides prediction with deep learning. \emph{Molecular
+Therapy -- Nucleic Acids} 20, 882--894 (2020).
 \end{thebibliography}
 \end{document}

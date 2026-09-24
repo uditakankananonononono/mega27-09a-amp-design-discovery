@@ -1,0 +1,81 @@
+
+\section{Architecture and parameter counts}\label{app:arch}
+All parameter counts below are exact, verified against the implementation
+(\texttt{pepdesign/models/}) with \texttt{count\_parameters}.
+
+\subsection{PepCNN}
+Each branch $b$ with kernel width $k_b$ applies two convolutional layers
+with 32 channels and same-padding, followed by global max pooling over the
+length axis. A convolution from $c_{\mathrm{in}}$ to $c_{\mathrm{out}}$
+channels with kernel width $k$ costs
+\begin{equation}
+N_{\mathrm{conv}} = k\, c_{\mathrm{in}}\, c_{\mathrm{out}} + c_{\mathrm{out}}
+\label{eq:convparams}
+\end{equation}
+parameters (weights plus biases). With $c_{\mathrm{in}} = 24$ input
+channels (20 one-hot residues plus 4 physicochemical), widths
+$k \in \{3,5,7\}$ and $c = 32$ hidden channels, each branch costs
+$(24k \cdot 32 + 32) + (32k \cdot 32 + 32)$, and the head costs
+$(96 \cdot 64 + 64) + (64 \cdot 1 + 1)$.
+
+\begin{table}[h]\centering\small
+\caption{PepCNN parameter budget (total 33{,}345).}
+\label{tab:cnnparams}
+\begin{tabular}{lccc}
+\hline
+Component & Shape & Parameters & Eq.~\eqref{eq:convparams} \\
+\hline
+Branch $k{=}3$, conv 1 & $32 \times 24 \times 3$ & 2{,}304 + 32 & $3\cdot24\cdot32+32$ \\
+Branch $k{=}3$, conv 2 & $32 \times 32 \times 3$ & 3{,}072 + 32 & $3\cdot32\cdot32+32$ \\
+Branch $k{=}5$, conv 1 & $32 \times 24 \times 5$ & 3{,}840 + 32 & $5\cdot24\cdot32+32$ \\
+Branch $k{=}5$, conv 2 & $32 \times 32 \times 5$ & 5{,}120 + 32 & $5\cdot32\cdot32+32$ \\
+Branch $k{=}7$, conv 1 & $32 \times 24 \times 7$ & 5{,}376 + 32 & $7\cdot24\cdot32+32$ \\
+Branch $k{=}7$, conv 2 & $32 \times 32 \times 7$ & 7{,}168 + 32 & $7\cdot32\cdot32+32$ \\
+Head linear 1 & $64 \times 96$ & 6{,}144 + 64 & \\
+Head linear 2 & $1 \times 64$ & 64 + 1 & \\
+\hline
+\end{tabular}
+\end{table}
+
+The widest kernel sets the receptive field: after two $k{=}7$ layers each
+residue logit sees $2(7-1)+1 = 13$ residues, a 13-mer context, close to
+the 10-mer motif scale used by the homology audit.
+
+\subsection{PepGNN}
+A graph convolution $\mathrm{ReLU}(A_{\mathrm{norm}} H W + b)$ from $d$ to
+$d'$ features costs $d d' + d'$ parameters. With 4 node features, three
+layers of width 32 and the same 64-unit head, the model totals 4{,}449
+parameters.
+
+\begin{table}[h]\centering\small
+\caption{PepGNN parameter budget (total 4{,}449).}
+\label{tab:gnnparams}
+\begin{tabular}{lccc}
+\hline
+Component & Shape & Parameters & Rule \\
+\hline
+GraphConv 1 & $4 \times 32$ & 128 + 32 & $dd' + d'$ \\
+GraphConv 2 & $32 \times 32$ & 1{,}024 + 32 & $dd' + d'$ \\
+GraphConv 3 & $32 \times 32$ & 1{,}024 + 32 & $dd' + d'$ \\
+Head linear 1 & $64 \times 32$ & 2{,}048 + 64 & \\
+Head linear 2 & $1 \times 64$ & 64 + 1 & \\
+\hline
+\end{tabular}
+\end{table}
+
+PepGNN is $7.5\times$ smaller than PepCNN, which partly explains its weaker
+standalone performance (Tables \ref{tab:veltri-ours} and
+\ref{tab:strata-all}): the chain-window adjacency carries strictly less
+motif information than a 13-mer receptive field, and mean pooling dilutes
+short local motifs that global max pooling preserves. Its marginal value
+is diversity in the ensemble, not standalone accuracy.
+
+\subsection{Descriptor random forest}
+The classical baseline uses 400 trees (scikit-learn defaults otherwise)
+over a 426-dimensional descriptor: 20 amino-acid fractions, 400 dipeptide
+fractions, net charge \eqref{eq:netcharge}, mean and standard deviation of
+Kyte--Doolittle hydropathy, the Eisenberg moment \eqref{eq:hmoment}, the
+Boman index, and 3 residue-class fractions. The dipeptide block dominates
+the dimension count, so the forest behaves like a regularized 2-mer model;
+its competitive AUROC on the Veltri partition (96.19\%) is evidence that
+much of the benchmark's signal is compositional rather than structural.

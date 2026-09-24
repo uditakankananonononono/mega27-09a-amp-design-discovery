@@ -1,0 +1,59 @@
+
+\section{Encoding reference}\label{app:encoding}
+The CNN consumes 24 channels per residue: the 20-indicator one-hot vector
+followed by the four normalized physicochemical channels of
+Table~\ref{tab:encoding}. The GNN consumes only the four physicochemical
+channels as node features. Normalization keeps every channel in
+$[-1, 1]$: hydropathy spans $[-4.5, 4.5]$, volume spans $[60.1, 227.8]$.
+
+\begin{table}[h]\centering\small
+\caption{Per-residue feature values, exactly as implemented in
+\texttt{pepdesign/encoding.py}. $h$ = Kyte--Doolittle hydropathy,
+$q$ = formal charge at physiological pH, $v$ = residue volume in \AA$^3$.}
+\label{tab:encoding}
+\begin{tabular}{lcccccc}
+\hline
+Residue & $h$ & $h/4.5$ & $q$ & $v$ & $v/230$ & aromatic \\
+\hline
+A & +1.8 & +0.400 & +0.0 & 88.6 & 0.385 & 0 \\
+C & +2.5 & +0.556 & +0.0 & 108.5 & 0.472 & 0 \\
+D & -3.5 & -0.778 & -1.0 & 111.1 & 0.483 & 0 \\
+E & -3.5 & -0.778 & -1.0 & 138.4 & 0.602 & 0 \\
+F & +2.8 & +0.622 & +0.0 & 189.9 & 0.826 & 1 \\
+G & -0.4 & -0.089 & +0.0 & 60.1 & 0.261 & 0 \\
+H & -3.2 & -0.711 & +0.1 & 153.2 & 0.666 & 0 \\
+I & +4.5 & +1.000 & +0.0 & 166.7 & 0.725 & 0 \\
+K & -3.9 & -0.867 & +1.0 & 168.6 & 0.733 & 0 \\
+L & +3.8 & +0.844 & +0.0 & 166.7 & 0.725 & 0 \\
+M & +1.9 & +0.422 & +0.0 & 166.7 & 0.725 & 0 \\
+N & -3.5 & -0.778 & +0.0 & 124.9 & 0.543 & 0 \\
+P & -1.6 & -0.356 & +0.0 & 135.8 & 0.590 & 0 \\
+Q & -3.5 & -0.778 & +0.0 & 175.4 & 0.763 & 0 \\
+R & -4.5 & -1.000 & +1.0 & 112.7 & 0.490 & 0 \\
+S & -0.8 & -0.178 & +0.0 & 89.0 & 0.387 & 0 \\
+T & -0.7 & -0.156 & +0.0 & 116.1 & 0.505 & 0 \\
+V & +4.2 & +0.933 & +0.0 & 227.8 & 0.990 & 0 \\
+W & -0.9 & -0.200 & +0.0 & 193.6 & 0.842 & 1 \\
+Y & -1.3 & -0.289 & +0.0 & 140.0 & 0.609 & 1 \\
+\hline
+\end{tabular}
+\end{table}
+
+Sequences are truncated or zero-padded to the study's maximum length $L$
+(pilot 60, large studies 150, study 14: 200); non-standard residues are
+dropped by \texttt{clean\_sequence}, and study 14 retains records
+containing \texttt{X} by treating them as unknowns removed from the
+encoding, a choice recorded because the published Feb2020 dataset contains
+such records. Padding rows are all-zero in every channel, so the global
+max pool of the CNN and the mean pool of the GNN see them as neutral
+except where a learned negative bias activates; the head therefore never
+receives an explicit length signal, and length enters only through the
+pooled features.
+
+The GNN adjacency is the chain window with self loops: $A_{ij} = 1$ iff
+$|i-j| \le w$ or $i = j$ (window $w=2$ unless noted), row-normalized as
+$D^{-1}A$ with $D_{ii} = \sum_j A_{ij}$. The shared-adjacency variant
+broadcasts one $(L,L)$ matrix across the batch; the docstring in
+\texttt{pepdesign/models/gnn.py} records the memory argument
+($O(nL^2)$ per-sample adjacency is about 4.5 GB at $L{=}150$, $n{=}50$k,
+which does not fit the sandbox).

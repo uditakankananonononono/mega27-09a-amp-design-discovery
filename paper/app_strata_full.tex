@@ -1,0 +1,49 @@
+
+\section{Review-status stratification: complete tables}\label{app:strata}
+The label-provenance audit of Section~\ref{sec:labelconfound} separates the
+large-dataset test scores by UniProt review status. The tables below give
+the complete numbers behind that analysis. The reviewed-positive stratum
+is small (239 sequences) and its interval is correspondingly wide; the
+unreviewed stratum dominates the training distribution and therefore the
+headline score.
+
+\begin{table}[h]\centering\small
+\caption{Stratum: All records (as trained) ($n=4,386$, 1,461 positive, 2,925 negative).}
+\label{tab:strata-all}
+\begin{tabular}{lcccc}
+\hline
+Model & AUROC & AUPRC & Mean pos.\ score & Mean neg.\ score \\
+\hline
+PepCNN & 0.9206 & 0.8787 & 0.6783 & 0.0749 \\
+PepGNN & 0.8767 & 0.6803 & 0.6156 & 0.2076 \\
+\hline
+\end{tabular}
+\end{table}
+
+
+\begin{table}[h]\centering\small
+\caption{Stratum: Reviewed positives vs reviewed negatives ($n=3,164$, 239 positive, 2,925 negative).}
+\label{tab:strata-reviewed-only}
+\begin{tabular}{lcccc}
+\hline
+Model & AUROC & AUPRC & Mean pos.\ score & Mean neg.\ score \\
+\hline
+PepCNN & 0.9643 & 0.7549 & 0.8029 & 0.0749 \\
+PepGNN & 0.8703 & 0.2768 & 0.6045 & 0.2076 \\
+\hline
+\end{tabular}
+\end{table}
+
+
+\begin{table}[h]\centering\small
+\caption{Stratum: Unreviewed positives vs reviewed negatives ($n=4,147$, 1,222 positive, 2,925 negative).}
+\label{tab:strata-unreviewed-positive-vs-reviewed-negative}
+\begin{tabular}{lcccc}
+\hline
+Model & AUROC & AUPRC & Mean pos.\ score & Mean neg.\ score \\
+\hline
+PepCNN & 0.9121 & 0.8514 & 0.6539 & 0.0749 \\
+PepGNN & 0.8780 & 0.6384 & 0.6178 & 0.2076 \\
+\hline
+\end{tabular}
+\end{table}

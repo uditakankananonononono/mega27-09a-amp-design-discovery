@@ -1,0 +1,39 @@
+
+\section{Case study: one candidate end to end}\label{app:case}
+This appendix traces the top screen hit through every stage, collecting
+numbers reported piecemeal above into one falsifiable narrative.
+
+\paragraph{Stage 1: pool.} The discovery pool is 852 reviewed,
+uncharacterized UniProt proteins of 10--60 residues, fetched with
+provenance logging. P0ACW4 (YdcA, \emph{E. coli} K-12, 57 aa) enters as an
+uncharacterized protein; the screen makes no use of any AMP annotation.
+
+\paragraph{Stage 2: scoring.} The frozen study-07 ensemble scores it
+0.9082 (CNN 0.9992, GNN 0.8171), the top unique score in the pool. The
+duplicate-accession pair P0ACW4/P0ACW5 carries an identical 57-residue
+sequence in two species records and is reported as such.
+
+\paragraph{Stage 3: novelty audit.} Maximum 3-mer Jaccard against APD6
+2024 is 0.062 (novelty 0.938) and against the KW-0929 corpus 0.055; the
+longest common substring with any APD6 entry is 6 residues. Under
+Definition of Eq.~\eqref{eq:novelty} this is weak local similarity only.
+
+\paragraph{Stage 4: physicochemical audit.} Length 57, net charge
+$+4.87$ at pH 7.4 (Eq.~\eqref{eq:netcharge}), mean hydropathy $+0.08$,
+Eisenberg moment $1.18$ (Eq.~\eqref{eq:hmoment}), Boman index $1.09$:
+cationic and roughly hydrophobicity-neutral, a plausible but not extreme
+AMP-like profile.
+
+\paragraph{Stage 5: segment ablation.} YdcA carries an annotated 20-aa
+N-terminal signal peptide (EcoCyc/EcoliWiki gene record). Scoring the
+segments separately with the same frozen ensemble: full precursor 0.9082;
+precursor minus signal segment 0.6299. The model's confidence is carried
+substantially by the signal segment, which is expected: signal peptides
+are hydrophobic, and the confounded training set rewards hydrophobic
+cationic stretches (Section~\ref{sec:labelconfound}).
+
+\paragraph{Verdict.} P0ACW4 is a named, quantified, falsifiable
+\emph{hypothesis}: broth-microdilution MIC against \emph{E. coli} K-12 and
+\emph{S. aureus} ATCC 25923 decides it. The ablation is precisely the kind
+of negative control that keeps this report honest: the high score partly
+reflects a trafficking signal, not necessarily antimicrobial chemistry.

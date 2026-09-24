@@ -1,0 +1,54 @@
+
+\section{Full discovery-screen candidate audit}\label{app:cand-full}
+Table~\ref{tab:candfull} lists every candidate reported by the discovery
+screen with its frozen-ensemble score, the CNN and GNN sub-scores, 3-mer
+novelty against APD6 (Eq.~\eqref{eq:novelty}), and the physicochemical
+audit values of Section~\ref{sec:physchem-math}. Scores are model
+outputs under a confounded training set (Section~\ref{sec:labelconfound});
+they are hypotheses for experimental testing, not measured activities.
+
+\begin{table}[h]\centering\scriptsize
+\caption{All discovery-screen candidates. Novelty is $1 - \max$ 3-mer
+Jaccard vs APD6; $Q$ is net charge at pH 7.4; $\langle H\rangle$ is mean
+Kyte--Doolittle hydropathy; $\mu_H$ is the Eisenberg moment.}
+\label{tab:candfull}
+\begin{tabular}{llcccccccc}
+\hline
+\# & Accession & Len & Ensemble & CNN & GNN & Novelty & $Q$ & $\langle H\rangle$ & $\mu_H$ \\
+\hline
+1 & \texttt{P0ACW4} & 57 & 0.9082 & 0.9992 & 0.8171 & 0.938 & 4.87 & 0.08 & 1.18 \\
+2 & \texttt{Q8TGN5} & 46 & 0.8897 & 0.9785 & 0.8009 & 0.946 & -0.76 & -0.17 & 1.74 \\
+3 & \texttt{P64654} & 43 & 0.8357 & 0.8647 & 0.8067 & 0.941 & 0.83 & 0.07 & 1.62 \\
+4 & \texttt{P85380} & 10 & 0.8036 & 0.8338 & 0.7734 & 0.909 & 0.17 & 1.00 & 0.85 \\
+5 & \texttt{Q8TGN0} & 38 & 0.7931 & 0.8929 & 0.6933 & 0.945 & 1.10 & -0.17 & 1.21 \\
+6 & \texttt{Q8TGT5} & 39 & 0.7844 & 0.9714 & 0.5974 & 0.929 & 4.87 & 0.29 & 1.52 \\
+7 & \texttt{Q54HM1} & 54 & 0.7344 & 0.8837 & 0.5850 & 0.964 & -2.12 & -0.42 & 1.78 \\
+8 & \texttt{O55758} & 53 & 0.7278 & 0.9978 & 0.4577 & 0.932 & -0.61 & 1.02 & 1.57 \\
+9 & \texttt{InstiAMP-09a-1a} & 57 & 0.9181 & 0.9954 & 0.8409 & 0.945 & 2.87 & -0.27 & 1.69 \\
+\hline
+\end{tabular}
+\end{table}
+
+\subsection*{Sequences and falsifiable predictions}
+Each candidate carries an explicit, testable prediction; a
+broth-microdilution MIC assay against the named strains falsifies it.
+\begin{description}
+\item[\texttt{P0ACW4}] (Escherichia coli (strain K12), 57 aa) \texttt{MKKLALILFM GTLVSFYADA GRKPCSGSKG GISHCTAGGK FVCNDGSISA SKKTCTN}
+  ensemble p(AMP)=0.908 (>0.5 decision) predicts antibacterial activity; testable by broth-microdilution MIC assay vs E. coli K-12 and S. aureus ATCC 25923.
+\item[\texttt{Q8TGN5}] (Saccharomyces cerevisiae (strain ATCC 204508 / S288c), 46 aa) \texttt{MKTWMYSYLF DCPILVLPWT PHNYYLYHRF HHFLPLCYWH YSADTY}
+  ensemble p(AMP)=0.890 (>0.5 decision) predicts antibacterial activity; testable by broth-microdilution MIC assay vs E. coli K-12 and S. aureus ATCC 25923.
+\item[\texttt{P64654}] (Helicobacter pylori (strain J99 / ATCC 700824), 43 aa) \texttt{MYRRLLLNLF CMVFLQACLK PMSDPKAEKV DSQVQCGFGS KDC}
+  ensemble p(AMP)=0.836 (>0.5 decision) predicts antibacterial activity; testable by broth-microdilution MIC assay vs E. coli K-12 and S. aureus ATCC 25923.
+\item[\texttt{P85380}] (Nautilus macromphalus, 10 aa) \texttt{LGICFASMPR}
+  ensemble p(AMP)=0.804 (>0.5 decision) predicts antibacterial activity; testable by broth-microdilution MIC assay vs E. coli K-12 and S. aureus ATCC 25923.
+\item[\texttt{Q8TGN0}] (Saccharomyces cerevisiae (strain ATCC 204508 / S288c, 38 aa) \texttt{MFKQPGHLTS RKYDLGPWTN VFNLCFLASE AAVGCNKS}
+  ensemble p(AMP)=0.793 (>0.5 decision) predicts antibacterial activity; testable by broth-microdilution MIC assay vs E. coli K-12 and S. aureus ATCC 25923.
+\item[\texttt{Q8TGT5}] (Saccharomyces cerevisiae (strain ATCC 204508 / S288c, 39 aa) \texttt{MKGSKLFQMQ KCMPVWCRTG TCIILPVACH MAKPLKLPT}
+  ensemble p(AMP)=0.784 (>0.5 decision) predicts antibacterial activity; testable by broth-microdilution MIC assay vs E. coli K-12 and S. aureus ATCC 25923.
+\item[\texttt{Q54HM1}] (Dictyostelium discoideum, 54 aa) \texttt{MSINIVHSNE NNEENTNIEN WTTTGTNYRN ECIARCGRLF SGFNALICMK PCGV}
+  ensemble p(AMP)=0.734 (>0.5 decision) predicts antibacterial activity; testable by broth-microdilution MIC assay vs E. coli K-12 and S. aureus ATCC 25923.
+\item[\texttt{O55758}] (Invertebrate iridescent virus 6, 53 aa) \texttt{MSILLKILFK LLLLILSITF VITDCLPRSC ASFGCCSGNC ATWCDQCDIK YSC}
+  ensemble p(AMP)=0.728 (>0.5 decision) predicts antibacterial activity; testable by broth-microdilution MIC assay vs E. coli K-12 and S. aureus ATCC 25923.
+\item[\texttt{InstiAMP-09a-1a}] (annealed derivative of InstiAMP-09a-1, 57 aa) \texttt{QNTWTIICTT MWDSHRRRDP YNPYMVWRRM KTFCNTKEAL WFVGICPFNF CVFLTTY}
+  annealed derivative scoring higher than its natural parent; predicted AMP activity verifiable by MIC assay; sequence absent from APD6/UniProt AMP corpus.
+\end{description}
