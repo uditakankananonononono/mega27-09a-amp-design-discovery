@@ -127,7 +127,8 @@ $\partial \ell / \partial u = \sigma(u) - y$ and the chain rule.
 
 \begin{proposition}[MCC is a Pearson coefficient]
 \label{prop:mcc}
-For binary predictions $\hat y$ and labels $y$ with confusion counts
+For nonconstant binary predictions $\hat y$ and labels $y$ with nonzero
+class counts and confusion counts
 $TP, TN, FP, FN$,
 \begin{equation}
 \mathrm{MCC} = \frac{TP \cdot TN - FP \cdot FN}
@@ -149,7 +150,7 @@ $\phi = \mathrm{cov}/\sqrt{\mathrm{var}(y)\mathrm{var}(\hat y)}$ gives
 $\chi^2 = N\phi^2$ for $2 \times 2$ tables.
 \end{proof}
 
-Unlike accuracy, $\mathrm{MCC} = 0$ exactly at the correlation of any
-constant classifier with the labels, so it punishes the majority-class
-strategies that inflate accuracy on imbalanced peptide corpora; we report
-it for every benchmark comparison.
+Unlike accuracy, MCC reflects all four confusion-matrix cells; it is
+undefined mathematically when a prediction or label vector is constant,
+though some software conventions return zero. We report the specified
+software implementation for each benchmark comparison.
