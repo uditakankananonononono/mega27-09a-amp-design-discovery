@@ -8,5 +8,8 @@ version = "0.1.0"
 description = "MEGA27-09 in-silico peptide design suite (CNN+GNN, real data, benchmarked)"
 requires-python = ">=3.9"
 
+[project.scripts]
+pepdesign = "pepdesign.cli:main"
+
 [tool.setuptools.packages.find]
 include = ["pepdesign*"]
