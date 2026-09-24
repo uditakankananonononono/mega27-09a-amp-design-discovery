@@ -1,0 +1,22 @@
+{
+  "kmer": 10,
+  "seed": 27,
+  "n_clean_pos": 24628,
+  "n_neg_used": 24628,
+  "n_records": 49256,
+  "n_clusters": 12110,
+  "splits": {
+    "train": {
+      "n": 40776,
+      "pos": 21549
+    },
+    "val": {
+      "n": 4094,
+      "pos": 1618
+    },
+    "test": {
+      "n": 4386,
+      "pos": 1461
+    }
+  }
+}
