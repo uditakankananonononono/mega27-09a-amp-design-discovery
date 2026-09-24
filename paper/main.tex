@@ -119,10 +119,9 @@ function.
 
 \begin{remark}
 Shared exact 10-mers are a strict leakage criterion for length-10--150
-peptides: two sequences that are aligned homologs over most of their length
-almost surely share a 10-mer, so the criterion merges them. It can also merge
-unrelated sequences that share a low-complexity decamer; this errs on the
-side of harder, not easier, evaluation.
+peptides: two sequences sharing an exact decamer are merged; aligned homologs with
+no exact decamer can still cross the split. It can also merge unrelated sequences with a low-complexity decamer,
+reducing the number of independent split units.
 \end{remark}
 
 \subsection{External and screen sets}
