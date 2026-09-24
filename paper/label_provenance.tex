@@ -40,7 +40,11 @@ same reviewed test negatives cannot fully repair a training confound.
 
 The proper repair is to fetch reviewed-only positives or select negatives
 matched on review status and organism group, rebuild all splits, retrain,
-and re-evaluate before claiming a clean scale-up benchmark. We preserve the
+and re-evaluate before claiming a clean scale-up benchmark. The small pilot
+FASTA files in the handoff have synthetic identifiers (u0/n0), so their
+per-record source and review status cannot be independently verified from
+the shipped fixture; the pilot is a software sanity check, not a provenance-
+controlled published benchmark. We preserve the
 original experiment as an auditable negative result rather than delete it.
 The original source query and exact split counts are in
 \texttt{data/raw/large\_provenance.json} and
