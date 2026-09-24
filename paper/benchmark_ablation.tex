@@ -1,0 +1,15 @@
+\subsection{Filtered-data ablation, kept as a negative protocol lesson}
+\label{sec:filtered-ablation}
+Before the full-record run, study 13 used a 150-residue cap matching the
+UniProt model and dropped nine long sequences from the Feb2020 corpus.
+It also removed the unknown residue X from two decoy strings before
+encoding. On its 4{,}033 changed records, its stratified 10-fold CV mean
+was ACC $0.9055$, MCC $0.8116$, and AUC $0.9634$; these are measured
+values, but they are \emph{not} a fair result on the published 4{,}042-entry
+benchmark. The full-record study 14 retains all sequences and represents
+unknown positions as zero feature rows. This distinction matters: a
+benchmark "improvement" can be manufactured accidentally by dropping
+harder long cases. We preserve the ablation and its source code instead
+of overwriting it after finding the mismatch. Both our random-split runs
+still contain exact 10-mer cross-fold overlap, so neither supplants the
+homology-aware result in Section~\ref{sec:results}.
