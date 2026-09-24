@@ -1,0 +1,54 @@
+\section{Interpreting a published benchmark comparison}
+\label{sec:comparison-theory}
+
+\subsection{What same-dataset means}
+A model comparison on a shared set of FASTA records answers a narrower
+question than a paired model comparison on identical individual test
+predictions. The Feb2020 site reports a 10-fold CV mean, standard deviation,
+and model recipe, but not the exact assignment of each sequence to each
+fold or per-sequence predictions. Our full-record experiment samples its own
+stratified 10-fold partition. It can compare descriptive means, but cannot
+compute a paired uncertainty interval for their difference. The original
+Veltri split, by contrast, is distributed verbatim and our test partition
+matches ACEP's report; the published prediction vectors still are absent,
+so even there a paired significance test cannot be reconstructed.
+
+\subsection{Variance of the difference}
+If $A$ and $B$ denote model scores across matched folds, the variance of
+their mean difference would be
+\begin{equation}
+\mathrm{Var}(\overline{A}-\overline{B}) =
+\mathrm{Var}(\overline{A}) + \mathrm{Var}(\overline{B})
+- 2\mathrm{Cov}(\overline{A},\overline{B}).
+\label{eq:pairedvariance}
+\end{equation}
+The covariance term depends on which cases each model classifies correctly
+in the same folds. Published summary statistics do not supply that term.
+Dropping it is not guaranteed conservative: positive covariance makes an
+unpaired variance too large, negative covariance makes it too small.
+Furthermore, ordinary fold scores share overlapping training records, so
+simple independent-fold standard errors are at best approximate.
+
+\subsection{Threshold and metric choices}
+The reported accuracy and MCC use a fixed 0.5 threshold on an average of
+uncalibrated sigmoid outputs. A monotone transformation of these outputs
+preserves AUROC but can change the operating point. If we chose a threshold
+after observing the test folds, accuracy and MCC would be optimistically
+biased; therefore the full-record experiment never tunes a threshold on
+the held-out fold. Comparisons to the published production model are still
+not exact algorithmic replications: architecture, encoding, and preprocessing
+are different by design. These differences are what is being tested, but
+they also prevent attributing any score gap to a single component.
+
+\subsection{Prevalence and precision}
+The Feb2020 benchmark has equal positive and negative counts by
+construction. The positive predictive value of a classifier with sensitivity
+$Se$, specificity $Sp$, and target-population prevalence $\pi$ is
+\begin{equation}
+\mathrm{PPV}(\pi) = \frac{\pi Se}{\pi Se + (1-\pi)(1-Sp)}.
+\label{eq:ppv}
+\end{equation}
+A high benchmark AUPRC at $\pi=1/2$ need not imply high precision when
+screening an uncharacterized proteome where true AMP prevalence may be much
+lower and is unknown. Our discovery scores therefore rank hypotheses; they
+do not offer a validated per-candidate probability of activity.
