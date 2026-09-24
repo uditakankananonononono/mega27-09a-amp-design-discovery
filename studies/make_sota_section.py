@@ -1,8 +1,7 @@
-"""Generate paper/sota_benchmark.tex from results/study10/11/13 JSONs."""
+"""Generate paper/sota_benchmark.tex from studies 11 and 14 JSONs."""
 import json, pathlib
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
-s10 = json.load(open(ROOT/"results/study10_veltri.json"))
 s11 = json.load(open(ROOT/"results/study11_veltri_stack.json"))
 s13 = json.load(open(ROOT/"results/study14_feb2020_full.json"))
 
@@ -50,8 +49,8 @@ verdict_tex = "\n".join(
 tex = r"""\section{Head-to-head against the published state of the art}
 \label{sec:sota}
 
-Plain re-runs on our own splits are the floor; this section attacks the
-published state of the art on \emph{its own} benchmark, twice: on the
+This section compares our methods with published rows on two public
+benchmark datasets: on the
 original AMP Scanner Vr.2 benchmark with its exact distributed splits, and
 on the Feb2020 production benchmark with a 10-fold
 cross-validation protocol on the same dataset.
