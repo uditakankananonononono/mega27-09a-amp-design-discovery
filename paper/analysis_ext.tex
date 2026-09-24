@@ -1,0 +1,41 @@
+\subsection{Design composition analysis}
+The 24 scale-up annealed designs (Table~\ref{tab:alldesigns}) are all length
+25 --- the designer's fixed length --- and their composition is informative
+about what the ensemble rewards: cysteine 10.8\%, aromatics F/W 16.0\%,
+aliphatics I/V/L 16.8\%, but only 8.0\% K/R. The training positives are 6.8\%
+cysteine and 11.9\% K/R, so the designer amplifies cysteine and aromatic
+content while actually undershooting the corpus's cationic fraction. Two
+readings compete. The charitable one: the ensemble has learned that
+Cys-rich, aromatic, hydrophobic short sequences are the most reliably
+AMP-like pattern under leakage-controlled training, consistent with the
+dominance of disulfide-stabilized families in the reviewed corpus. The
+skeptical one: the annealer exploits regions where the model is
+overconfident, and cysteine-heavy sequences are exactly where a discriminative
+model extrapolates poorly. Distinguishing these requires activity data we do
+not have; we therefore present the designs as the model's own optimum, not as
+predicted therapeutics.
+
+\subsection{Screen case analysis}
+The top screen hits (Table~\ref{tab:allscreen}) share a family resemblance:
+short (10--57 aa), cysteine-rich, and hydrophobic, several with apparent
+signal-peptide-like N-terminal stretches (e.g.\ the identical P0ACW4/P0ACW5
+sequence, 57 aa, 7 Cys). That the same pattern drives both the annealed
+designs and the screen ranking is expected --- both consume the same learned
+score --- and it means the screen is best read as surfacing small Cys-rich
+proteins whose annotation has not caught up with them, rather than as a
+diverse portfolio of mechanisms. Two entries in the top 25 (Q54HM1, O55758)
+are longer and score lower on the CNN than the GNN relative to their ensemble
+rank, illustrating where the two architectures disagree; such disagreement
+cases are natural priorities for any follow-up experimental panel, since
+consensus at the top is partly an artifact of correlated errors.
+
+\subsection{Reproducibility checklist}
+Every claim in this paper is backed by a checked-in artifact:
+Tables~\ref{tab:pilot}--\ref{tab:screen} regenerate from
+\texttt{results/study01\_amp.json}, \texttt{study07\_scaleup.json},
+\texttt{study09\_apd\_validation.json}, and \texttt{study08\_discovery.json}
+via \texttt{studies/make\_paper\_assets.py}; Figures~\ref{fig:auroc}
+and~\ref{fig:roc} are written by the same script and by study01 respectively;
+all data carry provenance manifests (Appendix~\ref{app:prov}); and the test
+suite (21 tests) passes at the submission commit. No number in the text was
+entered by hand without a corresponding JSON record.

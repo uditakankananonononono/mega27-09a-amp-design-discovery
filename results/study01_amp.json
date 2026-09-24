@@ -1,0 +1,95 @@
+{
+  "dataset": {
+    "positives": 1232,
+    "negatives": 1500,
+    "source": "UniProt reviewed, keyword KW-0929, 8-60 aa"
+  },
+  "PepCNN": {
+    "auroc": 0.9466103896103895,
+    "auroc_ci95": [
+      0.9364539521142728,
+      0.9553373444550586
+    ],
+    "auprc": 0.9476038516412865,
+    "permutation_p": 0.001996007984031936
+  },
+  "PepGNN": {
+    "auroc": 0.7998479437229438,
+    "auroc_ci95": [
+      0.7822422391167676,
+      0.8162935618183796
+    ],
+    "auprc": 0.7875269451971726,
+    "permutation_p": 0.001996007984031936
+  },
+  "logreg_dipeptide": {
+    "auroc": 0.8135010822510822,
+    "auroc_ci95": [
+      0.7983125720146491,
+      0.828488011005088
+    ],
+    "auprc": 0.8269968605136189,
+    "permutation_p": 0.001996007984031936
+  },
+  "rf_dipeptide": {
+    "auroc": 0.9352297077922077,
+    "auroc_ci95": [
+      0.9265516650389793,
+      0.9443461097482185
+    ],
+    "auprc": 0.9346448082360932,
+    "permutation_p": 0.001996007984031936
+  },
+  "designs": [
+    {
+      "sequence": "LFLRCHLIKIGAIALGRLHARIMGI",
+      "score": 0.9929580092430115,
+      "novelty_vs_corpus": 0.9090909090909091
+    },
+    {
+      "sequence": "RCIVGFSLKIHVSMVTGAVKVSLAR",
+      "score": 0.9925448894500732,
+      "novelty_vs_corpus": 0.9069767441860466
+    },
+    {
+      "sequence": "ICTCLKKVLQSCLHKIVCCHGQCVL",
+      "score": 0.9921623170375824,
+      "novelty_vs_corpus": 0.9032258064516129
+    },
+    {
+      "sequence": "VQCTVSIFRKGVVTSRFVTLKVIFR",
+      "score": 0.990746945142746,
+      "novelty_vs_corpus": 0.9444444444444444
+    },
+    {
+      "sequence": "TKIIAKKYAMSVIKVPIQVALQATM",
+      "score": 0.9902244210243225,
+      "novelty_vs_corpus": 0.9347826086956522
+    },
+    {
+      "sequence": "GKAIRVVTVGQRACILFRIHAKLNM",
+      "score": 0.9896104633808136,
+      "novelty_vs_corpus": 0.9285714285714286
+    },
+    {
+      "sequence": "KGKVRIGRVLIKCCRKFHKLVCKAC",
+      "score": 0.9892600476741791,
+      "novelty_vs_corpus": 0.9032258064516129
+    },
+    {
+      "sequence": "GYRILVTTKLGVVKNPCAARLAAAG",
+      "score": 0.9888067841529846,
+      "novelty_vs_corpus": 0.9285714285714286
+    },
+    {
+      "sequence": "GMPTHFKICVNGARIIIKVLLRGIM",
+      "score": 0.9883624315261841,
+      "novelty_vs_corpus": 0.9090909090909091
+    },
+    {
+      "sequence": "ITKRVVKLGYIGMICLHIGPACRVC",
+      "score": 0.9864686131477356,
+      "novelty_vs_corpus": 0.9428571428571428
+    }
+  ]
+}

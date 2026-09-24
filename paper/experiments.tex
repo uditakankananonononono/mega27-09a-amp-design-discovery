@@ -1,0 +1,64 @@
+\subsection{Pilot study (study01)}
+The pilot used the curated handoff corpus: 1{,}232 reviewed UniProt KW-0929
+positives (8--60 aa) and 1{,}500 length-matched non-AMP negatives, evaluated
+by 5-fold cross-validation with bootstrap intervals ($B=2{,}000$) and
+label-permutation tests ($B=500$). All four models beat chance decisively
+(Table~\ref{tab:pilot}). PepCNN led at AUROC $0.947$ [0.936, 0.955], with the
+random forest on dipeptide composition surprisingly strong at $0.935$; the
+GNN and logistic baseline trailed near $0.80$. The pilot established that a
+small convolutional model is competitive with a strong feature-based baseline
+on this corpus, and that the graph model, as architected, adds nothing.
+
+\subsection{Scale-up with homology-aware splits (study07)}
+The scale-up used the full fetched corpus: \Npos{} positives and \Nneg{}
+length-matched negatives, clustered into \Nclusters{} shared-10-mer
+components and split 80/10/10 by cluster (Section 3.3). Models trained on a
+30{,}000-sequence subsample of the 40{,}776-sequence train split (8 epochs,
+batch 128, weighted BCE). On the held-out test split of \Ntest{} sequences
+(Table~\ref{tab:scaleup}), PepCNN attained AUROC $0.921$ [0.913, 0.929],
+AUPRC $0.879$ --- clearly ahead of the random forest ($0.879$), the GNN
+($0.877$), and logistic regression ($0.871$); all permutation $p=0.0020$.
+The ordering inverts part of the pilot: with leakage controlled and $20\times$
+more data, the learned-representation model separates from the feature
+baselines, while the random forest's pilot advantage evaporates. We read this
+as evidence that composition features saturate quickly, whereas the
+convolutional model keeps extracting positional motif information as data
+grows.
+
+\subsection{External validation on APD6 (study09)}
+APD6 is curated independently of UniProt keyword annotation, so scoring its
+2024 natural AMP list measures cross-database transfer rather than memorized
+annotation patterns. Of 3{,}306 entries, 3{,}207 passed standard-residue and
+length filters, and 1{,}412 survived decontamination against the training
+split by the shared-10-mer criterion. Scored against the 2{,}925 held-out
+test non-AMPs (Table~\ref{tab:apd}), PepCNN attained AUROC
+$0.926$ [0.918, 0.934] --- statistically indistinguishable from its internal
+test performance --- while the ensemble reached $0.909$ and the GNN $0.797$.
+Sensitivity on decontaminated APD6 at a 5\% false-positive rate was $0.601$.
+The honest reading: the CNN recognizes a meaningful fraction of independently
+curated AMPs, but roughly two in five fall below a stringent operating
+threshold, consistent with the known diversity of AMP mechanisms (many APD6
+entries are longer, disulfide-bonded, or anionic peptides unlike the short
+cationic training majority).
+
+\subsection{Annealed design (studies 1 and 7)}
+Running the Metropolis--Hastings designer of Theorem~\ref{thm:mh} against the
+pilot ensemble yielded ten candidates scoring $0.986$--$0.993$ with 3-mer
+novelty $0.90$--$0.94$; against the scale-up ensemble, 24 anneals scored
+$0.877$--$0.910$ (top 10 in Table~\ref{tab:designs}). The scale-up designs
+score lower in absolute terms because the scale-up ensemble is trained under
+homology-aware evaluation and is less overconfident --- a calibration
+feature, not a defect. All designs are \emph{in silico} hypotheses: no
+wet-lab or even secondary-structure validation is claimed.
+
+\subsection{Discovery screen (study08)}
+We screened 852 reviewed UniProt entries of length 10--60 annotated only as
+``uncharacterized'' or ``hypothetical'' protein (KW-0929 excluded) with the
+study07 ensemble. The top 25 (top 15 in Table~\ref{tab:screen}) are enriched
+for short, cysteine-rich, signal-peptide-like sequences. The top hit,
+P0ACW4/P0ACW5 (identical 57-aa sequences from two accessions, ensemble
+$0.908$, novelty $0.95$), is a small Cys-rich protein; such sequences
+superficially resemble defensin-like AMPs, which is plausibly why the model
+scores them highly --- and equally plausibly reflects a learned prior for
+Cys-rich small proteins rather than specific antimicrobial function. We
+report them as ranked candidates for downstream validation, nothing more.

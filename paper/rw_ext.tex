@@ -1,0 +1,44 @@
+\subsection{AMP databases}
+The APD has tracked the natural AMP literature since 2003; the APD3
+release~\cite{apd3} introduced a unified search and annotation interface, and
+the current APD6 site distributes curated FASTA lists, including the 2024
+natural-AMP list (3{,}306 entries) used here as external validation. DBAASP
+takes a different angle: it curates peptides together with experimentally
+measured activities against specific strains, making it the richer resource
+for potency modeling but a harder one to mirror programmatically; during this
+work its full-dataset endpoint returned empty responses to non-interactive
+requests, so we cite it but do not benchmark against it
+(Section 8). CAMP~\cite{camp} and its associated predictors remain widely
+used baselines; DRAMP and LAMP aggregate overlapping records. These resources
+differ in curation policy, redundancy, and label semantics, which is exactly
+why cross-database evaluation --- training on UniProt KW-0929 and testing on
+APD6 --- is more informative than a second random split of the same source.
+
+\subsection{Machine-learning AMP recognition}
+Early predictors used composition features with classical models: CAMP's
+built-in SVM and random-forest classifiers~\cite{camp} and a long tail of
+composition-plus-SVM tools. Deep approaches followed: AMPScanner applied
+recurrent and convolutional networks to raw sequences~\cite{ampscanner}, and
+subsequent work explored attention and pretrained protein language models.
+Two methodological concerns recur across this literature. First, most
+evaluations split sequences randomly, and AMP families are highly redundant
+--- many database records are isoforms or orthologs --- so reported AUROCs
+above 0.95 are routine and largely reflect memorized family membership.
+Second, negative sets are usually ``everything else,'' which conflates
+unlabeled positives with true negatives. Our design choices respond directly:
+cluster-aware splitting controls the first, length-matched reviewed negatives
+acknowledge the second (without eliminating it), and external validation on
+an independently curated database tests whether the learned function is
+about AMPs or about the training corpus.
+
+\subsection{AMP design}
+Computational AMP design has used genetic algorithms, physicochemical rules,
+and generative models including GANs, VAEs, and diffusion-style generators.
+A common weakness is evaluation: generated sequences are often scored by the
+same model that guided generation, an echo chamber that inflates apparent
+quality. We deliberately keep our designer simple --- Metropolis--Hastings on
+a discriminative ensemble with an explicit correctness proof
+(Theorem~\ref{thm:mh}) --- and we report novelty against the corpus so the
+reader can judge whether candidates are genuinely new or lightly mutated
+training sequences. No design is claimed active; the section exists to
+demonstrate a correct, reproducible prioritization mechanism.

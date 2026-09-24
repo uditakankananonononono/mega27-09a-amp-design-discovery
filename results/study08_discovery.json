@@ -1,0 +1,256 @@
+{
+  "screened": 852,
+  "max_len": 150,
+  "top": [
+    {
+      "accession": "P0ACW4",
+      "header": "sp|P0ACW4|YDCA_ECOLI Uncharacterized protein YdcA OS=Escherichia coli (strain K12) OX=83333 GN=ydcA PE=3 SV=1",
+      "sequence": "MKKLALILFMGTLVSFYADAGRKPCSGSKGGISHCTAGGKFVCNDGSISASKKTCTN",
+      "length": 57,
+      "ensemble_score": 0.9081547260284424,
+      "cnn_score": 0.9992469549179077,
+      "gnn_score": 0.817062497138977,
+      "novelty_vs_amp_corpus": 0.95
+    },
+    {
+      "accession": "P0ACW5",
+      "header": "sp|P0ACW5|YDCA_SHIFL Uncharacterized protein YdcA OS=Shigella flexneri OX=623 GN=ydcA PE=3 SV=1",
+      "sequence": "MKKLALILFMGTLVSFYADAGRKPCSGSKGGISHCTAGGKFVCNDGSISASKKTCTN",
+      "length": 57,
+      "ensemble_score": 0.9081547260284424,
+      "cnn_score": 0.9992469549179077,
+      "gnn_score": 0.817062497138977,
+      "novelty_vs_amp_corpus": 0.95
+    },
+    {
+      "accession": "Q8TGN5",
+      "header": "sp|Q8TGN5|YI105_YEAST Uncharacterized protein YIL105W-A OS=Saccharomyces cerevisiae (strain ATCC 204508 / S288c) OX=5592",
+      "sequence": "MKTWMYSYLFDCPILVLPWTPHNYYLYHRFHHFLPLCYWHYSADTY",
+      "length": 46,
+      "ensemble_score": 0.8896805644035339,
+      "cnn_score": 0.9784873127937317,
+      "gnn_score": 0.8008738160133362,
+      "novelty_vs_amp_corpus": 0.96
+    },
+    {
+      "accession": "P64654",
+      "header": "sp|P64654|Y112_HELPJ Uncharacterized protein jhp_0112 OS=Helicobacter pylori (strain J99 / ATCC 700824) OX=85963 GN=jhp_",
+      "sequence": "MYRRLLLNLFCMVFLQACLKPMSDPKAEKVDSQVQCGFGSKDC",
+      "length": 43,
+      "ensemble_score": 0.8356653451919556,
+      "cnn_score": 0.8646523356437683,
+      "gnn_score": 0.8066783547401428,
+      "novelty_vs_amp_corpus": 0.9459459459459459
+    },
+    {
+      "accession": "P64653",
+      "header": "sp|P64653|Y122_HELPY Uncharacterized protein HP_0122 OS=Helicobacter pylori (strain ATCC 700392 / 26695) OX=85962 GN=HP_",
+      "sequence": "MYRRLLLNLFCMVFLQACLKPMSDPKAEKVDSQVQCGFGSKDC",
+      "length": 43,
+      "ensemble_score": 0.8356653451919556,
+      "cnn_score": 0.8646523356437683,
+      "gnn_score": 0.8066783547401428,
+      "novelty_vs_amp_corpus": 0.9459459459459459
+    },
+    {
+      "accession": "P85380",
+      "header": "sp|P85380|SMP15_NAUMA Uncharacterized protein SMPP15 (Fragment) OS=Nautilus macromphalus OX=34576 PE=1 SV=1",
+      "sequence": "LGICFASMPR",
+      "length": 10,
+      "ensemble_score": 0.8036117553710938,
+      "cnn_score": 0.8337897062301636,
+      "gnn_score": 0.7734338045120239,
+      "novelty_vs_amp_corpus": 0.925
+    },
+    {
+      "accession": "Q8TGN0",
+      "header": "sp|Q8TGN0|YK156_YEAST Putative uncharacterized protein YKL156C-A OS=Saccharomyces cerevisiae (strain ATCC 204508 / S288c",
+      "sequence": "MFKQPGHLTSRKYDLGPWTNVFNLCFLASEAAVGCNKS",
+      "length": 38,
+      "ensemble_score": 0.7931309938430786,
+      "cnn_score": 0.8929126262664795,
+      "gnn_score": 0.6933494210243225,
+      "novelty_vs_amp_corpus": 0.96
+    },
+    {
+      "accession": "Q8TGT5",
+      "header": "sp|Q8TGT5|YH032_YEAST Putative uncharacterized protein YHR032C-A OS=Saccharomyces cerevisiae (strain ATCC 204508 / S288c",
+      "sequence": "MKGSKLFQMQKCMPVWCRTGTCIILPVACHMAKPLKLPT",
+      "length": 39,
+      "ensemble_score": 0.7843841910362244,
+      "cnn_score": 0.9713899493217468,
+      "gnn_score": 0.5973784327507019,
+      "novelty_vs_amp_corpus": 0.9285714285714286
+    },
+    {
+      "accession": "Q54HM1",
+      "header": "sp|Q54HM1|Y8382_DICDI Putative uncharacterized protein DDB_G0289359 OS=Dictyostelium discoideum OX=44689 GN=DDB_G0289359",
+      "sequence": "MSINIVHSNENNEENTNIENWTTTGTNYRNECIARCGRLFSGFNALICMKPCGV",
+      "length": 54,
+      "ensemble_score": 0.7343544960021973,
+      "cnn_score": 0.8837200403213501,
+      "gnn_score": 0.5849889516830444,
+      "novelty_vs_amp_corpus": 0.9637681159420289
+    },
+    {
+      "accession": "O55758",
+      "header": "sp|O55758|160L_IIV6 Uncharacterized protein 160L OS=Invertebrate iridescent virus 6 OX=176652 GN=IIV6-160L PE=3 SV=1",
+      "sequence": "MSILLKILFKLLLLILSITFVITDCLPRSCASFGCCSGNCATWCDQCDIKYSC",
+      "length": 53,
+      "ensemble_score": 0.7277659773826599,
+      "cnn_score": 0.9978156089782715,
+      "gnn_score": 0.45771634578704834,
+      "novelty_vs_amp_corpus": 0.9495798319327731
+    },
+    {
+      "accession": "P0C5N6",
+      "header": "sp|P0C5N6|YH32A_YEAST Uncharacterized protein YHR032W-A OS=Saccharomyces cerevisiae (strain ATCC 204508 / S288c) OX=5592",
+      "sequence": "MKLLQGRMTYRGDAHPHPRITPSLLANYVGNFKGFAMWHATGKIIHVPVRHQTGMHFCI",
+      "length": 59,
+      "ensemble_score": 0.6899840831756592,
+      "cnn_score": 0.7950490117073059,
+      "gnn_score": 0.5849192142486572,
+      "novelty_vs_amp_corpus": 0.9523809523809523
+    },
+    {
+      "accession": "Q9ZDH6",
+      "header": "sp|Q9ZDH6|Y352_RICPR Uncharacterized protein RP352 OS=Rickettsia prowazekii (strain Madrid E) OX=272947 GN=RP352 PE=4 SV",
+      "sequence": "MILLKVNHKPFMLPCVVIASLAYSEQVGWNRQLLPSSGEIKYL",
+      "length": 43,
+      "ensemble_score": 0.6886368989944458,
+      "cnn_score": 0.576145350933075,
+      "gnn_score": 0.8011284470558167,
+      "novelty_vs_amp_corpus": 0.9523809523809523
+    },
+    {
+      "accession": "P0C5N1",
+      "header": "sp|P0C5N1|YG014_YEAST Uncharacterized protein YGL014C-A OS=Saccharomyces cerevisiae (strain ATCC 204508 / S288c) OX=5592",
+      "sequence": "MRNLHHLRVGHEAHSTHHLWMWKHLRRRAISELRILRNFIRKCIRGGVFLWII",
+      "length": 53,
+      "ensemble_score": 0.6639183759689331,
+      "cnn_score": 0.5734018087387085,
+      "gnn_score": 0.7544350028038025,
+      "novelty_vs_amp_corpus": 0.9590163934426229
+    },
+    {
+      "accession": "P0C5M0",
+      "header": "sp|P0C5M0|YD320_YEAST Uncharacterized protein YDR320W-B OS=Saccharomyces cerevisiae (strain ATCC 204508 / S288c) OX=5592",
+      "sequence": "MRVLHVMLSFLNSLLFLPICFCLLQLKATCAVRVKKYSMKKKKKR",
+      "length": 45,
+      "ensemble_score": 0.6570978164672852,
+      "cnn_score": 0.486673504114151,
+      "gnn_score": 0.8275220990180969,
+      "novelty_vs_amp_corpus": 0.9405940594059405
+    },
+    {
+      "accession": "P9WEJ5",
+      "header": "sp|P9WEJ5|YD204_YEAST Uncharacterized protein YDL204W-A OS=Saccharomyces cerevisiae (strain ATCC 204508 / S288c) OX=5592",
+      "sequence": "MLYGNCCVKMVKNPGLPYERQCKDDCISQKDIFTPGAAREQNNYEKWTQS",
+      "length": 50,
+      "ensemble_score": 0.6471651196479797,
+      "cnn_score": 0.7866417765617371,
+      "gnn_score": 0.5076884627342224,
+      "novelty_vs_amp_corpus": 0.9532710280373832
+    },
+    {
+      "accession": "Q54SD7",
+      "header": "sp|Q54SD7|Y4813_DICDI Putative uncharacterized protein DDB_G0282523 OS=Dictyostelium discoideum OX=44689 GN=DDB_G0282523",
+      "sequence": "MTISNSLKLLNIGNAIKTNEIDYNNKKFLNNNINQNINETSKWVPNILWRGQGGKNIIAF",
+      "length": 60,
+      "ensemble_score": 0.6456924080848694,
+      "cnn_score": 0.771948516368866,
+      "gnn_score": 0.5194362998008728,
+      "novelty_vs_amp_corpus": 0.9538461538461538
+    },
+    {
+      "accession": "P85385",
+      "header": "sp|P85385|IMP04_NAUMA Uncharacterized protein IMPP4 (Fragment) OS=Nautilus macromphalus OX=34576 PE=1 SV=1",
+      "sequence": "TLASAIASAR",
+      "length": 10,
+      "ensemble_score": 0.6450653076171875,
+      "cnn_score": 0.7424284219741821,
+      "gnn_score": 0.5477022528648376,
+      "novelty_vs_amp_corpus": 0.8
+    },
+    {
+      "accession": "P51072",
+      "header": "sp|P51072|RJ21_FRAAN Uncharacterized protein RJ21 (Fragment) OS=Fragaria ananassa OX=3747 PE=2 SV=1",
+      "sequence": "LQLSYRPRVMIMAVMFVFCINKGYDIY",
+      "length": 27,
+      "ensemble_score": 0.6449892520904541,
+      "cnn_score": 0.4838472008705139,
+      "gnn_score": 0.8061313629150391,
+      "novelty_vs_amp_corpus": 0.9375
+    },
+    {
+      "accession": "O29001",
+      "header": "sp|O29001|Y1267_ARCFU Uncharacterized protein AF_1267 OS=Archaeoglobus fulgidus (strain ATCC 49558 / DSM 4304 / JCM 9628",
+      "sequence": "MAVAALAMYGGTCGACAVLACNWNVRECGIIWKNLFEVKK",
+      "length": 40,
+      "ensemble_score": 0.6396641731262207,
+      "cnn_score": 0.4850550591945648,
+      "gnn_score": 0.794273316860199,
+      "novelty_vs_amp_corpus": 0.9361702127659575
+    },
+    {
+      "accession": "P0C5L7",
+      "header": "sp|P0C5L7|YD18A_YEAST Uncharacterized protein YDR118W-A OS=Saccharomyces cerevisiae (strain ATCC 204508 / S288c) OX=5592",
+      "sequence": "MHREGIGGWKKRIPSVSKRKTKCLTHRQMTSSFFLVFA",
+      "length": 38,
+      "ensemble_score": 0.6376187801361084,
+      "cnn_score": 0.48128825426101685,
+      "gnn_score": 0.7939493656158447,
+      "novelty_vs_amp_corpus": 0.95
+    },
+    {
+      "accession": "P14589",
+      "header": "sp|P14589|YDH3_PLAFS Uncharacterized protein 3' to Asp-rich and His-rich proteins (Fragment) OS=Plasmodium falciparum (i",
+      "sequence": "PQYQFVGAKLFRWWCWRRRGWRRRWWLVIKLMLIETSFALDCEALCFSGVRQV",
+      "length": 53,
+      "ensemble_score": 0.6343805193901062,
+      "cnn_score": 0.9183737635612488,
+      "gnn_score": 0.35038724541664124,
+      "novelty_vs_amp_corpus": 0.9565217391304348
+    },
+    {
+      "accession": "Q3E813",
+      "header": "sp|Q3E813|YL154_YEAST Uncharacterized protein YLR154C-G OS=Saccharomyces cerevisiae (strain ATCC 204508 / S288c) OX=5592",
+      "sequence": "MWRRRREPWEELSFLLNSLSPRNWFIRRWGLMAGRGQHLCWLRCACDGP",
+      "length": 49,
+      "ensemble_score": 0.6327959895133972,
+      "cnn_score": 0.9182886481285095,
+      "gnn_score": 0.3473033010959625,
+      "novelty_vs_amp_corpus": 0.9551282051282052
+    },
+    {
+      "accession": "C1P620",
+      "header": "sp|C1P620|YSHB_ECOLI Uncharacterized protein YshB OS=Escherichia coli (strain K12) OX=83333 GN=yshB PE=1 SV=1",
+      "sequence": "MLESIINLVSSGAVDSHTPQTAVAAVLCAAMIGLFS",
+      "length": 36,
+      "ensemble_score": 0.6264170408248901,
+      "cnn_score": 0.5368186831474304,
+      "gnn_score": 0.7160154581069946,
+      "novelty_vs_amp_corpus": 0.952755905511811
+    },
+    {
+      "accession": "Q25BJ1",
+      "header": "sp|Q25BJ1|Y04_HIS1I Uncharacterized protein ORF4 OS=His1 virus (isolate Australia/Victoria) OX=654912 GN=ORF4 PE=4 SV=1",
+      "sequence": "MTNKKNWKCAGCKNRYSSFDKEKKDGQLKFNCPNCGHTVRRYTILGGY",
+      "length": 48,
+      "ensemble_score": 0.6225323677062988,
+      "cnn_score": 0.8362396955490112,
+      "gnn_score": 0.40882498025894165,
+      "novelty_vs_amp_corpus": 0.9416666666666667
+    },
+    {
+      "accession": "P0CW21",
+      "header": "sp|P0CW21|SPGOS_HUMAN Putative uncharacterized protein SPART-AS1 OS=Homo sapiens OX=9606 GN=SPART-AS1 PE=5 SV=1",
+      "sequence": "MKDIGHLQHLAQRLQWNRRAVNICGMHGWTKDLSPHSRMPSMLEHVKHYMSC",
+      "length": 52,
+      "ensemble_score": 0.6147692203521729,
+      "cnn_score": 0.9601684808731079,
+      "gnn_score": 0.2693699598312378,
+      "novelty_vs_amp_corpus": 0.9651162790697675
+    }
+  ]
+}
