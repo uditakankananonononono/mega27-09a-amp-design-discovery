@@ -21,7 +21,7 @@ PepCNN & 0.926 & [0.918, 0.934] & 0.855 \\
 PepGNN & 0.797 & [0.784, 0.810] & 0.510 \\
 ensemble & 0.908 & [0.900, 0.917] & 0.786 \\
 \hline\end{tabular}\end{table}
-\begin{table}[h]\centering\caption{Top annealed designs (study07 ensemble; novelty = $1 - $ max 3-mer Jaccard vs AMP corpus). Scores are model confidences, not measured activities.}\label{tab:designs}
+\begin{table}[h]\centering\caption{Top annealed designs (study07 ensemble; novelty = $1 - $ max 3-mer Jaccard vs AMP corpus). Scores are raw classifier outputs, not calibrated activity probabilities or measured activities.}\label{tab:designs}
 \begin{tabular}{lcc}\hline Sequence & Score & Novelty \\ \hline
 \texttt{FWFIFVMIYSGMWRHCCRWQKCVPR} & 0.910 & 0.951 \\
 \texttt{FFMLVAGGIWNVCWNDKDGEFDYPR} & 0.907 & 0.947 \\
