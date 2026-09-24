@@ -1,0 +1,18 @@
+[
+  {
+    "file": "uniprot_kw0929_all_10-150.fasta",
+    "url": "https://rest.uniprot.org/uniprotkb/stream?query=keyword%3AKW-0929%20AND%20length%3A%5B10%20TO%20150%5D&format=fasta",
+    "records": 27392,
+    "bytes": 5577606,
+    "sha256": "41531b252cd95008",
+    "fetched_at": "2026-09-24T14:32:20Z"
+  },
+  {
+    "file": "uniprot_nonamp_pool_10-150.fasta",
+    "url": "https://rest.uniprot.org/uniprotkb/stream?query=reviewed%3Atrue%20NOT%20keyword%3AKW-0929%20NOT%20keyword%3AKW-0800%20NOT%20keyword%3AKW-0862%20AND%20length%3A%5B10%20TO%20150%5D&format=fasta",
+    "records": 105041,
+    "bytes": 24709977,
+    "sha256": "2e0d4ec6ac7d6ca3",
+    "fetched_at": "2026-09-24T14:34:27Z"
+  }
+]

@@ -1,0 +1,10 @@
+[
+  {
+    "file": "uniprot_uncharacterized_10-60.fasta",
+    "url": "https://rest.uniprot.org/uniprotkb/stream?query=reviewed%3Atrue%20AND%20length%3A%5B10%20TO%2060%5D%20AND%20%28protein_name%3A%22uncharacterized%20protein%22%20OR%20protein_name%3A%22hypothetical%20protein%22%29%20NOT%20keyword%3AKW-0929&format=fasta",
+    "records": 852,
+    "bytes": 153443,
+    "sha256": "5df899dbc48de39e",
+    "fetched_at": "2026-09-24T14:38:17Z"
+  }
+]
