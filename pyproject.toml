@@ -1,0 +1,12 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pepdesign"
+version = "0.1.0"
+description = "MEGA27-09 in-silico peptide design suite (CNN+GNN, real data, benchmarked)"
+requires-python = ">=3.9"
+
+[tool.setuptools.packages.find]
+include = ["pepdesign*"]
