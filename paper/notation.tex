@@ -3,21 +3,19 @@
 \begin{tabular}{ll}\hline
 Symbol & Meaning \\ \hline
 $s$, $\ell$ & a peptide sequence and its length \\
-$L$ & encoding length cap (150; 60 in the pilot) \\
+$L$ & encoding cap (150; pilot 60; full Feb2020 audit 200) \\
 $K_k(s)$ & set of contiguous $k$-mers of $s$ \\
 $E(s)$ & encoded sequence, $\mathbb{R}^{L\times(20+d)}$ \\
 $\tilde A$ & symmetric-normalized shared adjacency \\
-$\hat p$, $f(s)$ & model probability and ensemble logit \\
+$\hat p$, $f(s)$ & sigmoid classifier output and ensemble score \\
 $\omega$ & positive-class weight $n_-/n_+$ \\
-$\pi(s)$, $T$ & annealing target measure and temperature \\
+$\pi_T(s)$, $T$ & fixed-temperature Boltzmann measure and temperature \\
 $J(\cdot,\cdot)$ & Jaccard index \\
 $B$ & resampling count (bootstrap or permutation) \\
 \hline\end{tabular}\end{table}
 
 Section 2 situates the work; Section 3 defines the data, clustering, and
 splits; Section 4 defines the models, objective, designer, and statistical
-procedures, with proofs; Section 5 fixes the evaluation metrics; Sections 6
-and 7 report the four studies and analyze their outputs; Section 8 discusses
-findings and limitations; Sections 9--11 cover threats, reproducibility, and
-the software artifact. Appendices give hyperparameters, provenance,
-derivations, and complete listings.
+procedures, with proofs; Section 5 fixes the evaluation metrics; Later sections report the benchmark studies, candidate screen, signal
+ablation, threats, reproducibility audit and software artifact. Appendices
+give hyperparameters, provenance and design/screen listings.

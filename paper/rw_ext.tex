@@ -22,8 +22,8 @@ recurrent and convolutional networks to raw sequences~\cite{ampscanner}, and
 subsequent work explored attention and pretrained protein language models.
 Two methodological concerns recur across this literature. First, most
 evaluations split sequences randomly, and AMP families are highly redundant
---- many database records are isoforms or orthologs --- so reported AUROCs
-above 0.95 are routine and largely reflect memorized family membership.
+--- many database records are isoforms or orthologs --- which can inflate random-split metrics; a high AUROC alone does not
+quantify memorization without a homology-aware control.
 Second, negative sets are usually ``everything else,'' which conflates
 unlabeled positives with true negatives. Our design choices respond directly:
 cluster-aware splitting controls the first, length-matched reviewed negatives
@@ -36,9 +36,9 @@ Computational AMP design has used genetic algorithms, physicochemical rules,
 and generative models including GANs, VAEs, and diffusion-style generators.
 A common weakness is evaluation: generated sequences are often scored by the
 same model that guided generation, an echo chamber that inflates apparent
-quality. We deliberately keep our designer simple --- Metropolis--Hastings on
-a discriminative ensemble with an explicit correctness proof
-with fixed-temperature detailed balance --- and we report novelty against the corpus so the
-reader can judge whether candidates are genuinely new or lightly mutated
-training sequences. No design is claimed active; the section exists to
+quality. We keep the designer simple: simulated annealing on a discriminative
+ensemble, with a proof of fixed-temperature detailed balance and an
+explicit pairwise 3-mer similarity check against the reference corpus.
+That check does not prove global novelty, and optimization on the scoring
+model cannot independently validate its own designs. No design is claimed active; the section exists to
 demonstrate a correct, reproducible prioritization mechanism.
