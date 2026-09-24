@@ -10,7 +10,12 @@ that each original training/test split has 712 positives and 712 decoys,
 that the tune split has 354 each, and that the updated dataset has 2{,}021
 positives and 2{,}021 decoys. No exact-sequence duplicates or cross-class exact overlaps were found in
 the six original split files or within the updated positive and negative
-sets; shared motifs and distant homology are not ruled out.
+sets; shared motifs and distant homology are not ruled out. In fact, a separate
+exact-10-mer audit of the full Feb2020 stratified CV folds finds that
+646/4{,}042 held-out sequences (15.98\%) share at least one exact decamer
+with a training sequence. This is a limitation of the published random-split
+style benchmark and of our replication, not a leakage-free generalization
+estimate; see \texttt{results/study16\_homology\_audit.json}.
 SHA-256 checksums for each downloaded FASTA
 are in \texttt{results/benchmark\_sources.json}.
 

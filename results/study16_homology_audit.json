@@ -1,0 +1,67 @@
+{
+  "dataset_n": 4042,
+  "k": 10,
+  "folds": [
+    {
+      "fold": 1,
+      "test_n": 405,
+      "shared_exact_10mer_n": 61,
+      "fraction": 0.1506172839506173
+    },
+    {
+      "fold": 2,
+      "test_n": 405,
+      "shared_exact_10mer_n": 64,
+      "fraction": 0.1580246913580247
+    },
+    {
+      "fold": 3,
+      "test_n": 404,
+      "shared_exact_10mer_n": 50,
+      "fraction": 0.12376237623762376
+    },
+    {
+      "fold": 4,
+      "test_n": 404,
+      "shared_exact_10mer_n": 70,
+      "fraction": 0.17326732673267325
+    },
+    {
+      "fold": 5,
+      "test_n": 404,
+      "shared_exact_10mer_n": 57,
+      "fraction": 0.14108910891089108
+    },
+    {
+      "fold": 6,
+      "test_n": 404,
+      "shared_exact_10mer_n": 86,
+      "fraction": 0.21287128712871287
+    },
+    {
+      "fold": 7,
+      "test_n": 404,
+      "shared_exact_10mer_n": 53,
+      "fraction": 0.1311881188118812
+    },
+    {
+      "fold": 8,
+      "test_n": 404,
+      "shared_exact_10mer_n": 68,
+      "fraction": 0.16831683168316833
+    },
+    {
+      "fold": 9,
+      "test_n": 404,
+      "shared_exact_10mer_n": 65,
+      "fraction": 0.1608910891089109
+    },
+    {
+      "fold": 10,
+      "test_n": 404,
+      "shared_exact_10mer_n": 72,
+      "fraction": 0.1782178217821782
+    }
+  ],
+  "overall_fraction": 0.15982187036120732
+}
