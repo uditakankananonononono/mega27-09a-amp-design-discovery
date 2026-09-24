@@ -22,12 +22,11 @@ timestamps recorded.
 \item A paired comparison of two neural architectures and two composition
 baselines under this split, with bootstrap intervals and permutation tests
 computed by one shared harness: PepCNN attains AUROC $0.921$ [0.913, 0.929],
-significantly ahead of all baselines; the graph model is a reported negative
+ahead of the tested baselines on the held-out sample; the graph model is a reported negative
 result.
 \item External validation on the APD6 2024 natural AMP list after strict
 decontamination: PepCNN transfers at AUROC $0.926$ [0.918, 0.934], with
-sensitivity $0.601$ at a 5\% false-positive rate --- evidence of real
-cross-database generalization and an honest bound on its reach.
+sensitivity $0.601$ at a 5\% false-positive rate --- evidence of transfer to the decontaminated APD6 subset and an honest bound on its reach.
 \item A simulated-annealing designer with a fixed-temperature detailed-balance
 proof producing ranked sequence candidates, and a discovery
 screen over 852 reviewed uncharacterized proteins producing 25 ranked
