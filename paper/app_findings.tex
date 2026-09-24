@@ -1,0 +1,44 @@
+
+\section{Key findings by study}\label{app:findings}
+\begin{description}
+\item[Study 1 (pilot).] On 2{,}000-reviewed-positive pilot data, PepCNN
+reached AUROC 0.95 within minutes, establishing the pipeline end to end;
+the annealing designer produced its first 24 candidates here.
+\item[Study 7 (scale-up).] Cluster-aware splitting cut apparent
+performance relative to a random split, the first signal that homology
+inflates random-split estimates; the frozen screen ensemble dates from
+this study and is never retrained afterward.
+\item[Study 8 (screen).] 852 reviewed uncharacterized proteins scored;
+41 pass the novelty floor; the identical P0ACW4/P0ACW5 sequence pair tops
+the list.
+\item[Study 9 (APD6).] The frozen ensemble scores APD6-2024 natural AMPs
+high on average, a sanity check that the model prefers known AMPs to
+uncharacterized proteins, without constituting validation of any
+individual candidate.
+\item[Study 10 (Veltri base).] On the authors' exact splits, PepCNN
+reaches AUC 95.77, the RF 93.32, the GNN 88.18; composition carries much
+of the benchmark signal.
+\item[Study 11 (stack).] Stacking with tune-partition weights reaches ACC
+91.22, MCC 0.8246, AUC 96.61: near-parity with the published AMP Scanner
+row, behind ACEP; reported as descriptive, without a paired test.
+\item[Study 12 (candidates).] Nine named candidates with novelty and
+physicochemical audits and explicit falsifiable MIC predictions.
+\item[Study 13 (filtered CV).] A Feb2020 CV that silently filtered records
+produced numbers not comparable to the published ones; retained as an
+ablation and superseded by study 14.
+\item[Study 14 (full CV).] All 4{,}042 Feb2020 records, 10-fold CV: ACC
+90.33, MCC 0.8076, AUC 96.36 versus published 89.9/0.799/96.2 ---
+descriptive parity with a slight edge, no significance claim possible.
+\item[Study 15 (ablation).] Removing the P0ACW4 signal peptide drops the
+ensemble score from 0.9082 to 0.6299: a negative control showing the
+score partly tracks trafficking signal.
+\item[Study 16 (homology).] 15.98\% of held-out Feb2020 sequences share
+an exact decamer with training; random-CV results are interpolation.
+\item[Study 17 (strata).] The large-dataset test AUROC is 0.9206 overall,
+0.9643 on the tiny reviewed-positive subgroup, 0.9121 on the confounded
+majority: the headline number cannot be attributed to AMP function.
+\item[Study 18 (composition).] First-order composition barely separates
+the label $\times$ review-status groups; the learnable confound is mostly
+a length artifact, directing the fix toward length-matched reviewed-only
+redesign.
+\end{description}

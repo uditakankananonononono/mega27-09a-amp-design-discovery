@@ -1,0 +1,28 @@
+
+\section{Symbol glossary}\label{app:symbols}
+\begin{table}[h]\centering\small
+\caption{Notation used throughout.}
+\label{tab:symbols}
+\begin{tabular}{ll}
+\hline
+Symbol & Meaning \\
+\hline
+$s = s_1\cdots s_n$ & peptide sequence, residues from the 20-letter alphabet \\
+$L$ & padded sequence length (60 pilot, 150 large, 200 study 14) \\
+$K_k(s)$ & set of contiguous $k$-mers of $s$ \\
+$J_k$, $\nu_k$ & $k$-mer Jaccard similarity and novelty (Eq.~\eqref{eq:novelty}) \\
+$Q(s;p)$ & expected net charge at pH $p$ (Eq.~\eqref{eq:netcharge}) \\
+$\mu_H$, $\mu_i(s;w,\delta)$ & Eisenberg hydrophobic moment (Eq.~\eqref{eq:hmoment}) \\
+$A$, $A_{\mathrm{norm}}$ & chain-window adjacency and its row normalization \\
+$\hat p(s)$ & model posterior $P(\mathrm{AMP}\mid s)$ \\
+$t^{*}$ & Bayes decision threshold (Eq.~\eqref{eq:bayesthr}) \\
+$A$ (AUROC context) & Mann--Whitney AUROC statistic (Prop.~\ref{prop:mw}) \\
+$Q_1, Q_2$ & placement probabilities in the Hanley--McNeil variance \\
+$B$ & bootstrap or permutation resample count \\
+$\alpha(n)$ & inverse Ackermann factor in union-find complexity \\
+$\omega$ & positive-class weight in the weighted BCE \\
+$c_{01}, c_{10}$ & false-positive and false-negative costs \\
+$\mathrm{BS}$ & Brier score (Eq.~\eqref{eq:brier}) \\
+\hline
+\end{tabular}
+\end{table}

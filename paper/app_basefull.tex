@@ -1,0 +1,32 @@
+
+\section{Complete study-11 metrics}\label{app:basefull}
+Table~\ref{tab:basefull} gives every metric for every model of the Veltri
+2018 study, including AUPRC, which the main text omits for space. The two
+ensemble rows used the tune partition for their thresholds (0.56 average,
+0.575 stack); base models use the default 0.5.
+
+\begin{table}[h]\centering\small
+\caption{All study-11 models on the Veltri test partition (percentages
+except MCC).}
+\label{tab:basefull}
+\begin{tabular}{lcccccc}
+\hline
+Model & SENS & SPEC & ACC & MCC & AUC & AUPRC \\
+\hline
+PepCNN seed 7 & 89.47 & 90.73 & 90.10 & 0.8020 & 96.04 & 96.33 \\
+PepCNN seed 27 & 94.66 & 80.48 & 87.57 & 0.7591 & 95.67 & 95.95 \\
+PepCNN seed 77 & 89.04 & 91.43 & 90.24 & 0.8050 & 96.01 & 96.32 \\
+PepGNN seed 11 & 76.26 & 86.24 & 81.25 & 0.6281 & 88.14 & 87.48 \\
+PepGNN seed 111 & 87.08 & 73.31 & 80.20 & 0.6097 & 87.93 & 86.37 \\
+RF (descriptors) & 90.31 & 88.76 & 89.54 & 0.7908 & 96.19 & 96.62 \\
+Average ensemble & 90.87 & 90.45 & 90.66 & 0.8132 & 95.95 & 96.38 \\
+Stacked ensemble & 90.31 & 92.13 & 91.22 & 0.8246 & 96.61 & 97.03 \\
+\hline
+\end{tabular}
+\end{table}
+
+The AUPRC column reinforces the ranking: the stack (97.03) leads every
+base model, and the GNN seeds trail on every metric, consistent with the
+capacity and pooling argument of Appendix~\ref{app:arch}. Seed variance
+among the CNNs is small on AUC (95.67--96.04) but larger on MCC
+(0.759--0.805), the expected pattern when only the threshold varies.

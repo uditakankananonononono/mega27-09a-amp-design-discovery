@@ -1,0 +1,16 @@
+
+\section{Compute environment}\label{app:env}
+All experiments ran CPU-only in a 2-core Linux sandbox. Key library
+versions: Python 3.11, PyTorch 2.14.0+cpu, scikit-learn 1.7.2, NumPy
+2.2.6, SciPy 1.15.3. No GPU, no network at study time (fetches are
+separate provenance-logged scripts). The full 10-fold study-14 run takes
+about 15 minutes wall-clock (85--89 s per fold); the study-11 stack
+training about 2 hours; the scale-up study-07 training is the multi-hour
+step. Every reported number regenerates from the committed scripts and
+pinned data on commodity hardware; nothing requires a cluster.
+
+The hermetic test suite (27 tests) covers encoding invariants, model
+shapes, the clustering union-find, the benchmark loaders against bundled
+fixtures, the CLI, and a no-stubs audit that rejects placeholder
+implementations. Tests run offline against cached fixtures and complete
+in under two minutes.

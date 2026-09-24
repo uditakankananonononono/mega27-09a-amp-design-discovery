@@ -25,3 +25,29 @@ File & Records & SHA-256 (first 16) \\
 \hline
 \end{tabular}
 \end{table}
+
+\subsection*{Data cards}
+\paragraph{Veltri 2018 original dataset.} Distributed as six FASTA files
+(\texttt{AMP.tr/eval/te}, \texttt{DECOY.tr/eval/te}) in the authors'
+public repository. Positives are experimentally validated AMPs collected
+from the APD; negatives are cytoplasmic proteins selected by the authors
+as non-secreted decoys. The authors identity-reduced the pool before
+splitting, so near-duplicates inside a partition are limited by
+construction, but the split itself is a single random partition: results
+on it carry split-specific variance that a single test number cannot
+express, one motivation for our bootstrap intervals
+(Appendix~\ref{app:ci}). We use the files byte-identically (hashes above)
+and impose no additional filtering.
+
+\paragraph{Feb2020 production dataset.} Distributed as a single zip from
+the authors' site containing the retrained production model's dataset:
+2{,}021 AMP and 2{,}021 decoy records. Unlike the 2018 release, no split
+files are published; the site's news page reports only 10-fold
+cross-validation means. Our study 14 therefore reproduces the protocol
+(stratified 10-fold CV on all 4{,}042 records) but not the exact folds,
+and the comparison in Table~\ref{tab:feb2020-verdict} is descriptive.
+The dataset also contains records longer than the 2018 maximum and
+records with the unknown-residue symbol \texttt{X}; study 14 retains both,
+encoding \texttt{X} as unknown (Appendix~\ref{app:encoding}), because
+dropping them would silently change the benchmark, the mistake study 13
+made and study 14 corrects.

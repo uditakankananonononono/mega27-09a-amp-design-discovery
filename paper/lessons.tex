@@ -1,0 +1,18 @@
+
+\subsection{Lessons for AMP benchmark design}
+Three features of this project generalize beyond the specific numbers.
+First, \emph{review status is a label leak}: UniProt keyword annotation
+without a \texttt{reviewed:true} filter produced a dataset whose positive
+class is 88\% unreviewed while the negative class is 100\% reviewed, so a
+model can profit from curation metadata rather than biology. Any UniProt
+derived benchmark should report the review-status cross-tab alongside
+accuracy. Second, \emph{length is a silent confound}: the reviewed
+positives average 66 aa against 93--97 aa for the other groups
+(Table~\ref{tab:compaudit}), and length-matching by construction, not just
+by mean, is the cheap control that removes it. Third, \emph{random CV
+flatters homology}: 15.98\% of held-out Feb2020 sequences share an exact
+decamer with training (Appendix~\ref{app:homology}), so cross-validation
+on this dataset estimates interpolation, not extrapolation to new
+families. A published fold assignment or a cluster-held-out protocol is
+the minimum requirement for a claim of the form ``method X beats method Y
+on remote sequences.''

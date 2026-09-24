@@ -1,0 +1,41 @@
+
+\section{Anticipated questions}\label{app:faq}
+\paragraph{Why is there no wet-lab validation?}
+Scope and access: this is a computational project, and every candidate is
+therefore stated as a falsifiable prediction with a named assay
+(Appendix~\ref{app:cand-full}) rather than a discovery claim. The MIC
+protocol is specified so an outside lab could run it directly.
+
+\paragraph{Why not retrain on the reviewed-only subgroup?}
+The reviewed-positive subgroup has 239 positives against 2{,}925 reviewed
+negatives (Appendix~\ref{app:strata}). A model retrained on it would be
+twelve times outnumbered at the class level and tiny in absolute terms;
+its intervals would swallow any effect. The correct fix is a fresh,
+length-matched, reviewed-only corpus at the original scale, which is a
+data effort, not a re-run, and is recorded as the top future-work item.
+
+\paragraph{Why is there no significance test against the published
+Feb2020 row?}
+A paired test needs either the published fold assignments or the
+published per-sequence outputs; neither is available
+(Appendix~\ref{app:sources}). With only the published means, any
+``significance'' would be computed against an assumed variance and would
+manufacture confidence we do not have. We report the descriptive gap and
+its direction instead, and Table~\ref{tab:feb2020} shows fold-to-fold
+variation larger than the gap.
+
+\paragraph{Why is the frozen ensemble used for the screen after the
+training-set confound was found?}
+The confound was discovered after the screen ran, and retraining a clean
+ensemble is the future-work item above. The screen results are retained
+because the ranking signal (Section~\ref{sec:labelconfound}) plausibly
+survives the confound while the calibration does not, and because
+withdrawing them would hide exactly the audit trail this report exists to
+document. Every consumer-facing number carries the caveat.
+
+\paragraph{Why do the GNN results stay in the paper if they are the
+weakest models?}
+Because they are measured, honest, and informative: the capacity and
+pooling analysis (Appendix~\ref{app:arch}) explains the gap, the GNN adds
+ensemble diversity on the Veltri stack, and deleting weak results is how
+benchmark literature becomes unreliable.

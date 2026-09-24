@@ -1,0 +1,31 @@
+
+\section{Screen output schema}\label{app:schema}
+\texttt{pepdesign screen} writes one JSON document per run:
+
+\begin{verbatim}
+{
+  "screened": <int>,               // sequences read from --input
+  "top": [
+    {
+      "name": <str>,               // FASTA header, verbatim
+      "sequence": <str>,           // cleaned, standard alphabet
+      "length": <int>,
+      "ensemble_score": <float>,   // mean of CNN and GNN probabilities
+      "cnn_score": <float>,
+      "gnn_score": <float>,
+      "novelty_3mer": <float>,     // 1 - max 3-mer Jaccard vs reference
+      "max_3mer_jaccard_vs_reference": <float>,
+      "passes_novelty_floor": <bool>
+    }, ...                         // sorted by ensemble_score desc
+  ]
+}
+\end{verbatim}
+
+Two contract points matter for downstream use. First, scores are frozen
+ensemble outputs under the training distribution documented in
+Section~\ref{sec:labelconfound}; consumers must treat them as rank orders,
+not calibrated probabilities (Appendix~\ref{app:math3}). Second, novelty
+is computed against the reference bundled with the model (APD6 by
+default); screening against a different corpus requires re-running the
+novelty audit, which \texttt{study12\_candidates.py} demonstrates against
+both APD6 and the KW-0929 corpus.

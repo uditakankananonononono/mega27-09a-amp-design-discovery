@@ -32,6 +32,22 @@ substantially by the signal segment, which is expected: signal peptides
 are hydrophobic, and the confounded training set rewards hydrophobic
 cationic stretches (Section~\ref{sec:labelconfound}).
 
+
+\begin{table}[h]\centering\small
+\caption{Signal-peptide ablation for P0ACW4 with the frozen ensemble
+(study 15; annotation: EcoliWiki ydcA gene record, signal residues 1--20).}
+\label{tab:signalabl}
+\begin{tabular}{lcccc}
+\hline
+Segment & Length & CNN & GNN & Ensemble \\
+\hline
+Full precursor (1--57) & 57 & 0.9992 & 0.8171 & 0.9082 \\
+Signal segment (1--20) & 20 & 0.5905 & 0.7920 & 0.6912 \\
+Post-signal segment (21--57) & 37 & 0.9974 & 0.2623 & 0.6299 \\
+\hline
+\end{tabular}
+\end{table}
+
 \paragraph{Verdict.} P0ACW4 is a named, quantified, falsifiable
 \emph{hypothesis}: broth-microdilution MIC against \emph{E. coli} K-12 and
 \emph{S. aureus} ATCC 25923 decides it. The ablation is precisely the kind
