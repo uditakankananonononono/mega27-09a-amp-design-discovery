@@ -1,0 +1,60 @@
+{
+  "screened": 852,
+  "top": [
+    {
+      "name": "sp|P0ACW4|YDCA_ECOLI",
+      "sequence": "MKKLALILFMGTLVSFYADAGRKPCSGSKGGISHCTAGGKFVCNDGSISASKKTCTN",
+      "length": 57,
+      "ensemble_score": 0.9082,
+      "cnn_score": 0.9992,
+      "gnn_score": 0.8171,
+      "novelty_3mer": 0.938,
+      "max_3mer_jaccard_vs_reference": 0.062,
+      "passes_novelty_floor": true
+    },
+    {
+      "name": "sp|P0ACW5|YDCA_SHIFL",
+      "sequence": "MKKLALILFMGTLVSFYADAGRKPCSGSKGGISHCTAGGKFVCNDGSISASKKTCTN",
+      "length": 57,
+      "ensemble_score": 0.9082,
+      "cnn_score": 0.9992,
+      "gnn_score": 0.8171,
+      "novelty_3mer": 0.938,
+      "max_3mer_jaccard_vs_reference": 0.062,
+      "passes_novelty_floor": true
+    },
+    {
+      "name": "sp|Q8TGN5|YI105_YEAST",
+      "sequence": "MKTWMYSYLFDCPILVLPWTPHNYYLYHRFHHFLPLCYWHYSADTY",
+      "length": 46,
+      "ensemble_score": 0.8897,
+      "cnn_score": 0.9785,
+      "gnn_score": 0.8009,
+      "novelty_3mer": 0.946,
+      "max_3mer_jaccard_vs_reference": 0.054,
+      "passes_novelty_floor": true
+    },
+    {
+      "name": "sp|P64653|Y122_HELPY",
+      "sequence": "MYRRLLLNLFCMVFLQACLKPMSDPKAEKVDSQVQCGFGSKDC",
+      "length": 43,
+      "ensemble_score": 0.8357,
+      "cnn_score": 0.8647,
+      "gnn_score": 0.8067,
+      "novelty_3mer": 0.941,
+      "max_3mer_jaccard_vs_reference": 0.059,
+      "passes_novelty_floor": true
+    },
+    {
+      "name": "sp|P64654|Y112_HELPJ",
+      "sequence": "MYRRLLLNLFCMVFLQACLKPMSDPKAEKVDSQVQCGFGSKDC",
+      "length": 43,
+      "ensemble_score": 0.8357,
+      "cnn_score": 0.8647,
+      "gnn_score": 0.8067,
+      "novelty_3mer": 0.941,
+      "max_3mer_jaccard_vs_reference": 0.059,
+      "passes_novelty_floor": true
+    }
+  ]
+}
