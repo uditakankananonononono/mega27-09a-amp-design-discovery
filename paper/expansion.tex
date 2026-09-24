@@ -39,7 +39,7 @@ same splits and subsamples as the neural models, so every comparison is
 paired.
 
 \subsection{Ensemble}
-The ensemble score is the unweighted mean of the CNN and GNN probabilities,
+The ensemble score is the unweighted mean of the CNN and GNN sigmoid outputs,
 $s_{\text{ens}} = (s_{\text{CNN}} + s_{\text{GNN}})/2$. It is used only for
 the design and screen stages; for recognition claims we report each model
 individually, since averaging with the weaker GNN dilutes the CNN
