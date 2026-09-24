@@ -154,10 +154,10 @@ fall out of the learned kernels; max pooling makes the score invariant to
 motif position, matching the biology of membrane-active motifs.
 
 \subsection{PepGNN}
-Each sequence is a chain graph with residue features $X$ and a
-\emph{shared} adjacency $A = A_{\text{chain}} + \lambda I$ over positions
-(adjacent residues plus self-loops), identical for every sample. One
-graph-convolution layer computes
+Each sequence is represented by four per-residue physicochemical channels
+and a \emph{shared} chain-window adjacency $A$ connecting positions within
+three residues plus self-loops, identical for every sample. Each of three
+graph-convolution layers computes
 \[
 H = \phi\!\left(\tilde A X W + b\right),\qquad
 \tilde A = D^{-1/2} A D^{-1/2},
@@ -165,7 +165,7 @@ H = \phi\!\left(\tilde A X W + b\right),\qquad
 with the symmetric normalization of~\cite{kipf2017}. Because $\tilde A$ is
 shared, the batched product is a single broadcast matrix multiplication
 rather than $n$ per-sample multiplications of $L\times L$ matrices; memory
-drops from $O(nL^2)$ to $O(L^2)$ per batch, which is what makes the model
+drops from $O(nL^2)$ to $O(L^2)$ for a shared adjacency, which is what makes the model
 trainable within the sandbox budget.
 
 \begin{remark}
