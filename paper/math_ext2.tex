@@ -30,8 +30,8 @@ We evaluate $Q(s) := Q(s; 7.4)$.
 
 \begin{proposition}[Monotonicity of net charge]
 \label{prop:charge-monotone}
-$Q(s; p)$ is strictly decreasing in $p$ whenever $s$ contains at least one
-ionizable residue, with $\lim_{p\to 0} Q = n_K + n_R + n_H + 1$ and
+$Q(s; p)$ is strictly decreasing in $p$ for every nonempty
+sequence in this model because its termini are ionizable, with $\lim_{p\to 0} Q = n_K + n_R + n_H + 1$ and
 $\lim_{p\to\infty} Q = -(n_D + n_E + n_C + n_Y) - 1$.
 \end{proposition}
 \begin{proof}
@@ -39,8 +39,7 @@ Each term in \eqref{eq:hh} is a logistic function of $p$:
 $f^{+}_a(p) = \sigma(\ln 10 \cdot (\mathrm{p}K_a - p))$ is strictly
 decreasing in $p$ and $f^{-}_a(p) = \sigma(\ln 10 \cdot (p - \mathrm{p}K_a))$
 strictly increasing. $Q(s;p)$ is a positive combination of the decreasing
-terms minus a positive combination of the increasing terms, hence strictly
-decreasing whenever at least one coefficient $n_a(s) > 0$. The limits follow
+terms minus a positive combination of the increasing terms, hence strictly decreasing because at least the terminal terms are present. The limits follow
 from $\lim_{x\to-\infty}\sigma(x) = 0$ and $\lim_{x\to\infty}\sigma(x) = 1$
 applied term by term.
 \end{proof}
