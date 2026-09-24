@@ -17,7 +17,7 @@ class GraphConv(nn.Module):
 
     def forward(self, h: torch.Tensor, adj: torch.Tensor) -> torch.Tensor:
         # h: (batch, n, in_dim); adj: (batch, n, n)
-        return torch.relu(torch.bmm(adj, h) @ self.weight + self.bias)
+        return torch.relu(torch.matmul(adj, h) @ self.weight + self.bias)
 
 
 class PepGNN(nn.Module):
@@ -42,3 +42,13 @@ def graph_inputs(seqs, max_len: int) -> tuple[torch.Tensor, torch.Tensor]:
     feats = np.stack([physchem(s, max_len) for s in seqs])
     adjs = np.stack([chain_adjacency(max_len) for _ in seqs])
     return torch.from_numpy(feats), torch.from_numpy(adjs)
+
+
+def graph_inputs_shared(seqs, max_len: int) -> tuple[torch.Tensor, torch.Tensor]:
+    """Memory-efficient variant: node feats stacked per sample, ONE shared
+    chain adjacency (max_len, max_len) broadcast by matmul in GraphConv.
+    Per-sample adjacency copies cost O(n * max_len^2); at 150 aa and 50k
+    sequences that is ~4.5 GB, which does not fit this sandbox."""
+    from pepdesign.encoding import physchem, chain_adjacency
+    feats = np.stack([physchem(s, max_len) for s in seqs])
+    return torch.from_numpy(feats), torch.from_numpy(chain_adjacency(max_len))
