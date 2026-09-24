@@ -1,0 +1,48 @@
+\section{Proposed biological validation protocol}
+\label{sec:wetlab}
+This section describes an experiment that could falsify the discovery
+hypothesis. It has \emph{not} been performed; no simulated MIC or docking
+output is reported as an observation.
+
+\subsection{Peptide selection and processing}
+The primary comparison is the 57-residue precursor of YdcA/P0ACW4 versus
+the 37-residue mature segment after cleavage of the annotated 1--20 signal
+peptide. The 20-residue signal segment alone is a necessary control because
+the GNN score changes markedly after it is removed. Include the 57-residue
+annealed derivative InstiAMP-09a-1a as a model-optimization control, plus
+one sequence drawn without selection from the 852-protein screen as a
+negative process control. A known antimicrobial reference peptide and a
+vehicle-only well are assay controls. Because the mature segment contains
+cysteines, synthesis and handling should specify oxidation state, purity,
+and whether a disulfide arrangement is defined or a mixture; otherwise a
+single primary-sequence prediction could map to several chemical species.
+
+\subsection{Activity endpoint}
+A standard broth-microdilution assay would span a twofold serial dilution
+range appropriate to the synthesized material and use at least three
+independent biological replicates. The endpoint is the lowest tested
+concentration with no visible growth under the assay's prespecified
+incubation and medium conditions. The experiment should record insolubility,
+precipitation, and turbidity interference rather than counting them as
+growth inhibition. The user-facing prediction is deliberately qualitative:
+there might be a growth-inhibition effect, not a specific MIC value. A
+continuous potency claim would require activity-labeled training data,
+which the binary classifier does not use.
+
+\subsection{Safety and specificity}
+A mammalian-cell viability or hemolysis assay at overlapping concentrations
+is necessary to distinguish selective antimicrobial action from nonspecific
+membrane toxicity. Material preparation should be verified by mass
+spectrometry and chromatography. These outcomes cannot be inferred from an
+AMP/non-AMP classifier score. A 0.908 score is a ranking statistic, not a
+validated 90.8\% chance of activity and not a therapeutic claim.
+
+\subsection{Statistical decision rule}
+Pre-register the primary comparison (mature YdcA versus vehicle) and the
+replicate count before running the assay. Report individual replicate MICs,
+not just an average; for twofold dilutions the endpoint is interval-censored,
+so a log$_2$-scale analysis with an explicit censoring convention is more
+honest than a decimal mean. A failure to inhibit growth at the highest
+non-toxic, soluble concentration would directly weaken the model-generated
+hypothesis. The analysis should not select one strain or one sequence after
+looking at the activity panel without marking it exploratory.
