@@ -46,9 +46,8 @@ Running the simulated-annealing designer against the
 pilot ensemble yielded ten candidates scoring $0.986$--$0.993$ with 3-mer
 novelty $0.90$--$0.94$; against the scale-up ensemble, 24 anneals scored
 $0.877$--$0.910$ (top 10 in Table~\ref{tab:designs}). The scale-up designs
-score lower in absolute terms because the scale-up ensemble is trained under
-homology-aware evaluation and is less overconfident --- a calibration
-feature, not a defect. All designs are \emph{in silico} hypotheses: no
+score lower in absolute terms, but the difference in training data and model
+calibration means this contrast does not establish improved calibration. All designs are \emph{in silico} hypotheses: no
 wet-lab or even secondary-structure validation is claimed.
 
 \subsection{Discovery screen (study08)}
@@ -57,7 +56,7 @@ We screened 852 reviewed UniProt entries of length 10--60 annotated only as
 study07 ensemble. The top 25 (top 15 in Table~\ref{tab:screen}) are enriched
 for short, cysteine-rich, signal-peptide-like sequences. The top hit,
 P0ACW4/P0ACW5 (identical 57-aa sequences from two accessions, ensemble
-$0.908$, novelty $0.95$), is a small Cys-rich protein; such sequences
+$0.908$, pairwise 3-mer novelty $0.95$ against the training reference), is a small Cys-rich protein; such sequences
 superficially resemble defensin-like AMPs, which is plausibly why the model
 scores them highly --- and equally plausibly reflects a learned prior for
 Cys-rich small proteins rather than specific antimicrobial function. We

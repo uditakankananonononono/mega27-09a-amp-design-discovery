@@ -39,7 +39,8 @@ The design and screen tables report
 $\mathrm{novelty}(s) = 1 - \max_{c \in C} J(K_3(s), K_3(c))$ where $C$ is the
 AMP training corpus and $J$ the Jaccard index over 3-mer sets. Three-mers are
 short enough that even unrelated peptides share some, so novelty is bounded
-away from 1 in practice; values near 0.9 indicate essentially no local
-compositional overlap with any training AMP. The metric is intentionally
+away from 1 in practice; values near 0.9 indicate low pairwise 3-mer Jaccard similarity to any
+individual checked training AMP, not an absence of shared 3-mers or
+sequence-level novelty. The metric is intentionally
 cheap and interpretable; alignment-based novelty would be stricter and is
 listed as future work.
