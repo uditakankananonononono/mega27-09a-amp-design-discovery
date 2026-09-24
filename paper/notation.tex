@@ -1,0 +1,23 @@
+\subsection{Notation and organization}
+\begin{table}[h]\centering\caption{Notation used throughout.}
+\begin{tabular}{ll}\hline
+Symbol & Meaning \\ \hline
+$s$, $\ell$ & a peptide sequence and its length \\
+$L$ & encoding length cap (150; 60 in the pilot) \\
+$K_k(s)$ & set of contiguous $k$-mers of $s$ \\
+$E(s)$ & encoded sequence, $\mathbb{R}^{L\times(20+d)}$ \\
+$\tilde A$ & symmetric-normalized shared adjacency \\
+$\hat p$, $f(s)$ & model probability and ensemble logit \\
+$\omega$ & positive-class weight $n_-/n_+$ \\
+$\pi(s)$, $T$ & annealing target measure and temperature \\
+$J(\cdot,\cdot)$ & Jaccard index \\
+$B$ & resampling count (bootstrap or permutation) \\
+\hline\end{tabular}\end{table}
+
+Section 2 situates the work; Section 3 defines the data, clustering, and
+splits; Section 4 defines the models, objective, designer, and statistical
+procedures, with proofs; Section 5 fixes the evaluation metrics; Sections 6
+and 7 report the four studies and analyze their outputs; Section 8 discusses
+findings and limitations; Sections 9--11 cover threats, reproducibility, and
+the software artifact. Appendices give hyperparameters, provenance,
+derivations, and complete listings.

@@ -1,0 +1,88 @@
+\appendix
+\section{Hyperparameters and training protocol}\label{app:hyper}
+\begin{table}[h]\centering\caption{Hyperparameters, fixed across studies unless noted.}
+\begin{tabular}{ll}\hline
+Parameter & Value \\ \hline
+Max sequence length $L$ & 150 (pilot: 60) \\
+PepCNN kernels / channels & width 5, 32 conv channels, 2 layers \\
+PepGNN hidden width & 32, 1 graph-conv layer, $\lambda=1$ self-loops \\
+Optimizer & Adam, lr $10^{-3}$ \\
+Batch size & 128 \\
+Epochs & 8 (pilot: 10) \\
+Loss & weighted BCE, $\omega = n_-/n_+$ \\
+Seeds & 27 (split), 7 (training) \\
+Annealing steps / restarts & 300 steps, 24 restarts, geometric $T: 2.0 \to 0.05$ \\
+Bootstrap resamples $B$ & 2{,}000 \\
+Permutations $B$ & 500 \\
+\hline\end{tabular}\end{table}
+
+Training used the weighted objective of Section 4.4 throughout. The scale-up
+training subsample of 30{,}000 sequences (15{,}000 positive) was drawn
+uniformly from the train split once, then fixed. All models were evaluated on
+the identical held-out test split; no test-point informed any training
+decision. The pilot's 5-fold cross-validation used fold assignments stratified
+by label with the same fixed seed.
+
+\section{Data provenance}\label{app:prov}
+\begin{table}[h]\centering\caption{Fetch provenance (hashes truncated to 16 hex chars as recorded).}
+\begin{tabular}{lll}\hline
+File & Records & Source \\ \hline
+\texttt{uniprot\_kw0929\_all\_10-150.fasta} & 27{,}392 & UniProt REST, reviewed, KW-0929, len 10--150 \\
+\texttt{uniprot\_nonamp\_pool\_10-150.fasta} & 105{,}041 & UniProt REST, reviewed, NOT KW-0929, len 10--150 \\
+\texttt{apd6\_natural\_2024.fasta} & 3{,}306 & aps.unmc.edu APD6 downloads (2024 list) \\
+\texttt{uniprot\_uncharacterized\_10-60.fasta} & 852 & UniProt REST, reviewed, uncharacterized, len 10--60 \\
+\hline\end{tabular}\end{table}
+
+Exact URLs, byte counts, SHA-256 prefixes, and UTC fetch timestamps are logged
+in \texttt{data/raw/large\_provenance.json} and
+\texttt{data/raw/uncharacterized\_provenance.json} in the repository. All
+fetches occurred on September 24, 2026.
+
+\section{Full design and screen listings}\label{app:full}
+Table~\ref{tab:designs} lists the top 10 of 24 scale-up anneals; the remaining
+14 scored between 0.877 and 0.905 with novelty 0.89--0.95 and are recorded in
+\texttt{results/study07\_scaleup.json}. Table~\ref{tab:screen} lists the top
+15 of the 852 screened uncharacterized proteins; the full top 25, including
+CNN and GNN sub-scores, sequences, and headers, is recorded in
+\texttt{results/study08\_discovery.json}. The duplicate top hit
+(P0ACW4/P0ACW5) arises from two accessions carrying an identical 57-residue
+sequence; we report both rather than silently de-duplicating, and flag it so
+downstream users do not count it as independent evidence.
+
+\section{Additional derivations}\label{app:math}
+\begin{lemma}[Union-find clustering complexity]
+Construction of the shared-$k$-mer clusters of Definition~\ref{def:cluster}
+over $n$ sequences of total length $M$ runs in $O(M k\, \alpha(n))$ expected
+time and $O(n + U)$ space, where $U$ is the number of distinct $k$-mers.
+\end{lemma}
+\begin{proof}
+Each sequence contributes at most $\ell - k + 1$ $k$-mers; hashing each
+$k$-mer to its first-seen sequence costs $O(1)$ expected time, so building
+the map costs $O(Mk)$ expected time. Each sequence then unions with the
+first-seen owner of each of its $k$-mers: at most $O(Mk)$ union operations,
+each $O(\alpha(n))$ amortized by path compression with union by rank.
+Storage is one parent pointer per sequence and one hash entry per distinct
+$k$-mer.
+\end{proof}
+
+\begin{proposition}[Permutation test validity]
+If $(y_i, s_i)$ are exchangeable under $H_0$, the Monte Carlo $p$-value
+$\hat p = (1 + \sum_b \mathbf{1}[T_b \ge T_{\mathrm{obs}}])/(1+B)$ satisfies
+$P(\hat p \le u) \le u$ for all $u \in [0,1]$ under $H_0$.
+\end{proposition}
+\begin{proof}
+Under exchangeability the observed statistic and the $B$ permuted statistics
+are exchangeable, so the rank of $T_{\mathrm{obs}}$ among the $B+1$ values is
+uniform on $\{1,\dots,B+1\}$, with ties broken at random. Hence
+$\hat p$ is uniform on $\{1/(B+1), \dots, 1\}$ up to ties, and
+$P(\hat p \le u) \le u$ follows.
+\end{proof}
+
+\begin{remark}[Why not asymptotic AUROC intervals]
+The DeLong estimator assumes a fixed score function and i.i.d.\ pairs; our
+evaluation resamples \emph{clusters}, and cluster-level dependence violates
+the i.i.d.\ assumption at the sequence level. The percentile bootstrap at the
+sequence level is itself optimistic for the same reason; a cluster-level
+bootstrap is the fully conservative choice and is left as an extension
+noted in the repository's issue tracker.
+\end{remark}

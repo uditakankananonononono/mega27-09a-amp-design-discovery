@@ -1,0 +1,38 @@
+\subsection{Metric definitions and identities}
+All recognition claims use two threshold-free metrics.
+\begin{definition}[AUROC]
+For scores $s_i$ and labels $y_i\in\{0,1\}$,
+$\mathrm{AUROC} = P(s_i > s_j \mid y_i{=}1, y_j{=}0) + \tfrac12 P(s_i = s_j)$,
+the area under the receiver operating characteristic curve traced by varying
+the decision threshold.
+\end{definition}
+\begin{proposition}[Mann--Whitney identity]\label{prop:mw}
+Let $U$ be the number of positive--negative pairs with $s_i > s_j$ plus half
+the ties. Then $\mathrm{AUROC} = U/(n_+ n_-)$ exactly, and under the null of
+no label information $\mathrm{AUROC}$ concentrates around $1/2$ with
+variance $(n_+ + n_- + 1)/(12 n_+ n_-)$.
+\end{proposition}
+\begin{proof}[Proof sketch]
+The ROC curve is the empirical survival function of positive scores against
+that of negatives; integrating by parts turns the area into the pairwise
+probability. The variance formula is the standard Mann--Whitney null variance
+under exchangeability of the pooled sample.
+\end{proof}
+\begin{definition}[AUPRC]
+With precision $\pi(t) = P(y{=}1 \mid s \ge t)$ and recall
+$\rho(t) = P(s \ge t \mid y{=}1)$, $\mathrm{AUPRC} = \int_0^1 \pi\, d\rho$,
+estimated by average precision.
+\end{definition}
+AUPRC is the more sensitive metric under class imbalance because it ignores
+true negatives entirely; our test split is balanced, so the two metrics track
+each other, and the observed AUPRC gaps (e.g.\ GNN $0.680$ vs CNN $0.879$ on
+the scale-up test) are the more informative signal of ranking quality in the
+high-score region that the design and screen stages consume.
+
+\subsection{Operating points}
+The 5\% FPR operating point used for APD6 sensitivity is chosen on the
+held-out negatives only: the threshold is the 95th percentile of ensemble
+scores over the 2{,}925 test negatives, then applied to the APD6 positives.
+Because the threshold never touches the positive scores, the sensitivity
+estimate is an honest one-sided generalization measurement rather than a
+fitted operating point.

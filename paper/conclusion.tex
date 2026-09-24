@@ -1,0 +1,21 @@
+\section{Conclusion}
+Under evaluation that controls homology leakage, a small convolutional
+network recognizes antimicrobial peptides with held-out AUROC $0.921$ and
+transfers to an independently curated database at $0.926$, while
+composition-based baselines plateau near $0.88$ and a chain-graph network
+adds nothing. The same models drive a provably correct annealing designer
+and a screen over uncharacterized proteins whose outputs are ranked, novel,
+and honestly labeled as hypotheses. The strongest claims we make are the
+ones the data carry: the pipeline is sound, the external transfer is real,
+and every number in this paper regenerates from checked-in artifacts.
+
+\subsection{Future work}
+Four extensions follow directly. (1) Activity-annotated benchmarking against
+DBAASP once programmatic access is workable, replacing binary labels with
+potency regression. (2) Alignment-based clustering (MMseqs2) to replace the
+10-mer criterion, with a cluster-level bootstrap for intervals. (3) Structure
+awareness: predicted contact maps or ESM-style embeddings as GNN edges and
+features, which is the honest test of whether graph models help once the
+graph carries real information. (4) Ablations of the encoding and the
+training budget on the full 40k train split with more epochs, now that the
+pipeline cost model is understood.

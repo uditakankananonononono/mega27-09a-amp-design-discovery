@@ -1,0 +1,19 @@
+\section{Software}\label{sec:software}
+The \texttt{pepdesign} package accompanying this paper has four modules.
+\texttt{pepdesign.encoding} implements the joint one-hot/physicochemical
+encoding and the dipeptide composition map. \texttt{pepdesign.models}
+contains \texttt{PepCNN}, \texttt{PepGNN}, and the training/prediction
+helpers, including the shared-adjacency batch path used at scale.
+\texttt{pepdesign.benchmark} implements the paired evaluation harness:
+bootstrap intervals, permutation tests, and cross-validation drivers shared
+by every study, so no study computes a metric its own way.
+\texttt{pepdesign.design} implements the annealing designer and the $k$-mer
+novelty score. The \texttt{studies/} directory holds one script per study
+(\texttt{study01}, \texttt{study07}, \texttt{study08}, \texttt{study09}),
+plus the fetch and dataset-build scripts; \texttt{tests/} holds 21 hermetic
+unit tests covering encoding shapes, model forward passes, the designer's
+acceptance rule, and metric correctness against brute-force references, all
+green at submission. Fetch scripts are the only components that touch the
+network, and every fetched file carries a provenance record
+(Appendix~\ref{app:prov}); every figure and table in this paper is
+regenerated from \texttt{results/*.json} by \texttt{studies/make\_paper\_assets.py}.

@@ -1,0 +1,25 @@
+\section{Threats to Validity}
+\textbf{Label noise.} KW-0929 annotation is literature-derived and not
+uniformly experimentally verified; negative labels are absence of annotation,
+not measured inactivity. Both noise sources bias metrics downward, so our
+numbers are, if anything, conservative.
+
+\textbf{Corpus shift.} UniProt and APD6 overlap through shared primary
+literature. The 10-mer decontamination removed 1{,}795 of 3{,}207 usable APD6
+entries, indicating substantial overlap; the retained 1{,}412 are the hard,
+non-memorized cases, and the external AUROC of $0.926$ is measured on those.
+
+\textbf{Split strictness.} Shared-10-mer clustering is stricter than typical
+identity thresholds for short peptides and may split some true homolog pairs
+that lack an exact decamer. A sensitive-alignment-based clustering (e.g.\
+MMseqs2) is a planned upgrade; we expect similar conclusions at slightly
+higher absolute numbers.
+
+\textbf{Multiple comparisons.} Four models on three evaluations share one
+test split; we report all planned comparisons with intervals rather than
+selecting the best, and the permutation calibration ($p=0.0020$ at $B=500$)
+is a resolution limit, not a sharp $p$-value.
+
+\textbf{Sandbox constraints.} Truncating training at 30{,}000 sequences and 8
+epochs caps absolute performance; the internal/external agreement suggests
+the cap costs little, but the claim is about the pipeline, not a ceiling.

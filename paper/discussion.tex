@@ -1,0 +1,35 @@
+Three findings survive scrutiny. First, a modest 1-D convolutional network
+over one-hot plus physicochemical encodings is a strong AMP recognizer under
+leakage-controlled evaluation (AUROC $0.921$ internal, $0.926$ external on
+APD6), and it scales where composition baselines saturate. Second, the chain
+graph network underperforms the CNN at every scale we tested; without
+contact-map or structure-derived edges, message passing along the backbone
+adds parameters and optimization difficulty without adding information the
+convolutions lack. We keep the GNN in the paper as a negative architectural
+result. Third, random-split benchmarks in this domain are optimistically
+biased: the same model family scored $\sim$0.95 AUROC under naive
+cross-validation on a small corpus and $0.92$ under cluster-aware splitting
+on a corpus $18\times$ larger, and the relative ranking of baselines changed
+with the split discipline.
+
+Limitations are real. The negative class is ``not annotated antimicrobial in
+UniProt,'' which is not the same as experimentally non-antimicrobial; some
+fraction of negatives are surely unrecognized AMPs, biasing all reported
+metrics conservatively. The training distribution is dominated by short
+cationic peptides, so APD6 families outside that mold (anionic AMPs, longer
+disulfide-stabilized peptides) are systematically underscored, as the 0.601
+sensitivity at 5\% FPR quantifies. The annealed designs and screen hits carry
+no experimental validation; their novelty scores are sequence-level, not
+structural. DBAASP was unreachable programmatically during this work (its
+full-dataset endpoint returns an empty body without an interactive session),
+so the APD6 list served as the sole external benchmark; adding DBAASP's
+activity-annotated records is the natural next validation. Finally, the
+sandbox budget (2 CPU, 2 GB RAM) capped model size, epochs, and the training
+subsample; larger models on the full 40k train split would likely improve the
+numbers, but not the conclusions.
+
+Verdict: PepCNN is a solid, honestly-evaluated AMP classifier with verified
+cross-database transfer, and the annealing designer plus discovery screen are
+useful prioritization tools. Nothing here is a claimed therapeutic or a
+benchmark record; the contribution is a leakage-controlled pipeline, an
+external-validation result, and a set of ranked hypotheses.

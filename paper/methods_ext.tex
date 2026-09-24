@@ -1,0 +1,45 @@
+\subsection{Encoding details}
+The physicochemical channel block $Z$ replicates, at every position, a
+per-residue vector of standardized scales: Kyte--Doolittle hydrophobicity,
+net charge at physiological pH ($+1$ for K/R, $-1$ for D/E, $+0.1$ for H),
+molecular volume, polarity, and a helix propensity index. Each scale is
+min-max standardized over the 20 residues. Concatenating $Z$ with the one-hot
+block lets the first convolution learn jointly over identity and property
+space; ablations are out of scope for the sandbox budget but are noted as
+future work.
+
+\subsection{Graph propagation, derived}
+The GNN layer of Section 4.3 can be written as a fixed two-step filter. With
+$\tilde A = D^{-1/2}(A_{\text{chain}} + \lambda I)D^{-1/2}$, one application
+replaces each residue's features by a degree-weighted mean of itself and its
+chain neighbors, followed by a shared linear map $W$ and nonlinearity. For
+the infinite chain the filter approximates, in the graph-Fourier basis, a
+low-pass kernel: eigenvalues of $\tilde A$ cluster in $[0, 2)$, and powers of
+$\tilde A$ contract high-frequency components at rate $(1-\mu_2)^t$ where
+$\mu_2$ is the spectral gap. A single layer therefore smooths residue
+features over a window of two positions --- strictly less positional context
+than a width-5 convolution, which is the simplest explanation of the observed
+performance gap (Tables~\ref{tab:pilot}--\ref{tab:apd}). Stacking layers
+widens the smoothing window but shrinks gradients and, for a chain, cannot
+recover the position-selective max-pooling that drives the CNN.
+
+\begin{proposition}[Shared-adjacency batching is exact]
+For a batch of $n$ sequences sharing $\tilde A$, broadcasting one matrix
+$\tilde A$ against the stacked feature tensor $X\in\mathbb{R}^{n\times L\times F}$
+computes exactly the $n$ independent products $\tilde A X_i$.
+\end{proposition}
+\begin{proof}
+The broadcast product $Y = \tilde A X$ has entries
+$Y_{bij} = \sum_k \tilde A_{ik} X_{bkj} = (\tilde A X_b)_{ij}$ by definition
+of matrix multiplication along the last two axes.
+\end{proof}
+
+\subsection{Novelty metric}
+The design and screen tables report
+$\mathrm{novelty}(s) = 1 - \max_{c \in C} J(K_3(s), K_3(c))$ where $C$ is the
+AMP training corpus and $J$ the Jaccard index over 3-mer sets. Three-mers are
+short enough that even unrelated peptides share some, so novelty is bounded
+away from 1 in practice; values near 0.9 indicate essentially no local
+compositional overlap with any training AMP. The metric is intentionally
+cheap and interpretable; alignment-based novelty would be stricter and is
+listed as future work.

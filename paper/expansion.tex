@@ -1,0 +1,64 @@
+\subsection{Dataset statistics}
+Table~\ref{tab:stats} summarizes the final corpus. Length matching is
+essentially exact (means 93.1 vs 93.2, medians 84 vs 86), so length itself is
+nearly uninformative as a feature --- any signal the models exploit is
+compositional or positional. Composition differs in the expected directions:
+positives are enriched in cysteine (6.8\% vs 1.5\%), reflecting the many
+disulfide-stabilized AMP families, and are modestly depleted in the acidic
+residues D/E and the aliphatic I/V; the canonical cationic residues K and R
+are actually \emph{more} frequent in the negative pool (14.6\% vs 11.9\%
+combined), because cytosolic proteins are themselves lysine-rich. Net charge
+alone is therefore a weaker discriminator on this corpus than textbook
+descriptions of AMPs suggest, which is one reason composition-only baselines
+saturate.
+
+\begin{table}[h]\centering\caption{Corpus statistics (all splits combined).}
+\label{tab:stats}
+\begin{tabular}{lcc}\hline
+ & Positives & Negatives \\ \hline
+$n$ & \Npos{} & \Nneg{} \\
+Mean length (aa) & 93.1 & 93.2 \\
+Median length (aa) & 84 & 86 \\
+Range (aa) & 10--150 & 10--150 \\
+Cys (\%) & 6.8 & 1.5 \\
+Lys+Arg (\%) & 11.9 & 14.6 \\
+Asp+Glu (\%) & 9.1 & 11.4 \\
+Ile+Val (\%) & 10.7 & 13.5 \\
+Trp (\%) & 1.5 & 0.9 \\
+\hline\end{tabular}\end{table}
+
+\subsection{Baselines}
+The logistic-regression and random-forest baselines use dipeptide composition:
+a sequence is mapped to the 400-vector of frequencies
+$x_{ab} = \#\{i : s_i s_{i+1} = ab\}/(\ell-1)$ over the 20$\times$20 ordered
+residue pairs. Dipeptides are the standard strongest composition feature for
+peptide classification, capturing nearest-neighbor preferences that single
+amino-acid frequencies miss. The forest uses 300 trees with default depths;
+logistic regression uses $L_2$ regularization at $C=1$. Both are fit on the
+same splits and subsamples as the neural models, so every comparison is
+paired.
+
+\subsection{Ensemble}
+The ensemble score is the unweighted mean of the CNN and GNN probabilities,
+$s_{\text{ens}} = (s_{\text{CNN}} + s_{\text{GNN}})/2$. It is used only for
+the design and screen stages; for recognition claims we report each model
+individually, since averaging with the weaker GNN dilutes the CNN
+(Table~\ref{tab:apd}).
+
+\subsection{Training dynamics}
+On the scale-up split, the weighted-BCE loss of the CNN fell from $0.107$
+after the first epoch to a stable plateau; the GNN descended from $0.501$ to
+$\sim$0.33 over its 8 epochs and did not overfit visibly. Validation
+selection was not used for the final numbers: all architectures and epoch
+counts were fixed before the test split was scored, so the test metrics are
+single-shot, not best-of-many.
+
+\subsection{Compute budget}
+All training ran on a 2-CPU, 2\,GB RAM sandbox. Feasibility drove three
+choices: the 30{,}000-sequence training subsample, the 8-epoch budget, and
+the shared-adjacency formulation of the GNN (Section 4.3), without which a
+single batch of $L\times L$ per-sample adjacency matrices would exceed
+memory by two orders of magnitude. We regard the sandbox constraint as
+methodologically informative: it is roughly the budget available to a
+student laptop, and the pipeline is deliberately sized to remain reproducible
+there.

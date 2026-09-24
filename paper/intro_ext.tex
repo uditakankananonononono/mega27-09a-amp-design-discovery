@@ -1,0 +1,45 @@
+\subsection{Biological setting}
+AMPs are produced across all domains of life. The canonical family --- short,
+net-cationic, amphipathic peptides such as magainins, LL-37, and the
+defensins --- partitions into microbial membranes and kills by
+permeabilization, but the known universe also includes anionic AMPs,
+glycine-rich peptides, proline-rich peptides that enter cells and inhibit
+translation, and larger disulfide-stabilized folds. This mechanistic variety
+is the central recognition challenge: there is no single sequence signature,
+and any single-feature rule (charge, hydrophobic moment, length) fails on
+whole families. It is also why we treat sensitivity numbers honestly: a model
+trained on a corpus dominated by short cationic peptides should not be
+expected to score disulfide-locked anionic families highly, and ours does not
+(Section 7.3).
+
+\subsection{Contributions}
+\begin{enumerate}
+\item A fully provenance-logged, leakage-controlled AMP benchmark:
+24{,}628 reviewed UniProt KW-0929 positives against 24{,}628 length-matched
+reviewed negatives, clustered by shared exact 10-mers into 12{,}110
+components and split 80/10/10 by cluster, with all fetch URLs, hashes, and
+timestamps recorded.
+\item A paired comparison of two neural architectures and two composition
+baselines under this split, with bootstrap intervals and permutation tests
+computed by one shared harness: PepCNN attains AUROC $0.921$ [0.913, 0.929],
+significantly ahead of all baselines; the graph model is a reported negative
+result.
+\item External validation on the APD6 2024 natural AMP list after strict
+decontamination: PepCNN transfers at AUROC $0.926$ [0.918, 0.934], with
+sensitivity $0.601$ at a 5\% false-positive rate --- evidence of real
+cross-database generalization and an honest bound on its reach.
+\item A provably correct Metropolis--Hastings designer
+(Theorem~\ref{thm:mh}) producing 24 ranked novel candidates, and a discovery
+screen over 852 reviewed uncharacterized proteins producing 25 ranked
+hypotheses, all clearly labeled as in-silico.
+\item A reproducible software artifact: the \texttt{pepdesign} package, four
+study scripts, a 21-test hermetic suite, and regeneration of every table and
+figure in this paper from checked-in result files.
+\end{enumerate}
+
+\subsection{Scope}
+This paper is item 9 part 1 of the MEGA-Program-27 series and is deliberately
+bounded: recognition, design, and screening of AMPs. Activity prediction
+against specific strains, toxicity estimation, secondary-structure
+validation, and wet-lab follow-up are out of scope and are the natural
+subjects of subsequent items.
