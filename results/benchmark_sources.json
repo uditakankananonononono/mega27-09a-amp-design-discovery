@@ -1,0 +1,38 @@
+{
+  "veltri_source": "https://github.com/dan-veltri/amp-scanner-v2/tree/main/original-dataset",
+  "feb2020_source": "https://www.dveltri.com/ascan/v2/news.html",
+  "files": {
+    "AMP.eval.fa": {
+      "sha256": "482b7af2c1b90575d8d78583f1fdc3511195a369e2cceb4b19a0475ec13155fa",
+      "records": 354
+    },
+    "DECOY.te.fa": {
+      "sha256": "ecc7753a2991c0a312d478227208484365fb218091047c1bb49f1243044724a3",
+      "records": 712
+    },
+    "AMP.te.fa": {
+      "sha256": "f25809eef0a24e58267b70f40f29be64d85bbe6a3968e5c04eab3f43518b2ae4",
+      "records": 712
+    },
+    "DECOY.eval.fa": {
+      "sha256": "86914571fee31c0311b02ed0fce5c93ba5d2f83ac6f001087ab2f68c855c1fe5",
+      "records": 354
+    },
+    "AMP.tr.fa": {
+      "sha256": "9cccc769cf4278898d6a629db8065bdf3f6b7ad8a586cf6be493f4502c918c4b",
+      "records": 712
+    },
+    "DECOY.tr.fa": {
+      "sha256": "e4b31fd721f0e60f4e2d88084f72030e584ab827d90362472c36c7b6224b7020",
+      "records": 712
+    },
+    "AMPS_02182020.fasta": {
+      "sha256": "1bdbdaf7da2ad05cbfc79faa976ae3877b7c154f493e525ad8593486b5dfee87",
+      "records": 2021
+    },
+    "DECOYS_02182020.fasta": {
+      "sha256": "704aea75885d65dae68be963c8147f747bf8735f86fac2bf467ce936cebdb172",
+      "records": 2021
+    }
+  }
+}

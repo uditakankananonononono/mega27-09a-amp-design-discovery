@@ -1,12 +1,11 @@
-"""Study 13 - head-to-head vs the AMP Scanner Vr.2 Feb2020 production model
+"""Study 14 - full-record audit of the AMP Scanner Vr.2 Feb2020 production model
 on its own benchmark (published 10-fold CV protocol).
 
 Data: AMP_Scan2_Feb2020_Dataset.zip from dveltri.com/ascan/v2/news.html
-(2,021 AMP + 2,021 non-AMP originally; this ablation filters 9
-sequences over 150 aa and removes X from two others, so it cannot support
-a directly comparable benchmark claim). Published Feb2020 10-fold CV numbers (news page):
+(2,021 AMP + 2,021 non-AMP, the exact sequences the Feb2020 server model
+was built on). Published Feb2020 10-fold CV numbers (news page):
   SENS 90.6% SPEC 89.1% ACC 89.9% MCC 0.799 auROC 96.2%
-Protocol: 10-fold stratified CV on the filtered data. Base learners: PepCNN x2 seeds,
+Protocol: same 10-fold stratified CV. Base learners: PepCNN x2 seeds,
 PepGNN (shared adj) x1, RF on AAC+dipeptide+physicochemical descriptors.
 Ensemble: unweighted average, threshold 0.5 (no tuning, fully nested).
 Reported: mean +/- sd across folds for SENS/SPEC/ACC/MCC/AUROC, plus the
@@ -30,7 +29,7 @@ from pepdesign.models.ensemble import (train_binary, predict_scores,
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 RAW = ROOT / "data/raw/feb2020"
-MAX_LEN = 150
+MAX_LEN = 200
 FOLDS = 10
 CNN_SEEDS = (7, 27)
 
@@ -67,9 +66,9 @@ def rich_features(seq):
     for i in range(n-1):
         di[seq[i:i+2]] = di.get(seq[i:i+2], 0) + 1
     v += [di.get(a+b, 0)/tot for a in AA for b in AA]
-    kd = [KD[a] for a in seq]
+    kd = [KD.get(a,0.0) for a in seq]
     v += [n, net_charge(seq), float(np.mean(kd)), float(np.std(kd)),
-          hydrophobic_moment(seq), float(np.mean([BOMAN[a] for a in seq]))]
+          hydrophobic_moment(seq), float(np.mean([BOMAN.get(a,0.0) for a in seq]))]
     return v
 
 def load_fasta_seqs(path):
@@ -81,9 +80,9 @@ def load_fasta_seqs(path):
                 if cur: seqs.append(cur)
                 cur = ""
             elif line:
-                cur += "".join(ch for ch in line if ch in AA)
+                cur += line
     if cur: seqs.append(cur)
-    return [s for s in seqs if 5 <= len(s) <= 150]
+    return seqs
 
 def cnn_inputs(seqs, max_len):
     return (torch.stack([torch.from_numpy(combined_features(x, max_len)) for x in seqs]),)
@@ -94,11 +93,13 @@ def main():
     seqs = amp + dec
     y = np.array([1]*len(amp) + [0]*len(dec))
     print(f"dataset: {len(amp)} AMP + {len(dec)} decoy = {len(seqs)}", flush=True)
+    assert (len(amp),len(dec)) == (2021,2021)
+    assert max(map(len,seqs)) <= MAX_LEN
 
     published = {"sens":0.906,"spec":0.891,"acc":0.899,"mcc":0.799,"auc":0.962}
     results = {"benchmark": "AMP Scanner Vr.2 Feb2020 dataset (dveltri.com)",
                "n_amp": len(amp), "n_decoy": len(dec),
-               "protocol": "10-fold stratified CV, avg ensemble (2x PepCNN + PepGNN + RF-rich), thr 0.5",
+               "protocol": "10-fold stratified CV, avg ensemble (2x PepCNN + PepGNN + RF-rich), thr 0.5, all 4042 original sequences retained (X treated as unknown)",
                "published_feb2020_cv": published}
 
     oof_sum = np.zeros(len(seqs)); oof_cnt = np.zeros(len(seqs))
@@ -151,7 +152,7 @@ def main():
                               "delta_mean": mean_sd[k][0] - published[k]}
                           for k in published}
     print(json.dumps(results["verdict"], indent=2), flush=True)
-    out = ROOT/"results/study13_feb2020_cv.json"
+    out = ROOT/"results/study14_feb2020_full.json"
     out.write_text(json.dumps(results, indent=2))
     print(f"wrote {out}", flush=True)
 

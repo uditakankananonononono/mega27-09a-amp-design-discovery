@@ -1,0 +1,27 @@
+\section{Software tool: \texttt{pepdesign screen}}
+\label{sec:tool}
+
+The CLI combines model scoring with an explicit pairwise 3-mer novelty
+audit. We have not established that this combination is unique among
+existing AMP tools. The package shipped with
+this project exposes one command that does both in one pass:
+
+\begin{verbatim}
+pepdesign screen CANDIDATES.fasta --cnn CNN.pt --gnn GNN.pt \
+    --reference APD6.fasta --novelty-floor 0.5 --top 25 --out screen.json
+\end{verbatim}
+
+For every input sequence the tool emits the CNN and GNN scores, their
+ensemble, the 3-mer novelty of Equation~\eqref{eq:novelty} against the
+reference corpus, the maximum 3-mer Jaccard against any single reference,
+and a pass/fail flag at the requested novelty floor, ranked by ensemble
+score. The implementation is \texttt{pepdesign/cli.py} (about 100 lines), covered
+by three hermetic tests (FASTA parsing; ranking plus audit on a duplicated
+reference, which must score Jaccard 1.0 and novelty $<0.05$; end-to-end
+JSON output). The full suite is 24 tests, all hermetic.
+
+As a functional check we ran the tool over the 852-protein uncharacterized
+corpus of Section~\ref{sec:candidates} with the study-07 checkpoints and
+the APD6 reference: it reproduces the study-08 ranking exactly (top hit
+\texttt{P0ACW4}, ensemble 0.9082, novelty 0.938), confirming that the
+delivered command, not a private script, produces the reported screen.

@@ -42,7 +42,6 @@ BOMAN = {"A":1.81,"R":-1.10,"N":0.76,"D":0.70,"C":1.09,"Q":0.67,"E":0.36,
 AA = "ACDEFGHIKLMNPQRSTVWY"
 
 def net_charge(seq, ph=7.4):
-    q = 10**PKA.get("K",0)/(10**ph+10**PKA["K"]) * 0  # placeholder
     pos = sum(10**PKA[a]/(10**ph+10**PKA[a]) for a in seq if a in ("K","R","H"))
     neg = sum(10**ph/(10**ph+10**PKA[a]) for a in seq if a in ("D","E","C","Y"))
     pos += 10**7.0/(10**ph+10**7.0)   # N-terminus

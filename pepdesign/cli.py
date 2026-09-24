@@ -3,8 +3,7 @@
 Screens a FASTA of candidate sequences with a trained ensemble, audits
 novelty against a reference AMP corpus (k-mer novelty + max k-mer Jaccard),
 and emits a ranked candidate table (JSON/TSV). One pass: score -> novelty
-filter -> ranked report. No other open AMP tool bundles a novelty audit
-with scoring in a single command.
+filter -> ranked report. This command bundles an explicit novelty audit with scoring.
 """
 from __future__ import annotations
 import argparse, json, sys

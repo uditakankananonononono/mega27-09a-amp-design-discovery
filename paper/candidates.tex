@@ -1,0 +1,71 @@
+\section{Discovery candidates: named, quantified, falsifiable}
+\label{sec:candidates}
+
+The study-08 screen scored 852 reviewed uncharacterized UniProt proteins of
+10--60 residues with the study-07 ensemble. Here we audit the top unique
+hits for novelty and characterize them physicochemically, and we evolve one
+annealed variant. Every candidate below is \emph{named}, carries a
+\emph{quantified} score and novelty audit, and a \emph{falsifiable}
+prediction.
+
+\subsection{Novelty audit protocol}
+For each candidate $s$ we compute (i) the maximum 3-mer Jaccard similarity
+against all 3{,}283 usable APD6 2024 natural AMPs, (ii) the longest common
+substring against the first 2{,}000 APD6 entries, (iii) the maximum 3-mer
+Jaccard against a 6{,}000-sequence subsample of the UniProt KW-0929 AMP
+corpus, and (iv) the 3-mer novelty $\nu_3$ of
+Equation~\eqref{eq:novelty}. A candidate has low pairwise 3-mer similarity when its closest checked reference has low Jaccard similarity; this does
+not establish global sequence novelty or biological activity.
+
+\subsection{Candidate table}
+\begin{table}[h]\centering\small
+\caption{Named discovery candidates. ens = ensemble $p(\mathrm{AMP})$;
+$J_3^{\mathrm{APD6}}$ = max 3-mer Jaccard vs APD6; LCS = longest common
+substring vs APD6; $Q$ = net charge at pH 7.4 (Eq.~\eqref{eq:netcharge});
+$\langle h\rangle$ = mean Kyte--Doolittle hydropathy; $\mu_H$ = Eisenberg
+moment (Eq.~\eqref{eq:hmoment}); $B$ = Boman index.}
+\label{tab:candidates}
+\begin{tabular}{llcccccccc}
+\hline
+Name & Accession & Len & ens & $J_3^{\mathrm{APD6}}$ & LCS & $Q$ & $\langle h\rangle$ & $\mu_H$ & $B$ \\
+\hline
+InstiAMP-09a-1 & P0ACW4 & 57 & 0.908 & 0.062 & 6 & 4.87 & 0.08 & 1.18 & 1.09 \\
+InstiAMP-09a-2 & Q8TGN5 & 46 & 0.890 & 0.054 & 4 & -0.76 & -0.17 & 1.74 & 1.59 \\
+InstiAMP-09a-3 & P64654 & 43 & 0.836 & 0.059 & 4 & 0.83 & 0.07 & 1.62 & 1.09 \\
+InstiAMP-09a-4 & P85380 & 10 & 0.804 & 0.091 & 4 & 0.17 & 1.00 & 0.85 & 1.19 \\
+InstiAMP-09a-5 & Q8TGN0 & 38 & 0.793 & 0.055 & 4 & 1.10 & -0.17 & 1.21 & 1.16 \\
+InstiAMP-09a-6 & Q8TGT5 & 39 & 0.784 & 0.071 & 4 & 4.87 & 0.29 & 1.52 & 1.00 \\
+InstiAMP-09a-7 & Q54HM1 & 54 & 0.734 & 0.036 & 4 & -2.12 & -0.42 & 1.78 & 1.15 \\
+InstiAMP-09a-8 & O55758 & 53 & 0.728 & 0.068 & 5 & -0.61 & 1.02 & 1.57 & 1.39 \\
+InstiAMP-09a-1a & -- & 57 & 0.918 & 0.055 & -- & 2.87 & -0.27 & 1.69 & 1.26 \\
+\hline
+\end{tabular}
+\end{table}
+
+\subsection{Sequences}
+\begin{description}
+\item[InstiAMP-09a-1.] \texttt{MKKLALILFMGTLVSFYADAGRKPCSGSKGGISHCTAGGKFVCNDGSISASKKTCTN}
+\item[InstiAMP-09a-2.] \texttt{MKTWMYSYLFDCPILVLPWTPHNYYLYHRFHHFLPLCYWHYSADTY}
+\item[InstiAMP-09a-3.] \texttt{MYRRLLLNLFCMVFLQACLKPMSDPKAEKVDSQVQCGFGSKDC}
+\item[InstiAMP-09a-4.] \texttt{LGICFASMPR}
+\item[InstiAMP-09a-5.] \texttt{MFKQPGHLTSRKYDLGPWTNVFNLCFLASEAAVGCNKS}
+\item[InstiAMP-09a-6.] \texttt{MKGSKLFQMQKCMPVWCRTGTCIILPVACHMAKPLKLPT}
+\item[InstiAMP-09a-7.] \texttt{MSINIVHSNENNEENTNIENWTTTGTNYRNECIARCGRLFSGFNALICMKPCGV}
+\item[InstiAMP-09a-8.] \texttt{MSILLKILFKLLLLILSITFVITDCLPRSCASFGCCSGNCATWCDQCDIKYSC}
+\item[InstiAMP-09a-1a.] \texttt{QNTWTIICTTMWDSHRRRDPYNPYMVWRRMKTFCNTKEALWFVGICPFNFCVFLTTY}
+\end{description}
+
+\subsection{Falsifiable predictions}
+Each candidate carries the prediction implied by the ensemble decision rule:
+InstiAMP-09a-1 through 09a-4 receive classification scores $\ge 0.80$;
+a testable working hypothesis is that one or more inhibit growth in a standard broth-microdilution
+in an MIC assay against \emph{E.~coli} K-12 and \emph{S.~aureus} ATCC 25923;
+InstiAMP-09a-1a, an annealed derivative of 09a-1 not identical to entries in the checked
+corpora (max 3-mer Jaccard 0.055 vs APD6, 0.042 vs the KW-0929 subsample),
+scores $0.918$, higher than its parent $0.908$. A higher model score is not
+a prediction of lower MIC. The uncharacterized protein P0ACW4 has an
+annotated N-terminal signal peptide, so secretion may drive the model score.
+All nine sequences require synthesis, a standardized MIC assay, and
+cytotoxicity testing before an antimicrobial claim. The eight source
+proteins are known sequences; the finding is a ranked, testable functional
+hypothesis, not the discovery of a new molecule.

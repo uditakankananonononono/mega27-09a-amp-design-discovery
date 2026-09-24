@@ -16,7 +16,7 @@
       },
       "physicochemical": {
         "length": 57,
-        "net_charge_ph7.4": 0.21,
+        "net_charge_ph7.4": 4.87,
         "kd_mean": 0.08,
         "hydrophobic_moment": 1.18,
         "boman": 1.09
@@ -39,7 +39,7 @@
       },
       "physicochemical": {
         "length": 46,
-        "net_charge_ph7.4": 0.21,
+        "net_charge_ph7.4": -0.76,
         "kd_mean": -0.17,
         "hydrophobic_moment": 1.74,
         "boman": 1.59
@@ -62,7 +62,7 @@
       },
       "physicochemical": {
         "length": 43,
-        "net_charge_ph7.4": -0.83,
+        "net_charge_ph7.4": 0.83,
         "kd_mean": 0.07,
         "hydrophobic_moment": 1.62,
         "boman": 1.09
@@ -108,7 +108,7 @@
       },
       "physicochemical": {
         "length": 38,
-        "net_charge_ph7.4": -0.79,
+        "net_charge_ph7.4": 1.1,
         "kd_mean": -0.17,
         "hydrophobic_moment": 1.21,
         "boman": 1.16
@@ -131,7 +131,7 @@
       },
       "physicochemical": {
         "length": 39,
-        "net_charge_ph7.4": 1.21,
+        "net_charge_ph7.4": 4.87,
         "kd_mean": 0.29,
         "hydrophobic_moment": 1.52,
         "boman": 1.0
@@ -154,7 +154,7 @@
       },
       "physicochemical": {
         "length": 54,
-        "net_charge_ph7.4": 0.21,
+        "net_charge_ph7.4": -2.12,
         "kd_mean": -0.42,
         "hydrophobic_moment": 1.78,
         "boman": 1.15
@@ -177,7 +177,7 @@
       },
       "physicochemical": {
         "length": 53,
-        "net_charge_ph7.4": 0.17,
+        "net_charge_ph7.4": -0.61,
         "kd_mean": 1.02,
         "hydrophobic_moment": 1.57,
         "boman": 1.39
@@ -194,11 +194,11 @@
       "novelty": {
         "max_3mer_jaccard_vs_APD6": 0.055,
         "max_3mer_jaccard_vs_KW0929": 0.042,
-        "novelty_3mer_vs_APD6": 0.958
+        "novelty_3mer_vs_APD6": 0.945
       },
       "physicochemical": {
         "length": 57,
-        "net_charge_ph7.4": -0.79,
+        "net_charge_ph7.4": 2.87,
         "kd_mean": -0.27,
         "hydrophobic_moment": 1.69,
         "boman": 1.26
@@ -209,5 +209,12 @@
   "novelty_references": {
     "apd6_n": 3283,
     "kw0929_n": 27327
-  }
+  },
+  "caveats": [
+    "3-mer novelty = 1 - maximum pairwise Jaccard against reference; not fraction of novel k-mers",
+    "KW-0929 similarity audit uses a 6,000-sequence subsample, not the full corpus",
+    "Model scores are not calibrated probabilities of MIC/activity",
+    "Candidate P0ACW4 contains an annotated signal peptide (residues 1-20); confounding possible",
+    "No database-wide absence or antimicrobial activity has been established"
+  ]
 }

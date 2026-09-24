@@ -1,0 +1,155 @@
+\subsection{Physicochemical descriptors: definitions and derivations}
+\label{sec:physchem-math}
+
+The discovery audit and the tree-based baseline use four classical
+descriptors. We state them precisely and derive the properties we rely on.
+
+\begin{definition}[Net charge at pH $p$]
+For residue $a$ with side-chain $\mathrm{p}K_a$, the Henderson--Hasselbalch
+equation gives the protonated fraction of a basic group and the
+deprotonated fraction of an acidic group as
+\begin{equation}
+f^{+}_a(p) = \frac{10^{\mathrm{p}K_a}}{10^{p} + 10^{\mathrm{p}K_a}}
+\qquad
+f^{-}_a(p) = \frac{10^{p}}{10^{p} + 10^{\mathrm{p}K_a}},
+\label{eq:hh}
+\end{equation}
+and the expected net charge of sequence $s = s_1\cdots s_n$ at pH $p$ is
+\begin{equation}
+Q(s; p) = f^{+}_{\mathrm{N\text{-}term}}(p)
+  + \!\!\sum_{a \in \{K,R,H\}}\!\! n_a(s)\, f^{+}_a(p)
+  - f^{-}_{\mathrm{C\text{-}term}}(p)
+  - \!\!\sum_{a \in \{D,E,C,Y\}}\!\! n_a(s)\, f^{-}_a(p),
+\label{eq:netcharge}
+\end{equation}
+where $n_a(s)$ counts occurrences of $a$ in $s$ and we use
+$\mathrm{p}K_a$ values $K{=}10.5$, $R{=}12.4$, $H{=}6.0$, $D{=}3.9$,
+$E{=}4.1$, $C{=}8.3$, $Y{=}10.1$, N-terminus $7.0$, C-terminus $2.34$.
+We evaluate $Q(s) := Q(s; 7.4)$.
+\end{definition}
+
+\begin{proposition}[Monotonicity of net charge]
+\label{prop:charge-monotone}
+$Q(s; p)$ is strictly decreasing in $p$ whenever $s$ contains at least one
+ionizable residue, with $\lim_{p\to 0} Q = n_K + n_R + n_H + 1$ and
+$\lim_{p\to\infty} Q = -(n_D + n_E + n_C + n_Y) - 1$.
+\end{proposition}
+\begin{proof}
+Each term in \eqref{eq:hh} is a logistic function of $p$:
+$f^{+}_a(p) = \sigma(\ln 10 \cdot (\mathrm{p}K_a - p))$ is strictly
+decreasing in $p$ and $f^{-}_a(p) = \sigma(\ln 10 \cdot (p - \mathrm{p}K_a))$
+strictly increasing. $Q(s;p)$ is a positive combination of the decreasing
+terms minus a positive combination of the increasing terms, hence strictly
+decreasing whenever at least one coefficient $n_a(s) > 0$. The limits follow
+from $\lim_{x\to-\infty}\sigma(x) = 0$ and $\lim_{x\to\infty}\sigma(x) = 1$
+applied term by term.
+\end{proof}
+
+\begin{definition}[Eisenberg hydrophobic moment]
+For window length $w$ and helix angle $\delta$ ($100^\circ$ for an
+$\alpha$-helix), the hydrophobic moment of window $s_{i+1}\cdots s_{i+w}$
+with Kyte--Doolittle hydropathy values $h_j$ is
+\begin{equation}
+\mu_i(s; w, \delta) = \frac{1}{w}\left[\left(\sum_{j=1}^{w} h_j \cos j\delta\right)^2
+  + \left(\sum_{j=1}^{w} h_j \sin j\delta\right)^2\right]^{1/2},
+\label{eq:hmoment}
+\end{equation}
+and $\mu_H(s) = \max_i \mu_i(s; 11, 100^\circ)$.
+\end{definition}
+
+\begin{remark}
+Equation \eqref{eq:hmoment} is the length of the mean resultant vector of
+the hydropathy values placed at successive residues of a regular helix; it
+is maximal exactly when the hydrophobic residues cluster on one face, the
+amphipathicity that membrane-active helices exploit. This is the standard
+Eisenberg consensus moment.
+\end{remark}
+
+\begin{definition}[Pairwise $k$-mer novelty]
+For sequence $s$, reference corpus $\mathcal R$, and set $K_k(s)$ of
+contiguous $k$-mers, define
+\begin{equation}
+J_k(s,r)=\frac{|K_k(s)\cap K_k(r)|}{|K_k(s)\cup K_k(r)|},\qquad
+\nu_k(s;\mathcal R)=1-\max_{r\in\mathcal R} J_k(s,r).
+\label{eq:novelty}
+\end{equation}
+This is distance from the nearest individual reference under the Jaccard
+metric, not the fraction of $k$-mers missing from the union of the corpus.
+A high score establishes only weak local sequence similarity; it does not
+establish absence from every database or imply a new biological function.
+\end{definition}
+
+\begin{proposition}[Nearest-neighbor interpretation]
+If $\mathcal R$ is finite and nonempty, $0\leq\nu_k\leq1$,
+and $\nu_k(s;\mathcal R)=0$ exactly when at least one reference has the same
+set of $k$-mers as $s$.
+\end{proposition}
+\begin{proof}
+$0\leq |A\cap B|\leq |A\cup B|$ for any nonempty finite sets $A,B$,
+so $0\leq J_k\leq1$. A finite maximum reaches one precisely if
+$K_k(s)=K_k(r)$ for some $r$. Subtracting from one proves both claims.
+Notice that equal $k$-mer sets do not imply identical sequences.
+\end{proof}
+
+\subsection{Stacked generalization}
+\label{sec:stack-math}
+
+Let $b_1, \dots, b_B$ be base scorers trained on the training partition
+and let $z(x) = (b_1(x), \dots, b_B(x))^\top \in [0,1]^B$ be the score
+vector on the tune partition. The stacking rule is the logistic model
+\begin{equation}
+g(x) = \sigma(w^\top z(x) + w_0), \qquad
+\hat w = \arg\min_{w} \sum_{(x,y) \in \mathcal{T}_{\mathrm{tune}}}
+  \ell(y, w^\top z(x) + w_0) + \lambda \|w\|_2^2,
+\label{eq:stack}
+\end{equation}
+with $\ell(y, u) = \log(1 + e^{u}) - yu$.
+
+\begin{proposition}[Convexity and gradient of the stacking objective]
+\label{prop:stack-convex}
+The objective \eqref{eq:stack} is convex in $(w,w_0)$ and strictly convex
+when the augmented tune-partition design matrix $[Z,\mathbf1]$ has full
+column rank and all fitted probabilities lie strictly between zero and one, with gradient
+$\nabla_w = Z^\top(\sigma(Zw + w_0\mathbf 1) - y) + 2\lambda w$.
+\end{proposition}
+\begin{proof}
+$\ell(y, u)$ is convex in $u$ since
+$\partial^2 \ell / \partial u^2 = \sigma(u)(1-\sigma(u)) \ge 0$;
+composition with the affine map $(w,w_0) \mapsto w^\top z + w_0$ preserves
+convexity, and $\lambda\|w\|_2^2$ adds strict convexity in $w$ for
+$\lambda > 0$. Positive logistic curvature plus full rank of the
+augmented design makes the Hessian positive definite. The gradient follows from
+$\partial \ell / \partial u = \sigma(u) - y$ and the chain rule.
+\end{proof}
+
+\subsection{The Matthews correlation coefficient}
+\label{sec:mcc-math}
+
+\begin{proposition}[MCC is a Pearson coefficient]
+\label{prop:mcc}
+For binary predictions $\hat y$ and labels $y$ with confusion counts
+$TP, TN, FP, FN$,
+\begin{equation}
+\mathrm{MCC} = \frac{TP \cdot TN - FP \cdot FN}
+ {\sqrt{(TP{+}FP)(TP{+}FN)(TN{+}FP)(TN{+}FN)}}
+ = \phi(y, \hat y),
+\label{eq:mcc}
+\end{equation}
+the Pearson correlation of the binary vectors; equivalently
+$\mathrm{MCC}^2 = \chi^2 / N$ for the $2\times 2$ contingency table.
+\end{proposition}
+\begin{proof}
+For binary vectors, $\mathrm{cov}(y,\hat y) = \frac{TP}{N} -
+\frac{(TP{+}FN)(TP{+}FP)}{N^2} = \frac{TP \cdot TN - FP \cdot FN}{N^2}$
+after expanding $(TP{+}TN{+}FP{+}FN) = N$, and
+$\mathrm{var}(y) = \frac{(TP{+}FN)(TN{+}FP)}{N^2}$,
+$\mathrm{var}(\hat y) = \frac{(TP{+}FP)(TN{+}FN)}{N^2}$. Substitution into
+$\phi = \mathrm{cov}/\sqrt{\mathrm{var}(y)\mathrm{var}(\hat y)}$ gives
+\eqref{eq:mcc}; the $\chi^2$ identity is the standard
+$\chi^2 = N\phi^2$ for $2 \times 2$ tables.
+\end{proof}
+
+Unlike accuracy, $\mathrm{MCC} = 0$ exactly at the correlation of any
+constant classifier with the labels, so it punishes the majority-class
+strategies that inflate accuracy on imbalanced peptide corpora; we report
+it for every benchmark comparison.

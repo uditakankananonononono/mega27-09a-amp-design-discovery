@@ -3,9 +3,9 @@ Under evaluation that controls homology leakage, a small convolutional
 network recognizes antimicrobial peptides with held-out AUROC $0.921$ and
 transfers to an independently curated database at $0.926$, while
 composition-based baselines plateau near $0.88$ and a chain-graph network
-adds nothing. The same models drive a provably correct annealing designer
-and a screen over uncharacterized proteins whose outputs are ranked, novel,
-and honestly labeled as hypotheses. The strongest claims we make are the
+adds nothing. The same models drive an annealing designer with a proved fixed-temperature balance property
+and a screen over uncharacterized proteins whose outputs are ranked by model score and low pairwise 3-mer similarity,
+but remain biological hypotheses, not validated antimicrobial agents. The strongest claims we make are the
 ones the data carry: the pipeline is sound, the external transfer is real,
 and every number in this paper regenerates from checked-in artifacts.
 

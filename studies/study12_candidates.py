@@ -36,8 +36,8 @@ BOMAN = {"A":1.81,"R":-1.10,"N":0.76,"D":0.70,"C":1.09,"Q":0.67,"E":0.36,
          "P":-0.99,"S":0.54,"T":0.96,"W":3.07,"Y":2.76,"V":2.59}
 
 def net_charge(seq, ph=7.4):
-    pos = sum(10**PKA[a]/(10**ph+10**PKA[a]) for a in set(seq) if a in ("K","R","H"))
-    neg = sum(10**ph/(10**ph+10**PKA[a]) for a in set(seq) if a in ("D","E","C","Y"))
+    pos = sum(10**PKA[a]/(10**ph+10**PKA[a]) for a in seq if a in ("K","R","H"))
+    neg = sum(10**ph/(10**ph+10**PKA[a]) for a in seq if a in ("D","E","C","Y"))
     return pos - neg + 10**7.0/(10**ph+10**7.0) - 10**ph/(10**ph+10**2.34)
 
 def hydrophobic_moment(seq, angle=100.0, window=11):

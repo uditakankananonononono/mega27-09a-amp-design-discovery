@@ -42,7 +42,12 @@ scale and on external validation against the APD6 2024 natural AMP list.
 We prove correctness of the Metropolis--Hastings annealing designer used to
 propose novel candidates, derive the permutation and bootstrap procedures
 used for significance, and report an in-silico discovery screen over 852
-reviewed uncharacterized proteins of 10--60 residues. All results are
+reviewed uncharacterized proteins of 10--60 residues. On the published AMP Scanner Vr.2 benchmark our stacked ensemble is near
+the original model on its own test partition but below the later ACEP model.
+We additionally audit an updated Feb2020 production dataset with 10-fold
+cross-validation; comparability limits and detailed results are reported. Eight screened proteins and one annealed design are named as testable
+candidates with quantified pairwise 3-mer similarity checks against APD6 and
+a UniProt KW-0929 subsample, not established antimicrobial discoveries. All results are
 reproducible from the accompanying repository; claims are limited to what the
 data support.
 \end{abstract}
@@ -132,12 +137,10 @@ entries of length 10--60 whose protein name is ``uncharacterized'' or
 \subsection{Sequence encoding}
 Each sequence $s$ of length at most $L=150$ is encoded as
 $X\in\{0,1\}^{L\times 20}$ (one-hot) concatenated channel-wise with
-row-replicated physicochemical features $Z\in\mathbb{R}^{L\times d}$,
+per-residue physicochemical features $Z\in\mathbb{R}^{L\times d}$,
 $d$ covering hydrophobicity, charge, and related scales, giving
-$E(s)=[X\;Z]\in\mathbb{R}^{L\times(20+d)}$. Zero-padding right-aligns short
-sequences; a mask is unnecessary because the convolutional layers are
-followed by global pooling and padding contributes a constant offset absorbed
-by the bias terms.
+$E(s)=[X\;Z]\in\mathbb{R}^{L\times(20+d)}$. Zero-padding follows the sequence. No explicit mask is used, a potential
+length and padding confound that should be tested in future work.
 
 \subsection{PepCNN}
 PepCNN applies 1-D convolutions of kernel width $k$ over the residue axis,
@@ -145,7 +148,7 @@ PepCNN applies 1-D convolutions of kernel width $k$ over the residue axis,
 H^{(1)} = \phi\!\left(W^{(1)} * E(s) + b^{(1)}\right),\qquad
 H^{(2)} = \phi\!\left(W^{(2)} * H^{(1)} + b^{(2)}\right),
 \]
-with $\phi=\mathrm{ReLU}$, followed by global max-plus-mean pooling and a
+with $\phi=\mathrm{ReLU}$, followed by global max pooling and a
 linear readout $\hat p = \sigma(w^\top h + c)$. Multi-scale motif detectors
 fall out of the learned kernels; max pooling makes the score invariant to
 motif position, matching the biology of membrane-active motifs.
@@ -241,11 +244,16 @@ J(K_3(s), K_3(c))$ over 3-mer Jaccard similarity against the AMP corpus.
 
 \input{methods_ext.tex}
 \input{metrics.tex}
+\input{math_ext2.tex}
 \section{Experiments}\label{sec:results}
 % STUDY07/08/09 RESULT TABLES GO HERE
 \input{experiments.tex}
 \input{expansion.tex}
 \input{results_tables.tex}
+\input{sota_benchmark.tex}
+\begin{figure}[h]\centering\includegraphics[width=0.85\textwidth]{fig_sota.png}\caption{Veltri 2018 test partition: published rows from ACEP Table 2 vs our stacked ensemble.}\label{fig:sota}\end{figure}
+\begin{figure}[h]\centering\includegraphics[width=0.85\textwidth]{fig_feb2020.png}\caption{Per-fold 10-fold CV on the AMP Scanner Feb2020 dataset vs the published production numbers (dashed).}\label{fig:feb2020}\end{figure}
+\input{candidates.tex}
 \begin{figure}[h]\centering\includegraphics[width=0.8\textwidth]{fig_auroc.png}\caption{AUROC across evaluation regimes. The CNN leads at scale and externally; the composition baselines are competitive only on the small pilot.}\label{fig:auroc}\end{figure}
 \begin{figure}[h]\centering\includegraphics[width=0.7\textwidth]{../results/study01_roc.png}\caption{Pilot-study ROC curves (5-fold CV, pooled).}\label{fig:roc}\end{figure}
 
@@ -261,10 +269,11 @@ All datasets are streamed from the UniProt REST API and the APD6 download
 page at run time or read from caches whose provenance (URL, record count,
 byte count, SHA-256 prefix, timestamp) is logged in
 \texttt{data/raw/*provenance.json}. Splits, seeds (27/7), and hyperparameters
-are fixed in the study scripts. The test suite (21 tests) is hermetic; live
+are fixed in the study scripts. The test suite (24 tests) is hermetic; live
 network calls occur only in the fetch scripts.
 
 \input{software.tex}
+\input{tool.tex}
 \input{appendix.tex}
 \input{listings.tex}
 \begin{thebibliography}{9}
@@ -280,6 +289,9 @@ knowledgebase in 2025. \emph{Nucleic Acids Research} 53(D1), D609--D617, 2025.
 \bibitem{camp} Waghu, F.H., et al. CAMP: Collection of sequences and
 structures of antimicrobial peptides. \emph{Nucleic Acids Research} 42(D1),
 D1154--D1158, 2014.
+\bibitem{acep} Fu, H., Cao, Z., Li, M., Wang, S. ACEP: improving antimicrobial
+peptides recognition through automatic feature fusion and amino acid embedding.
+\emph{BMC Genomics} 21:597 (2020).
 \bibitem{ampscanner} Veltri, D., Kamath, U., Shehu, A. Deep learning improves
 antimicrobial peptide recognition. \emph{Bioinformatics} 34(16),
 2740--2747, 2018.
