@@ -3,16 +3,16 @@
 \begin{table}[h]\centering\caption{Hyperparameters, fixed across studies unless noted.}
 \begin{tabular}{ll}\hline
 Parameter & Value \\ \hline
-Max sequence length $L$ & 150 (pilot: 60) \\
+Max sequence length $L$ & 150 (pilot: 60; study 14: 200) \\
 PepCNN kernels / channels & widths 3/5/7, 32 channels each, 2 conv layers/branch \\
 PepGNN hidden width & 32, 3 graph-conv layers, chain-window adjacency \\
 Optimizer & Adam, lr $10^{-3}$ \\
-Batch size & 128 \\
+Batch size & 128 (study 7); 64 (published-benchmark CNN) \\
 Epochs & 8 (pilot: 10) \\
 Loss & weighted BCE, $\omega = n_-/n_+$ \\
 Seeds & 27 (split), 7 (training) \\
 Annealing steps / restarts & 250 steps, 24 seeds, $T_0=0.2$, cooling factor 0.99 \\
-Bootstrap resamples $B$ & 500 \\
+Bootstrap resamples $B$ & 500 (studies 1/7); 2{,}000 (study 9) \\
 Permutations $B$ & 500 \\
 \hline\end{tabular}\end{table}
 
