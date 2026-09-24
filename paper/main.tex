@@ -31,14 +31,16 @@ molecules and a candidate answer to antibiotic resistance. We study AMP
 recognition and design with two neural architectures --- a convolutional
 network (PepCNN) over a joint one-hot/physicochemical sequence encoding and a
 graph neural network (PepGNN) over a residue graph with a shared positional
-adjacency --- trained and evaluated on 24{,}628 reviewed UniProt
-KW-0929 AMPs against 24{,}628 length-matched non-AMP proteins, with
-cluster-aware train/validation/test splits that prevent homology leakage.
+adjacency --- trained and evaluated on 24{,}628 UniProt
+KW-0929 AMP-annotated entries (mostly unreviewed) against 24{,}628 length-matched non-AMP proteins, with
+exact-10-mer cluster-aware splits. The positive/negative source-review
+status is severely confounded and the scale-up scores are descriptive only.
 PepCNN attains AUROC $0.947$ [0.936, 0.955] under 5-fold cross-validation on a
 curated 2{,}732-sequence pilot and $0.921$ [0.913, 0.929] on the held-out
 large-scale test split; a random-forest baseline on dipeptide composition is
 competitive on the pilot (0.935) but the convolutional model dominates at
-scale and on external validation against the APD6 2024 natural AMP list.
+scale and on external validation against the APD6 2024 natural AMP list,
+but this test does not remove the training-source confound.
 We prove fixed-temperature detailed balance of a simulated-annealing
 transition used to propose untested candidate sequences, derive the permutation and bootstrap procedures
 used for significance, and report an in-silico discovery screen over 852
@@ -91,7 +93,7 @@ chain-adjacency structure rather than a learned or contact-derived graph.
 \input{rw_ext.tex}
 \section{Data}
 \subsection{Positive set}
-All reviewed UniProtKB entries carrying keyword KW-0929 (antimicrobial) with
+UniProtKB entries carrying keyword KW-0929 (antimicrobial) with
 sequence length 10--150 were streamed from the UniProt REST API on
 September 24, 2026 (27{,}392 records). After restricting to the 20 standard
 amino acids and de-duplicating, \Npos{} positives remained.
@@ -253,6 +255,7 @@ against the chosen reference corpus.
 \input{experiments.tex}
 \input{expansion.tex}
 \input{results_tables.tex}
+\input{label_provenance.tex}
 \input{sota_benchmark.tex}
 \input{benchmark_ablation.tex}
 \begin{figure}[h]\centering\includegraphics[width=0.85\textwidth]{fig_sota.png}\caption{Veltri 2018 test partition: published rows from ACEP Table 2 vs our stacked ensemble.}\label{fig:sota}\end{figure}

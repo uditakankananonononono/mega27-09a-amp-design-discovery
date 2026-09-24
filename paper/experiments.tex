@@ -1,13 +1,13 @@
 \subsection{Pilot study (study01)}
-The pilot used the curated handoff corpus: 1{,}232 reviewed UniProt KW-0929
-positives (8--60 aa) and 1{,}500 length-matched non-AMP negatives, evaluated
-by 5-fold cross-validation with bootstrap intervals ($B=2{,}000$) and
+The pilot used the curated handoff corpus: 1{,}232 AMP-labeled peptide sequences with synthetic FASTA
+identifiers and unverified source provenance (8--60 aa) and 1{,}500 length-matched non-AMP negatives, evaluated
+by 5-fold cross-validation with bootstrap intervals ($B=500$) and
 label-permutation tests ($B=500$). All four models beat chance decisively
 (Table~\ref{tab:pilot}). PepCNN led at AUROC $0.947$ [0.936, 0.955], with the
 random forest on dipeptide composition surprisingly strong at $0.935$; the
-GNN and logistic baseline trailed near $0.80$. The pilot established that a
-small convolutional model is competitive with a strong feature-based baseline
-on this corpus, and that the graph model, as architected, adds nothing.
+GNN and logistic baseline trailed near $0.80$. The pilot shows an internal classifier difference on this corpus; because
+the handoff FASTA identifiers are synthetic, we cannot independently
+verify the provenance or annotation status of every source sequence.
 
 \subsection{Scale-up with homology-aware splits (study07)}
 The scale-up used the full fetched corpus: \Npos{} positives and \Nneg{}
@@ -35,8 +35,8 @@ test non-AMPs (Table~\ref{tab:apd}), PepCNN attained AUROC
 $0.926$ [0.918, 0.934] --- statistically indistinguishable from its internal
 test performance --- while the ensemble reached $0.909$ and the GNN $0.797$.
 Sensitivity on decontaminated APD6 at a 5\% false-positive rate was $0.601$.
-The honest reading: the CNN recognizes a meaningful fraction of independently
-curated AMPs, but roughly two in five fall below a stringent operating
+The limited reading: the CNN ranks many APD6 positives above the reviewed
+UniProt test negatives, but the training-source confound still applies, but roughly two in five fall below a stringent operating
 threshold, consistent with the known diversity of AMP mechanisms (many APD6
 entries are longer, disulfide-bonded, or anionic peptides unlike the short
 cationic training majority).

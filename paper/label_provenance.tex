@@ -1,0 +1,50 @@
+\section{Critical label-provenance confound in the UniProt scale-up}
+\label{sec:labelconfound}
+The positive UniProt REST query was intended to request reviewed KW-0929
+entries, but the actual recorded URL lacks the \texttt{reviewed:true}
+constraint. The raw positive FASTA contains 27{,}392 entries, of which
+24{,}295 have the UniProt \texttt{tr|} prefix (unreviewed) and only 3{,}098
+have \texttt{sp|} (reviewed). After canonical-residue filtering and
+sequence de-duplication, 24{,}628 positives remained: 21{,}742 unreviewed
+and 2{,}886 reviewed. The negative pool was queried with
+\texttt{reviewed:true}, so all 24{,}628 selected negatives are reviewed.
+This is a major source-status confound, not an innocuous metadata issue.
+
+\begin{table}[h]\centering
+\caption{Review status by class and split, counted from the committed CSV
+headers. \texttt{tr|} indicates UniProtKB/TrEMBL; \texttt{sp|} indicates
+UniProtKB/Swiss-Prot.}
+\label{tab:reviewconfound}
+\begin{tabular}{lrrrr}
+\hline
+Split & AMP $\mathrm{tr}$ & AMP $\mathrm{sp}$ & Non-AMP $\mathrm{tr}$ & Non-AMP $\mathrm{sp}$ \\
+\hline
+Train & 19{,}173 & 2{,}376 & 0 & 19{,}227 \\
+Validation & 1{,}347 & 271 & 0 & 2{,}476 \\
+Test & 1{,}222 & 239 & 0 & 2{,}925 \\
+\hline
+Total & 21{,}742 & 2{,}886 & 0 & 24{,}628 \\
+\hline
+\end{tabular}
+\end{table}
+
+The models do not receive review status as an explicit input, but annotation
+pipelines, organism composition, length distributions within buckets, and
+family composition can carry review-status proxies. The 0.921 AUROC for
+PepCNN on the cluster-aware test set is therefore a measurement on this
+\emph{confounded} dataset, not a reliable estimate of AMP recognition on a
+review-status-matched population. Ten-mer clustering blocks exact motif
+sharing across splits; it does not remove a train/test review-status
+association. Likewise, APD6 validation with external positives and the
+same reviewed test negatives cannot fully repair a training confound.
+
+The proper repair is to fetch reviewed-only positives or select negatives
+matched on review status and organism group, rebuild all splits, retrain,
+and re-evaluate before claiming a clean scale-up benchmark. We preserve the
+original experiment as an auditable negative result rather than delete it.
+The original source query and exact split counts are in
+\texttt{data/raw/large\_provenance.json} and
+\texttt{results/large\_label\_provenance.json}. The Veltri 2018 and
+Feb2020 experiments use separate public benchmark corpora and are not
+contaminated by this UniProt query error, though they have their own
+random-split homology caveat.

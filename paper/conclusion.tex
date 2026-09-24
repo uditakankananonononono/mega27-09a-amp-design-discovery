@@ -1,13 +1,14 @@
 \section{Conclusion}
-Under evaluation that controls homology leakage, a small convolutional
-network recognizes antimicrobial peptides with held-out AUROC $0.921$ and
-transfers to an independently curated database at $0.926$, while
-composition-based baselines plateau near $0.88$ and a chain-graph network
-adds nothing. The same models drive an annealing designer with a proved fixed-temperature balance property
-and a screen over uncharacterized proteins whose outputs are ranked by model score and low pairwise 3-mer similarity,
-but remain biological hypotheses, not validated antimicrobial agents. The strongest claims we make are the
-ones the data carry: the pipeline runs on real data, the external comparison is measurable,
-and reported local results have corresponding scripts and artifacts.
+The original UniProt scale-up has a severe source-review confound: most
+positive sequences are unreviewed while all selected negatives are reviewed.
+Its AUROC $0.921$ and external APD6 score $0.926$ are retained as measured
+outputs but cannot support the original clean AMP-recognition claim. The
+Veltri 2018 test-set comparison is near the original AMPScanner model but
+below ACEP. A full-record Feb2020 production-dataset CV offers a separate
+benchmark comparison, with published-fold and homology-overlap limitations
+spelled out. The YdcA screen result is a testable biological hypothesis;
+signal-peptide ablation shows a major model-dependence warning. The shipped
+CLI, tests, scripts, data and candidate audit make these claims inspectable.
 
 \subsection{Future work}
 Four extensions follow directly. (1) Activity-annotated benchmarking against

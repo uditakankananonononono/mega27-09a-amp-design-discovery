@@ -1,7 +1,7 @@
 """Study 7 - scale-up AMP benchmark on the homology-aware split.
 
 Data: data/processed_large/{train,val,test}.csv from build_large_dataset.py
-(27k reviewed UniProt KW-0929 AMPs vs length-matched reviewed non-AMP,
+(27k UniProt KW-0929 entries (mostly unreviewed) vs length-matched reviewed non-AMP,
 cluster-aware 80/10/10 split over shared-10-mer union-find clusters, so no
 near-duplicate crosses splits). Models: PepCNN, PepGNN (shared-adjacency
 path, memory-bounded), logreg/RF dipeptide baselines. Metrics on the held-out
@@ -64,7 +64,7 @@ def main():
     results = {"split": {"train": len(tr_s), "val": len(va_s), "test": len(te_s),
                          "train_subsample": len(sub_s)},
                "max_len": MAX_LEN,
-               "source": "UniProt reviewed KW-0929 (27k AMP) vs reviewed non-AMP, "
+               "source": "UniProt KW-0929 (mostly unreviewed positives) vs reviewed non-AMP, "
                          "cluster-aware 10-mer split"}
 
     def report(name, scores):

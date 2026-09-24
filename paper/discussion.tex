@@ -1,12 +1,12 @@
-Three findings survive scrutiny. First, a modest 1-D convolutional network
-over one-hot plus physicochemical encodings is a strong AMP recognizer under
-leakage-controlled evaluation (AUROC $0.921$ internal, $0.926$ external on
-APD6), and it scales where composition baselines saturate. Second, the chain
+The primary negative finding is that the original UniProt scale-up labels
+confound review status with class. Its $0.921$ held-out AUROC and $0.926$
+APD6 comparison are descriptive, not validated measures of AMP recognition
+on review-status-matched data (Section~\ref{sec:labelconfound}). Second, the chain
 graph network underperforms the CNN at every scale we tested; without
 contact-map or structure-derived edges, message passing along the backbone
 adds parameters and optimization difficulty without adding information the
 convolutions lack. We keep the GNN in the paper as a negative architectural
-result. Third, the small pilot scored about 0.95 AUROC while the larger, cluster-aware
+result. The small pilot scored about 0.95 AUROC while the larger, cluster-aware
 experiment scored 0.92; because both data scale and split method changed,
 this contrast does not by itself quantify homology leakage.
 
@@ -25,8 +25,9 @@ sandbox budget (2 CPU, 2 GB RAM) capped model size, epochs, and the training
 subsample; larger models on the full 40k train split would likely improve the
 numbers, but not the conclusions.
 
-Verdict: PepCNN is a solid, honestly-evaluated AMP classifier with verified
-cross-database transfer, and the annealing designer plus discovery screen are
-useful prioritization tools. Nothing here is a claimed therapeutic or a
-benchmark record; the contribution is a leakage-controlled pipeline, an
-external-validation result, and a set of ranked hypotheses.
+Verdict: the UniProt scale-up is compromised by label-source confounding
+and must be redone before making a clean recognition claim. The independent
+published-corpus comparison, negative protocol lessons, and the ranked
+candidates remain reproducible in-silico results. Nothing here is a
+therapeutic, a wet-lab discovery, or a statistically established benchmark
+record.
