@@ -14,19 +14,21 @@ expected to score disulfide-locked anionic families highly, and ours does not
 
 \subsection{Contributions}
 \begin{enumerate}
-\item A fully provenance-logged, leakage-controlled AMP benchmark:
+\item An auditable, exact-10-mer cluster-split benchmark with a subsequently
+identified source-review confound:
 24{,}628 UniProt KW-0929 positives (mostly unreviewed) against 24{,}628 length-matched
 reviewed negatives, clustered by shared exact 10-mers into 12{,}110
 components and split 80/10/10 by cluster, with all fetch URLs, hashes, and
 timestamps recorded.
 \item A paired comparison of two neural architectures and two composition
 baselines under this split, with bootstrap intervals and permutation tests
-computed by one shared harness: PepCNN attains AUROC $0.921$ [0.913, 0.929],
-ahead of the tested baselines on the held-out sample; the graph model is a reported negative
+computed by one shared harness: PepCNN attains descriptive AUROC $0.921$ [0.913, 0.929] on the confounded
+held-out sample, ahead of the tested baselines; the graph model is a reported negative
 result.
-\item External validation on the APD6 2024 natural AMP list after strict
-decontamination: PepCNN transfers at AUROC $0.926$ [0.918, 0.934], with
-sensitivity $0.601$ at a 5\% false-positive rate --- evidence of transfer to the decontaminated APD6 subset and an honest bound on its reach.
+\item An APD6 2024 external-set comparison after exact-10-mer filtering:
+PepCNN scores AUROC $0.926$ [0.918, 0.934] and sensitivity $0.601$ at a
+5\% false-positive rate, but review-status confounding in training limits
+its biological interpretation.
 \item A simulated-annealing designer with a fixed-temperature detailed-balance
 proof producing ranked sequence candidates, and a discovery
 screen over 852 reviewed uncharacterized proteins producing 25 ranked
