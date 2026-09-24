@@ -4,19 +4,20 @@
 \begin{tabular}{ll}\hline
 Parameter & Value \\ \hline
 Max sequence length $L$ & 150 (pilot: 60) \\
-PepCNN kernels / channels & width 5, 32 conv channels, 2 layers \\
-PepGNN hidden width & 32, 1 graph-conv layer, $\lambda=1$ self-loops \\
+PepCNN kernels / channels & widths 3/5/7, 32 channels each, 2 conv layers/branch \\
+PepGNN hidden width & 32, 3 graph-conv layers, chain-window adjacency \\
 Optimizer & Adam, lr $10^{-3}$ \\
 Batch size & 128 \\
 Epochs & 8 (pilot: 10) \\
 Loss & weighted BCE, $\omega = n_-/n_+$ \\
 Seeds & 27 (split), 7 (training) \\
-Annealing steps / restarts & 300 steps, 24 restarts, geometric $T: 2.0 \to 0.05$ \\
-Bootstrap resamples $B$ & 2{,}000 \\
+Annealing steps / restarts & 250 steps, 24 seeds, $T_0=0.2$, cooling factor 0.99 \\
+Bootstrap resamples $B$ & 500 \\
 Permutations $B$ & 500 \\
 \hline\end{tabular}\end{table}
 
-Training used the weighted objective of Section 4.4 throughout. The scale-up
+Training used weighted binary cross-entropy with the study-specific class
+weight set by the script; the benchmark studies use balanced classes. The scale-up
 training subsample of 30{,}000 sequences (15{,}000 positive) was drawn
 uniformly from the train split once, then fixed. All models were evaluated on
 the identical held-out test split; no test-point informed any training
