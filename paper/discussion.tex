@@ -12,18 +12,17 @@ this contrast does not by itself quantify homology leakage.
 
 Limitations are real. The negative class is ``not annotated antimicrobial in
 UniProt,'' which is not the same as experimentally non-antimicrobial; some negatives may be unrecognized AMPs and any bias direction depends on
-which subsets are affected. The training distribution is dominated by short
-cationic peptides, so APD6 families outside that mold (anionic AMPs, longer
-disulfide-stabilized peptides) are systematically underscored, as the 0.601
-sensitivity at 5\% FPR quantifies. The annealed designs and screen hits carry
+which subsets are affected. The APD6 sensitivity at a 5\% negative-set FPR is 0.601; without
+family-level analysis, we cannot attribute this miss rate to a specific
+AMP class. The annealed designs and screen hits carry
 no experimental validation; their novelty scores are sequence-level, not
 structural. DBAASP was unreachable programmatically during this work (its
 full-dataset endpoint returns an empty body without an interactive session),
 so the APD6 list served as the sole external benchmark; adding DBAASP's
 activity-annotated records is the natural next validation. Finally, the
 sandbox budget (2 CPU, 2 GB RAM) capped model size, epochs, and the training
-subsample; larger models on the full 40k train split would likely improve the
-numbers, but not the conclusions.
+subsample; a larger training run might alter the numbers, but cannot by itself
+remove the label-source confound.
 
 Verdict: the UniProt scale-up is compromised by label-source confounding
 and must be redone before making a clean recognition claim. The independent
