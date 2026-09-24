@@ -1,0 +1,53 @@
+{
+  "all": {
+    "n": 4386,
+    "n_pos": 1461,
+    "n_neg": 2925,
+    "PepCNN": {
+      "auroc": 0.9206411718937386,
+      "auprc": 0.878662725192113,
+      "mean_positive_score": 0.6782910227775574,
+      "mean_negative_score": 0.07485774904489517
+    },
+    "PepGNN": {
+      "auroc": 0.876713877042419,
+      "auprc": 0.6802552761667892,
+      "mean_positive_score": 0.6156033873558044,
+      "mean_negative_score": 0.20762887597084045
+    }
+  },
+  "reviewed_only": {
+    "n": 3164,
+    "n_pos": 239,
+    "n_neg": 2925,
+    "PepCNN": {
+      "auroc": 0.9642599148875299,
+      "auprc": 0.7549266075193845,
+      "mean_positive_score": 0.8029048442840576,
+      "mean_negative_score": 0.07485774904489517
+    },
+    "PepGNN": {
+      "auroc": 0.8703243571862819,
+      "auprc": 0.27682449072795007,
+      "mean_positive_score": 0.6044634580612183,
+      "mean_negative_score": 0.20762887597084045
+    }
+  },
+  "unreviewed_positive_vs_reviewed_negative": {
+    "n": 4147,
+    "n_pos": 1222,
+    "n_neg": 2925,
+    "PepCNN": {
+      "auroc": 0.9121101738777679,
+      "auprc": 0.8513787970900862,
+      "mean_positive_score": 0.6539189219474792,
+      "mean_negative_score": 0.07485774904489517
+    },
+    "PepGNN": {
+      "auroc": 0.8779635458195196,
+      "auprc": 0.6384308680971867,
+      "mean_positive_score": 0.6177821755409241,
+      "mean_negative_score": 0.20762887597084045
+    }
+  }
+}

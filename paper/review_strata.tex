@@ -1,0 +1,23 @@
+\subsection{Post-hoc within-review-status audit}
+\label{sec:reviewstrata}
+The review-status confound does not by itself prove that the classifier
+merely detects review status. We rescored the committed cluster-held-out
+test split using the frozen study-07 checkpoints and stratified positive
+examples by UniProt record prefix, retaining the same reviewed negative
+examples in both comparisons. The PepCNN AUROC on the full test set was
+$0.9206$ (1{,}461 positives/2{,}925 negatives). Among the 239 reviewed
+\texttt{sp|} positives versus the 2{,}925 reviewed negatives, AUROC was
+$0.9643$; among 1{,}222 unreviewed \texttt{tr|} positives versus the same
+negatives, $0.9121$. PepGNN scored $0.8703$ and $0.8780$, respectively.
+The numbers are in \texttt{results/study17\_review\_strata.json} and can
+be regenerated with \texttt{studies/study17\_review\_strata.py}.
+
+The reviewed-only PepCNN result shows discriminative signal is not wholly
+explained by the review-status prefix, but it does \emph{not} rescue the
+original benchmark. Reviewed positives form a small, selected subgroup;
+they may have different sequence families, labels, organisms and length
+profiles. The model was trained mostly on unreviewed positives and all
+reviewed negatives; class-conditional differences unrelated to AMP
+function remain. This post-hoc subgroup is not an independent, prospectively
+matched test and its AUROC cannot be generalized to all reviewed AMPs.
+The proper reviewed-only retraining and matched evaluation remain undone.
