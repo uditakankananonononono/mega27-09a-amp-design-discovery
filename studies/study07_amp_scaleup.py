@@ -109,6 +109,10 @@ def main():
     designs.sort(key=lambda d: -d["score"])
     results["designs"] = designs[:10]
 
+    torch.save({"state_dict": cnn.state_dict(), "max_len": MAX_LEN},
+               ROOT / "results/study07_cnn.pt")
+    torch.save({"state_dict": gnn.state_dict(), "max_len": MAX_LEN},
+               ROOT / "results/study07_gnn.pt")
     out = ROOT / "results/study07_scaleup.json"
     out.write_text(json.dumps(results, indent=2))
     print(f"wrote {out}", flush=True)
