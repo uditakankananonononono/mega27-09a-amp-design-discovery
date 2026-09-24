@@ -6,16 +6,13 @@ graph network underperforms the CNN at every scale we tested; without
 contact-map or structure-derived edges, message passing along the backbone
 adds parameters and optimization difficulty without adding information the
 convolutions lack. We keep the GNN in the paper as a negative architectural
-result. Third, random-split benchmarks in this domain are optimistically
-biased: the same model family scored $\sim$0.95 AUROC under naive
-cross-validation on a small corpus and $0.92$ under cluster-aware splitting
-on a corpus $18\times$ larger, and the relative ranking of baselines changed
-with the split discipline.
+result. Third, the small pilot scored about 0.95 AUROC while the larger, cluster-aware
+experiment scored 0.92; because both data scale and split method changed,
+this contrast does not by itself quantify homology leakage.
 
 Limitations are real. The negative class is ``not annotated antimicrobial in
-UniProt,'' which is not the same as experimentally non-antimicrobial; some
-fraction of negatives are surely unrecognized AMPs, biasing all reported
-metrics conservatively. The training distribution is dominated by short
+UniProt,'' which is not the same as experimentally non-antimicrobial; some negatives may be unrecognized AMPs and any bias direction depends on
+which subsets are affected. The training distribution is dominated by short
 cationic peptides, so APD6 families outside that mold (anionic AMPs, longer
 disulfide-stabilized peptides) are systematically underscored, as the 0.601
 sensitivity at 5\% FPR quantifies. The annealed designs and screen hits carry

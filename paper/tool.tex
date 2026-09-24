@@ -18,7 +18,7 @@ and a pass/fail flag at the requested novelty floor, ranked by ensemble
 score. The implementation is \texttt{pepdesign/cli.py} (about 100 lines), covered
 by three hermetic tests (FASTA parsing; ranking plus audit on a duplicated
 reference, which must score Jaccard 1.0 and novelty $<0.05$; end-to-end
-JSON output). The full suite is 24 tests, all hermetic.
+JSON output). The full suite is 27 tests, all hermetic.
 
 As a functional check we ran the tool over the 852-protein uncharacterized
 corpus of Section~\ref{sec:candidates} with the study-07 checkpoints and

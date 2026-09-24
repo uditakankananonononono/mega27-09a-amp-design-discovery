@@ -52,8 +52,8 @@ def hydrophobic_moment(seq, angle=100.0, window=11):
     rad = np.deg2rad(angle); best = 0.0
     for i in range(len(seq)-window+1):
         w = seq[i:i+window]
-        x = sum(KD[a]*np.cos(j*rad) for j,a in enumerate(w))
-        y = sum(KD[a]*np.sin(j*rad) for j,a in enumerate(w))
+        x = sum(KD.get(a,0.0)*np.cos(j*rad) for j,a in enumerate(w))
+        y = sum(KD.get(a,0.0)*np.sin(j*rad) for j,a in enumerate(w))
         best = max(best, (x*x+y*y)**0.5/window)
     return best
 

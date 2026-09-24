@@ -1,0 +1,69 @@
+\section{Reproducibility audit and protocol limits}
+\label{sec:reproext}
+
+\subsection{Source records and checksums}
+The original Veltri split is distributed as six FASTA files in the authors'
+\texttt{original-dataset} folder. The updated production dataset is a ZIP
+archive linked from the AMP Scanner news page. The script
+\texttt{studies/fetch\_published\_benchmarks.py} retrieves the files, checks
+that each original training/test split has 712 positives and 712 decoys,
+that the tune split has 354 each, and that the updated dataset has 2{,}021
+positives and 2{,}021 decoys. SHA-256 checksums for each downloaded FASTA
+are in \texttt{results/benchmark\_sources.json}.
+
+The original partition was used for studies 10 and 11. Studies 13 and 14
+were run on the updated production dataset. Study 13 is deliberately kept
+as a \emph{non-comparable ablation}: it used a 150-residue cap, retaining
+2{,}013 positives and 2{,}020 decoys, and removed unknown amino acid symbols
+from two decoys. Study 14 retains all 4{,}042 source records, represents X
+as an unknown residue (zero one-hot/physicochemical row), and uses a
+200-residue cap, above the observed maximum of 183. It alone supplies the
+full-record comparison.
+
+\subsection{Reproduction commands}
+\begin{verbatim}
+python studies/fetch_published_benchmarks.py
+python studies/study10_veltri.py
+python studies/study11_veltri_stack.py
+python studies/study13_feb2020_cv.py # filtered ablation only
+python studies/study14_feb2020_full.py # complete dataset
+python studies/study12_candidates.py
+python studies/make_sota_section.py
+python studies/make_figs2.py
+python -m pytest -q tests
+cd paper && pdflatex -interaction=nonstopmode main.tex
+\end{verbatim}
+
+The complete 10-fold CNN/GNN/RF experiment takes about 10--20 minutes on
+the stated two-CPU sandbox. It is not part of the hermetic test suite; tests
+use tiny fixtures and never access the network. The random-forest fit is
+deterministic from its seed. The convolutional training helper draws a
+permutation once and reuses it across epochs; this is a design choice that
+limits stochasticity and should be tested against reshuffling each epoch.
+
+\subsection{Inference and statistical limits}
+The 10-fold standard deviation measures variation across \emph{our} folds,
+not uncertainty in the gap from the published AMP Scanner result: the authors'
+per-fold scores and fold assignments are unavailable. The difference of two
+published means cannot be assigned a paired $p$-value without those records.
+A numerical lead of less than one percentage point in accuracy or a few
+thousandths in AUC may disappear under resampling, preprocessing changes,
+or alternative hyperparameters. Our bootstrap intervals in the UniProt
+experiments resample individual sequences, not homology clusters, and may
+understate uncertainty for correlated families. No independent potency
+regression or clinical assay was run.
+
+\subsection{Candidate ranking limits}
+All candidate sequences in study 12 were selected after looking at the
+study-08 model scores. The selection is conditional and the resulting scores
+cannot be treated as unbiased validation metrics. P0ACW4 and P0ACW5 have
+identical sequences and are collapsed before naming the unique candidates.
+The sequence of P0ACW4 has an N-terminal signal peptide annotated at residues
+1--20; a predictor trained on AMP labels may learn secretion or short-protein
+features instead of antibacterial activity. The designed variant was
+optimized on the same ensemble that scored it, so its higher score cannot
+be taken as an independent confirmation. Pairwise 3-mer Jaccard against a
+finite corpus is a useful triage feature, not proof of sequence novelty
+in all public databases. Antimicrobial efficacy would require synthesized
+purified peptide, growth inhibition across concentrations with positive and
+negative controls, replication, and toxicity assessment.

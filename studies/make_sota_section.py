@@ -4,7 +4,7 @@ import json, pathlib
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 s10 = json.load(open(ROOT/"results/study10_veltri.json"))
 s11 = json.load(open(ROOT/"results/study11_veltri_stack.json"))
-s13 = json.load(open(ROOT/"results/study13_feb2020_cv.json"))
+s13 = json.load(open(ROOT/"results/study14_feb2020_full.json"))
 
 def pct(x): return f"{100*x:.2f}"
 
@@ -53,8 +53,8 @@ tex = r"""\section{Head-to-head against the published state of the art}
 Plain re-runs on our own splits are the floor; this section attacks the
 published state of the art on \emph{its own} benchmark, twice: on the
 original AMP Scanner Vr.2 benchmark with its exact distributed splits, and
-on the Feb2020 production benchmark with the published 10-fold
-cross-validation protocol.
+on the Feb2020 production benchmark with a 10-fold
+cross-validation protocol on the same dataset.
 
 \subsection{The Veltri 2018 benchmark}
 Veltri, Kamath and Shehu's AMP Scanner Vr.2~\cite{ampscanner} is the most
@@ -86,7 +86,7 @@ Method & SENS(\%) & SPEC(\%) & ACC(\%) & MCC & AUC(\%) \\
 \subsection{Our protocol and per-model results}
 We trained the full model zoo of this project on the benchmark's training
 partition: three PepCNN seeds, two PepGNN seeds (shared-adjacency path) and
-a random forest on a 435-dimensional descriptor vector (amino-acid and
+a random forest on a 426-dimensional descriptor vector (amino-acid and
 dipeptide composition, net charge Eq.~\eqref{eq:netcharge}, mean and
 standard deviation of Kyte--Doolittle hydropathy, Eisenberg moment
 Eq.~\eqref{eq:hmoment}, Boman index, residue-class fractions). The stacking
@@ -106,23 +106,22 @@ Model & ACC(\%) & MCC & AUC(\%) \\
 \end{table}
 
 The stacked ensemble reaches 91.19\% accuracy, MCC 0.825 and AUC 96.59\%:
-statistically indistinguishable from the published AMP Scanner row
-(91.29/0.8261/96.30) and behind ACEP (93.04/0.8610/97.78), which exploits
-PSI-BLAST PSSM profiles unavailable to our sandbox-feasible pipeline. We
-report this as an honest parity result, not a record.
+close to the published AMP Scanner row (no paired significance test is available)
+(91.29/0.8261/96.30) and behind ACEP (93.04/0.8610/97.78), which uses PSSM profiles. We
+report a descriptive near-parity result, not a record.
 
-\subsection{Breaking the Feb2020 production benchmark}
+\subsection{Testing against the Feb2020 production benchmark}
 The production server model was retrained in February 2020 on an updated
 dataset of 2{,}021 AMPs and 2{,}021 non-AMPs (downloaded from the authors'
 site, \texttt{AMP\_Scan2\_Feb2020\_Dataset.zip}); its published 10-fold
 cross-validation performance is SENS 90.6\%, SPEC 89.1\%, ACC 89.9\%, MCC
-0.799, auROC 96.2\%. We ran the identical protocol --- stratified 10-fold
-CV, ensemble of two PepCNN seeds, one PepGNN and the descriptor random
-forest combined by an unweighted average with a fixed 0.5 threshold, so no
+0.799, auROC 96.2\%. We used the same dataset and a 10-fold stratified CV protocol, but
+not necessarily the same folds or preprocessing. Our ensemble of two PepCNN seeds, one PepGNN and the descriptor random
+forest is combined by an unweighted average with a fixed 0.5 threshold, so no
 tuning of any kind touches the held-out fold.
 
 \begin{table}[h]\centering\small
-\caption{10-fold CV on the Feb2020 dataset (4{,}033 usable sequences), vs
+\caption{10-fold CV on the complete Feb2020 dataset (4{,}042 sequences), vs
 the published Feb2020 row.}
 \label{tab:feb2020}
 \begin{tabular}{cccccc}
@@ -146,9 +145,10 @@ Metric & Published & Ours (mean) & Ours (pooled) & $\Delta$ (pp) \\
 \end{tabular}
 \end{table}
 
-The ensemble exceeds the published production numbers on every metric we
-measure, without any per-fold tuning. This is the benchmark break claimed
-by this item, stated with its exact protocol so it can be checked.
+The numbers above are descriptive comparisons with a published 10-fold CV
+mean, not a paired head-to-head test: the published fold assignments, model
+outputs, and identical preprocessing are unavailable. We therefore do not
+claim a statistically significant record from the small numerical gap.
 """
 (ROOT/"paper/sota_benchmark.tex").write_text(tex)
 print("sota_benchmark.tex written", len(tex))

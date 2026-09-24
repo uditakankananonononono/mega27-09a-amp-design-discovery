@@ -210,36 +210,40 @@ exchangeable nulls up to Monte Carlo error~\cite{permutation}.
 \begin{definition}[Bootstrap confidence interval]
 Resample test pairs $(y_i, s_i)$ with replacement $B$ times; the percentile
 interval $[\hat\theta_{2.5},\hat\theta_{97.5}]$ of the resampled statistics
-is asymptotically pivotal and consistent for the true coverage
-level~\cite{efron1994}.
+estimates uncertainty under independent sampling, but can have poor
+coverage under homology clustering~\cite{efron1994}.
 \end{definition}
 
 \subsection{Annealing designer}
-The designer searches $\{20\}^{25}$ by Metropolis--Hastings with proposal
-$q(s'\mid s)$ that mutates one uniformly chosen position to a uniformly
-chosen alternative residue, and target $\pi(s) \propto \exp(f(s)/T)$ where
-$f$ is the ensemble logit and $T$ a temperature annealed geometrically.
-\begin{theorem}[Correctness of the designer]\label{thm:mh}
-The chain is irreducible, aperiodic, and satisfies detailed balance with
-respect to $\pi$; hence its law converges to $\pi$ in total variation.
-\end{theorem}
+The implemented proposal replaces one residue by a different canonical
+amino acid, and with probability 0.2 makes a second independent replacement.
+Let $f(s)$ be the ensemble score in $[0,1]$ and
+$\mathcal V=\{s:\nu_3(s;\mathcal R)\ge\nu_0\}$ the allowed sequences.
+At a fixed positive temperature $T$, a valid current sequence, and symmetric
+proposal $q$, the transition accepts a valid proposal with probability
+$\alpha_T(s,s')=\min\{1,\exp[(f(s')-f(s))/T]\}$.
+The actual script changes $T$ geometrically after each step and reports the
+highest-scoring visited state; its finite trajectory is therefore an
+optimization heuristic, not a sample from an equilibrium distribution.
+\begin{proposition}[Fixed-temperature detailed balance]
+For a valid initial state and fixed $T$, the restricted transition kernel is
+reversible with respect to
+$\pi_T(s)\propto \exp[f(s)/T]1_{\{s\in\mathcal V\}}$.
+\end{proposition}
 \begin{proof}
-Irreducibility: any $s'$ is reachable from $s$ by changing one position at a
-time, each with positive proposal probability. Aperiodicity: self-loops occur
-with probability $1 - \alpha(s,s')q(s'\mid s) > 0$ whenever an improving move
-exists, and if not, any accepted mutation returns to $s$ in two steps, so the
-period is 1. Detailed balance: the acceptance
-$\alpha = \min\{1, \exp((f(s')-f(s))/T)\, q(s\mid s')/q(s'\mid s)\}$ with
-symmetric $q$ (uniform position, uniform residue) gives
-$\pi(s)q(s'\mid s)\alpha = \pi(s')q(s\mid s')\alpha'$ by the standard
-$\min$ identity, $\min(a,b) = a\,\min(1, b/a)$.
+Each single mutation has a symmetric reverse with probability
+$1/(19L)$; the mixture of one- and two-mutation kernels is symmetric.
+Proposals outside $\mathcal V$ are rejected. For $s,s'\in\mathcal V$,
+$\pi_T(s)q(s'|s)\alpha_T(s,s')$ equals
+$Z^{-1}q(s'|s)\min\{e^{f(s)/T},e^{f(s')/T}\}$, symmetric in $s,s'$.
+Rejection handles diagonal mass, so detailed balance holds. We do not
+claim convergence of the implemented cooling schedule.
 \end{proof}
 
 \begin{remark}
-At fixed $T$ the invariant measure is the Boltzmann distribution of the
-learned score, not a certificate of antimicrobial activity: candidates are
-ranked hypotheses. Novelty is reported as $1 - \max_{c\in\text{corpus}}
-J(K_3(s), K_3(c))$ over 3-mer Jaccard similarity against the AMP corpus.
+A learned score is not a certificate of antimicrobial activity. Novelty is
+$1-\max_{c\in\mathcal R}J_3(s,c)$, a pairwise 3-mer Jaccard distance
+against the chosen reference corpus.
 \end{remark}
 
 \input{methods_ext.tex}
@@ -269,12 +273,13 @@ All datasets are streamed from the UniProt REST API and the APD6 download
 page at run time or read from caches whose provenance (URL, record count,
 byte count, SHA-256 prefix, timestamp) is logged in
 \texttt{data/raw/*provenance.json}. Splits, seeds (27/7), and hyperparameters
-are fixed in the study scripts. The test suite (24 tests) is hermetic; live
+are fixed in the study scripts. The test suite (27 tests) is hermetic; live
 network calls occur only in the fetch scripts.
 
 \input{software.tex}
 \input{tool.tex}
 \input{appendix.tex}
+\input{reproducibility_ext.tex}
 \input{listings.tex}
 \begin{thebibliography}{9}
 \bibitem{apd3} Wang, G., Li, X., Wang, Z. APD3: the antimicrobial peptide

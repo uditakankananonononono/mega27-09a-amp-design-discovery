@@ -28,13 +28,12 @@ result.
 decontamination: PepCNN transfers at AUROC $0.926$ [0.918, 0.934], with
 sensitivity $0.601$ at a 5\% false-positive rate --- evidence of real
 cross-database generalization and an honest bound on its reach.
-\item A provably correct Metropolis--Hastings designer
-(Theorem~\ref{thm:mh}) producing 24 ranked novel candidates, and a discovery
+\item A simulated-annealing designer with a fixed-temperature detailed-balance
+proof producing ranked sequence candidates, and a discovery
 screen over 852 reviewed uncharacterized proteins producing 25 ranked
 hypotheses, all clearly labeled as in-silico.
-\item A reproducible software artifact: the \texttt{pepdesign} package, four
-study scripts, a 21-test hermetic suite, and regeneration of every table and
-figure in this paper from checked-in result files.
+\item A reproducible software artifact: the \texttt{pepdesign} package, multiple study scripts, a 27-test hermetic suite, and reproducible
+benchmark and candidate tables derived from checked-in result files.
 \end{enumerate}
 
 \subsection{Scope}

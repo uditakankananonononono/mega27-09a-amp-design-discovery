@@ -38,7 +38,7 @@ A common weakness is evaluation: generated sequences are often scored by the
 same model that guided generation, an echo chamber that inflates apparent
 quality. We deliberately keep our designer simple --- Metropolis--Hastings on
 a discriminative ensemble with an explicit correctness proof
-(Theorem~\ref{thm:mh}) --- and we report novelty against the corpus so the
+with fixed-temperature detailed balance --- and we report novelty against the corpus so the
 reader can judge whether candidates are genuinely new or lightly mutated
 training sequences. No design is claimed active; the section exists to
 demonstrate a correct, reproducible prioritization mechanism.
