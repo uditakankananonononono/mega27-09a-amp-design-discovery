@@ -18,7 +18,7 @@ def stream(query):
             time.sleep(2 ** attempt * 2)
 
 q = ('reviewed:true AND length:[10 TO 60] AND '
-     '(name:"uncharacterized protein" OR name:"hypothetical protein") '
+     '(protein_name:"uncharacterized protein" OR protein_name:"hypothetical protein") '
      'NOT keyword:KW-0929')
 url, text = stream(q)
 p = os.path.join(RAW, "uniprot_uncharacterized_10-60.fasta")
