@@ -1,0 +1,16 @@
+\subsection{Precursor-versus-mature sensitivity check}
+\label{sec:signal}
+P0ACW4 has a signal peptide annotated at residues 1--20 (EcoliWiki,
+\texttt{https://ecoliwiki.org/colipedia/index.php/ydcA:Gene\_Product(s)}).
+Because the UniProt screening input is the 57-residue precursor, not an
+isolated mature peptide, we rescored three contiguous segments with the
+frozen study-07 checkpoints. The full precursor scores 0.9082 (CNN
+0.9992, GNN 0.8171); the 37-residue segment after residue 20 scores
+0.6299 (CNN 0.9974, GNN 0.2623); and the 20-residue signal peptide alone
+scores 0.6912 (CNN 0.5905, GNN 0.7920). The $0.2783$ ensemble-score drop
+on removing the signal peptide is a mechanistic warning: the GNN's high
+score is heavily driven by the signal segment or its contribution to length
+and padding. The CNN remains high for the mature segment. This post-hoc
+ablation supports testing the mature segment separately; it does not
+establish activity of either segment. Exact sequences and unrounded scores
+are in \texttt{results/study15\_signal\_ablation.json}.

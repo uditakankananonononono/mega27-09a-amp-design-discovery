@@ -1,0 +1,24 @@
+{
+  "P0ACW4_precursor": {
+    "sequence": "MKKLALILFMGTLVSFYADAGRKPCSGSKGGISHCTAGGKFVCNDGSISASKKTCTN",
+    "length": 57,
+    "cnn": 0.9992469549179077,
+    "gnn": 0.8170623779296875,
+    "ensemble": 0.9081546664237976
+  },
+  "P0ACW4_mature_after20": {
+    "sequence": "GRKPCSGSKGGISHCTAGGKFVCNDGSISASKKTCTN",
+    "length": 37,
+    "cnn": 0.9974122643470764,
+    "gnn": 0.26229381561279297,
+    "ensemble": 0.6298530399799347
+  },
+  "P0ACW4_signal_1_20": {
+    "sequence": "MKKLALILFMGTLVSFYADA",
+    "length": 20,
+    "cnn": 0.5904737114906311,
+    "gnn": 0.792003333568573,
+    "ensemble": 0.691238522529602
+  },
+  "source": "https://ecoliwiki.org/colipedia/index.php/ydcA:Gene_Product(s) (signal peptide residues 1-20)"
+}

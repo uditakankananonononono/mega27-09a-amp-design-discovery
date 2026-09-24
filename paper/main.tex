@@ -40,7 +40,7 @@ large-scale test split; a random-forest baseline on dipeptide composition is
 competitive on the pilot (0.935) but the convolutional model dominates at
 scale and on external validation against the APD6 2024 natural AMP list.
 We prove correctness of the Metropolis--Hastings annealing designer used to
-propose novel candidates, derive the permutation and bootstrap procedures
+propose untested candidate sequences, derive the permutation and bootstrap procedures
 used for significance, and report an in-silico discovery screen over 852
 reviewed uncharacterized proteins of 10--60 residues. On the published AMP Scanner Vr.2 benchmark our stacked ensemble is near
 the original model on its own test partition but below the later ACEP model.
@@ -258,6 +258,7 @@ against the chosen reference corpus.
 \begin{figure}[h]\centering\includegraphics[width=0.85\textwidth]{fig_sota.png}\caption{Veltri 2018 test partition: published rows from ACEP Table 2 vs our stacked ensemble.}\label{fig:sota}\end{figure}
 \begin{figure}[h]\centering\includegraphics[width=0.85\textwidth]{fig_feb2020.png}\caption{Per-fold 10-fold CV on the AMP Scanner Feb2020 dataset vs the published production numbers (dashed).}\label{fig:feb2020}\end{figure}
 \input{candidates.tex}
+\input{signal_ablation.tex}
 \begin{figure}[h]\centering\includegraphics[width=0.8\textwidth]{fig_auroc.png}\caption{AUROC across evaluation regimes. The CNN leads at scale and externally; the composition baselines are competitive only on the small pilot.}\label{fig:auroc}\end{figure}
 \begin{figure}[h]\centering\includegraphics[width=0.7\textwidth]{../results/study01_roc.png}\caption{Pilot-study ROC curves (5-fold CV, pooled).}\label{fig:roc}\end{figure}
 

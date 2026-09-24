@@ -10,7 +10,7 @@ the decision threshold.
 Let $U$ be the number of positive--negative pairs with $s_i > s_j$ plus half
 the ties. Then $\mathrm{AUROC} = U/(n_+ n_-)$ exactly, and under the null of
 no label information $\mathrm{AUROC}$ concentrates around $1/2$ with
-variance $(n_+ + n_- + 1)/(12 n_+ n_-)$.
+variance $(n_+ + n_- + 1)/(12 n_+ n_-)$ when scores have no ties.
 \end{proposition}
 \begin{proof}[Proof sketch]
 The ROC curve is the empirical survival function of positive scores against
