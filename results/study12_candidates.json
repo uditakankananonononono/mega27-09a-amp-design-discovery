@@ -1,0 +1,213 @@
+{
+  "candidates": [
+    {
+      "name": "InstiAMP-09a-1",
+      "accession": "P0ACW4",
+      "organism": "Escherichia coli (strain K12)",
+      "sequence": "MKKLALILFMGTLVSFYADAGRKPCSGSKGGISHCTAGGKFVCNDGSISASKKTCTN",
+      "ensemble_score": 0.9082,
+      "cnn_score": 0.9992,
+      "gnn_score": 0.8171,
+      "novelty": {
+        "max_3mer_jaccard_vs_APD6": 0.062,
+        "longest_common_substr_vs_APD6": 6,
+        "max_3mer_jaccard_vs_KW0929": 0.055,
+        "novelty_3mer_vs_APD6": 0.938
+      },
+      "physicochemical": {
+        "length": 57,
+        "net_charge_ph7.4": 0.21,
+        "kd_mean": 0.08,
+        "hydrophobic_moment": 1.18,
+        "boman": 1.09
+      },
+      "falsifiable_prediction": "ensemble p(AMP)=0.908 (>0.5 decision) predicts antibacterial activity; testable by broth-microdilution MIC assay vs E. coli K-12 and S. aureus ATCC 25923"
+    },
+    {
+      "name": "InstiAMP-09a-2",
+      "accession": "Q8TGN5",
+      "organism": "Saccharomyces cerevisiae (strain ATCC 204508 / S288c)",
+      "sequence": "MKTWMYSYLFDCPILVLPWTPHNYYLYHRFHHFLPLCYWHYSADTY",
+      "ensemble_score": 0.8897,
+      "cnn_score": 0.9785,
+      "gnn_score": 0.8009,
+      "novelty": {
+        "max_3mer_jaccard_vs_APD6": 0.054,
+        "longest_common_substr_vs_APD6": 4,
+        "max_3mer_jaccard_vs_KW0929": 0.05,
+        "novelty_3mer_vs_APD6": 0.946
+      },
+      "physicochemical": {
+        "length": 46,
+        "net_charge_ph7.4": 0.21,
+        "kd_mean": -0.17,
+        "hydrophobic_moment": 1.74,
+        "boman": 1.59
+      },
+      "falsifiable_prediction": "ensemble p(AMP)=0.890 (>0.5 decision) predicts antibacterial activity; testable by broth-microdilution MIC assay vs E. coli K-12 and S. aureus ATCC 25923"
+    },
+    {
+      "name": "InstiAMP-09a-3",
+      "accession": "P64654",
+      "organism": "Helicobacter pylori (strain J99 / ATCC 700824)",
+      "sequence": "MYRRLLLNLFCMVFLQACLKPMSDPKAEKVDSQVQCGFGSKDC",
+      "ensemble_score": 0.8357,
+      "cnn_score": 0.8647,
+      "gnn_score": 0.8067,
+      "novelty": {
+        "max_3mer_jaccard_vs_APD6": 0.059,
+        "longest_common_substr_vs_APD6": 4,
+        "max_3mer_jaccard_vs_KW0929": 0.059,
+        "novelty_3mer_vs_APD6": 0.941
+      },
+      "physicochemical": {
+        "length": 43,
+        "net_charge_ph7.4": -0.83,
+        "kd_mean": 0.07,
+        "hydrophobic_moment": 1.62,
+        "boman": 1.09
+      },
+      "falsifiable_prediction": "ensemble p(AMP)=0.836 (>0.5 decision) predicts antibacterial activity; testable by broth-microdilution MIC assay vs E. coli K-12 and S. aureus ATCC 25923"
+    },
+    {
+      "name": "InstiAMP-09a-4",
+      "accession": "P85380",
+      "organism": "Nautilus macromphalus",
+      "sequence": "LGICFASMPR",
+      "ensemble_score": 0.8036,
+      "cnn_score": 0.8338,
+      "gnn_score": 0.7734,
+      "novelty": {
+        "max_3mer_jaccard_vs_APD6": 0.091,
+        "longest_common_substr_vs_APD6": 4,
+        "max_3mer_jaccard_vs_KW0929": 0.075,
+        "novelty_3mer_vs_APD6": 0.909
+      },
+      "physicochemical": {
+        "length": 10,
+        "net_charge_ph7.4": 0.17,
+        "kd_mean": 1.0,
+        "hydrophobic_moment": 0.85,
+        "boman": 1.19
+      },
+      "falsifiable_prediction": "ensemble p(AMP)=0.804 (>0.5 decision) predicts antibacterial activity; testable by broth-microdilution MIC assay vs E. coli K-12 and S. aureus ATCC 25923"
+    },
+    {
+      "name": "InstiAMP-09a-5",
+      "accession": "Q8TGN0",
+      "organism": "Saccharomyces cerevisiae (strain ATCC 204508 / S288c",
+      "sequence": "MFKQPGHLTSRKYDLGPWTNVFNLCFLASEAAVGCNKS",
+      "ensemble_score": 0.7931,
+      "cnn_score": 0.8929,
+      "gnn_score": 0.6933,
+      "novelty": {
+        "max_3mer_jaccard_vs_APD6": 0.055,
+        "longest_common_substr_vs_APD6": 4,
+        "max_3mer_jaccard_vs_KW0929": 0.048,
+        "novelty_3mer_vs_APD6": 0.945
+      },
+      "physicochemical": {
+        "length": 38,
+        "net_charge_ph7.4": -0.79,
+        "kd_mean": -0.17,
+        "hydrophobic_moment": 1.21,
+        "boman": 1.16
+      },
+      "falsifiable_prediction": "ensemble p(AMP)=0.793 (>0.5 decision) predicts antibacterial activity; testable by broth-microdilution MIC assay vs E. coli K-12 and S. aureus ATCC 25923"
+    },
+    {
+      "name": "InstiAMP-09a-6",
+      "accession": "Q8TGT5",
+      "organism": "Saccharomyces cerevisiae (strain ATCC 204508 / S288c",
+      "sequence": "MKGSKLFQMQKCMPVWCRTGTCIILPVACHMAKPLKLPT",
+      "ensemble_score": 0.7844,
+      "cnn_score": 0.9714,
+      "gnn_score": 0.5974,
+      "novelty": {
+        "max_3mer_jaccard_vs_APD6": 0.071,
+        "longest_common_substr_vs_APD6": 4,
+        "max_3mer_jaccard_vs_KW0929": 0.071,
+        "novelty_3mer_vs_APD6": 0.929
+      },
+      "physicochemical": {
+        "length": 39,
+        "net_charge_ph7.4": 1.21,
+        "kd_mean": 0.29,
+        "hydrophobic_moment": 1.52,
+        "boman": 1.0
+      },
+      "falsifiable_prediction": "ensemble p(AMP)=0.784 (>0.5 decision) predicts antibacterial activity; testable by broth-microdilution MIC assay vs E. coli K-12 and S. aureus ATCC 25923"
+    },
+    {
+      "name": "InstiAMP-09a-7",
+      "accession": "Q54HM1",
+      "organism": "Dictyostelium discoideum",
+      "sequence": "MSINIVHSNENNEENTNIENWTTTGTNYRNECIARCGRLFSGFNALICMKPCGV",
+      "ensemble_score": 0.7344,
+      "cnn_score": 0.8837,
+      "gnn_score": 0.585,
+      "novelty": {
+        "max_3mer_jaccard_vs_APD6": 0.036,
+        "longest_common_substr_vs_APD6": 4,
+        "max_3mer_jaccard_vs_KW0929": 0.045,
+        "novelty_3mer_vs_APD6": 0.964
+      },
+      "physicochemical": {
+        "length": 54,
+        "net_charge_ph7.4": 0.21,
+        "kd_mean": -0.42,
+        "hydrophobic_moment": 1.78,
+        "boman": 1.15
+      },
+      "falsifiable_prediction": "ensemble p(AMP)=0.734 (>0.5 decision) predicts antibacterial activity; testable by broth-microdilution MIC assay vs E. coli K-12 and S. aureus ATCC 25923"
+    },
+    {
+      "name": "InstiAMP-09a-8",
+      "accession": "O55758",
+      "organism": "Invertebrate iridescent virus 6",
+      "sequence": "MSILLKILFKLLLLILSITFVITDCLPRSCASFGCCSGNCATWCDQCDIKYSC",
+      "ensemble_score": 0.7278,
+      "cnn_score": 0.9978,
+      "gnn_score": 0.4577,
+      "novelty": {
+        "max_3mer_jaccard_vs_APD6": 0.068,
+        "longest_common_substr_vs_APD6": 5,
+        "max_3mer_jaccard_vs_KW0929": 0.062,
+        "novelty_3mer_vs_APD6": 0.932
+      },
+      "physicochemical": {
+        "length": 53,
+        "net_charge_ph7.4": 0.17,
+        "kd_mean": 1.02,
+        "hydrophobic_moment": 1.57,
+        "boman": 1.39
+      },
+      "falsifiable_prediction": "ensemble p(AMP)=0.728 (>0.5 decision) predicts antibacterial activity; testable by broth-microdilution MIC assay vs E. coli K-12 and S. aureus ATCC 25923"
+    },
+    {
+      "name": "InstiAMP-09a-1a",
+      "parent": "InstiAMP-09a-1",
+      "sequence": "QNTWTIICTTMWDSHRRRDPYNPYMVWRRMKTFCNTKEALWFVGICPFNFCVFLTTY",
+      "ensemble_score": 0.9181,
+      "cnn_score": 0.9954,
+      "gnn_score": 0.8409,
+      "novelty": {
+        "max_3mer_jaccard_vs_APD6": 0.055,
+        "max_3mer_jaccard_vs_KW0929": 0.042,
+        "novelty_3mer_vs_APD6": 0.958
+      },
+      "physicochemical": {
+        "length": 57,
+        "net_charge_ph7.4": -0.79,
+        "kd_mean": -0.27,
+        "hydrophobic_moment": 1.69,
+        "boman": 1.26
+      },
+      "falsifiable_prediction": "annealed derivative scoring higher than its natural parent; predicted AMP activity verifiable by MIC assay; sequence absent from APD6/UniProt AMP corpus"
+    }
+  ],
+  "novelty_references": {
+    "apd6_n": 3283,
+    "kw0929_n": 27327
+  }
+}
