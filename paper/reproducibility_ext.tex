@@ -8,7 +8,10 @@ archive linked from the AMP Scanner news page. The script
 \texttt{studies/fetch\_published\_benchmarks.py} retrieves the files, checks
 that each original training/test split has 712 positives and 712 decoys,
 that the tune split has 354 each, and that the updated dataset has 2{,}021
-positives and 2{,}021 decoys. SHA-256 checksums for each downloaded FASTA
+positives and 2{,}021 decoys. No exact-sequence duplicates or cross-class exact overlaps were found in
+the six original split files or within the updated positive and negative
+sets; shared motifs and distant homology are not ruled out.
+SHA-256 checksums for each downloaded FASTA
 are in \texttt{results/benchmark\_sources.json}.
 
 The original partition was used for studies 10 and 11. Studies 13 and 14
