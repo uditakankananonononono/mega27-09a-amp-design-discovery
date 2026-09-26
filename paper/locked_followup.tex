@@ -1,0 +1,41 @@
+\clearpage
+\section{Locked follow-up: benchmark, cluster holdout and discovery audit}
+\label{sec:lockedfollowup}
+\subsection{Evidence boundary and hypothesis}
+The follow-up asks three separate questions. Study 19 tests whether an AMP classifier exceeds a published comparison value on the Feb2020 AMP Scanner Vr.2 dataset; study 20 tests a different, cluster-held-out partition on that dataset; and study 21 screens uncharacterized sequences for candidates. A numerical classifier win on a held-out partition cannot establish antimicrobial activity, clinical utility or toxicity. These outputs were read from the committed \texttt{results/study19\_feb2020\_v2.json}, \texttt{results/study20\_cluster\_holdout.json} and \texttt{results/study21\_rescreen.json}. Study 13's filtered-record analysis remains non-comparable to the full-record benchmark.
+\subsection{Method and locked benchmark outcome}
+The study 19 protocol specifies tenfold cross-validation on AMP Scanner Vr.2 Feb2020 and a fixed ensemble. The recorded mean, across-fold standard deviation and one-sided 95\% lower bound are in the table below. The published reference values are point summaries, not raw predictions under this exact ensemble's folds; the recorded gates therefore express a comparison to published values, not an independent same-split paired superiority test or a global record.
+\begin{center}\begin{tabular}{lrrrr}\hline
+Metric & Mean & Fold SD & One-sided lower & Published CV\\\hline
+Sensitivity & 0.9099 & 0.0192 & 0.8988 & 0.9060\\
+Specificity & 0.9223 & 0.0221 & 0.9095 & 0.8910\\
+Accuracy & 0.9161 & 0.0096 & 0.9106 & 0.8990\\
+MCC & 0.8328 & 0.0192 & 0.8217 & 0.7990\\
+AUROC & 0.9688 & 0.0067 & 0.9649 & 0.9620\\\hline
+\end{tabular}\end{center}
+\noindent\textit{the table below note:} Published reference numbers and all displayed ensemble numbers come from the committed study 19 JSON. The three recorded gates for MCC, accuracy and AUROC are true.
+\subsection{Cluster-held-out stress test}
+Study 20 defines 4,001 sequence-similarity clusters by a single-linkage 3-mer Jaccard threshold of at least 0.6 and assigns clusters across ten folds. Its recorded mean MCC is 0.8369 (fold SD 0.0305, one-sided lower 0.8193); mean AUROC is 0.9701 (fold SD 0.0093, lower 0.9647); accuracy is 0.9181 (fold SD 0.0156, lower 0.9091). The cluster split is useful as a different in-dataset stress test, not a replacement for external testing. Three-mer Jaccard clusters do not guarantee separation of remote homologs. The study 20 JSON itself records a random-split study 19 MCC of 0.8328; no inference of universal out-of-family generalization follows from the small numerical difference.
+\subsection{Discovery candidates and triage flags}
+Study 21 rescored a pool of 852 uncharacterized proteins with the full-data ensemble, then applied a tiered similarity audit against APD6, DRAMP and DBAASP reference sets. The ten named candidates below are all marked T1 in the committed output. ``Maximum Jaccard'' is the maximum observed per-reference three-mer Jaccard, not a proof of absence from all biological sequence databases. Ensemble outputs are model scores, not measured antimicrobial probabilities or MIC values. An N-terminal signal-peptide ablation changes the input being scored and cannot establish mature-peptide activity. Hemolysis risk is a computational flag, not a measured safety endpoint.
+\begin{center}\small\begin{tabular}{lrrrrr}\hline
+Candidate & Ensemble score & Max Jaccard & Signal flag & Ablated score & Hemolysis flag\\\hline
+InstiAMP-21-1 & 0.9681 & 0.073 & yes & 0.8604 & no \\
+InstiAMP-21-2 & 0.9634 & 0.083 & yes & 0.8866 & no \\
+InstiAMP-21-3 & 0.9613 & 0.092 & yes & 0.9706 & no \\
+InstiAMP-21-4 & 0.9604 & 0.057 & no & n/a & no \\
+InstiAMP-21-5 & 0.9596 & 0.072 & yes & 0.7175 & yes \\
+InstiAMP-21-6 & 0.9584 & 0.084 & yes & 0.6844 & yes \\
+InstiAMP-21-7 & 0.9574 & 0.066 & no & n/a & no \\
+InstiAMP-21-8 & 0.9522 & 0.114 & no & n/a & no \\
+InstiAMP-21-9 & 0.9519 & 0.062 & yes & 0.8747 & no \\
+InstiAMP-21-10 & 0.9492 & 0.054 & yes & 0.5577 & yes \\
+\hline\end{tabular}\end{center}
+Seven of these ten have a signal-peptide flag; three have a hemolysis-risk flag (21-5, 21-6, 21-10). For flagged signal peptides, the precursor's score must not be presented as the activity of the mature product. The sharp decline of candidate 21-10 from 0.9492 to 0.5577 under ablation is a concrete failure mode for naive ranking. Candidate 21-8 is arginine-rich and repetitive; low three-mer similarity against the audited references does not exclude nonspecific membrane effects or assay artifacts. Synthesis, a defined broth-microdilution MIC assay and hemolysis testing would be needed before calling any of these biologically active or safe. No wet-lab validation is recorded here.
+\subsection{Claim ledger and pending work}
+\begin{itemize}
+\item Supported within this dataset: study 19's recorded MCC, accuracy and AUROC gates; study 20's cluster-held-out summaries; study 21's ten named T1 computational nominations and risk flags.
+\item Not supported: broad superiority over every AMP model, a calibrated MIC prediction, experimentally discovered antibiotics, mature-peptide activity inferred from full precursor score, or clinical safety.
+\item \textbf{Pending:} independent external held-out cohort that resolves training-source confounding.
+\item \textbf{Pending:} prospective MIC and hemolysis assays for the named sequences, with mature-peptide constructs separately defined.
+\end{itemize}
