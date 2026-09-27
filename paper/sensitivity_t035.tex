@@ -1,0 +1,36 @@
+\clearpage
+\section*{Preregistered sensitivity arm at Jaccard 0.35}
+\label{sec:sensitivity035}
+\subsection*{Protocol and scope}
+Addendum 3 fixed 3-mer Jaccard 0.40 as the primary threshold before outcomes, with 0.35 and 0.45 as secondary sensitivity arms under the same ensemble and cluster-held-out tenfold protocol. The 0.35 result is now final in the committed \texttt{results/study21\_hard\_split\_t0.35.json} (science commits c296ce3 and 5e7f660). It does not replace the 0.40 primary result in the preceding section. The 0.45 arm remains [PENDING: committed final sensitivity outcome].
+
+\subsection*{Cluster and fold diagnostics}
+At 0.35, \texttt{results/study21\_clusters\_t0.35.json} records 3,624 clusters, compared with 3,721 at the primary threshold 0.40, from the same 4,042 rows. The ten held-out fold sizes are 404 or 405. The cluster diagnostic stores the largest cluster sizes as a truncated leading list: its largest entry is 21, but it does not store all cluster sizes or an exact singleton count. Thus no singleton count for 0.35 is claimed here. A smaller similarity threshold joins more sequences but does not by itself demonstrate protein-family independence or erase assay/source confounding.
+
+\subsection*{Full sensitivity outcome}
+\begin{center}\small\begin{tabular}{rrrrrr}\hline
+Fold & MCC & Accuracy & AUROC & Sensitivity & Specificity\\\hline
+1 & 0.7366 & 0.8667 & 0.9469 & 0.9043 & 0.8341\\
+2 & 0.8472 & 0.9235 & 0.9739 & 0.9420 & 0.9040\\
+3 & 0.8717 & 0.9356 & 0.9802 & 0.9231 & 0.9490\\
+4 & 0.8814 & 0.9406 & 0.9758 & 0.9505 & 0.9307\\
+5 & 0.8016 & 0.9010 & 0.9645 & 0.8964 & 0.9052\\
+6 & 0.8550 & 0.9282 & 0.9759 & 0.9278 & 0.9286\\
+7 & 0.8257 & 0.9134 & 0.9655 & 0.9067 & 0.9218\\
+8 & 0.8163 & 0.9084 & 0.9548 & 0.9299 & 0.8842\\
+9 & 0.8244 & 0.9109 & 0.9766 & 0.8534 & 0.9624\\
+10 & 0.7715 & 0.8861 & 0.9467 & 0.9014 & 0.8691\\\hline
+\end{tabular}\end{center}
+
+\begin{center}\small\begin{tabular}{lrrr}\hline
+Metric & Mean & Stored fold SD & One-sided lower 95\%\\\hline
+MCC & 0.8231 & 0.0447 & 0.7972\\
+Accuracy & 0.9114 & 0.0227 & 0.8983\\
+AUROC & 0.9661 & 0.0126 & 0.9588\\
+Sensitivity & 0.9135 & 0.0278 & 0.8975\\
+Specificity & 0.9089 & 0.0385 & 0.8866\\\hline
+\end{tabular}\end{center}
+The locked point-value hard gate compares mean MCC to 0.799. It passes by 0.0241. The stronger point-value gate compares mean MCC to 0.8328 and fails by 0.0097. The one-sided lower bound 0.7972 is itself below the published 0.799 comparator by 0.0018, so the point-value hard success is \emph{not} evidence that the lower confidence bound clears that comparator. The 0.35 MCC is 0.0106 below the primary 0.40 mean, and its fold spread is larger. These arms share rows, architecture and much of their fold construction; a difference between means is not an independent method comparison or proof that the exact threshold is biologically optimal.
+
+\subsection*{Branch audit and limitations}
+Mean branch AUROCs in the stored result are CNN7 0.9575, CNN27 0.9591, GNN 0.8877, random forest 0.9638 and histogram gradient boosting 0.9669. These are components of the same trained ensemble, not five independent external benchmarks. Fold 1 MCC is 0.7366 and fold 10 is 0.7715, showing uneven performance that the mean alone can conceal. Neither sensitivity arm tests the ten discovery candidates' antimicrobial activity or hemolysis. [PENDING: independent AMP cohort, MIC assays, hemolysis assays and final 0.45 sensitivity arm.] The primary 0.40 arm retains its preregistered status; this secondary result is reported in full regardless of its mixed gate verdict.

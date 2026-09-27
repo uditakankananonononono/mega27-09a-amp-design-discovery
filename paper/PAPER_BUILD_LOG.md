@@ -15,3 +15,8 @@ Branch: `paper-build`, separate from the science builder's `main`. Paper paths o
 ## Judge requirement amended, 2026-09-27 10:00 IST
 
 The owner said "NOT 10 ROUNDS OOF CHATGPT CHECK JUST ONE WHICH I PROVIDE OK?" (authenticated WhatsApp message `wamid.HBgMOTE4MTM0MDk4NTcxFQIAEhgWM0VCMDJCMTZGRTVEMkQwMTFBQzc4MQA=`, 10:00:07 IST). For this project, the paper branch therefore marks the counted judge gate **0 of 1, PENDING her personally provided verdict**. A round initiated by agents, even through her ChatGPT account, remains historical or supplementary and does not meet the gate. Historical ten-round language in the science ledgers is not erased by this note. A project-specific user-pasted verdict must be traced and evaluated before completion is recorded. Supplementary Gemini/LLM consults do not count. No scientific result, page count or font gate changes here.
+
+## Preregistered t=0.35 sensitivity arm, 2026-09-27
+
+- Added committed `results/study21_hard_split_t0.35.json` from main c296ce3 and diagnostics from main 5e7f660. Mean MCC 0.8231 passes the published 0.799 point-value hard gate and fails the stronger 0.8328 gate. The one-sided lower 95% bound is 0.7972, below 0.799. Fold SD is 0.0447; the 0.35 diagnostic has 3,624 clusters, and its 50-element leading-size list cannot establish a singleton count. The primary t=0.40 arm stays primary; t=0.45 remains pending.
+- Rebuilt twice: 56 pages (up from 54) in Nimbus Roman, not genuine TNR. Visual check pages 53-55 verified the new two-page section's readable fold and summary tables, with no clipping; references continue on page 56. The second sensitivity arm does not validate the discovery candidates or change the pending user-provided judge-verdict gate.
