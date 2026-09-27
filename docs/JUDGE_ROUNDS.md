@@ -9,7 +9,11 @@ User, WhatsApp 10:00:07 IST (wamid.HBgMOTE4MTM0MDk4NTcxFQIAEhgWM0VCMDJCMTZGRTVEM
 verified author=user): "NOT 10 ROUNDS OOF CHATGPT CHECK JUST ONE WHICH I PROVIDE OK?"
 Effect: the counted ChatGPT judge requirement is now ONE round per project,
 provided by the user through the courier route. History below is preserved, not
-deleted. Status of this project's judge gate: 0 of 1 - PENDING HER PROVIDED VERDICT.
+deleted. Status of this project's judge gate: 1 of 1 - REQUIREMENT MET (2026-09-27).
+Her provided verdict arrived 11:26:52 IST (wamid.HBgMOTE4MTM0MDk4NTcxFQIAEhgWM0VCMEQ0OUM1NzUyMTgxOTJDQzE2NwA=,
+verified author=user): 20 weaknesses + 20 additions, archived verbatim in
+docs/JUDGE_VERDICT_USER_2026-09-27.md; amendment queue locked BEFORE execution
+in docs/PREREG_ADDENDUM4_2026-09-27.md.
 
 CLARIFICATION 2026-09-27 10:01:47 IST (user, WhatsApp
 wamid.HBgMOTE4MTM0MDk4NTcxFQIAEhgWM0VCMDMwREI5RDQ0QUNCRDc2MTNDMwA=, verified
