@@ -1,0 +1,22 @@
+{
+ "study": "study27_q3_potency",
+ "cohort": "E. coli ATCC 25922, log10 median MIC ug/ml",
+ "n": 4929,
+ "n_clusters": 2745,
+ "model": {
+  "spearman": 0.4647470994448199,
+  "mae": 0.47800028138182776,
+  "r2": 0.19967121591758985
+ },
+ "null_median": {
+  "spearman": -0.08807701934401152,
+  "mae": 0.5628707103609465,
+  "r2": -0.004204256980747001
+ },
+ "falsifier_shuffle": {
+  "spearman": 0.01915492595328468,
+  "mae": 0.6068349887177554,
+  "r2": -0.1573768498248258
+ },
+ "falsifier_invalidates": false
+}

@@ -101,11 +101,25 @@ def run():
     seqs = [r["sequence"] for r in pri]
     y = np.array([np.log10(r["median_mic_ugml"]) for r in pri])
     print(f"primary cohort n={len(seqs)}", flush=True)
-    clusters = mmseqs_clusters(seqs)
+    cache = ROOT / 'results/study27_q3_clusters.json'
+    if cache.exists():
+        cc = json.load(open(cache))
+        assert cc['n_seqs'] == len(seqs), 'cluster cache size mismatch'
+        assert sum(len(g) for g in cc['clusters']) == len(seqs)
+        clusters = cc['clusters']
+    else:
+        clusters = mmseqs_clusters(seqs)
     ncl = len(clusters)
     print(f"clusters={ncl}", flush=True)
     splits = make_splits(clusters, len(seqs))
-    X = np.array([rich_features_v2(s) for s in seqs])
+    xcache = ROOT / 'results/study27_q3_X.npy'
+    if xcache.exists():
+        X = np.load(xcache)
+        assert X.shape[0] == len(seqs)
+    else:
+        X = np.array([rich_features_v2(s) for s in seqs])
+        np.save(xcache, X)
+    print(f'X ready {X.shape}', flush=True)
     def cv_pred(yy):
         pred = np.zeros(len(yy))
         for tri, tei in splits:
