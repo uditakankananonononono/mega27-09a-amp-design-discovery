@@ -56,3 +56,13 @@ except where marked PARTIAL (pre-planned work already locked under addenda 1-3).
 ## Rules
 Negatives are reported, never terminal; any deviation from this queue is disclosed
 in-addendum before use; each item commits with its own hash.
+
+## Disclosed amendment A4.1 (2026-09-27, before Q1 training use)
+Q1 locked "match negatives on review status AND organism distribution". Data audit
+BEFORE any training found exact organism matching impossible: 364/766 reviewed-positive
+organisms (919/2,973 sequences, mostly exotic spider/frog AMP hosts) have ZERO reviewed
+small (10-150aa) non-AMP proteins in UniProt - the negative class does not exist for
+those species at this length range. Locked fallback hierarchy, disclosed here before
+use: species pool -> genus pool -> global reviewed pool length-matched to the positive
+length distribution (1:1, rng(11)). This impossibility is itself a reported finding of
+the label-provenance audit (it bounds how clean a "clean" AMP benchmark can be).

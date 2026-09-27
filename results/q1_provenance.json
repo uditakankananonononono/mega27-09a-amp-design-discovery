@@ -1,0 +1,23 @@
+{
+ "step": "Q1 reviewed-only rebuild dataset (addendum-4)",
+ "positives": {
+  "source": "uniprot_kw0929_reviewed_10-150.fasta (sp| subset of pinned uniprot_kw0929_all_10-150.fasta)",
+  "n_raw": 3098,
+  "n_unique": 2973
+ },
+ "negatives": {
+  "source": "uniprot_nonamp_pool_10-150.fasta (pinned, reviewed:true NOT KW-0929/KW-0800/KW-0862, 10-150aa)",
+  "rule": "1:1 match, rng(11): species -> genus -> global length-matched (addendum-4 amendment A4.1, disclosed before use)",
+  "n": 2973,
+  "fill": {
+   "species": 1503,
+   "genus": 365,
+   "global": 1105
+  },
+  "audit_finding": "364/766 positive organisms lack ANY reviewed small-protein negatives; exact organism matching impossible for 919/2973 sequences"
+ },
+ "sha256": {
+  "q1_reviewed_positives.fasta": "58f444dadbb290f4",
+  "q1_matched_negatives.fasta": "f446c276658653af"
+ }
+}
