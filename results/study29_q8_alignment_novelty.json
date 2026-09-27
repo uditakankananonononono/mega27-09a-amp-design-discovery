@@ -1,0 +1,392 @@
+{
+ "study": "study29_q8_alignment_novelty",
+ "engine": "MMseqs2 easy-search -s 7.5 --max-seqs 10000 -e 1e-3 (--threads 1, mechanics only)",
+ "locked_flag": "NOVEL if no hit with pident>=30% AND qcov>=0.5 at e<=1e-3 in any corpus",
+ "candidates": [
+  {
+   "name": "InstiAMP-21-1",
+   "sequence": "MRVLHVMLSFLNSLLFLPICFCLLQLKATCAVRVKKYSMKKKKKR",
+   "jaccard_tier": "T1",
+   "per_corpus": {
+    "APD6": {
+     "best": null,
+     "flagged": false
+    },
+    "DRAMP": {
+     "best": null,
+     "flagged": false
+    },
+    "DBAASP": {
+     "best": null,
+     "flagged": false
+    }
+   },
+   "alignment_novel": true
+  },
+  {
+   "name": "InstiAMP-21-2",
+   "sequence": "MKGSKLFQMQKCMPVWCRTGTCIILPVACHMAKPLKLPT",
+   "jaccard_tier": "T1",
+   "per_corpus": {
+    "APD6": {
+     "best": null,
+     "flagged": false
+    },
+    "DRAMP": {
+     "best": null,
+     "flagged": false
+    },
+    "DBAASP": {
+     "best": null,
+     "flagged": false
+    }
+   },
+   "alignment_novel": true
+  },
+  {
+   "name": "InstiAMP-21-3",
+   "sequence": "MTNKKNWKCAGCKNRYSSFDKEKKDGQLKFNCPNCGHTVRRYTILGGY",
+   "jaccard_tier": "T1",
+   "per_corpus": {
+    "APD6": {
+     "best": null,
+     "flagged": false
+    },
+    "DRAMP": {
+     "best": null,
+     "flagged": false
+    },
+    "DBAASP": {
+     "best": null,
+     "flagged": false
+    }
+   },
+   "alignment_novel": true
+  },
+  {
+   "name": "InstiAMP-21-4",
+   "sequence": "MVLTNLQKITGLLCVLVETKKLKIFIKFMLKTKNGGKKVLKKIYKKAKKKNILTMIMFI",
+   "jaccard_tier": "T1",
+   "per_corpus": {
+    "APD6": {
+     "best": null,
+     "flagged": false
+    },
+    "DRAMP": {
+     "best": null,
+     "flagged": false
+    },
+    "DBAASP": {
+     "best": null,
+     "flagged": false
+    }
+   },
+   "alignment_novel": true
+  },
+  {
+   "name": "InstiAMP-21-5",
+   "sequence": "MLLVVIFGLVALFALWGVLRSVRNKNILGFLLAGATLFVFGWFTVMTVINSGYPTAH",
+   "jaccard_tier": "T1",
+   "per_corpus": {
+    "APD6": {
+     "best": null,
+     "flagged": false
+    },
+    "DRAMP": {
+     "best": null,
+     "flagged": false
+    },
+    "DBAASP": {
+     "best": null,
+     "flagged": false
+    }
+   },
+   "alignment_novel": true
+  },
+  {
+   "name": "InstiAMP-21-6",
+   "sequence": "MANGTILAHSLRHHTPPFPRMPLGYSSSRAVRRSRWFLVLISCCCCCFRRC",
+   "jaccard_tier": "T1",
+   "per_corpus": {
+    "APD6": {
+     "best": null,
+     "flagged": false
+    },
+    "DRAMP": {
+     "best": null,
+     "flagged": false
+    },
+    "DBAASP": {
+     "best": null,
+     "flagged": false
+    }
+   },
+   "alignment_novel": true
+  },
+  {
+   "name": "InstiAMP-21-7",
+   "sequence": "MWFIIFGIIFFIEGIIMTVYGVKKKNGMLTYIGIVFAIMTFGVVMIKLTGH",
+   "jaccard_tier": "T1",
+   "per_corpus": {
+    "APD6": {
+     "best": null,
+     "flagged": false
+    },
+    "DRAMP": {
+     "best": null,
+     "flagged": false
+    },
+    "DBAASP": {
+     "best": null,
+     "flagged": false
+    }
+   },
+   "alignment_novel": true
+  },
+  {
+   "name": "InstiAMP-21-8",
+   "sequence": "MKRKIIAIGIFFRLFIIHIHFSHHCCENHFINPLVCLIALFCI",
+   "jaccard_tier": "T1",
+   "per_corpus": {
+    "APD6": {
+     "best": null,
+     "flagged": false
+    },
+    "DRAMP": {
+     "best": null,
+     "flagged": false
+    },
+    "DBAASP": {
+     "best": null,
+     "flagged": false
+    }
+   },
+   "alignment_novel": true
+  },
+  {
+   "name": "InstiAMP-21-9",
+   "sequence": "MPICVLRKSPKRRSPSPKRRRSPKRRSPRRSPRRSPRRSPPRRRSPRRSTRRSPRRR",
+   "jaccard_tier": "T1",
+   "per_corpus": {
+    "APD6": {
+     "best": null,
+     "flagged": false
+    },
+    "DRAMP": {
+     "best": null,
+     "flagged": false
+    },
+    "DBAASP": {
+     "best": null,
+     "flagged": false
+    }
+   },
+   "alignment_novel": true
+  },
+  {
+   "name": "InstiAMP-21-10",
+   "sequence": "MKKLALILFMGTLVSFYADAGRKPCSGSKGGISHCTAGGKFVCNDGSISASKKTCTN",
+   "jaccard_tier": "T1",
+   "per_corpus": {
+    "APD6": {
+     "best": null,
+     "flagged": false
+    },
+    "DRAMP": {
+     "best": null,
+     "flagged": false
+    },
+    "DBAASP": {
+     "best": null,
+     "flagged": false
+    }
+   },
+   "alignment_novel": true
+  },
+  {
+   "name": "InstiAMP-09a-1",
+   "sequence": "MKKLALILFMGTLVSFYADAGRKPCSGSKGGISHCTAGGKFVCNDGSISASKKTCTN",
+   "jaccard_tier": "T1",
+   "per_corpus": {
+    "APD6": {
+     "best": null,
+     "flagged": false
+    },
+    "DRAMP": {
+     "best": null,
+     "flagged": false
+    },
+    "DBAASP": {
+     "best": null,
+     "flagged": false
+    }
+   },
+   "alignment_novel": true
+  },
+  {
+   "name": "InstiAMP-09a-2",
+   "sequence": "MKTWMYSYLFDCPILVLPWTPHNYYLYHRFHHFLPLCYWHYSADTY",
+   "jaccard_tier": "T1",
+   "per_corpus": {
+    "APD6": {
+     "best": null,
+     "flagged": false
+    },
+    "DRAMP": {
+     "best": null,
+     "flagged": false
+    },
+    "DBAASP": {
+     "best": null,
+     "flagged": false
+    }
+   },
+   "alignment_novel": true
+  },
+  {
+   "name": "InstiAMP-09a-3",
+   "sequence": "MYRRLLLNLFCMVFLQACLKPMSDPKAEKVDSQVQCGFGSKDC",
+   "jaccard_tier": "T1",
+   "per_corpus": {
+    "APD6": {
+     "best": null,
+     "flagged": false
+    },
+    "DRAMP": {
+     "best": null,
+     "flagged": false
+    },
+    "DBAASP": {
+     "best": null,
+     "flagged": false
+    }
+   },
+   "alignment_novel": true
+  },
+  {
+   "name": "InstiAMP-09a-4",
+   "sequence": "LGICFASMPR",
+   "jaccard_tier": "T1",
+   "per_corpus": {
+    "APD6": {
+     "best": null,
+     "flagged": false
+    },
+    "DRAMP": {
+     "best": null,
+     "flagged": false
+    },
+    "DBAASP": {
+     "best": null,
+     "flagged": false
+    }
+   },
+   "alignment_novel": true
+  },
+  {
+   "name": "InstiAMP-09a-5",
+   "sequence": "MFKQPGHLTSRKYDLGPWTNVFNLCFLASEAAVGCNKS",
+   "jaccard_tier": "T1",
+   "per_corpus": {
+    "APD6": {
+     "best": null,
+     "flagged": false
+    },
+    "DRAMP": {
+     "best": null,
+     "flagged": false
+    },
+    "DBAASP": {
+     "best": null,
+     "flagged": false
+    }
+   },
+   "alignment_novel": true
+  },
+  {
+   "name": "InstiAMP-09a-6",
+   "sequence": "MKGSKLFQMQKCMPVWCRTGTCIILPVACHMAKPLKLPT",
+   "jaccard_tier": "T1",
+   "per_corpus": {
+    "APD6": {
+     "best": null,
+     "flagged": false
+    },
+    "DRAMP": {
+     "best": null,
+     "flagged": false
+    },
+    "DBAASP": {
+     "best": null,
+     "flagged": false
+    }
+   },
+   "alignment_novel": true
+  },
+  {
+   "name": "InstiAMP-09a-7",
+   "sequence": "MSINIVHSNENNEENTNIENWTTTGTNYRNECIARCGRLFSGFNALICMKPCGV",
+   "jaccard_tier": "T1",
+   "per_corpus": {
+    "APD6": {
+     "best": null,
+     "flagged": false
+    },
+    "DRAMP": {
+     "best": null,
+     "flagged": false
+    },
+    "DBAASP": {
+     "best": null,
+     "flagged": false
+    }
+   },
+   "alignment_novel": true
+  },
+  {
+   "name": "InstiAMP-09a-8",
+   "sequence": "MSILLKILFKLLLLILSITFVITDCLPRSCASFGCCSGNCATWCDQCDIKYSC",
+   "jaccard_tier": "T1",
+   "per_corpus": {
+    "APD6": {
+     "best": null,
+     "flagged": false
+    },
+    "DRAMP": {
+     "best": null,
+     "flagged": false
+    },
+    "DBAASP": {
+     "best": null,
+     "flagged": false
+    }
+   },
+   "alignment_novel": true
+  },
+  {
+   "name": "InstiAMP-09a-1a",
+   "sequence": "QNTWTIICTTMWDSHRRRDPYNPYMVWRRMKTFCNTKEALWFVGICPFNFCVFLTTY",
+   "jaccard_tier": "T1",
+   "per_corpus": {
+    "APD6": {
+     "best": null,
+     "flagged": false
+    },
+    "DRAMP": {
+     "best": null,
+     "flagged": false
+    },
+    "DBAASP": {
+     "best": null,
+     "flagged": false
+    }
+   },
+   "alignment_novel": true
+  }
+ ],
+ "summary": {
+  "n": 19,
+  "alignment_novel": 19,
+  "jaccard_T1": 19
+ }
+}
