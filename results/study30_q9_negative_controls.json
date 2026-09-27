@@ -1,0 +1,1304 @@
+{
+ "study": "study30_q9_negative_controls",
+ "screen": "locked study21 rerun ensemble recipe (5 branches, same seeds/epochs, full Feb2020 retrain)",
+ "arms": {
+  "scrambles": {
+   "n": 100,
+   "median": 0.9538,
+   "q1": 0.9446,
+   "q3": 0.9613,
+   "max": 0.9776,
+   "n_ge_0.5": 100,
+   "ge_0.5_cases": [
+    {
+     "name": "scramble-21-1-1",
+     "p": 0.9692
+    },
+    {
+     "name": "scramble-21-1-2",
+     "p": 0.9658
+    },
+    {
+     "name": "scramble-21-1-3",
+     "p": 0.9704
+    },
+    {
+     "name": "scramble-21-1-4",
+     "p": 0.965
+    },
+    {
+     "name": "scramble-21-1-5",
+     "p": 0.9521
+    },
+    {
+     "name": "scramble-21-1-6",
+     "p": 0.9457
+    },
+    {
+     "name": "scramble-21-1-7",
+     "p": 0.9633
+    },
+    {
+     "name": "scramble-21-1-8",
+     "p": 0.9616
+    },
+    {
+     "name": "scramble-21-1-9",
+     "p": 0.9639
+    },
+    {
+     "name": "scramble-21-1-10",
+     "p": 0.9686
+    },
+    {
+     "name": "scramble-21-2-1",
+     "p": 0.9499
+    },
+    {
+     "name": "scramble-21-2-2",
+     "p": 0.9455
+    },
+    {
+     "name": "scramble-21-2-3",
+     "p": 0.9571
+    },
+    {
+     "name": "scramble-21-2-4",
+     "p": 0.9439
+    },
+    {
+     "name": "scramble-21-2-5",
+     "p": 0.9637
+    },
+    {
+     "name": "scramble-21-2-6",
+     "p": 0.9466
+    },
+    {
+     "name": "scramble-21-2-7",
+     "p": 0.9596
+    },
+    {
+     "name": "scramble-21-2-8",
+     "p": 0.9547
+    },
+    {
+     "name": "scramble-21-2-9",
+     "p": 0.9507
+    },
+    {
+     "name": "scramble-21-2-10",
+     "p": 0.9539
+    },
+    {
+     "name": "scramble-21-3-1",
+     "p": 0.9419
+    },
+    {
+     "name": "scramble-21-3-2",
+     "p": 0.9568
+    },
+    {
+     "name": "scramble-21-3-3",
+     "p": 0.9562
+    },
+    {
+     "name": "scramble-21-3-4",
+     "p": 0.9507
+    },
+    {
+     "name": "scramble-21-3-5",
+     "p": 0.9354
+    },
+    {
+     "name": "scramble-21-3-6",
+     "p": 0.9584
+    },
+    {
+     "name": "scramble-21-3-7",
+     "p": 0.9496
+    },
+    {
+     "name": "scramble-21-3-8",
+     "p": 0.9477
+    },
+    {
+     "name": "scramble-21-3-9",
+     "p": 0.958
+    },
+    {
+     "name": "scramble-21-3-10",
+     "p": 0.9419
+    },
+    {
+     "name": "scramble-21-4-1",
+     "p": 0.957
+    },
+    {
+     "name": "scramble-21-4-2",
+     "p": 0.954
+    },
+    {
+     "name": "scramble-21-4-3",
+     "p": 0.9631
+    },
+    {
+     "name": "scramble-21-4-4",
+     "p": 0.9634
+    },
+    {
+     "name": "scramble-21-4-5",
+     "p": 0.958
+    },
+    {
+     "name": "scramble-21-4-6",
+     "p": 0.9564
+    },
+    {
+     "name": "scramble-21-4-7",
+     "p": 0.957
+    },
+    {
+     "name": "scramble-21-4-8",
+     "p": 0.943
+    },
+    {
+     "name": "scramble-21-4-9",
+     "p": 0.9533
+    },
+    {
+     "name": "scramble-21-4-10",
+     "p": 0.9544
+    },
+    {
+     "name": "scramble-21-5-1",
+     "p": 0.9468
+    },
+    {
+     "name": "scramble-21-5-2",
+     "p": 0.8595
+    },
+    {
+     "name": "scramble-21-5-3",
+     "p": 0.8527
+    },
+    {
+     "name": "scramble-21-5-4",
+     "p": 0.9512
+    },
+    {
+     "name": "scramble-21-5-5",
+     "p": 0.9498
+    },
+    {
+     "name": "scramble-21-5-6",
+     "p": 0.9578
+    },
+    {
+     "name": "scramble-21-5-7",
+     "p": 0.9645
+    },
+    {
+     "name": "scramble-21-5-8",
+     "p": 0.9556
+    },
+    {
+     "name": "scramble-21-5-9",
+     "p": 0.9275
+    },
+    {
+     "name": "scramble-21-5-10",
+     "p": 0.9547
+    },
+    {
+     "name": "scramble-21-6-1",
+     "p": 0.9596
+    },
+    {
+     "name": "scramble-21-6-2",
+     "p": 0.9592
+    },
+    {
+     "name": "scramble-21-6-3",
+     "p": 0.9636
+    },
+    {
+     "name": "scramble-21-6-4",
+     "p": 0.966
+    },
+    {
+     "name": "scramble-21-6-5",
+     "p": 0.9483
+    },
+    {
+     "name": "scramble-21-6-6",
+     "p": 0.9679
+    },
+    {
+     "name": "scramble-21-6-7",
+     "p": 0.9599
+    },
+    {
+     "name": "scramble-21-6-8",
+     "p": 0.9588
+    },
+    {
+     "name": "scramble-21-6-9",
+     "p": 0.9557
+    },
+    {
+     "name": "scramble-21-6-10",
+     "p": 0.9612
+    },
+    {
+     "name": "scramble-21-7-1",
+     "p": 0.9354
+    },
+    {
+     "name": "scramble-21-7-2",
+     "p": 0.946
+    },
+    {
+     "name": "scramble-21-7-3",
+     "p": 0.9619
+    },
+    {
+     "name": "scramble-21-7-4",
+     "p": 0.9581
+    },
+    {
+     "name": "scramble-21-7-5",
+     "p": 0.9508
+    },
+    {
+     "name": "scramble-21-7-6",
+     "p": 0.94
+    },
+    {
+     "name": "scramble-21-7-7",
+     "p": 0.888
+    },
+    {
+     "name": "scramble-21-7-8",
+     "p": 0.9538
+    },
+    {
+     "name": "scramble-21-7-9",
+     "p": 0.9476
+    },
+    {
+     "name": "scramble-21-7-10",
+     "p": 0.9372
+    },
+    {
+     "name": "scramble-21-8-1",
+     "p": 0.901
+    },
+    {
+     "name": "scramble-21-8-2",
+     "p": 0.9296
+    },
+    {
+     "name": "scramble-21-8-3",
+     "p": 0.7858
+    },
+    {
+     "name": "scramble-21-8-4",
+     "p": 0.9449
+    },
+    {
+     "name": "scramble-21-8-5",
+     "p": 0.9405
+    },
+    {
+     "name": "scramble-21-8-6",
+     "p": 0.9488
+    },
+    {
+     "name": "scramble-21-8-7",
+     "p": 0.9423
+    },
+    {
+     "name": "scramble-21-8-8",
+     "p": 0.9494
+    },
+    {
+     "name": "scramble-21-8-9",
+     "p": 0.8967
+    },
+    {
+     "name": "scramble-21-8-10",
+     "p": 0.9324
+    },
+    {
+     "name": "scramble-21-9-1",
+     "p": 0.9342
+    },
+    {
+     "name": "scramble-21-9-2",
+     "p": 0.9253
+    },
+    {
+     "name": "scramble-21-9-3",
+     "p": 0.9543
+    },
+    {
+     "name": "scramble-21-9-4",
+     "p": 0.9499
+    },
+    {
+     "name": "scramble-21-9-5",
+     "p": 0.9463
+    },
+    {
+     "name": "scramble-21-9-6",
+     "p": 0.9433
+    },
+    {
+     "name": "scramble-21-9-7",
+     "p": 0.9346
+    },
+    {
+     "name": "scramble-21-9-8",
+     "p": 0.9415
+    },
+    {
+     "name": "scramble-21-9-9",
+     "p": 0.9431
+    },
+    {
+     "name": "scramble-21-9-10",
+     "p": 0.9482
+    },
+    {
+     "name": "scramble-21-10-1",
+     "p": 0.9776
+    },
+    {
+     "name": "scramble-21-10-2",
+     "p": 0.962
+    },
+    {
+     "name": "scramble-21-10-3",
+     "p": 0.9621
+    },
+    {
+     "name": "scramble-21-10-4",
+     "p": 0.9692
+    },
+    {
+     "name": "scramble-21-10-5",
+     "p": 0.9741
+    },
+    {
+     "name": "scramble-21-10-6",
+     "p": 0.9509
+    },
+    {
+     "name": "scramble-21-10-7",
+     "p": 0.9678
+    },
+    {
+     "name": "scramble-21-10-8",
+     "p": 0.9666
+    },
+    {
+     "name": "scramble-21-10-9",
+     "p": 0.9736
+    },
+    {
+     "name": "scramble-21-10-10",
+     "p": 0.9649
+    }
+   ],
+   "items": [
+    {
+     "name": "scramble-21-1-1",
+     "sequence": "VCMKSLKAKKKFKCRLFMYNMLLKFSCVLRKVHRTQILVSLPALL",
+     "ensemble_p": 0.9692
+    },
+    {
+     "name": "scramble-21-1-2",
+     "sequence": "TKLQRLAKKMVVFFKYCKSMVFLLINSAMKCLCLRKHPLSLRKLV",
+     "ensemble_p": 0.9658
+    },
+    {
+     "name": "scramble-21-1-3",
+     "sequence": "LAKFVIMRLSVNSVCCKKQSMALLKLLLLKRFPFCKRLTHYVKKM",
+     "ensemble_p": 0.9704
+    },
+    {
+     "name": "scramble-21-1-4",
+     "sequence": "LQSAVLKKLRFMKYMCSKLLFAKKMFRVNLLISCVLKVCPLTRHK",
+     "ensemble_p": 0.965
+    },
+    {
+     "name": "scramble-21-1-5",
+     "sequence": "SVTRVNSLLMYQLKLFRLKLMVLCSLKCVHKKFCLKFKKARIMAP",
+     "ensemble_p": 0.9521
+    },
+    {
+     "name": "scramble-21-1-6",
+     "sequence": "VKKSVLRMLAFYSPKLRISKCHKMLLKKLVTLACFRMFLKNCQLV",
+     "ensemble_p": 0.9457
+    },
+    {
+     "name": "scramble-21-1-7",
+     "sequence": "SKLKQLRFLRSYKSFTVKMKACKLLLMNMIACKLVPVFLVLHKCR",
+     "ensemble_p": 0.9633
+    },
+    {
+     "name": "scramble-21-1-8",
+     "sequence": "VFRKTSCLLKQLLPSLAFMLLLMVHFKLRASRKYIKMVKVCNCKK",
+     "ensemble_p": 0.9616
+    },
+    {
+     "name": "scramble-21-1-9",
+     "sequence": "ALLMLFMVCSLNKLVRSFKRLKAKKLVYFCLKKSKMHVQTCLIRP",
+     "ensemble_p": 0.9639
+    },
+    {
+     "name": "scramble-21-1-10",
+     "sequence": "FLNIFRLKRYMKKMSACKHCVVFKCLLQKLVSTAKLLVPRMSLLK",
+     "ensemble_p": 0.9686
+    },
+    {
+     "name": "scramble-21-2-1",
+     "sequence": "TMPCKIWACKHQLKAFICGLMCKGRQVLLSPMPTKTVMP",
+     "ensemble_p": 0.9499
+    },
+    {
+     "name": "scramble-21-2-2",
+     "sequence": "LKTKVTLRPQCMMTAKHIFLGPLPSICWCVACQPGKMKM",
+     "ensemble_p": 0.9455
+    },
+    {
+     "name": "scramble-21-2-3",
+     "sequence": "PGMAKRKCTLASPQMKKCLFHTCQPIMKLMVPWICLVTG",
+     "ensemble_p": 0.9571
+    },
+    {
+     "name": "scramble-21-2-4",
+     "sequence": "RHMTCMAQPICMSVCPPKLLTPCLMIKAKFLWKVTGKQG",
+     "ensemble_p": 0.9439
+    },
+    {
+     "name": "scramble-21-2-5",
+     "sequence": "GTLIIHRFLGPVVMKQATTWMKCLPLACKPMQMKKCPCS",
+     "ensemble_p": 0.9637
+    },
+    {
+     "name": "scramble-21-2-6",
+     "sequence": "KRFIALLCVQGGPIPWKALMCTTSQMCLMHVPKKMTCKP",
+     "ensemble_p": 0.9466
+    },
+    {
+     "name": "scramble-21-2-7",
+     "sequence": "GMIAKKKLPLMCTSCMIKGPACMPTQPVHQLKTFLWRCV",
+     "ensemble_p": 0.9596
+    },
+    {
+     "name": "scramble-21-2-8",
+     "sequence": "LPRLGKKKPAMLITTVGCQCKWMQCSCLKIHPATFPVMM",
+     "ensemble_p": 0.9547
+    },
+    {
+     "name": "scramble-21-2-9",
+     "sequence": "GKARTFLVKMHLCPPCLCKLASTTPIMGKMKQWICMQVP",
+     "ensemble_p": 0.9507
+    },
+    {
+     "name": "scramble-21-2-10",
+     "sequence": "KMKPCFSLIRLWPPMTVMGIQLAKPCTQVGMKCCAHTLK",
+     "ensemble_p": 0.9539
+    },
+    {
+     "name": "scramble-21-3-1",
+     "sequence": "LCPNKKRGCSDKRGLYTKSTKNNGMINKGYGHAFYKRVECNFKCDWQT",
+     "ensemble_p": 0.9419
+    },
+    {
+     "name": "scramble-21-3-2",
+     "sequence": "GVNYNGIFHSKWYRAYRLTCFKTKKPKDKMSTCNGCKNRGKCGQLEDN",
+     "ensemble_p": 0.9568
+    },
+    {
+     "name": "scramble-21-3-3",
+     "sequence": "RAKLNWKEGDPMGGKRCNNLTKRCKYNTFDKNHISFVCCKYQSKGTYG",
+     "ensemble_p": 0.9562
+    },
+    {
+     "name": "scramble-21-3-4",
+     "sequence": "SNRDGGFMKKKPWLKGLNCHAGRKSTYIFYQEKVCNDKCGTKTNRCNY",
+     "ensemble_p": 0.9507
+    },
+    {
+     "name": "scramble-21-3-5",
+     "sequence": "GDLTPNRYRKCVKWLCGKNSRANSKGNTYNFTDKGIYKKCMEQKCGFH",
+     "ensemble_p": 0.9354
+    },
+    {
+     "name": "scramble-21-3-6",
+     "sequence": "WTSYYPTDFLNKLKNHGCNRATNVMKFCDKCGKRGRYQKGCNKSKIGE",
+     "ensemble_p": 0.9584
+    },
+    {
+     "name": "scramble-21-3-7",
+     "sequence": "TAKFKKKNCCNYCLFGQCRKSKWNLGEIYDKVKGGMGYRPRHTNNTSD",
+     "ensemble_p": 0.9496
+    },
+    {
+     "name": "scramble-21-3-8",
+     "sequence": "DFAFKRPGHRVQMNCKSNGTTKKKNCGLGSKTKEWCKLYICGYDRNYN",
+     "ensemble_p": 0.9477
+    },
+    {
+     "name": "scramble-21-3-9",
+     "sequence": "TTKGIRDNSGAGKRSLHFCKNKLRYNQKCGKEFYVCWNCDKKPNMGTY",
+     "ensemble_p": 0.958
+    },
+    {
+     "name": "scramble-21-3-10",
+     "sequence": "MICVPQYRCSLKKTDKNGHLKGRFGDNYRESNWAGKNKKTCTYNCGFK",
+     "ensemble_p": 0.9419
+    },
+    {
+     "name": "scramble-21-4-1",
+     "sequence": "LVMLQKTYVKKVKKKGTKTEILIIGMVLIKLKKLLKTICKGIKFMNLTKLIKFNMANKF",
+     "ensemble_p": 0.957
+    },
+    {
+     "name": "scramble-21-4-2",
+     "sequence": "FKLQLIKAVFTTVLLLYKKLGEIMKCNIKVGILKMTKKNMIIKKVKLMGTTKKKLNFKI",
+     "ensemble_p": 0.954
+    },
+    {
+     "name": "scramble-21-4-3",
+     "sequence": "AKLLKVINKTIQKKKMKMKFLLVIITEMKKKLTKINKNTLLGLKLKVKTIFIGGYVCMF",
+     "ensemble_p": 0.9631
+    },
+    {
+     "name": "scramble-21-4-4",
+     "sequence": "MNLITIKLCKIGLVFKTKGLGKMTTKLQVKMVFKNLKNIILMILAIKKYKFLKKEKKTV",
+     "ensemble_p": 0.9634
+    },
+    {
+     "name": "scramble-21-4-5",
+     "sequence": "FKEKFTKQGFIYITTLNVVMLKALMMIKVCLNKITVKIKLKKLKKLKLKKIGLGKTMIN",
+     "ensemble_p": 0.958
+    },
+    {
+     "name": "scramble-21-4-6",
+     "sequence": "MKKILKLIKCGFKNTVNLLVGKKYTELFTKLKKIMKMMIKITQVLIGAVNLKIKTKFKL",
+     "ensemble_p": 0.9564
+    },
+    {
+     "name": "scramble-21-4-7",
+     "sequence": "TLIMMELLYKITGIGKLLLLTKKFCMIKFNVQKKKVIKKVAKKKNKTGVITLINKFLMK",
+     "ensemble_p": 0.957
+    },
+    {
+     "name": "scramble-21-4-8",
+     "sequence": "LKKTIVKIKIKLKLQTVNCTLTKIKMGLILKLMKKKTFLKGNKIMGKKILYFENVAVMF",
+     "ensemble_p": 0.943
+    },
+    {
+     "name": "scramble-21-4-9",
+     "sequence": "KLIVTLLIMLMKIFQKKLVMKKIKKKFYLGGLVALKTKGETLCTIKMNNNIKFVKKTIK",
+     "ensemble_p": 0.9533
+    },
+    {
+     "name": "scramble-21-4-10",
+     "sequence": "VGGFNLLINFTTVYKKKAKKKMKTITMINGQLILMKKLVKKMLTKLEILCIKFKLIKVK",
+     "ensemble_p": 0.9544
+    },
+    {
+     "name": "scramble-21-5-1",
+     "sequence": "IGLVLHLFLAVITKVMLSLWPFMLGAFFSIGGLVWNGVGTRVAVLTRLNAFYTFVNA",
+     "ensemble_p": 0.9468
+    },
+    {
+     "name": "scramble-21-5-2",
+     "sequence": "VGNIVAGSNGAVYNAVVGTLAMPKAILWLFFMRLTGVLLLWRVFTLGHLSLIFFFVT",
+     "ensemble_p": 0.8595
+    },
+    {
+     "name": "scramble-21-5-3",
+     "sequence": "GNAKSVTALPWGNNSMGLTFVLIRTVMLGAGLFFAHVFVGTALILFYIVWLLVFRVL",
+     "ensemble_p": 0.8527
+    },
+    {
+     "name": "scramble-21-5-4",
+     "sequence": "TLNTALLRAFILLMFKFVLNLGALISAHFIFPVGRFYGVVGWVMALSVVGNTGTWVL",
+     "ensemble_p": 0.9512
+    },
+    {
+     "name": "scramble-21-5-5",
+     "sequence": "VGFITVFMVFRRLNYAFWVAALLVLGGNAVIGMSWFLKILSPTLNGFVVLLTTALHG",
+     "ensemble_p": 0.9498
+    },
+    {
+     "name": "scramble-21-5-6",
+     "sequence": "AALLTIMAKFVNRVAMNLLLYVLIRGLSTGTGFLHGPNFVVVLVATLFWWGFSIGVF",
+     "ensemble_p": 0.9578
+    },
+    {
+     "name": "scramble-21-5-7",
+     "sequence": "TLGSVFLGLLLFFFFLYRGGAVVLINLVSRVLWPAFNATVKINLAVIMAGTGHTMVW",
+     "ensemble_p": 0.9645
+    },
+    {
+     "name": "scramble-21-5-8",
+     "sequence": "NLVWGGVAKGLAGATLFLTIWLMVTVFTNGFLLRHLIVFVVNSILFFGRMLASPAYV",
+     "ensemble_p": 0.9556
+    },
+    {
+     "name": "scramble-21-5-9",
+     "sequence": "VIGFPSGVSFTALVYLGFGAVARLRVGVLLLTNNVALTLIHGWLFLTMNKAVFIMFW",
+     "ensemble_p": 0.9275
+    },
+    {
+     "name": "scramble-21-5-10",
+     "sequence": "AVPWGNSGLGMMATNLAGKVFSGALVVINLRFLLIFWLGTFVYIRALTHLVVTFFVL",
+     "ensemble_p": 0.9547
+    },
+    {
+     "name": "scramble-21-6-1",
+     "sequence": "GLNRLPMRCISRRTLAAPCSRCWHVMSFHSPSFRASYIRGCFVCPLCTLRH",
+     "ensemble_p": 0.9596
+    },
+    {
+     "name": "scramble-21-6-2",
+     "sequence": "MFTLCWYRASRPLHRILGCCCASMRRFFNVCRISGRALSRHSTPCPVSHPL",
+     "ensemble_p": 0.9592
+    },
+    {
+     "name": "scramble-21-6-3",
+     "sequence": "MRHHRRCSTTLNFSLLPLIRCACMRSRSVARPCRCGPIFPHLSFVWCSAGY",
+     "ensemble_p": 0.9636
+    },
+    {
+     "name": "scramble-21-6-4",
+     "sequence": "GWRYVCGAFCSMMTRFSPRIISHRLRRCPCHLTSHARCPRSFVNACLPLLS",
+     "ensemble_p": 0.966
+    },
+    {
+     "name": "scramble-21-6-5",
+     "sequence": "FSSPPSITPCGMTIASRLCVPSMCCLHRSRNGCAHWARRYRLLVRFRFLCH",
+     "ensemble_p": 0.9483
+    },
+    {
+     "name": "scramble-21-6-6",
+     "sequence": "IHPGSRNCLFRVRMCHSRLAFSLSTGPCRWAMLCRRSIRPLTYCAVHFCSP",
+     "ensemble_p": 0.9679
+    },
+    {
+     "name": "scramble-21-6-7",
+     "sequence": "VHRTRPSHHSCPVLRSRFTLANWYPLSCMRCRGCLSSCRAIGCFLRPMAFI",
+     "ensemble_p": 0.9599
+    },
+    {
+     "name": "scramble-21-6-8",
+     "sequence": "CIHFACLFRRHCRPHLMCSAMRRSTLRLPRWSVIPSTGCAGCLRPSYNFSV",
+     "ensemble_p": 0.9588
+    },
+    {
+     "name": "scramble-21-6-9",
+     "sequence": "MCSNSARSICLFVCPHYRHGSLRFFSCAHRCCAMVPIWPSGRLPRLTRRTL",
+     "ensemble_p": 0.9557
+    },
+    {
+     "name": "scramble-21-6-10",
+     "sequence": "AMLCHRLLVARRLHRCCNFTVSCCPHTPGSYRSIWRFSAGCPRPILSRFMS",
+     "ensemble_p": 0.9612
+    },
+    {
+     "name": "scramble-21-7-1",
+     "sequence": "EGKLKFWIMNIIIGMGFFAFFGLYITVIMGVKTTIHGMVGIYMFIVIVTKI",
+     "ensemble_p": 0.9354
+    },
+    {
+     "name": "scramble-21-7-2",
+     "sequence": "IGGIYIWTLGFKLIYFMIGTIVIMHMEIAVVVGIVNGMKFTKTFGFIMIKF",
+     "ensemble_p": 0.946
+    },
+    {
+     "name": "scramble-21-7-3",
+     "sequence": "MGWLGIIKIVIFKTYIENFMMIVKTITVTVGGVGMMFILGKFGIFYFHIAI",
+     "ensemble_p": 0.9619
+    },
+    {
+     "name": "scramble-21-7-4",
+     "sequence": "KITMGTIWKMVVIEVGMNGIKFFTYMIKLHGFFVIIAVYFGMIIGILGITF",
+     "ensemble_p": 0.9581
+    },
+    {
+     "name": "scramble-21-7-5",
+     "sequence": "TTGAMFIKHGIKIYIGLVMFTMVIIEIVFKFFYLNIGIGVKFIGVTMGIMW",
+     "ensemble_p": 0.9508
+    },
+    {
+     "name": "scramble-21-7-6",
+     "sequence": "VVGGIMVKEIIIGTFINAWIMGMVIFMKIFFGKYLTYMGFVILGTHFITKI",
+     "ensemble_p": 0.94
+    },
+    {
+     "name": "scramble-21-7-7",
+     "sequence": "VNKFLTGVKIYVIFMIMMAFILFIGIGMVEGWFIMITGTTIYKHVIFIGKG",
+     "ensemble_p": 0.888
+    },
+    {
+     "name": "scramble-21-7-8",
+     "sequence": "KIGMWHKIFTAGGIFLNTIIFITGETFMIVVMLYGMIKKVFIVIYVFGMIG",
+     "ensemble_p": 0.9538
+    },
+    {
+     "name": "scramble-21-7-9",
+     "sequence": "FFMIAGTVGYNGKVGHLIKVMIMGFKTFITELVYMKIFIIFIWIVMTGIGI",
+     "ensemble_p": 0.9476
+    },
+    {
+     "name": "scramble-21-7-10",
+     "sequence": "IIVAIIIMFKGKLTNVLGGFGMYWFFGIKTGKVIMFMMEIGVYIFHTTIVI",
+     "ensemble_p": 0.9372
+    },
+    {
+     "name": "scramble-21-8-1",
+     "sequence": "FIHLHINIIFVIFECKCGHIRFIRPCLMANHSKLICFFIIAHL",
+     "ensemble_p": 0.901
+    },
+    {
+     "name": "scramble-21-8-2",
+     "sequence": "EHFCINIIINPALHIRMCCFIILKVFFKGLFHIHILRFHSAIC",
+     "ensemble_p": 0.9296
+    },
+    {
+     "name": "scramble-21-8-3",
+     "sequence": "ILFIHHFMFIRLVLKLHCIAIIARHCSIFFHICGIKFCPIENN",
+     "ensemble_p": 0.7858
+    },
+    {
+     "name": "scramble-21-8-4",
+     "sequence": "ICIIHFVFHLLAGACEFKPIIIILFSMCNKFHHIRNCRLHIFI",
+     "ensemble_p": 0.9449
+    },
+    {
+     "name": "scramble-21-8-5",
+     "sequence": "KILLCRSFHCIFILFICIIHHPIACRNFHMNAVHELFIKIIFG",
+     "ensemble_p": 0.9405
+    },
+    {
+     "name": "scramble-21-8-6",
+     "sequence": "IHFCFHLIERPICGFLSFMNFHIIILCHVARHIINKICLFAKI",
+     "ensemble_p": 0.9488
+    },
+    {
+     "name": "scramble-21-8-7",
+     "sequence": "IERHACPNIFLAIHLIKRIHHISLCFCINFICIVFFFGMILHK",
+     "ensemble_p": 0.9423
+    },
+    {
+     "name": "scramble-21-8-8",
+     "sequence": "ECKLIFFPNHAFVHIHAFRLCLIFLIFIHIINMICCRIIGSHK",
+     "ensemble_p": 0.9494
+    },
+    {
+     "name": "scramble-21-8-9",
+     "sequence": "HIIMLKLSHNAFCFIIHPCVHHFIIKFCIGRRNCFAILILIFE",
+     "ensemble_p": 0.8967
+    },
+    {
+     "name": "scramble-21-8-10",
+     "sequence": "ICISVIKIHEFHIKILFFLFICHNILRFFMCAAICPGNHRLHI",
+     "ensemble_p": 0.9324
+    },
+    {
+     "name": "scramble-21-9-1",
+     "sequence": "RPRPPMKLRSRKRSRPSRRRSRCPRSRRRRISPPPSRRKKTRSRRRSPRVSSRPPRP",
+     "ensemble_p": 0.9342
+    },
+    {
+     "name": "scramble-21-9-2",
+     "sequence": "PPRKRSCSPRRSSPRPSRRRRPPRRPMPRKSSRLSRRKRKRSRPPRRRTRRSSPIRV",
+     "ensemble_p": 0.9253
+    },
+    {
+     "name": "scramble-21-9-3",
+     "sequence": "RRRRKRLPRKSSSKRRSSRRSRPSPSRRRPRPRPKPRRPIVPRCSRTSRRMRPPPSR",
+     "ensemble_p": 0.9543
+    },
+    {
+     "name": "scramble-21-9-4",
+     "sequence": "PTPRSPSRSRKRSVSPRRPPCPRRPRRRRRPLRKRSRRSIRRRPKPRSKSRSSRPRM",
+     "ensemble_p": 0.9499
+    },
+    {
+     "name": "scramble-21-9-5",
+     "sequence": "RRRSRRRPRPRSKMSRRSPVPPSCSRRRSPPKRSTPIPRRPKRSRPRRRSPRSRLKR",
+     "ensemble_p": 0.9463
+    },
+    {
+     "name": "scramble-21-9-6",
+     "sequence": "SRRRSRRSMRRRSRTPRPPRLRPPRPRSRKIRPRRSRPRKSCKPRRSPPKSRRVSSP",
+     "ensemble_p": 0.9433
+    },
+    {
+     "name": "scramble-21-9-7",
+     "sequence": "RRRRRRIRPCRSPSRVRSLKRRRSPPPPSPKKSTRRPSPPSSPRKRPSRRMRRSRRR",
+     "ensemble_p": 0.9346
+    },
+    {
+     "name": "scramble-21-9-8",
+     "sequence": "RPSLRSKPRRKPSRSPSMIRSPSSTSRRPRSKRRRPVCSRRRRRRPPRKPRRRPRPR",
+     "ensemble_p": 0.9415
+    },
+    {
+     "name": "scramble-21-9-9",
+     "sequence": "RPRSPVRRCRRSRPRPSRRPMPPKISRPRRKLSRKKPRSPSTRRRSPSRRRSPRSRR",
+     "ensemble_p": 0.9431
+    },
+    {
+     "name": "scramble-21-9-10",
+     "sequence": "RRSSKPRSPPRRKTRPSRCRRPVRRSRPPSSRRSPRRPRKRMPKSPRIPRSLRRRSR",
+     "ensemble_p": 0.9482
+    },
+    {
+     "name": "scramble-21-10-1",
+     "sequence": "SLSPAGKGDKKSFTCKTCMKVFLAFLNGIRMGTSIKVSDKGSAIAGCLSNCGYGTHA",
+     "ensemble_p": 0.9776
+    },
+    {
+     "name": "scramble-21-10-2",
+     "sequence": "CACKSMGALIDMTNAYGLSSCKSSIAFSVGTLTKCKFKGGGLPGRHFKVTNAISGDK",
+     "ensemble_p": 0.962
+    },
+    {
+     "name": "scramble-21-10-3",
+     "sequence": "SGDGGCGMKVTCCAKIVFKCTAGAFKNKKNSSPDLLSLGTSSGMAIIAFGSRYHTLK",
+     "ensemble_p": 0.9621
+    },
+    {
+     "name": "scramble-21-10-4",
+     "sequence": "GPCSYVINLSMDFSFSSCKGAGASLMLKRCGTVCGAFIANKKLDKGKKTTGSATIHG",
+     "ensemble_p": 0.9692
+    },
+    {
+     "name": "scramble-21-10-5",
+     "sequence": "VDDSGCAGPGKFKGICKGASKTNKFSATYGCMLATGGCRLNKISIVLSSKMTLHSAF",
+     "ensemble_p": 0.9741
+    },
+    {
+     "name": "scramble-21-10-6",
+     "sequence": "KKKSALKFHTTISAGNSSCKMLYANISAGCSSGFCRLTDGCLVVPTMIGGKGDKFAG",
+     "ensemble_p": 0.9509
+    },
+    {
+     "name": "scramble-21-10-7",
+     "sequence": "FLSGAGAHDVKILYMNILGGKTCCGKSARGPSTFNASFAGKDSGCKLVTIMSCKKTS",
+     "ensemble_p": 0.9678
+    },
+    {
+     "name": "scramble-21-10-8",
+     "sequence": "KSKLPILGDFKCTSSGMKKLAGASFYHITAGNASNFMASCKGTSIGCLDVVCKTGGR",
+     "ensemble_p": 0.9666
+    },
+    {
+     "name": "scramble-21-10-9",
+     "sequence": "IFSMIKAMGGLTCKSFKSLSGKCCSGVPKDGKNNFDIKAVAHTASTLSGTLGCGRYA",
+     "ensemble_p": 0.9736
+    },
+    {
+     "name": "scramble-21-10-10",
+     "sequence": "GCTCIGLTGYGPNSSHMCISKVGAGFTADVKTASMLKFGLFDSISNSKKGKARALKC",
+     "ensemble_p": 0.9649
+    }
+   ]
+  },
+  "known_non_amp": {
+   "n": 50,
+   "median": 0.6762,
+   "q1": 0.3723,
+   "q3": 0.8637,
+   "max": 0.9735,
+   "n_ge_0.5": 31,
+   "ge_0.5_cases": [
+    {
+     "name": "nonamp-2",
+     "p": 0.9464
+    },
+    {
+     "name": "nonamp-4",
+     "p": 0.6645
+    },
+    {
+     "name": "nonamp-5",
+     "p": 0.6148
+    },
+    {
+     "name": "nonamp-6",
+     "p": 0.9617
+    },
+    {
+     "name": "nonamp-7",
+     "p": 0.8402
+    },
+    {
+     "name": "nonamp-8",
+     "p": 0.528
+    },
+    {
+     "name": "nonamp-10",
+     "p": 0.8518
+    },
+    {
+     "name": "nonamp-11",
+     "p": 0.8916
+    },
+    {
+     "name": "nonamp-12",
+     "p": 0.87
+    },
+    {
+     "name": "nonamp-16",
+     "p": 0.8717
+    },
+    {
+     "name": "nonamp-18",
+     "p": 0.8726
+    },
+    {
+     "name": "nonamp-20",
+     "p": 0.5124
+    },
+    {
+     "name": "nonamp-21",
+     "p": 0.7116
+    },
+    {
+     "name": "nonamp-22",
+     "p": 0.7955
+    },
+    {
+     "name": "nonamp-23",
+     "p": 0.9735
+    },
+    {
+     "name": "nonamp-24",
+     "p": 0.6882
+    },
+    {
+     "name": "nonamp-26",
+     "p": 0.931
+    },
+    {
+     "name": "nonamp-27",
+     "p": 0.6856
+    },
+    {
+     "name": "nonamp-31",
+     "p": 0.7691
+    },
+    {
+     "name": "nonamp-33",
+     "p": 0.7135
+    },
+    {
+     "name": "nonamp-34",
+     "p": 0.5757
+    },
+    {
+     "name": "nonamp-35",
+     "p": 0.7967
+    },
+    {
+     "name": "nonamp-36",
+     "p": 0.9144
+    },
+    {
+     "name": "nonamp-37",
+     "p": 0.8645
+    },
+    {
+     "name": "nonamp-42",
+     "p": 0.8615
+    },
+    {
+     "name": "nonamp-43",
+     "p": 0.8658
+    },
+    {
+     "name": "nonamp-44",
+     "p": 0.8786
+    },
+    {
+     "name": "nonamp-46",
+     "p": 0.6668
+    },
+    {
+     "name": "nonamp-47",
+     "p": 0.8846
+    },
+    {
+     "name": "nonamp-48",
+     "p": 0.7394
+    },
+    {
+     "name": "nonamp-50",
+     "p": 0.8171
+    }
+   ],
+   "items": [
+    {
+     "name": "nonamp-1",
+     "sequence": "KKIKRETEEDENENEEERNERSEMKRYAFGYPSGEEKKIKRETEEDENENEEERNEEGSEMKRYAFGYPSGEAKRMKRKPAEEETE",
+     "ensemble_p": 0.0688
+    },
+    {
+     "name": "nonamp-2",
+     "sequence": "MSKTLNIIWQYLRAFVLIYACLYAGIFIASLLPVTIPGSIIGMLILFVLLALQILPAKWVNPGCYVLIRYMALLFVPIGVGVMQYFDLLRAQFGPVVVSCAVSTLVVFLVVSWSSQLVHGERKVVGQKGSEE",
+     "ensemble_p": 0.9464
+    },
+    {
+     "name": "nonamp-3",
+     "sequence": "MADFEKVKSIIVEQLGVDESEVTPEAHFIDDLGADSLDTVELVMALEEEFGIEISDEDAEKIQTVGDVTKFIDNLKS",
+     "ensemble_p": 0.0288
+    },
+    {
+     "name": "nonamp-4",
+     "sequence": "MALVRSIFSAKKILGGSLARTSKAPKGFLAVYVGENQEKKQRYFVPVSYLKQPSFQALLSKCEEEFGFDHPMGGLTICCPEYTFISITSRIQ",
+     "ensemble_p": 0.6645
+    },
+    {
+     "name": "nonamp-5",
+     "sequence": "MGDLLDWIISFLFLATLIIIVIYQLTCLADLEFDRINPYDVSSRINRMVLPEFGLQGLLCLYYILTGHWFMAVLSLPHLFYNIRLYMKREHLADVTELYNTNKWEQKKRVYKIGHIALSIFITTYWLIHSALGDI",
+     "ensemble_p": 0.6148
+    },
+    {
+     "name": "nonamp-6",
+     "sequence": "MKIFFAVLVILVLFSMLIWTAYGTPYPVNCKTDRDCVMCGLGISCKNGYCQGCTR",
+     "ensemble_p": 0.9617
+    },
+    {
+     "name": "nonamp-7",
+     "sequence": "MRQRLLPSVTSLLLVALLFPGSSQARHVNHSATEALGELRERAPGQGTNGFQLLRHAVKRDLLPPRTPPYQVHISHQEARGPSFKICVGFLGPRWARGCSTGN",
+     "ensemble_p": 0.8402
+    },
+    {
+     "name": "nonamp-8",
+     "sequence": "MHPNYVSWLGAVGFLLWALLCLGAWTEAYPVKPENPGEDAPAEELAKYYSALRHYINLITRQRYGKRSTPEILDTLVSELLLKETSDTLPQSRYDPSLW",
+     "ensemble_p": 0.528
+    },
+    {
+     "name": "nonamp-9",
+     "sequence": "MRKPQAGTGEAARDPSLRPARTVLVGDQDEYTAAENKSPRGTLCPTGEQRIHAREDACIFSRLFSEK",
+     "ensemble_p": 0.098
+    },
+    {
+     "name": "nonamp-10",
+     "sequence": "MAKFATQLLLFVLIASLVMLEVHASNTFQVPDLGKRLLMNRDPNGFPCAESCVYIPCTVTALLGCSCRNRVCYRNEL",
+     "ensemble_p": 0.8518
+    },
+    {
+     "name": "nonamp-11",
+     "sequence": "ATRPWKCCDRAICTKSFPPMCRCMDMVEQCAATCKKCGPATSDSSRRVCEDXY",
+     "ensemble_p": 0.8916
+    },
+    {
+     "name": "nonamp-12",
+     "sequence": "MKALYMVFVLWVLIGCFLRLLKDEATVFGLWPLCSYRMLPF",
+     "ensemble_p": 0.87
+    },
+    {
+     "name": "nonamp-13",
+     "sequence": "MSRNIIRPAPGNKVLLVLDDATNHKLLGARERSGRTKTNEVLVRLRDHLNRFPDFYNLDAIKEGAEETDSIIKDL",
+     "ensemble_p": 0.1872
+    },
+    {
+     "name": "nonamp-14",
+     "sequence": "MAAQSDKDVKYYTLEEIKKHNHSKSTWLILHHKVYDLTKFLEEHPGGEEVLREQAGGDATENFEDVGHSTDARELSKTFIIGELHPDDRSKLSKPMETLITTVDSNSSWWTNWVIPAISALIVALMYRLYMADD",
+     "ensemble_p": 0.3354
+    },
+    {
+     "name": "nonamp-15",
+     "sequence": "MSRTENIEHVEESVESELKQPSMYKVILNNDDYTPMDFVIEILQLFFKKDEQQATEIMLAIHHKGKGICGIYPFGIAETKVAQVNQFARQNQHPLLCSLEEA",
+     "ensemble_p": 0.2149
+    },
+    {
+     "name": "nonamp-16",
+     "sequence": "DKCSPSGAICSGFGPPEQCCSGACVPHPILRIFVCQ",
+     "ensemble_p": 0.8717
+    },
+    {
+     "name": "nonamp-17",
+     "sequence": "MDQFECINVADAHQKLQEKEAVLVDIRDPQSFAMGHAVQAFHLTNDTLGAFMRDNDFDTPVMVMCYHGNSSKGAAQYLLQQGYDVVYSIDGGFEAWQRQFPAEVAYGA",
+     "ensemble_p": 0.2864
+    },
+    {
+     "name": "nonamp-18",
+     "sequence": "MSKTDVKKSREASGILTLQVNLRERRNFLNLMQNKLFSWKIRFSAIKGKCSQKSKYFRRSRSEDCYVEADLKILSRTRRSRKLPGTVPDFLGKQLIGISSSVVSRVSRSCR",
+     "ensemble_p": 0.8726
+    },
+    {
+     "name": "nonamp-19",
+     "sequence": "MPYYEHVFLARQDASAQQVEELTTQITGVIEGLGGKVTKTESWGVRSLTYRIQKNRKAHFVLLNIDGPATIVAEVERQERINEDIIRYLTVRVDELEEGPSAMMRKADRDRERDERGGPREGGFRSERGPRRPREEETTASVEE",
+     "ensemble_p": 0.4211
+    },
+    {
+     "name": "nonamp-20",
+     "sequence": "MKWMFKEDHSLEHRCVESAKIRAKYPDRVPVIVEKVSGSQIVDIDKRKYLVPSDITVAQFMWIIRKRIQLPSEKAIFLFVDKTVPQSSLTMGQLYEKEKDEDGFLYVAYSGENTFGF",
+     "ensemble_p": 0.5124
+    },
+    {
+     "name": "nonamp-21",
+     "sequence": "MAMKIRLARGGSKKRPHYAIVASDSRMPRDGRFIEKLGTYNPLLPKDSEDRIKMNLERVQYWLGQGAQPTDRVARFLEAAGVKEKAERKNLKKGEPGKAAKERAEKRAAREAAANAPAEEAASE",
+     "ensemble_p": 0.7116
+    },
+    {
+     "name": "nonamp-22",
+     "sequence": "LTWKIPTRFCGVT",
+     "ensemble_p": 0.7955
+    },
+    {
+     "name": "nonamp-23",
+     "sequence": "MKRMILFTSCLLLIDIVVGGKEGYPADSKGCKVTCFLTAAGYCNTECKLQKASSGYCAWPACYCYGLPDSASVWDSATNKCGKK",
+     "ensemble_p": 0.9735
+    },
+    {
+     "name": "nonamp-24",
+     "sequence": "MHLITQKALKDAAEKYPQHKTELVALGNTIAKGYFKKPESLKAVFPSLDNFKYLDKHYVFNVGGNELRVVAMVFFESQKCYIREVMTHKEYDFFTAVHRTKGKK",
+     "ensemble_p": 0.6882
+    },
+    {
+     "name": "nonamp-25",
+     "sequence": "MSITKDQILEAFAAMSVMEVVELIEAMEEKFGVSAAAAVVSGGAEAAVVEEQTEFNVVLTAHGDNKVAVIKAIRGATGLGLKEAKAMSEAAPVAVKEGVSKEEAEALKKELTEAGASVEIK",
+     "ensemble_p": 0.0881
+    },
+    {
+     "name": "nonamp-26",
+     "sequence": "MHLFIGVSLRPLGHGIPAPYAVEDICTAKPRDIPVNPICIYRNPEKKPQERRGAGAGEGQDPGVHKPPASGSCPGPTRAFGRRSFLQAPGPTPRTMRRTSSCRPS",
+     "ensemble_p": 0.931
+    },
+    {
+     "name": "nonamp-27",
+     "sequence": "MSKEKVARFNKQHFVVGLKETLKALKKDQVTSLIIAEDVEVYLMTRVLSQINQKNIPVSFFKSKHALGKHVGINVNATIVALIK",
+     "ensemble_p": 0.6856
+    },
+    {
+     "name": "nonamp-28",
+     "sequence": "MRPQQAPVSGKVFIQRDYSSGTRCQFQTKFPAELENRIDRQQFEETVRTLNNLYAEAEKLGGQSYLEGCLACLTAYTIFLCMETHYEKVLKKVSKYIQEQNEKIYAPQGLLLTDPIERGLRVIEITIYEDRGVSSGR",
+     "ensemble_p": 0.4943
+    },
+    {
+     "name": "nonamp-29",
+     "sequence": "MGIRLLCRVAFCFLAVGLVDVKVTQSSRYLVKRTGEKVFLECVQDMDHENMFWYRQDPGLGLRLIYFSYDVKMKEKGDIPEGYSVSREKKERFSLILESASTNQTSMYLCASSL",
+     "ensemble_p": 0.4912
+    },
+    {
+     "name": "nonamp-30",
+     "sequence": "MAFLKKSLFLVLFLALVPLSICEAEKREEENEEKQEDDDESEKKRGVVTDLLNTAGGLLGNLVGSLSGGER",
+     "ensemble_p": 0.3867
+    },
+    {
+     "name": "nonamp-31",
+     "sequence": "MDAIDSVVDPLRDFAKDSIRLVKRCHKPDRKEFTKVAVRTAIGFVVMGFVGFFVKLIFIPINNIIVGAT",
+     "ensemble_p": 0.7691
+    },
+    {
+     "name": "nonamp-32",
+     "sequence": "MAIDQATVRKIASLARIAISDAEAAAMEGELNGILGWVEQLGEVDVSGVEPMTAVIPNTLRLRDDVVDADPLTGGNRRDDILANAPAAMHGFFGVPKVIE",
+     "ensemble_p": 0.341
+    },
+    {
+     "name": "nonamp-33",
+     "sequence": "MARIAGVDIPREKRVVISLTYIYGIGTSTAQKILEEANVSADTRVKDLTDDELGRIREVVDGYKVEGDLRRETNLNIKRLMEISSYRGIRHRRGLPVRGQKTKNNARTRKGPVKTVANKKK",
+     "ensemble_p": 0.7135
+    },
+    {
+     "name": "nonamp-34",
+     "sequence": "MSKVSFKITLTSDPRLPYKVLSVPESTPFTAVLKFAAEEFKVPAATSAIITNDGIGINPAQTAGNVFLKHGSELRLIPRDRVGSC",
+     "ensemble_p": 0.5757
+    },
+    {
+     "name": "nonamp-35",
+     "sequence": "MARFAGVDIPNEKRIVISLTYVFGVGLQTSKKVLAAAGVSEDIRTKDLTSDQEDAIRRELDGLKLEGDLRREVSLNIKRLMEIGSYRGMRHRRGLPTRGQNTKNNARTRKGPAKSIAGKKK",
+     "ensemble_p": 0.7967
+    },
+    {
+     "name": "nonamp-36",
+     "sequence": "MPKSPSKSSPRKGSPRKASPKRGGKGAKRA",
+     "ensemble_p": 0.9144
+    },
+    {
+     "name": "nonamp-37",
+     "sequence": "MPRSLKKGPFVDHHLLGKVEDAVEAGSRKPIKTWSRRSMIIPEMVGLTIAVYNGKQHVPVMVSEHMVGHKLGEFALTRNYRGHAVDKKAKR",
+     "ensemble_p": 0.8645
+    },
+    {
+     "name": "nonamp-38",
+     "sequence": "EVLLEGPSGVLFKDGQKKYLPPGVKIVLLTESGAVLSNGDNVQF",
+     "ensemble_p": 0.1018
+    },
+    {
+     "name": "nonamp-39",
+     "sequence": "MADEDYNDVDDLGYEDEPAEPEIEEGVEEDVEMKENDDVNGEPIEAEDKVETEPVQRPRKTSKFMTKYERARILGTRALQISMNAPVMVELEGETDPLEIAMKELRQRKIPFTIRRYLPDGSFEEWGVDELIVEDSWKRQVGGD",
+     "ensemble_p": 0.0579
+    },
+    {
+     "name": "nonamp-40",
+     "sequence": "MVAVRRPWPVMVAMLLVLLACLGALVDAYPAKPEAPGEDASPEELSRYYASLRHYLNLVTRQRYGKREVPAALFSKLLFTDDSENLPFRSRPEGVDQW",
+     "ensemble_p": 0.3675
+    },
+    {
+     "name": "nonamp-41",
+     "sequence": "MKTLFLAIALFSAVALAEEKSESAELVPGGEAFVVESVNYPEDASANLKQTWKLTTTAGNFIHLECTDIRLFEDKPCGDWALTFDDGGNVTEMCTTSFDHKFTSKTNTLTLTLRTGRDARGFVACKATATKK",
+     "ensemble_p": 0.4022
+    },
+    {
+     "name": "nonamp-42",
+     "sequence": "PLGGKRAAPDLDVRKCLPCGPGGKGRCFGPNICCAEELGCFVGTAEALRCQEENYLPSPCQSGQKACGSGGRCAVFGLCCSPDGC",
+     "ensemble_p": 0.8615
+    },
+    {
+     "name": "nonamp-43",
+     "sequence": "MADPEVAAAGIVKKRTFKKFSFRGVDLDALLDMSTDDLVKLFPSRIRRRFSRGLTRKPMALIKKLRKAKIEAPAGEKPAAVRTHLRNMIIVPEMIGSVIGVYNGKTFNQVEIKPEMIGHYLAEFSISYKPVKHGRPGVGATNSSRFIPLK",
+     "ensemble_p": 0.8658
+    },
+    {
+     "name": "nonamp-44",
+     "sequence": "MLYPIFIFILAGLCEIGGGYLIWLWLREGQSSLVGLIGGAILMLYGVIATFQSFPSFGRVYAAYGGVFIIMSLIFAMVVDKQMPDKYDVIGAIICIVGVLVMLLPSRA",
+     "ensemble_p": 0.8786
+    },
+    {
+     "name": "nonamp-45",
+     "sequence": "MLVKFVACFVFVAVASASDFSSFSYGVADPSTGDFKSQIESRLGDNVQGQYSLLESDGTQRTVDYAAGSEGFNAVVRKDPALIAAAPYITAPYGYAVPYAYTSPYGISNLANYRALKFASALPYSRVFF",
+     "ensemble_p": 0.4412
+    },
+    {
+     "name": "nonamp-46",
+     "sequence": "KARALKITEELDRTMEVPKPVRMHWTGCPNTCAQVQVADIGFMGCMTRDENKKVVEGVDIFIGGRVGADSHLGDLIHKGVPCKDVVPVVQELLIKHFGAIRKTNM",
+     "ensemble_p": 0.6668
+    },
+    {
+     "name": "nonamp-47",
+     "sequence": "MLVLLMVLVFTLVLLFAFYLINFLLSIKDMGKNKISAFECGFVSVGKIQNSFSIHFFIMMLMFVIFDLEIVMFLGILVSDLSSYISFLMMFIFILGGFYMEWWYGKLVWVI",
+     "ensemble_p": 0.8846
+    },
+    {
+     "name": "nonamp-48",
+     "sequence": "MPLIYMNITLAFTMSLLGMLVYRSHLMSSLLCLEGMMLSLFIMITLMTLNTHSLLANIMPITMLVFAACEAAVGLALLASISNTYGLDYVNNLNLLQC",
+     "ensemble_p": 0.7394
+    },
+    {
+     "name": "nonamp-49",
+     "sequence": "MSALRYTLVVNGSVYGSQSARTAYQFATALIEKGHTLVSVFFYQDGVTNGTELTVPANDEFHLTKAWQQLAKQHNVRLETCVAAALRRGVVSQSEASQHGLLQHNLAEGFEQAGLGSLAEAMLTQDRVVQF",
+     "ensemble_p": 0.1941
+    },
+    {
+     "name": "nonamp-50",
+     "sequence": "MASRCRSLSKPAFSAFRSAMNKPSIRPKSASSFIGVPPSPGFSRPIGQLGSLQSLLPLYSAVASARLTSCLGIDSQNSRSLAQGMLCSANPGV",
+     "ensemble_p": 0.8171
+    }
+   ]
+  }
+ }
+}
