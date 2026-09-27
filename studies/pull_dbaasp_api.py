@@ -11,7 +11,8 @@ label inspection. Also dumps the corrected reference FASTA
 data/raw/novelty_refs/dbaasp_catalog_2026-09-27.fasta (+ sha256) to replace
 the degenerate novelty reference.
 """
-import hashlib, json, pathlib, time, urllib.request
+import hashlib, json, pathlib, socket, time, urllib.request
+socket.setdefaulttimeout(45)
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 OUT = ROOT / "data/raw/dbaasp_api"
@@ -20,10 +21,16 @@ MAN = ROOT / "docs/DBAASP_API_MANIFEST_2026-09-27.md"
 UA = {"User-Agent": "research-pull/1.0"}
 AA20 = set("ACDEFGHIKLMNPQRSTVWY")
 
-def get(url):
-    req = urllib.request.Request(url, headers=UA)
-    with urllib.request.urlopen(req, timeout=60) as r:
-        return json.loads(r.read())
+def get(url, tries=4):
+    for t in range(tries):
+        try:
+            req = urllib.request.Request(url, headers=UA)
+            with urllib.request.urlopen(req, timeout=60) as r:
+                return json.loads(r.read())
+        except Exception as e:
+            if t == tries - 1:
+                raise
+            time.sleep(3 * (t + 1))
 
 INDEX = OUT / "_catalog_index.json"
 OUT.mkdir(parents=True, exist_ok=True)
@@ -34,6 +41,30 @@ if INDEX.exists():
     all_ids = idx["all_ids"]
     total = idx["total"]
     print(f"loaded index: {total} records, {len(seq2id)} sequences", flush=True)
+    if idx.get("partial_offset") and idx["partial_offset"] < total:
+        off = idx["partial_offset"]
+        print(f"resuming catalog at {off}", flush=True)
+        while off < total:
+            d = get(f"https://dbaasp.org/peptides?offset={off}&limit=100")
+            for rec in d["data"]:
+                all_ids.append(rec["id"])
+                s2 = rec.get("sequence")
+                if s2:
+                    seq2id.setdefault(s2, rec["id"])
+                for m in rec.get("monomers") or []:
+                    ms = m.get("sequence")
+                    if ms:
+                        seq2id.setdefault(ms, rec["id"])
+            off += 100
+            if off % 2000 == 0:
+                print(f"catalog {off}/{total} seqs={len(seq2id)}", flush=True)
+                INDEX.write_text(json.dumps({"total": total, "all_ids": all_ids,
+                                             "seq2id": list(seq2id.items()),
+                                             "partial_offset": off}))
+            time.sleep(0.15)
+        INDEX.write_text(json.dumps({"total": total, "all_ids": all_ids,
+                                     "seq2id": list(seq2id.items())}))
+        print(f"catalog done: {total} records, {len(seq2id)} sequences", flush=True)
 else:
     seq2id, all_ids, offset, total = {}, [], 0, None
     while True:
@@ -51,6 +82,9 @@ else:
         offset += 100
         if offset % 2000 == 0:
             print(f"catalog {offset}/{total} seqs={len(seq2id)}", flush=True)
+            INDEX.write_text(json.dumps({"total": total, "all_ids": all_ids,
+                                         "seq2id": list(seq2id.items()),
+                                         "partial_offset": offset}))
         if offset >= total:
             break
         time.sleep(0.15)
