@@ -4,3 +4,4 @@ __pycache__/
 build/
 dist/
 data/raw/
+results/study27_q3_X.npy
