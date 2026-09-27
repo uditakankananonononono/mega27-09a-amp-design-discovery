@@ -1,0 +1,17 @@
+{
+ "study": "study25_q5_calibration",
+ "protocol": "10-fold held-out calibration over study24 OOF probabilities",
+ "n": 5946,
+ "uncalibrated": {
+  "brier": 0.07736076804672049,
+  "slope": 7.7191098140534375
+ },
+ "platt": {
+  "brier": 0.07437769931639157,
+  "slope": 6.191421999736044
+ },
+ "isotonic": {
+  "brier": 0.07404000349246173,
+  "slope": 6.358573482464025
+ }
+}
