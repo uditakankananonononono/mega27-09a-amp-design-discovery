@@ -9,9 +9,19 @@ User, WhatsApp 10:00:07 IST (wamid.HBgMOTE4MTM0MDk4NTcxFQIAEhgWM0VCMDJCMTZGRTVEM
 verified author=user): "NOT 10 ROUNDS OOF CHATGPT CHECK JUST ONE WHICH I PROVIDE OK?"
 Effect: the counted ChatGPT judge requirement is now ONE round per project,
 provided by the user through the courier route. History below is preserved, not
-deleted. Status of this project's judge gate: 1 of 1 - REQUIREMENT MET
-(Round 1 below counted under rule 8: its critique produced a landed novelty
-change). Any further Gemini/DeepSeek/LLM consults are supplementary only -
+deleted. Status of this project's judge gate: 0 of 1 - PENDING HER PROVIDED VERDICT.
+
+CLARIFICATION 2026-09-27 10:01:47 IST (user, WhatsApp
+wamid.HBgMOTE4MTM0MDk4NTcxFQIAEhgWM0VCMDMwREI5RDQ0QUNCRDc2MTNDMwA=, verified
+author=user): "EACH PROJECTS NEED ONE FROM ME TO PASS" - only a verdict she
+personally provides through the courier paste route counts. Agent-initiated
+ChatGPT rounds, even in her account, do NOT satisfy the gate. Round 1 below
+(2026-09-26) was agent-initiated: it remains in this ledger as preserved
+history/supplementary evidence and its landed novelty change stands as
+science, but it does NOT count toward the judge gate. A courier prompt for
+this project will be delivered to her via the parent; the gate passes when her
+verdict returns (wamid provenance) and, per rule 8, its critique produces a
+landed novelty change. Gemini/DeepSeek/LLM consults are supplementary only -
 logged, never counted.
 
 ---
