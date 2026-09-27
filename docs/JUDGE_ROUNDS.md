@@ -347,3 +347,12 @@ Iframe [frame_id=EF7DBFED6E0C21E017F545DBB63F47FB parent_frame_id=071841B7B9B3C8
   binaries are not installable in this sandbox, so a documented 3-mer-Jaccard
   proxy with stated thresholds was locked instead; DRAMP/DBAASP public dumps
   confirmed freely downloadable (to be pinned with sha256 at fetch time).
+
+## ROUND 2 (COUNTED: 1 of 1 remains MET) - 2026-09-27 12:02:56 IST
+Source: user WhatsApp mega-verdict, wamid.HBgMOTE4MTM0MDk4NTcxFQIAEhgWM0VCMEFGRDY4MzY4OTkxNzFEQURGRAA= (verified author=user).
+Section 6 (09a) extracted DIRECTLY from the authenticated message;
+archive docs/JUDGE_VERDICT_USER_2026-09-27B.md. A courier-compiled file
+received the same minute did NOT match her message and was rejected.
+Response: addendum-5 with honest overlap map vs addendum-4 (no double-
+claiming). Gate: 1 of 1 user-provided verdicts - MET (round 1, bd93084);
+round 2 is an additional verdict, gate remains MET.
