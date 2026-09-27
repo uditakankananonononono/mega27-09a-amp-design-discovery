@@ -53,3 +53,20 @@ a published benchmark unless the numbers say so on their face.
 ## Deviations
 None at lock time. Any deviation discovered during execution is disclosed
 in-doc here and in the results JSON, never silently.
+
+## DEVIATION-1 (disclosed 2026-09-27, before any label fetch)
+1. The in-repo dbaasp_all.fasta is DEGENERATE: 546 FASTA entries but only 12
+   unique sequences (original novelty-ref pull bug; headers carry parent
+   dbaaspId repeated per monomer chain). Header-ID matching is impossible.
+2. Consequence for the locked universe: the "546 canonical sequences already
+   in-repo" do not exist as distinct sequences. Universe is redefined as ALL
+   canonical 20-aa 5-150 aa monomer sequences from the live DBAASP catalog
+   (25,542 records, paginated list endpoint carries sequences only, no
+   activity data). The label pull (full /peptides/<id> records) begins only
+   after this disclosure; the blind-pull property is preserved.
+3. A corrected novelty reference (data/raw/novelty_refs/
+   dbaasp_catalog_2026-09-27.fasta, sha256 in the pull manifest) replaces the
+   degenerate file. Impact on study21's DBAASP novelty arm (which read the
+   degenerate file) is being re-audited and will be corrected in the open.
+4. Everything else in this addendum (assay filter, primary cohort, target
+   transform, model, folds, metrics, falsifier) is unchanged.
