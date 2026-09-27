@@ -83,8 +83,9 @@ was imprecise. Exact timeline:
    model, folds, and metrics were inherited unchanged from addendum-4 Q3,
    which predates all contact with the API.
 2. ~14:15:22, AFTER addendum 6 (59916c1) but BEFORE DEVIATION-1 (87b4c7f):
-   the first scripted pull wrote 10 full records to disk (ids 1,3,4,6,9,18,
-   19,21,22 + 1 more), unread and unsummarized (log shows counts only).
+   the first scripted pull wrote 10 full records to disk (ids 1,3,6,9,17,
+   18,19,21,22,23 - verified by file mtimes 14:15:23-14:15:30), unread and
+   unsummarized (log shows counts only).
    Those files remain as raw data and are a subset of the redefined universe.
 No label-informed decision occurred at any point; all other labels remain
 uninspected until the locked pipeline runs. This correction is also being
