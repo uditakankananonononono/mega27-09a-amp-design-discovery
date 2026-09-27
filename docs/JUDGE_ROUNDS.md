@@ -4,6 +4,18 @@
 
 ---
 
+## RULE CHANGE 2026-09-27 (counted-round requirement 10 -> 1)
+User, WhatsApp 10:00:07 IST (wamid.HBgMOTE4MTM0MDk4NTcxFQIAEhgWM0VCMDJCMTZGRTVEMkQwMTFBQzc4MQA=,
+verified author=user): "NOT 10 ROUNDS OOF CHATGPT CHECK JUST ONE WHICH I PROVIDE OK?"
+Effect: the counted ChatGPT judge requirement is now ONE round per project,
+provided by the user through the courier route. History below is preserved, not
+deleted. Status of this project's judge gate: 1 of 1 - REQUIREMENT MET
+(Round 1 below counted under rule 8: its critique produced a landed novelty
+change). Any further Gemini/DeepSeek/LLM consults are supplementary only -
+logged, never counted.
+
+---
+
 ## Round 1 - 2026-09-26, novelty critique of the study19 state
 Conversation: https://chatgpt.com/c/6ab7e420-12e0-83e8-b100-367851b30c05
 Route: text paste into chatgpt.com (user rule 8:16 PM), one fill, clicked Send.
