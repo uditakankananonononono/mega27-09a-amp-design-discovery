@@ -6,7 +6,7 @@ PepGNN & 0.800 & [0.782, 0.816] & 0.788 & 0.0020 \\
 logreg dipeptide & 0.814 & [0.798, 0.828] & 0.827 & 0.0020 \\
 rf dipeptide & 0.935 & [0.927, 0.944] & 0.935 & 0.0020 \\
 \hline\end{tabular}\end{table}
-\begin{table}[h]\centering\caption{Scale-up benchmark (study07): held-out cluster-aware test split (4{,}386 sequences) from 24{,}628 AMP / 24{,}628 non-AMP; models trained on a 30{,}000-sequence subsample of the 40{,}776-sequence train split.}\label{tab:scaleup}
+\begin{table}[h]\centering\caption{Confounded UniProt scale-up (study07): held-out cluster-aware test split (4{,}386 sequences) from 24{,}628 AMP / 24{,}628 non-AMP; models trained on a 30{,}000-sequence subsample of the 40{,}776-sequence train split.}\label{tab:scaleup}
 \begin{tabular}{lcccc}\hline
 Model & AUROC & 95\% CI & AUPRC & $p$ \\ \hline
 PepCNN & 0.921 & [0.913, 0.929] & 0.879 & 0.0020 \\
@@ -14,7 +14,7 @@ PepGNN & 0.877 & [0.868, 0.886] & 0.680 & 0.0020 \\
 logreg dipeptide & 0.871 & [0.861, 0.881] & 0.743 & 0.0020 \\
 rf dipeptide & 0.879 & [0.868, 0.888] & 0.799 & 0.0020 \\
 \hline\end{tabular}\end{table}
-\begin{table}[h]\centering\caption{External validation (study09): APD6 2024 natural AMPs, decontaminated against train by shared 10-mers (1412 of 3207 retained), scored against 2925 held-out test non-AMPs. Sensitivity at 5\% FPR: 0.601.}\label{tab:apd}
+\begin{table}[h]\centering\caption{External-positive, reviewed-UniProt-negative comparison (study09; not clean biological transfer): APD6 2024 natural AMPs, decontaminated against train by shared 10-mers (1412 of 3207 retained), scored against 2925 held-out test non-AMPs. Sensitivity at 5\% FPR: 0.601.}\label{tab:apd}
 \begin{tabular}{lccc}\hline
 Model & AUROC & 95\% CI & AUPRC \\ \hline
 PepCNN & 0.926 & [0.918, 0.934] & 0.855 \\

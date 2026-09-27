@@ -18,9 +18,9 @@
 \newcommand{\Nval}{4{,}094}
 \newcommand{\Ntest}{4{,}386}
 
-\title{Antimicrobial Peptide Design and Discovery with Convolutional and
-Graph Neural Networks: Homology-Aware Benchmarks, External Validation on
-APD6, and a Discovery Screen over Uncharacterized Proteins}
+\title{Label Provenance in Antimicrobial Peptide Prediction:
+An Audited UniProt Benchmark, Negative Architecture Results,
+and an Unvalidated Discovery Screen}
 \author{}
 \date{September 24, 2026}
 
@@ -28,6 +28,7 @@ APD6, and a Discovery Screen over Uncharacterized Proteins}
 \maketitle
 
 \begin{abstract}
+The primary contribution is a label-provenance audit: 21,742 of 24,628 AMP-labelled UniProt scale-up examples are unreviewed while every sampled negative is reviewed. The original scale-up and APD6 AUROCs are confounded measurements, not clean function-recognition or external-generalization evidence.
 Antimicrobial peptides (AMPs) are a structurally diverse class of host-defense
 molecules and a candidate answer to antibiotic resistance. We study AMP
 recognition and design with two neural architectures --- a convolutional
@@ -41,9 +42,7 @@ status is severely confounded and the scale-up scores are descriptive only.
 PepCNN attains AUROC $0.947$ [0.936, 0.955] under 5-fold cross-validation on a
 curated 2{,}732-sequence pilot and $0.921$ [0.913, 0.929] on the held-out
 large-scale test split; a random-forest baseline on dipeptide composition is
-competitive on the pilot (0.935) but the convolutional model dominates at
-scale and on external validation against the APD6 2024 natural AMP list,
-but this test does not remove the training-source confound.
+competitive on the pilot (0.935) but the convolutional model ranks higher on the original scale-up and APD6 positive-versus-reviewed-negative comparison. Neither result removes the training-source confound.
 We prove fixed-temperature detailed balance of a simulated-annealing
 transition used to propose untested candidate sequences, derive the permutation and bootstrap procedures
 used for significance, and report an in-silico discovery screen over 852
@@ -54,9 +53,11 @@ cross-validation; comparability limits and detailed results are reported. Eight 
 candidates with quantified pairwise 3-mer similarity checks against APD6 and
 a UniProt KW-0929 subsample, not established antimicrobial discoveries. All results are
 reproducible from the accompanying repository; claims are limited to what the
-data support.
+data support. A reviewed-only, organism- and length-matched retraining
+experiment is pending; no clean performance claim is made from the original
+label-confounded scale-up.
 \end{abstract}
-
+\input{judge_response.tex}
 \section{Introduction}
 The spread of antibiotic resistance has renewed interest in antimicrobial
 peptides (AMPs), short cationic and often amphipathic sequences that disrupt
@@ -69,11 +70,10 @@ design of AMPs is attractive because the sequence space is enormous: even at
 length 25 there are $20^{25} \approx 3.4\times 10^{32}$ candidates, of which
 only a minuscule fraction has been assayed.
 
-This paper, item 9 part 1 of the MEGA-Program-27 series, asks three questions.
+This paper asks three questions, beginning with whether the benchmark labels and their provenance permit a valid recognition claim.
 (1) How well do convolutional and graph neural networks recognize AMPs when
 evaluation is protected against homology leakage --- the dominant confound in
-peptide classification benchmarks? (2) Do models trained on UniProt KW-0929
-generalize to an independently curated resource, APD6? (3) Can the trained
+peptide classification benchmarks? (2) What does an APD6-positive comparison measure when its negatives remain reviewed UniProt examples? (3) Can the trained
 models prioritize plausible novel AMPs, both by free design (simulated
 annealing against the learned score) and by screening uncharacterized
 proteins?
@@ -89,7 +89,7 @@ AMP classifiers span support-vector machines and random forests on
 composition features (e.g., CAMP~\cite{camp}) to recurrent and convolutional
 architectures such as AMPScanner~\cite{ampscanner}. Most published benchmarks
 split sequences randomly, which leaks near-duplicates across train and test;
-we instead cluster on shared $k$-mers and split clusters. Our graph model is
+we instead cluster on shared $k$-mers and split clusters, while recognizing that exact motif sharing is weaker than an alignment-based family holdout. Our graph model is
 related to message-passing networks~\cite{gilmer2017} with a fixed
 chain-adjacency structure rather than a learned or contact-derived graph.
 
@@ -131,7 +131,7 @@ reducing the number of independent split units.
 \end{remark}
 
 \subsection{External and screen sets}
-For external validation we use the APD6 2024 natural AMP list (3{,}306
+For an external-positive comparison we use the APD6 2024 natural AMP list (3{,}306
 entries)~\cite{apd3}, restricted to standard residues, length 10--150,
 de-duplicated, and decontaminated against the training split by the same
 10-mer criterion. For the discovery screen we fetched 852 reviewed UniProt

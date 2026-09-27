@@ -2,7 +2,7 @@
 The APD has tracked the natural AMP literature since 2003; the APD3
 release~\cite{apd3} introduced a unified search and annotation interface, and
 the current APD6 site distributes curated FASTA lists, including the 2024
-natural-AMP list (3{,}306 entries) used here as external validation. DBAASP
+natural-AMP list (3{,}306 entries) used here as an external-positive comparison. DBAASP
 takes a different angle: it curates peptides together with experimentally
 measured activities against specific strains, making it the richer resource
 for potency modeling but a harder one to mirror programmatically; during this
@@ -10,9 +10,7 @@ work its full-dataset endpoint returned empty responses to non-interactive
 requests, so we cite it but do not benchmark against it
 (Section 8). CAMP~\cite{camp} and its associated predictors remain widely
 used baselines; DRAMP and LAMP aggregate overlapping records. These resources
-differ in curation policy, redundancy, and label semantics, which is exactly
-why cross-database evaluation --- training on UniProt KW-0929 and testing on
-APD6 --- is more informative than a second random split of the same source.
+differ in curation policy, redundancy, and label semantics, which is exactly why a cross-database comparison must also use compatible and source-matched negatives. The comparison here retains reviewed UniProt negatives, so it is not a clean transfer test.
 
 \subsection{Machine-learning AMP recognition}
 Early predictors used composition features with classical models: CAMP's
@@ -26,10 +24,7 @@ evaluations split sequences randomly, and AMP families are highly redundant
 quantify memorization without a homology-aware control.
 Second, negative sets are usually ``everything else,'' which conflates
 unlabeled positives with true negatives. Our design choices respond directly:
-cluster-aware splitting controls the first, length-matched reviewed negatives
-acknowledge the second (without eliminating it), and external validation on
-an independently curated database tests whether the learned function is
-about AMPs or about the training corpus.
+exact-10-mer cluster splitting partially controls the first but not distant homology. Length-matched reviewed negatives do not match the mostly unreviewed positive class. The APD6-positive comparison retains those negatives and cannot isolate biological transfer.
 
 \subsection{AMP design}
 Computational AMP design has used genetic algorithms, physicochemical rules,

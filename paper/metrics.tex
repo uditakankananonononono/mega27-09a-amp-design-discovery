@@ -33,6 +33,4 @@ high-score region that the design and screen stages consume.
 The 5\% FPR operating point used for APD6 sensitivity is chosen on the
 held-out negatives only: the threshold is the 95th percentile of ensemble
 scores over the 2{,}925 test negatives, then applied to the APD6 positives.
-Because the threshold never touches the positive scores, the sensitivity
-estimate is an honest one-sided generalization measurement rather than a
-fitted operating point.
+Because the threshold never touches the positive scores, the sensitivity is not tuned on APD6 positives. It is still conditional on a reviewed-UniProt negative distribution and the confounded training labels, so it is not a clean generalization estimate.

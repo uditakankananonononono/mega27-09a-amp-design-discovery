@@ -9,8 +9,7 @@ is the central recognition challenge: there is no single sequence signature,
 and any single-feature rule (charge, hydrophobic moment, length) fails on
 whole families. It is also why we treat sensitivity numbers honestly: a model
 trained on a corpus dominated by short cationic peptides should not be
-expected to score disulfide-locked anionic families highly, and ours does not
-(Section 7.3).
+expected to score disulfide-locked anionic families highly, but per-family sensitivity has not yet been measured in this study.
 
 \subsection{Contributions}
 \begin{enumerate}
@@ -25,7 +24,7 @@ baselines under this split, with bootstrap intervals and permutation tests
 computed by one shared harness: PepCNN attains descriptive AUROC $0.921$ [0.913, 0.929] on the confounded
 held-out sample, ahead of the tested baselines; the graph model is a reported negative
 result.
-\item An APD6 2024 external-set comparison after exact-10-mer filtering:
+\item An APD6 2024 positive-versus-reviewed-UniProt-negative comparison after exact-10-mer filtering:
 PepCNN scores AUROC $0.926$ [0.918, 0.934] and sensitivity $0.601$ at a
 5\% false-positive rate, but review-status confounding in training limits
 its biological interpretation.
@@ -38,8 +37,4 @@ benchmark and candidate tables derived from checked-in result files.
 \end{enumerate}
 
 \subsection{Scope}
-This paper is item 9 part 1 of the MEGA-Program-27 series and is deliberately
-bounded: recognition, design, and screening of AMPs. Activity prediction
-against specific strains, toxicity estimation, secondary-structure
-validation, and wet-lab follow-up are out of scope and are the natural
-subjects of subsequent items.
+This paper is bounded to an AMP benchmark provenance audit and its exploratory recognition, design and screening work. No activity against specific strains, toxicity, structural mechanism or wet-lab outcome is inferred from binary labels and unassayed sequences.

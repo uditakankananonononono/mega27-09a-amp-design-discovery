@@ -1,8 +1,8 @@
 # 09a judge verdict and locked paper response queue
 
-Provenance: owner-pasted WhatsApp verdict, message `wamid.HBgMOTE4MTM0MDk4NTcxFQIAEhgWM0VCMEQ0OUM1NzUyMTgxOTJDQzE2NwA=`, 2026-09-27 11:26:52 IST. The full verbatim text follows this queue. This is a critique and proposed additions, not independent proof of any stated number or permission to fabricate outcomes. All empirical changes require committed results from the science branch.
+Provenance: owner-pasted WhatsApp verdict, message `wamid.HBgMOTE4MTM0MDk4NTcxFQIAEhgWM0VCMEQ0OUM1NzUyMTgxOTJDQzE2NwA=`, 2026-09-27 11:26:52 IST. The full verbatim owner text follows the divider. The P0--P5 queue above it is an agent-authored response plan, not part of the owner message. This is a critique and proposed additions, not independent proof of any stated number or permission to fabricate outcomes. All empirical changes require committed results from the science branch.
 
-Queue locked before implementing paper response:
+Agent-authored queue locked before implementing paper response:
 
 P0. Lead with label-provenance audit (weaknesses 1, 2, 8, 16; additions 1, 13, 17). Reframe the existing 0.921 and 0.926 as confounded measurements, not clean recognition or cross-database validation. Await the science agent's reviewed-only matched rebuild; report failure honestly if it fails.
 P1. Distill the 56-page paper into a concise 12-slide judge narrative (weakness 15; addition 16), keeping long manuscript for archival details. Do not misrepresent the 12 slides as a scientific gate or claim them completed before rendering.

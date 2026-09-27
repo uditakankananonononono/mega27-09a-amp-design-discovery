@@ -20,26 +20,17 @@ AUPRC $0.879$ --- clearly ahead of the random forest ($0.879$), the GNN
 ($0.877$), and logistic regression ($0.871$); all permutation $p=0.0020$.
 The ordering inverts part of the pilot: with leakage controlled and $20\times$
 more data, the learned-representation model separates from the feature
-baselines, while the random forest's pilot advantage evaporates. We read this
-as evidence that composition features saturate quickly, whereas the
-convolutional model keeps extracting positional motif information as data
-grows.
+baselines, while the random forest's pilot advantage evaporates. This ordering is descriptive within the confounded scale-up. Because source/review status tracks class and multiple design choices change from the pilot, it does not establish that the CNN learns antimicrobial motifs better as data grow.
 
-\subsection{External validation on APD6 (study09)}
-APD6 is curated independently of UniProt keyword annotation, so scoring its
-2024 natural AMP list measures cross-database transfer rather than memorized
-annotation patterns. Of 3{,}306 entries, 3{,}207 passed standard-residue and
+\subsection{APD6 positive-set comparison (study09)}
+APD6 supplies positives curated separately from the UniProt keyword query, but the comparison still reuses reviewed UniProt negatives and a model trained on source-confounded labels. It cannot isolate cross-database biological transfer. Of 3{,}306 entries, 3{,}207 passed standard-residue and
 length filters, and 1{,}412 survived decontamination against the training
 split by the shared-10-mer criterion. Scored against the 2{,}925 held-out
 test non-AMPs (Table~\ref{tab:apd}), PepCNN attained AUROC
-$0.926$ [0.918, 0.934] --- statistically indistinguishable from its internal
-test performance --- while the ensemble reached $0.909$ and the GNN $0.797$.
+$0.926$ [0.918, 0.934] on that selected comparison --- while the ensemble reached $0.909$ and the GNN $0.797$.
 Sensitivity on decontaminated APD6 at a 5\% false-positive rate was $0.601$.
 The limited reading: the CNN ranks many APD6 positives above the reviewed
-UniProt test negatives, but the training-source confound still applies, but roughly two in five fall below a stringent operating
-threshold, consistent with the known diversity of AMP mechanisms (many APD6
-entries are longer, disulfide-bonded, or anionic peptides unlike the short
-cationic training majority).
+UniProt test negatives, but the training-source confound still applies. Roughly two in five APD6 positives fall below the stringent operating threshold. The composition of those missed positives is unknown until an accession-grounded per-family analysis is run.
 
 \subsection{Annealed design (studies 1 and 7)}
 Running the simulated-annealing designer against the
