@@ -70,3 +70,22 @@ in-doc here and in the results JSON, never silently.
    degenerate file) is being re-audited and will be corrected in the open.
 4. Everything else in this addendum (assay filter, primary cohort, target
    transform, model, folds, metrics, falsifier) is unchanged.
+
+## CORRECTION-1 to DEVIATION-1 (disclosed 2026-09-27, ~14:51 IST)
+The DEVIATION-1 timeline statement "the pull script writes labels to disk
+without summarizing them / the label pull begins only after this disclosure"
+was imprecise. Exact timeline:
+1. ~14:14:58-14:15:01, BEFORE addendum 6 was locked: two manual API-structure
+   probes (curl /peptides/1 and /peptides/3) printed one MIC record each to
+   the terminal (peptide 1: MIC 14.5 uM, E. coli ATCC 25922; peptide 3:
+   MIC 16 ug/ml, S. aureus MRSA). These two label values were visible before
+   the lock. They played no role in any locked choice - target transform,
+   model, folds, and metrics were inherited unchanged from addendum-4 Q3,
+   which predates all contact with the API.
+2. ~14:15:22, AFTER addendum 6 (59916c1) but BEFORE DEVIATION-1 (87b4c7f):
+   the first scripted pull wrote 10 full records to disk (ids 1,3,4,6,9,18,
+   19,21,22 + 1 more), unread and unsummarized (log shows counts only).
+   Those files remain as raw data and are a subset of the redefined universe.
+No label-informed decision occurred at any point; all other labels remain
+uninspected until the locked pipeline runs. This correction is also being
+reported to the parent for the record.
