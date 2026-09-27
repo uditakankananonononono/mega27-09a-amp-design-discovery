@@ -1,0 +1,30 @@
+{
+ "study": "study32_q11_external_cohort",
+ "cohort_meta": {
+  "records_with_ecoli_mic": 4929,
+  "pos_pre": 1935,
+  "neg_pre": 481,
+  "exact_dup_dropped_pos": 251,
+  "exact_dup_dropped_neg": 109,
+  "pos_final": 1457,
+  "neg_final": 352,
+  "cluster_dropped_pos": 227,
+  "cluster_dropped_neg": 20
+ },
+ "model": "study22-recipe ensemble, full Q1 dataset, locked thr 0.5",
+ "auroc": 0.6404709630623324,
+ "mcc_at_0.5": 0.21589140122595807,
+ "pos_scores": {
+  "n": 1457,
+  "median": 0.8206553587632084,
+  "q1": 0.7283042538238078,
+  "q3": 0.8941175650297053
+ },
+ "neg_scores": {
+  "n": 352,
+  "median": 0.7522904674610267,
+  "q1": 0.5666147326275413,
+  "q3": 0.8607323473943111
+ },
+ "pos_spearman_vs_log_mic": -0.0989557638569617
+}
