@@ -3,61 +3,18 @@
  "refs": {
   "APD6": 3306,
   "DRAMP": 12816,
-  "DBAASP": 546
+  "DBAASP": 16239
  },
  "pool_size": 852,
  "named_candidates": [
   {
    "name": "InstiAMP-21-1",
    "origin": "uncharacterized_pool",
-   "sequence": "MKGSKLFQMQKCMPVWCRTGTCIILPVACHMAKPLKLPT",
-   "header": "sp|Q8TGT5|YH032_YEAST Putative uncharacterized protein YHR032C-A OS=Saccharomyces cerevisiae (strain ATCC 204508 / S288c) OX=559292 GN=YHR032C-A PE=5 SV=1",
-   "ensemble_p": 0.9681,
-   "branch_scores": {
-    "cnn7": 1.0,
-    "cnn27": 1.0,
-    "gnn": 0.9689,
-    "rf": 0.8733,
-    "hgb": 0.9924
-   },
-   "novelty": {
-    "per_db": {
-     "APD6": {
-      "max_3mer_jaccard": 0.071,
-      "lcs": 0
-     },
-     "DRAMP": {
-      "max_3mer_jaccard": 0.073,
-      "lcs": 0
-     },
-     "DBAASP": {
-      "max_3mer_jaccard": 0.0,
-      "lcs": 0
-     }
-    },
-    "overall_max_jaccard": 0.073,
-    "tier": "T1"
-   },
-   "physicochemical": {
-    "length": 39,
-    "net_charge_ph7.4": 4.87,
-    "kd_mean": 0.29,
-    "hydrophobic_moment": 1.52,
-    "boman": 1.0
-   },
-   "signal_peptide_flag": true,
-   "ablated_ensemble_p": 0.8604,
-   "hemolysis_risk_flag": false,
-   "falsifiable_prediction": "ensemble p(AMP)=0.968; testable by broth-microdilution MIC assay vs E. coli K-12 and S. aureus ATCC 25923"
-  },
-  {
-   "name": "InstiAMP-21-2",
-   "origin": "uncharacterized_pool",
    "sequence": "MRVLHVMLSFLNSLLFLPICFCLLQLKATCAVRVKKYSMKKKKKR",
    "header": "sp|P0C5M0|YD320_YEAST Uncharacterized protein YDR320W-B OS=Saccharomyces cerevisiae (strain ATCC 204508 / S288c) OX=559292 GN=YDR320W-B PE=1 SV=1",
-   "ensemble_p": 0.9634,
+   "ensemble_p": 0.9693,
    "branch_scores": {
-    "cnn7": 0.9687,
+    "cnn7": 0.9978,
     "cnn27": 0.9998,
     "gnn": 0.9954,
     "rf": 0.8667,
@@ -74,11 +31,11 @@
       "lcs": 0
      },
      "DBAASP": {
-      "max_3mer_jaccard": 0.013,
+      "max_3mer_jaccard": 0.088,
       "lcs": 0
      }
     },
-    "overall_max_jaccard": 0.083,
+    "overall_max_jaccard": 0.088,
     "tier": "T1"
    },
    "physicochemical": {
@@ -89,12 +46,98 @@
     "boman": 1.11
    },
    "signal_peptide_flag": true,
-   "ablated_ensemble_p": 0.8866,
+   "ablated_ensemble_p": 0.9503,
    "hemolysis_risk_flag": false,
-   "falsifiable_prediction": "ensemble p(AMP)=0.963; testable by broth-microdilution MIC assay vs E. coli K-12 and S. aureus ATCC 25923"
+   "falsifiable_prediction": "ensemble p(AMP)=0.969; testable by broth-microdilution MIC assay vs E. coli K-12 and S. aureus ATCC 25923"
+  },
+  {
+   "name": "InstiAMP-21-2",
+   "origin": "uncharacterized_pool",
+   "sequence": "MKGSKLFQMQKCMPVWCRTGTCIILPVACHMAKPLKLPT",
+   "header": "sp|Q8TGT5|YH032_YEAST Putative uncharacterized protein YHR032C-A OS=Saccharomyces cerevisiae (strain ATCC 204508 / S288c) OX=559292 GN=YHR032C-A PE=5 SV=1",
+   "ensemble_p": 0.9681,
+   "branch_scores": {
+    "cnn7": 0.9999,
+    "cnn27": 1.0,
+    "gnn": 0.9689,
+    "rf": 0.8733,
+    "hgb": 0.9924
+   },
+   "novelty": {
+    "per_db": {
+     "APD6": {
+      "max_3mer_jaccard": 0.071,
+      "lcs": 0
+     },
+     "DRAMP": {
+      "max_3mer_jaccard": 0.073,
+      "lcs": 0
+     },
+     "DBAASP": {
+      "max_3mer_jaccard": 0.095,
+      "lcs": 0
+     }
+    },
+    "overall_max_jaccard": 0.095,
+    "tier": "T1"
+   },
+   "physicochemical": {
+    "length": 39,
+    "net_charge_ph7.4": 4.87,
+    "kd_mean": 0.29,
+    "hydrophobic_moment": 1.52,
+    "boman": 1.0
+   },
+   "signal_peptide_flag": true,
+   "ablated_ensemble_p": 0.8697,
+   "hemolysis_risk_flag": false,
+   "falsifiable_prediction": "ensemble p(AMP)=0.968; testable by broth-microdilution MIC assay vs E. coli K-12 and S. aureus ATCC 25923"
   },
   {
    "name": "InstiAMP-21-3",
+   "origin": "uncharacterized_pool",
+   "sequence": "MTNKKNWKCAGCKNRYSSFDKEKKDGQLKFNCPNCGHTVRRYTILGGY",
+   "header": "sp|Q25BJ1|Y04_HIS1I Uncharacterized protein ORF4 OS=His1 virus (isolate Australia/Victoria) OX=654912 GN=ORF4 PE=4 SV=1",
+   "ensemble_p": 0.9646,
+   "branch_scores": {
+    "cnn7": 0.9991,
+    "cnn27": 0.9999,
+    "gnn": 0.9192,
+    "rf": 0.8967,
+    "hgb": 0.9903
+   },
+   "novelty": {
+    "per_db": {
+     "APD6": {
+      "max_3mer_jaccard": 0.051,
+      "lcs": 0
+     },
+     "DRAMP": {
+      "max_3mer_jaccard": 0.057,
+      "lcs": 0
+     },
+     "DBAASP": {
+      "max_3mer_jaccard": 0.058,
+      "lcs": 0
+     }
+    },
+    "overall_max_jaccard": 0.058,
+    "tier": "T1"
+   },
+   "physicochemical": {
+    "length": 48,
+    "net_charge_ph7.4": 6.86,
+    "kd_mean": -1.16,
+    "hydrophobic_moment": 1.76,
+    "boman": 0.83
+   },
+   "signal_peptide_flag": false,
+   "ablated_ensemble_p": null,
+   "hemolysis_risk_flag": false,
+   "falsifiable_prediction": "ensemble p(AMP)=0.965; testable by broth-microdilution MIC assay vs E. coli K-12 and S. aureus ATCC 25923"
+  },
+  {
+   "name": "InstiAMP-21-4",
    "origin": "uncharacterized_pool",
    "sequence": "MVLTNLQKITGLLCVLVETKKLKIFIKFMLKTKNGGKKVLKKIYKKAKKKNILTMIMFI",
    "header": "sp|Q91FR7|255L_IIV6 Uncharacterized protein 255L OS=Invertebrate iridescent virus 6 OX=176652 GN=IIV6-255L PE=4 SV=1",
@@ -117,11 +160,11 @@
       "lcs": 0
      },
      "DBAASP": {
-      "max_3mer_jaccard": 0.023,
+      "max_3mer_jaccard": 0.136,
       "lcs": 0
      }
     },
-    "overall_max_jaccard": 0.092,
+    "overall_max_jaccard": 0.136,
     "tier": "T1"
    },
    "physicochemical": {
@@ -137,56 +180,13 @@
    "falsifiable_prediction": "ensemble p(AMP)=0.961; testable by broth-microdilution MIC assay vs E. coli K-12 and S. aureus ATCC 25923"
   },
   {
-   "name": "InstiAMP-21-4",
-   "origin": "uncharacterized_pool",
-   "sequence": "MTNKKNWKCAGCKNRYSSFDKEKKDGQLKFNCPNCGHTVRRYTILGGY",
-   "header": "sp|Q25BJ1|Y04_HIS1I Uncharacterized protein ORF4 OS=His1 virus (isolate Australia/Victoria) OX=654912 GN=ORF4 PE=4 SV=1",
-   "ensemble_p": 0.9604,
-   "branch_scores": {
-    "cnn7": 0.978,
-    "cnn27": 0.9999,
-    "gnn": 0.9192,
-    "rf": 0.8967,
-    "hgb": 0.9903
-   },
-   "novelty": {
-    "per_db": {
-     "APD6": {
-      "max_3mer_jaccard": 0.051,
-      "lcs": 0
-     },
-     "DRAMP": {
-      "max_3mer_jaccard": 0.057,
-      "lcs": 0
-     },
-     "DBAASP": {
-      "max_3mer_jaccard": 0.014,
-      "lcs": 0
-     }
-    },
-    "overall_max_jaccard": 0.057,
-    "tier": "T1"
-   },
-   "physicochemical": {
-    "length": 48,
-    "net_charge_ph7.4": 6.86,
-    "kd_mean": -1.16,
-    "hydrophobic_moment": 1.76,
-    "boman": 0.83
-   },
-   "signal_peptide_flag": false,
-   "ablated_ensemble_p": null,
-   "hemolysis_risk_flag": false,
-   "falsifiable_prediction": "ensemble p(AMP)=0.960; testable by broth-microdilution MIC assay vs E. coli K-12 and S. aureus ATCC 25923"
-  },
-  {
    "name": "InstiAMP-21-5",
    "origin": "uncharacterized_pool",
    "sequence": "MLLVVIFGLVALFALWGVLRSVRNKNILGFLLAGATLFVFGWFTVMTVINSGYPTAH",
    "header": "sp|P54500|YQGW_BACSU Uncharacterized protein YqgW OS=Bacillus subtilis (strain 168) OX=224308 GN=yqgW PE=4 SV=1",
-   "ensemble_p": 0.9596,
+   "ensemble_p": 0.9597,
    "branch_scores": {
-    "cnn7": 0.9989,
+    "cnn7": 0.9994,
     "cnn27": 0.9998,
     "gnn": 0.9952,
     "rf": 0.8233,
@@ -203,7 +203,7 @@
       "lcs": 0
      },
      "DBAASP": {
-      "max_3mer_jaccard": 0.015,
+      "max_3mer_jaccard": 0.066,
       "lcs": 0
      }
     },
@@ -218,61 +218,18 @@
     "boman": 1.76
    },
    "signal_peptide_flag": true,
-   "ablated_ensemble_p": 0.7175,
+   "ablated_ensemble_p": 0.7723,
    "hemolysis_risk_flag": true,
    "falsifiable_prediction": "ensemble p(AMP)=0.960; testable by broth-microdilution MIC assay vs E. coli K-12 and S. aureus ATCC 25923"
   },
   {
    "name": "InstiAMP-21-6",
    "origin": "uncharacterized_pool",
-   "sequence": "MKRKIIAIGIFFRLFIIHIHFSHHCCENHFINPLVCLIALFCI",
-   "header": "sp|A6X995|YC7F_SCHPO Putative uncharacterized protein C417.15 OS=Schizosaccharomyces pombe (strain 972 / ATCC 24843) OX=284812 GN=SPCC417.15 PE=3 SV=1",
-   "ensemble_p": 0.9584,
-   "branch_scores": {
-    "cnn7": 0.9976,
-    "cnn27": 0.9996,
-    "gnn": 0.9722,
-    "rf": 0.8233,
-    "hgb": 0.9941
-   },
-   "novelty": {
-    "per_db": {
-     "APD6": {
-      "max_3mer_jaccard": 0.068,
-      "lcs": 0
-     },
-     "DRAMP": {
-      "max_3mer_jaccard": 0.084,
-      "lcs": 0
-     },
-     "DBAASP": {
-      "max_3mer_jaccard": 0.017,
-      "lcs": 0
-     }
-    },
-    "overall_max_jaccard": 0.084,
-    "tier": "T1"
-   },
-   "physicochemical": {
-    "length": 43,
-    "net_charge_ph7.4": 2.03,
-    "kd_mean": 1.18,
-    "hydrophobic_moment": 1.7,
-    "boman": 1.61
-   },
-   "signal_peptide_flag": true,
-   "ablated_ensemble_p": 0.6844,
-   "hemolysis_risk_flag": true,
-   "falsifiable_prediction": "ensemble p(AMP)=0.958; testable by broth-microdilution MIC assay vs E. coli K-12 and S. aureus ATCC 25923"
-  },
-  {
-   "name": "InstiAMP-21-7",
-   "origin": "uncharacterized_pool",
    "sequence": "MANGTILAHSLRHHTPPFPRMPLGYSSSRAVRRSRWFLVLISCCCCCFRRC",
    "header": "sp|Q8TGL8|YN097_YEAST Putative uncharacterized protein YNL097W-A OS=Saccharomyces cerevisiae (strain ATCC 204508 / S288c) OX=559292 GN=YNL097W-A PE=5 SV=1",
-   "ensemble_p": 0.9574,
+   "ensemble_p": 0.9573,
    "branch_scores": {
-    "cnn7": 1.0,
+    "cnn7": 0.9998,
     "cnn27": 1.0,
     "gnn": 0.9845,
     "rf": 0.8333,
@@ -289,11 +246,11 @@
       "lcs": 0
      },
      "DBAASP": {
-      "max_3mer_jaccard": 0.012,
+      "max_3mer_jaccard": 0.076,
       "lcs": 0
      }
     },
-    "overall_max_jaccard": 0.066,
+    "overall_max_jaccard": 0.076,
     "tier": "T1"
    },
    "physicochemical": {
@@ -309,99 +266,13 @@
    "falsifiable_prediction": "ensemble p(AMP)=0.957; testable by broth-microdilution MIC assay vs E. coli K-12 and S. aureus ATCC 25923"
   },
   {
-   "name": "InstiAMP-21-8",
-   "origin": "uncharacterized_pool",
-   "sequence": "MPICVLRKSPKRRSPSPKRRRSPKRRSPRRSPRRSPRRSPPRRRSPRRSTRRSPRRR",
-   "header": "sp|O55724|106L_IIV6 Uncharacterized protein 106L OS=Invertebrate iridescent virus 6 OX=176652 GN=IIV6-106L PE=4 SV=1",
-   "ensemble_p": 0.9522,
-   "branch_scores": {
-    "cnn7": 0.9995,
-    "cnn27": 0.9997,
-    "gnn": 0.9986,
-    "rf": 0.8,
-    "hgb": 0.9703
-   },
-   "novelty": {
-    "per_db": {
-     "APD6": {
-      "max_3mer_jaccard": 0.075,
-      "lcs": 0
-     },
-     "DRAMP": {
-      "max_3mer_jaccard": 0.114,
-      "lcs": 0
-     },
-     "DBAASP": {
-      "max_3mer_jaccard": 0.024,
-      "lcs": 0
-     }
-    },
-    "overall_max_jaccard": 0.114,
-    "tier": "T1"
-   },
-   "physicochemical": {
-    "length": 57,
-    "net_charge_ph7.4": 27.17,
-    "kd_mean": -2.38,
-    "hydrophobic_moment": 1.1,
-    "boman": -0.44
-   },
-   "signal_peptide_flag": false,
-   "ablated_ensemble_p": null,
-   "hemolysis_risk_flag": false,
-   "falsifiable_prediction": "ensemble p(AMP)=0.952; testable by broth-microdilution MIC assay vs E. coli K-12 and S. aureus ATCC 25923"
-  },
-  {
-   "name": "InstiAMP-21-9",
-   "origin": "uncharacterized_pool",
-   "sequence": "MKKLALILFMGTLVSFYADAGRKPCSGSKGGISHCTAGGKFVCNDGSISASKKTCTN",
-   "header": "sp|P0ACW5|YDCA_SHIFL Uncharacterized protein YdcA OS=Shigella flexneri OX=623 GN=ydcA PE=3 SV=1",
-   "ensemble_p": 0.9519,
-   "branch_scores": {
-    "cnn7": 0.9983,
-    "cnn27": 0.9997,
-    "gnn": 0.9546,
-    "rf": 0.8333,
-    "hgb": 0.9698
-   },
-   "novelty": {
-    "per_db": {
-     "APD6": {
-      "max_3mer_jaccard": 0.062,
-      "lcs": 0
-     },
-     "DRAMP": {
-      "max_3mer_jaccard": 0.062,
-      "lcs": 0
-     },
-     "DBAASP": {
-      "max_3mer_jaccard": 0.038,
-      "lcs": 0
-     }
-    },
-    "overall_max_jaccard": 0.062,
-    "tier": "T1"
-   },
-   "physicochemical": {
-    "length": 57,
-    "net_charge_ph7.4": 4.87,
-    "kd_mean": 0.08,
-    "hydrophobic_moment": 1.18,
-    "boman": 1.09
-   },
-   "signal_peptide_flag": true,
-   "ablated_ensemble_p": 0.8747,
-   "hemolysis_risk_flag": false,
-   "falsifiable_prediction": "ensemble p(AMP)=0.952; testable by broth-microdilution MIC assay vs E. coli K-12 and S. aureus ATCC 25923"
-  },
-  {
-   "name": "InstiAMP-21-10",
+   "name": "InstiAMP-21-7",
    "origin": "uncharacterized_pool",
    "sequence": "MWFIIFGIIFFIEGIIMTVYGVKKKNGMLTYIGIVFAIMTFGVVMIKLTGH",
    "header": "sp|O34905|YFLI_BACSU Uncharacterized protein YflI OS=Bacillus subtilis (strain 168) OX=224308 GN=yflI PE=4 SV=1",
-   "ensemble_p": 0.9492,
+   "ensemble_p": 0.9561,
    "branch_scores": {
-    "cnn7": 0.9558,
+    "cnn7": 0.9904,
     "cnn27": 0.9992,
     "gnn": 0.993,
     "rf": 0.8033,
@@ -418,11 +289,11 @@
       "lcs": 0
      },
      "DBAASP": {
-      "max_3mer_jaccard": 0.013,
+      "max_3mer_jaccard": 0.088,
       "lcs": 0
      }
     },
-    "overall_max_jaccard": 0.054,
+    "overall_max_jaccard": 0.088,
     "tier": "T1"
    },
    "physicochemical": {
@@ -433,20 +304,104 @@
     "boman": 1.81
    },
    "signal_peptide_flag": true,
-   "ablated_ensemble_p": 0.5577,
+   "ablated_ensemble_p": 0.5805,
    "hemolysis_risk_flag": true,
-   "falsifiable_prediction": "ensemble p(AMP)=0.949; testable by broth-microdilution MIC assay vs E. coli K-12 and S. aureus ATCC 25923"
-  }
- ],
- "prior_candidates_rescored": [
+   "falsifiable_prediction": "ensemble p(AMP)=0.956; testable by broth-microdilution MIC assay vs E. coli K-12 and S. aureus ATCC 25923"
+  },
   {
-   "name": "InstiAMP-09a-1",
-   "origin": "study12_prior_candidate",
+   "name": "InstiAMP-21-8",
+   "origin": "uncharacterized_pool",
+   "sequence": "MKRKIIAIGIFFRLFIIHIHFSHHCCENHFINPLVCLIALFCI",
+   "header": "sp|A6X995|YC7F_SCHPO Putative uncharacterized protein C417.15 OS=Schizosaccharomyces pombe (strain 972 / ATCC 24843) OX=284812 GN=SPCC417.15 PE=3 SV=1",
+   "ensemble_p": 0.9545,
+   "branch_scores": {
+    "cnn7": 0.9781,
+    "cnn27": 0.9996,
+    "gnn": 0.9722,
+    "rf": 0.8233,
+    "hgb": 0.9941
+   },
+   "novelty": {
+    "per_db": {
+     "APD6": {
+      "max_3mer_jaccard": 0.068,
+      "lcs": 0
+     },
+     "DRAMP": {
+      "max_3mer_jaccard": 0.084,
+      "lcs": 0
+     },
+     "DBAASP": {
+      "max_3mer_jaccard": 0.089,
+      "lcs": 0
+     }
+    },
+    "overall_max_jaccard": 0.089,
+    "tier": "T1"
+   },
+   "physicochemical": {
+    "length": 43,
+    "net_charge_ph7.4": 2.03,
+    "kd_mean": 1.18,
+    "hydrophobic_moment": 1.7,
+    "boman": 1.61
+   },
+   "signal_peptide_flag": true,
+   "ablated_ensemble_p": 0.7365,
+   "hemolysis_risk_flag": true,
+   "falsifiable_prediction": "ensemble p(AMP)=0.955; testable by broth-microdilution MIC assay vs E. coli K-12 and S. aureus ATCC 25923"
+  },
+  {
+   "name": "InstiAMP-21-9",
+   "origin": "uncharacterized_pool",
+   "sequence": "MPICVLRKSPKRRSPSPKRRRSPKRRSPRRSPRRSPRRSPPRRRSPRRSTRRSPRRR",
+   "header": "sp|O55724|106L_IIV6 Uncharacterized protein 106L OS=Invertebrate iridescent virus 6 OX=176652 GN=IIV6-106L PE=4 SV=1",
+   "ensemble_p": 0.9522,
+   "branch_scores": {
+    "cnn7": 0.9997,
+    "cnn27": 0.9997,
+    "gnn": 0.9986,
+    "rf": 0.8,
+    "hgb": 0.9703
+   },
+   "novelty": {
+    "per_db": {
+     "APD6": {
+      "max_3mer_jaccard": 0.075,
+      "lcs": 0
+     },
+     "DRAMP": {
+      "max_3mer_jaccard": 0.114,
+      "lcs": 0
+     },
+     "DBAASP": {
+      "max_3mer_jaccard": 0.2,
+      "lcs": 0
+     }
+    },
+    "overall_max_jaccard": 0.2,
+    "tier": "T1"
+   },
+   "physicochemical": {
+    "length": 57,
+    "net_charge_ph7.4": 27.17,
+    "kd_mean": -2.38,
+    "hydrophobic_moment": 1.1,
+    "boman": -0.44
+   },
+   "signal_peptide_flag": false,
+   "ablated_ensemble_p": null,
+   "hemolysis_risk_flag": false,
+   "falsifiable_prediction": "ensemble p(AMP)=0.952; testable by broth-microdilution MIC assay vs E. coli K-12 and S. aureus ATCC 25923"
+  },
+  {
+   "name": "InstiAMP-21-10",
+   "origin": "uncharacterized_pool",
    "sequence": "MKKLALILFMGTLVSFYADAGRKPCSGSKGGISHCTAGGKFVCNDGSISASKKTCTN",
    "header": "sp|P0ACW5|YDCA_SHIFL Uncharacterized protein YdcA OS=Shigella flexneri OX=623 GN=ydcA PE=3 SV=1",
-   "ensemble_p": 0.9519,
+   "ensemble_p": 0.9521,
    "branch_scores": {
-    "cnn7": 0.9983,
+    "cnn7": 0.9994,
     "cnn27": 0.9997,
     "gnn": 0.9546,
     "rf": 0.8333,
@@ -463,11 +418,11 @@
       "lcs": 0
      },
      "DBAASP": {
-      "max_3mer_jaccard": 0.038,
+      "max_3mer_jaccard": 0.074,
       "lcs": 0
      }
     },
-    "overall_max_jaccard": 0.062,
+    "overall_max_jaccard": 0.074,
     "tier": "T1"
    },
    "physicochemical": {
@@ -478,7 +433,52 @@
     "boman": 1.09
    },
    "signal_peptide_flag": true,
-   "ablated_ensemble_p": 0.8747,
+   "ablated_ensemble_p": 0.9084,
+   "hemolysis_risk_flag": false,
+   "falsifiable_prediction": "ensemble p(AMP)=0.952; testable by broth-microdilution MIC assay vs E. coli K-12 and S. aureus ATCC 25923"
+  }
+ ],
+ "prior_candidates_rescored": [
+  {
+   "name": "InstiAMP-09a-1",
+   "origin": "study12_prior_candidate",
+   "sequence": "MKKLALILFMGTLVSFYADAGRKPCSGSKGGISHCTAGGKFVCNDGSISASKKTCTN",
+   "header": "sp|P0ACW5|YDCA_SHIFL Uncharacterized protein YdcA OS=Shigella flexneri OX=623 GN=ydcA PE=3 SV=1",
+   "ensemble_p": 0.9521,
+   "branch_scores": {
+    "cnn7": 0.9994,
+    "cnn27": 0.9997,
+    "gnn": 0.9546,
+    "rf": 0.8333,
+    "hgb": 0.9698
+   },
+   "novelty": {
+    "per_db": {
+     "APD6": {
+      "max_3mer_jaccard": 0.062,
+      "lcs": 0
+     },
+     "DRAMP": {
+      "max_3mer_jaccard": 0.062,
+      "lcs": 0
+     },
+     "DBAASP": {
+      "max_3mer_jaccard": 0.074,
+      "lcs": 0
+     }
+    },
+    "overall_max_jaccard": 0.074,
+    "tier": "T1"
+   },
+   "physicochemical": {
+    "length": 57,
+    "net_charge_ph7.4": 4.87,
+    "kd_mean": 0.08,
+    "hydrophobic_moment": 1.18,
+    "boman": 1.09
+   },
+   "signal_peptide_flag": true,
+   "ablated_ensemble_p": 0.9084,
    "hemolysis_risk_flag": false,
    "falsifiable_prediction": "ensemble p(AMP)=0.952; testable by broth-microdilution MIC assay vs E. coli K-12 and S. aureus ATCC 25923"
   },
@@ -487,9 +487,9 @@
    "origin": "study12_prior_candidate",
    "sequence": "MKTWMYSYLFDCPILVLPWTPHNYYLYHRFHHFLPLCYWHYSADTY",
    "header": "sp|Q8TGN5|YI105_YEAST Uncharacterized protein YIL105W-A OS=Saccharomyces cerevisiae (strain ATCC 204508 / S288c) OX=559292 GN=YIL105W-A PE=4 SV=1",
-   "ensemble_p": 0.6014,
+   "ensemble_p": 0.6017,
    "branch_scores": {
-    "cnn7": 0.5108,
+    "cnn7": 0.512,
     "cnn27": 0.9842,
     "gnn": 0.8511,
     "rf": 0.3,
@@ -506,11 +506,11 @@
       "lcs": 0
      },
      "DBAASP": {
-      "max_3mer_jaccard": 0.0,
+      "max_3mer_jaccard": 0.089,
       "lcs": 0
      }
     },
-    "overall_max_jaccard": 0.088,
+    "overall_max_jaccard": 0.089,
     "tier": "T1"
    },
    "physicochemical": {
@@ -521,18 +521,18 @@
     "boman": 1.59
    },
    "signal_peptide_flag": true,
-   "ablated_ensemble_p": 0.3933,
+   "ablated_ensemble_p": 0.4709,
    "hemolysis_risk_flag": false,
-   "falsifiable_prediction": "ensemble p(AMP)=0.601; testable by broth-microdilution MIC assay vs E. coli K-12 and S. aureus ATCC 25923"
+   "falsifiable_prediction": "ensemble p(AMP)=0.602; testable by broth-microdilution MIC assay vs E. coli K-12 and S. aureus ATCC 25923"
   },
   {
    "name": "InstiAMP-09a-3",
    "origin": "study12_prior_candidate",
    "sequence": "MYRRLLLNLFCMVFLQACLKPMSDPKAEKVDSQVQCGFGSKDC",
    "header": "sp|P64654|Y112_HELPJ Uncharacterized protein jhp_0112 OS=Helicobacter pylori (strain J99 / ATCC 700824) OX=85963 GN=jhp_0112 PE=3 SV=1",
-   "ensemble_p": 0.4782,
+   "ensemble_p": 0.5278,
    "branch_scores": {
-    "cnn7": 0.0313,
+    "cnn7": 0.2793,
     "cnn27": 0.9529,
     "gnn": 0.7701,
     "rf": 0.48,
@@ -549,7 +549,7 @@
       "lcs": 0
      },
      "DBAASP": {
-      "max_3mer_jaccard": 0.014,
+      "max_3mer_jaccard": 0.07,
       "lcs": 0
      }
     },
@@ -564,18 +564,18 @@
     "boman": 1.09
    },
    "signal_peptide_flag": true,
-   "ablated_ensemble_p": 0.216,
+   "ablated_ensemble_p": 0.2186,
    "hemolysis_risk_flag": false,
-   "falsifiable_prediction": "ensemble p(AMP)=0.478; testable by broth-microdilution MIC assay vs E. coli K-12 and S. aureus ATCC 25923"
+   "falsifiable_prediction": "ensemble p(AMP)=0.528; testable by broth-microdilution MIC assay vs E. coli K-12 and S. aureus ATCC 25923"
   },
   {
    "name": "InstiAMP-09a-4",
    "origin": "study12_prior_candidate",
    "sequence": "LGICFASMPR",
    "header": "sp|P85380|SMP15_NAUMA Uncharacterized protein SMPP15 (Fragment) OS=Nautilus macromphalus OX=34576 PE=1 SV=1",
-   "ensemble_p": 0.6222,
+   "ensemble_p": 0.7648,
    "branch_scores": {
-    "cnn7": 0.1386,
+    "cnn7": 0.8516,
     "cnn27": 0.6638,
     "gnn": 0.6399,
     "rf": 0.6833,
@@ -592,7 +592,7 @@
       "lcs": 0
      },
      "DBAASP": {
-      "max_3mer_jaccard": 0.0,
+      "max_3mer_jaccard": 0.1,
       "lcs": 0
      }
     },
@@ -609,16 +609,16 @@
    "signal_peptide_flag": false,
    "ablated_ensemble_p": null,
    "hemolysis_risk_flag": true,
-   "falsifiable_prediction": "ensemble p(AMP)=0.622; testable by broth-microdilution MIC assay vs E. coli K-12 and S. aureus ATCC 25923"
+   "falsifiable_prediction": "ensemble p(AMP)=0.765; testable by broth-microdilution MIC assay vs E. coli K-12 and S. aureus ATCC 25923"
   },
   {
    "name": "InstiAMP-09a-5",
    "origin": "study12_prior_candidate",
    "sequence": "MFKQPGHLTSRKYDLGPWTNVFNLCFLASEAAVGCNKS",
    "header": "sp|Q8TGN0|YK156_YEAST Putative uncharacterized protein YKL156C-A OS=Saccharomyces cerevisiae (strain ATCC 204508 / S288c) OX=559292 GN=YKL156C-A PE=5 SV=1",
-   "ensemble_p": 0.7104,
+   "ensemble_p": 0.7268,
    "branch_scores": {
-    "cnn7": 0.9179,
+    "cnn7": 0.9996,
     "cnn27": 0.9984,
     "gnn": 0.7494,
     "rf": 0.58,
@@ -635,11 +635,11 @@
       "lcs": 0
      },
      "DBAASP": {
-      "max_3mer_jaccard": 0.017,
+      "max_3mer_jaccard": 0.089,
       "lcs": 0
      }
     },
-    "overall_max_jaccard": 0.08,
+    "overall_max_jaccard": 0.089,
     "tier": "T1"
    },
    "physicochemical": {
@@ -652,7 +652,7 @@
    "signal_peptide_flag": false,
    "ablated_ensemble_p": null,
    "hemolysis_risk_flag": false,
-   "falsifiable_prediction": "ensemble p(AMP)=0.710; testable by broth-microdilution MIC assay vs E. coli K-12 and S. aureus ATCC 25923"
+   "falsifiable_prediction": "ensemble p(AMP)=0.727; testable by broth-microdilution MIC assay vs E. coli K-12 and S. aureus ATCC 25923"
   },
   {
    "name": "InstiAMP-09a-6",
@@ -661,7 +661,7 @@
    "header": "sp|Q8TGT5|YH032_YEAST Putative uncharacterized protein YHR032C-A OS=Saccharomyces cerevisiae (strain ATCC 204508 / S288c) OX=559292 GN=YHR032C-A PE=5 SV=1",
    "ensemble_p": 0.9681,
    "branch_scores": {
-    "cnn7": 1.0,
+    "cnn7": 0.9999,
     "cnn27": 1.0,
     "gnn": 0.9689,
     "rf": 0.8733,
@@ -678,11 +678,11 @@
       "lcs": 0
      },
      "DBAASP": {
-      "max_3mer_jaccard": 0.0,
+      "max_3mer_jaccard": 0.095,
       "lcs": 0
      }
     },
-    "overall_max_jaccard": 0.073,
+    "overall_max_jaccard": 0.095,
     "tier": "T1"
    },
    "physicochemical": {
@@ -693,7 +693,7 @@
     "boman": 1.0
    },
    "signal_peptide_flag": true,
-   "ablated_ensemble_p": 0.8604,
+   "ablated_ensemble_p": 0.8697,
    "hemolysis_risk_flag": false,
    "falsifiable_prediction": "ensemble p(AMP)=0.968; testable by broth-microdilution MIC assay vs E. coli K-12 and S. aureus ATCC 25923"
   },
@@ -702,9 +702,9 @@
    "origin": "study12_prior_candidate",
    "sequence": "MSINIVHSNENNEENTNIENWTTTGTNYRNECIARCGRLFSGFNALICMKPCGV",
    "header": "sp|Q54HM1|Y8382_DICDI Putative uncharacterized protein DDB_G0289359 OS=Dictyostelium discoideum OX=44689 GN=DDB_G0289359 PE=4 SV=1",
-   "ensemble_p": 0.3556,
+   "ensemble_p": 0.3203,
    "branch_scores": {
-    "cnn7": 0.2106,
+    "cnn7": 0.0343,
     "cnn27": 0.9076,
     "gnn": 0.4094,
     "rf": 0.3,
@@ -721,7 +721,7 @@
       "lcs": 0
      },
      "DBAASP": {
-      "max_3mer_jaccard": 0.015,
+      "max_3mer_jaccard": 0.053,
       "lcs": 0
      }
     },
@@ -738,16 +738,16 @@
    "signal_peptide_flag": false,
    "ablated_ensemble_p": null,
    "hemolysis_risk_flag": false,
-   "falsifiable_prediction": "ensemble p(AMP)=0.356; testable by broth-microdilution MIC assay vs E. coli K-12 and S. aureus ATCC 25923"
+   "falsifiable_prediction": "ensemble p(AMP)=0.320; testable by broth-microdilution MIC assay vs E. coli K-12 and S. aureus ATCC 25923"
   },
   {
    "name": "InstiAMP-09a-8",
    "origin": "study12_prior_candidate",
    "sequence": "MSILLKILFKLLLLILSITFVITDCLPRSCASFGCCSGNCATWCDQCDIKYSC",
    "header": "sp|O55758|160L_IIV6 Uncharacterized protein 160L OS=Invertebrate iridescent virus 6 OX=176652 GN=IIV6-160L PE=3 SV=1",
-   "ensemble_p": 0.9193,
+   "ensemble_p": 0.9194,
    "branch_scores": {
-    "cnn7": 0.9998,
+    "cnn7": 1.0,
     "cnn27": 0.9999,
     "gnn": 0.9465,
     "rf": 0.65,
@@ -764,11 +764,11 @@
       "lcs": 0
      },
      "DBAASP": {
-      "max_3mer_jaccard": 0.016,
+      "max_3mer_jaccard": 0.093,
       "lcs": 0
      }
     },
-    "overall_max_jaccard": 0.068,
+    "overall_max_jaccard": 0.093,
     "tier": "T1"
    },
    "physicochemical": {
@@ -779,7 +779,7 @@
     "boman": 1.39
    },
    "signal_peptide_flag": true,
-   "ablated_ensemble_p": 0.8373,
+   "ablated_ensemble_p": 0.8387,
    "hemolysis_risk_flag": true,
    "falsifiable_prediction": "ensemble p(AMP)=0.919; testable by broth-microdilution MIC assay vs E. coli K-12 and S. aureus ATCC 25923"
   },
@@ -788,9 +788,9 @@
    "origin": "study12_prior_candidate",
    "sequence": "QNTWTIICTTMWDSHRRRDPYNPYMVWRRMKTFCNTKEALWFVGICPFNFCVFLTTY",
    "header": null,
-   "ensemble_p": 0.8937,
+   "ensemble_p": 0.8947,
    "branch_scores": {
-    "cnn7": 0.9933,
+    "cnn7": 0.9985,
     "cnn27": 0.9999,
     "gnn": 0.9353,
     "rf": 0.64,
@@ -807,7 +807,7 @@
       "lcs": 0
      },
      "DBAASP": {
-      "max_3mer_jaccard": 0.012,
+      "max_3mer_jaccard": 0.055,
       "lcs": 0
      }
     },
@@ -824,12 +824,12 @@
    "signal_peptide_flag": false,
    "ablated_ensemble_p": null,
    "hemolysis_risk_flag": false,
-   "falsifiable_prediction": "ensemble p(AMP)=0.894; testable by broth-microdilution MIC assay vs E. coli K-12 and S. aureus ATCC 25923"
+   "falsifiable_prediction": "ensemble p(AMP)=0.895; testable by broth-microdilution MIC assay vs E. coli K-12 and S. aureus ATCC 25923"
   }
  ],
  "rediscovery_controls": [],
  "top40_tier_counts": {
-  "T1T2": 37,
+  "T1T2": 38,
   "T3": 0
  }
 }
