@@ -26,13 +26,13 @@ by label with the same fixed seed.
 
 \section{Data provenance}\label{app:prov}
 \begin{table}[h]\centering\caption{Fetch provenance (hashes truncated to 16 hex chars as recorded).}
-\begin{tabular}{lll}\hline
+\begin{tabularx}{\textwidth}{p{5.6cm}p{1.5cm}X}\hline
 File & Records & Source \\ \hline
-\texttt{uniprot\_kw0929\_all\_10-150.fasta} & 27{,}392 & UniProt REST, KW-0929 (review-status mixed), len 10--150 \\
-\texttt{uniprot\_nonamp\_pool\_10-150.fasta} & 105{,}041 & UniProt REST, reviewed, NOT KW-0929, len 10--150 \\
-\texttt{apd6\_natural\_2024.fasta} & 3{,}306 & aps.unmc.edu APD6 downloads (2024 list) \\
-\texttt{uniprot\_uncharacterized\_10-60.fasta} & 852 & UniProt REST, reviewed, uncharacterized, len 10--60 \\
-\hline\end{tabular}\end{table}
+\path{uniprot_kw0929_all_10-150.fasta} & 27{,}392 & UniProt REST, KW-0929 (review-status mixed), len 10--150 \\
+\path{uniprot_nonamp_pool_10-150.fasta} & 105{,}041 & UniProt REST, reviewed, NOT KW-0929, len 10--150 \\
+\path{apd6_natural_2024.fasta} & 3{,}306 & aps.unmc.edu APD6 downloads (2024 list) \\
+\path{uniprot_uncharacterized_10-60.fasta} & 852 & UniProt REST, reviewed, uncharacterized, len 10--60 \\
+\hline\end{tabularx}\end{table}
 
 Exact URLs, byte counts, SHA-256 prefixes, and UTC fetch timestamps are logged
 in \texttt{data/raw/large\_provenance.json} and
